@@ -1,9 +1,9 @@
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/Assets/AssetStoreTools*
+/goods-transport/[Ll]ibrary/
+/goods-transport/[Tt]emp/
+/goods-transport/[Oo]bj/
+/goods-transport/[Bb]uild/
+/goods-transport/[Bb]uilds/
+/goods-transport/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
 /.vs/
