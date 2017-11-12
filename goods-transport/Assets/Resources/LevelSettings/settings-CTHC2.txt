@@ -1,0 +1,4 @@
+taskdescription: Töm alla bilar på lampor. Hur många lampor kom med bilarna?
+precode: antal_bilar = 7
+rowlimit: 20
+smartbuttons: töm_bilen(), åk_framåt, svara()

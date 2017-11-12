@@ -1,0 +1,3 @@
+taskdescription: Lasta av alla palmer från bilen
+rowlimit: 20
+smartbuttons: lasta_av_palm()

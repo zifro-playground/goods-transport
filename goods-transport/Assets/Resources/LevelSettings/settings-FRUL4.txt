@@ -1,0 +1,4 @@
+taskdescription: Lasta av alla palmer från bilen
+precode: stolar = 10
+rowlimit: 20
+smartbuttons: lasta_av_stol()

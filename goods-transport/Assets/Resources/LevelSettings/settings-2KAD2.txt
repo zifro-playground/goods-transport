@@ -1,0 +1,5 @@
+taskdescription: Hur många möbler finns i bilen?
+precode: stolar = 3\npalmer = 2\nbord = 1
+rowlimit: 20
+casecount: 3
+smartbuttons: svara()

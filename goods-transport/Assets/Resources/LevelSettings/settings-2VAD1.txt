@@ -1,0 +1,6 @@
+taskdescription: Hur många varor finns i bilen?
+precode: lampor = 15\npalmer = 5
+startcode: varor = lampor + palmer\nsvara(varor)
+rowlimit: 20
+casecount: 3
+smartbuttons: svara()

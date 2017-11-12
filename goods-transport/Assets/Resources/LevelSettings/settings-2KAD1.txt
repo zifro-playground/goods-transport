@@ -1,0 +1,5 @@
+taskdescription: Hur många träd finns i bilen?
+precode: stolar = 3\npalmer = 2\ngranar = 4
+rowlimit: 20
+casecount: 3
+smartbuttons: svara()

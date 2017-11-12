@@ -1,0 +1,5 @@
+taskdescription: Töm alla bilar på granar
+precode: antal_bilar = 9
+startcode: for i in range(antal_bilar):\n\ttöm_bilen()\nåk_framåt()
+rowlimit: 20
+smartbuttons: töm_bilen(), åk_framåt
