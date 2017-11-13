@@ -14,3 +14,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game-variabler/Scenes/Scene2.unity
     guid: 4273d46c6b224c442b7953615820bd06
+  - enabled: 1
+    path: Assets/Game-variabler/Scenes/Scene3.unity
+    guid: 4fb2f280bab799b4aa26beab1e70a49b

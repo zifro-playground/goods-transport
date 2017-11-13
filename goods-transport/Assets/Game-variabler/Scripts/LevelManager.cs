@@ -1,27 +1,43 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour, IPMLevelChanged
 {
-	private string currentScene;
+	private LevelGroup[] allGroups = new LevelGroup[3]
+	{
+		new LevelGroup(0, 7, "Scene1"),
+		new LevelGroup(8, 11, "Scene2"),
+		new LevelGroup(12, 19, "Scene3")
+	};
+	private LevelGroup currentGroup;
 
-	void Start ()
+	void Awake()
 	{
 		SceneManager.LoadSceneAsync("Scene1", LoadSceneMode.Additive);
-		currentScene = "Scene1";
+		currentGroup = allGroups[0];
 	}
 	
 	public void OnPMLevelChanged()
 	{
-		if (PMWrapper.currentLevel == 8)
-		{
-			if (currentScene == "Scene1")
-				SceneManager.UnloadSceneAsync("Scene1");
-			else if (currentScene == "Scene3")
-				SceneManager.UnloadSceneAsync("Scene3");
+		LevelGroup newGroup = GetGroup(PMWrapper.currentLevel);
 
-			SceneManager.LoadSceneAsync("Scene2", LoadSceneMode.Additive);
-			currentScene = "Scene2";
+		if (currentGroup.sceneName != newGroup.sceneName)
+		{
+			SceneManager.UnloadSceneAsync(currentGroup.sceneName);
+			SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
+			currentGroup = newGroup;
 		}
+	}
+
+	private LevelGroup GetGroup(int level)
+	{
+		foreach (LevelGroup group in allGroups)
+		{
+			if (level >= group.startLevel && level <= group.endLevel)
+				return group;
+		}
+		throw new Exception("Current level number \"" + level + "\" does not fit into any existing group intervall");
 	}
 }
