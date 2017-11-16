@@ -1,19 +1,26 @@
 ﻿{
-	"name": "Jonathan",
-	"age":  22
-}
-
-/*{
-	"game": {
+	"game": 
+	{
 		"levels": {
 			"case": {
-				"car": {
-					"granar": 6,
-					"palmer": 5,
-					"stolar": 4
-				}
+				"cars": [
+					{
+						"granar": 6,
+						"palmer": 5,
+						"stolar": 4
+					},
+					{
+						"granar": 6,
+						"palmer": 5,
+						"stolar": 4
+					},
+					{
+						"granar": 6,
+						"palmer": 5,
+						"stolar": 4
+					}
+				]
 			}
 		}
 	}
 }
-*/

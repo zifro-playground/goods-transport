@@ -32,7 +32,7 @@ public class LevelManager : MonoBehaviour, IPMLevelChanged
 			SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
 			currentGroup = newGroup;
 		}
-        loader.LoadLevel("game1.json", PMWrapper.currentLevel);
+        loader.LoadLevel();
 	}
 
 	private LevelGroup GetGroup(int level)
