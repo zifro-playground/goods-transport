@@ -1,26 +1,103 @@
 ﻿{
-	"game": 
-	{
-		"levels": {
-			"case": {
-				"cars": [
-					{
-						"granar": 6,
-						"palmer": 5,
-						"stolar": 4
-					},
-					{
-						"granar": 6,
-						"palmer": 5,
-						"stolar": 4
-					},
-					{
-						"granar": 6,
-						"palmer": 5,
-						"stolar": 4
-					}
-				]
-			}
+	"levels": [
+		{
+			"id": "2VAD1",
+			"cases": [
+				{
+					"number": 1,
+					"cars": [
+						{
+							"lampor": 15,
+							"palmer": 2
+						}
+					]
+				},
+				{
+					"number": 2,
+					"cars": [
+						{
+							"lampor": 13,
+							"palmer": 4
+						}
+					]
+				},
+				{
+					"number": 3,
+					"cars": [
+						{
+							"lampor": 5,
+							"palmer": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "2VAD2",
+			"cases": [
+				{
+					"number": 1,
+					"cars": [
+						{
+							"lampor": 15,
+							"palmer": 2
+						}
+					]
+				},
+				{
+					"number": 2,
+					"cars": [
+						{
+							"lampor": 10,
+							"palmer": 3
+						}
+					]
+				},
+				{
+					"number": 3,
+					"cars": [
+						{
+							"lampor": 4,
+							"palmer": 6
+						}
+					]
+				}
+			]
+		},
+		{
+			"id": "3VAD1",
+			"cases": [
+				{
+					"number": 1,
+					"cars": [
+						{
+							"lampor": 15,
+							"palmer": 2,
+							"stolar": 4
+						}
+					]
+				},
+				{
+					"number": 2,
+					"cars": [
+						{
+							"lampor": 11,
+							"palmer": 5,
+							"stolar": 6
+						}
+					]
+				},
+				{
+					"number": 3,
+					"cars": [
+						{
+							"lampor": 7,
+							"palmer": 8,
+							"stolar": 3
+						}
+					]
+				}
+			]
 		}
-	}
+	]
 }

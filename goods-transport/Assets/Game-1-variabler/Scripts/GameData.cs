@@ -1,10 +1,25 @@
-﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-[System.Serializable]
+public class Car
+{
+	public int lampor { get; set; }
+	public int palmer { get; set; }
+	public int? stolar { get; set; }
+}
+
+public class Case
+{
+	public int number { get; set; }
+	public List<Car> cars { get; set; }
+}
+
+public class Level
+{
+	public string id { get; set; }
+	public List<Case> cases { get; set; }
+}
+
 public class GameData
 {
-	public string name;
-	public int age;	
+	public List<Level> levels { get; set; }
 }
