@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour, IPMLevelChanged
 {
+    private LevelLoader loader;
+
 	private LevelGroup[] allGroups = new LevelGroup[3]
 	{
 		new LevelGroup(0, 7, "Scene1"),
@@ -17,6 +19,7 @@ public class LevelManager : MonoBehaviour, IPMLevelChanged
 	{
 		SceneManager.LoadSceneAsync("Scene1", LoadSceneMode.Additive);
 		currentGroup = allGroups[0];
+        loader = GetComponent<LevelLoader>();
 	}
 	
 	public void OnPMLevelChanged()
@@ -29,6 +32,7 @@ public class LevelManager : MonoBehaviour, IPMLevelChanged
 			SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
 			currentGroup = newGroup;
 		}
+        loader.LoadLevel("game1.json", PMWrapper.currentLevel);
 	}
 
 	private LevelGroup GetGroup(int level)
