@@ -1,5 +1,5 @@
 taskdescription: Hur många varor finns i bilen?
-precode: lampor = 15\npalmer = 5
+precode: lampor = 15\npalmer = 2
 startcode: varor = lampor + palmer\nsvara(varor)
 rowlimit: 20
 casecount: 3

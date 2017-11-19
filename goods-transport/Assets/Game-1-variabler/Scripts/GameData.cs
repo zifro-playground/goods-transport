@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 
+public class Item
+{
+	public string type { get; set; }
+	public int amount { get; set; }
+}
+
 public class Car
 {
-	public int lampor { get; set; }
-	public int palmer { get; set; }
-	public int? stolar { get; set; }
+	public List<Item> items { get; set; }
 }
 
 public class Case

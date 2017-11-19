@@ -1,0 +1,151 @@
+fileFormatVersion: 2
+guid: 3c194996c339d924da783df01f21eb69
+timeCreated: 1511095552
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: 3x3
+    100002: 4x4
+    100004: Car
+    100006: Car_2
+    100008: Extra
+    100010: Lamp
+    100012: Palm
+    100014: //RootNode
+    100016: Table
+    100018: Tree
+    400000: 3x3
+    400002: 4x4
+    400004: Car
+    400006: Car_2
+    400008: Extra
+    400010: Lamp
+    400012: Palm
+    400014: //RootNode
+    400016: Table
+    400018: Tree
+    2300000: 3x3
+    2300002: 4x4
+    2300004: Car
+    2300006: Car_2
+    2300008: Extra
+    2300010: Lamp
+    2300012: Palm
+    2300014: Table
+    2300016: Tree
+    3300000: 3x3
+    3300002: 4x4
+    3300004: Car
+    3300006: Car_2
+    3300008: Extra
+    3300010: Lamp
+    3300012: Palm
+    3300014: Table
+    3300016: Tree
+    4300000: Extra
+    4300002: Lamp
+    4300004: Table
+    4300006: Car_2
+    4300008: 4x4
+    4300010: 3x3
+    4300012: Tree
+    4300014: Palm
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bark
+    second: {fileID: 2100000, guid: 97fb936905253b64491ed0633c40234c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves
+    second: {fileID: 2100000, guid: aeb6e9a2f4577964c8b8f215020ef4f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 9575dfcb5e52339479b530c308e622f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: palm1_t
+    second: {fileID: 2100000, guid: b40d31a8effe7334cbda45c02f39a8fd, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

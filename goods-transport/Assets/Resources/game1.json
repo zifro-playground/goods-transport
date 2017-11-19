@@ -6,18 +6,52 @@
 				{
 					"number": 1,
 					"cars": [
-						{
-							"lampor": 15,
-							"palmer": 2
-						}
+            {
+              "items":
+              [
+                {
+                	"type": "lamp",
+                	"amount": 15
+                },
+                {
+                	"type": "palm",
+                	"amount": 2
+                },
+                {
+                	"type": "table",
+                	"amount": 0
+                },
+                {
+                	"type": "tree",
+                	"amount": 0
+                }
+              ]
+            }
 					]
 				},
 				{
 					"number": 2,
 					"cars": [
 						{
-							"lampor": 13,
-							"palmer": 4
+							"items": 
+							[
+								{
+                	"type": "lamp",
+                	"amount": 13
+                },
+                {
+                	"type": "palm",
+                	"amount": 4
+                },
+                {
+                	"type": "table",
+                	"amount": 0
+                },
+                {
+                	"type": "tree",
+                	"amount": 0
+                }
+							]
 						}
 					]
 				},
@@ -25,13 +59,35 @@
 					"number": 3,
 					"cars": [
 						{
-							"lampor": 5,
-							"palmer": 1
+							"items":
+              [
+              	{
+                	"type": "lamp",
+                	"amount": 5
+                },
+                {
+                	"type": "palm",
+                	"amount": 1
+                },
+                {
+                	"type": "table",
+                	"amount": 0
+                },
+                {
+                	"type": "tree",
+                	"amount": 0
+                }
+							]
 						}
 					]
 				}
 			]
-		},
+		}
+	]
+}
+
+
+/*,
 		{
 			"id": "2VAD2",
 			"cases": [
@@ -39,8 +95,12 @@
 					"number": 1,
 					"cars": [
 						{
-							"lampor": 15,
-							"palmer": 2
+							"items":
+              {
+								"lampor": 15,
+								"palmer": 2,
+								"sum": 17
+							}
 						}
 					]
 				},
@@ -48,8 +108,12 @@
 					"number": 2,
 					"cars": [
 						{
-							"lampor": 10,
-							"palmer": 3
+							"items":
+              {
+								"lampor": 10,
+								"palmer": 3,
+								"sum": 13
+							}
 						}
 					]
 				},
@@ -57,8 +121,12 @@
 					"number": 3,
 					"cars": [
 						{
-							"lampor": 4,
-							"palmer": 6
+							"items":
+              {
+								"lampor": 4,
+								"palmer": 6,
+								"sum": 10
+							}
 						}
 					]
 				}
@@ -71,9 +139,13 @@
 					"number": 1,
 					"cars": [
 						{
-							"lampor": 15,
-							"palmer": 2,
-							"stolar": 4
+							"items":
+              [
+								{ "lampor": 15 },
+								{ "palmer": 2 },
+								{ "stolar": 4 },
+								{ "sum": 21 }
+							]
 						}
 					]
 				},
@@ -81,9 +153,13 @@
 					"number": 2,
 					"cars": [
 						{
-							"lampor": 11,
-							"palmer": 5,
-							"stolar": 6
+							"items":
+              [
+								{ "lampor": 11 },
+								{ "palmer": 5 },
+								{ "stolar": 6 },
+								{ "sum": 22 }
+							]
 						}
 					]
 				},
@@ -91,13 +167,15 @@
 					"number": 3,
 					"cars": [
 						{
-							"lampor": 7,
-							"palmer": 8,
-							"stolar": 3
+							"items":
+              [
+								{ "lampor": 7 },
+								{ "palmer": 8 },
+								{ "stolar": 3 },
+								{ "sum": 18 }
+							]
 						}
 					]
 				}
 			]
-		}
-	]
-}
+		}*/

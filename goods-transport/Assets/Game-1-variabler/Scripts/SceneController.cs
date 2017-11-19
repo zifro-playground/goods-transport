@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneController : MonoBehaviour, IPMLevelChanged
+public class SceneController : MonoBehaviour, IPMCaseSwitched
 {
+	private LevelController levelController;
+
 	private LevelGroup[] allGroups = new LevelGroup[3]
 	{
 		new LevelGroup(0, 7, "Scene1"),
@@ -15,11 +17,15 @@ public class SceneController : MonoBehaviour, IPMLevelChanged
 
 	void Awake()
 	{
-		SceneManager.LoadSceneAsync("Scene1", LoadSceneMode.Additive);
+		levelController = GetComponent<LevelController>();
+
+		levelController.LoadGameData();
+
+		SceneManager.LoadScene("Scene1", LoadSceneMode.Additive);
 		currentGroup = allGroups[0];
 	}
 	
-	public void OnPMLevelChanged()
+	public void OnPMCaseSwitched(int caseNumber)
 	{
 		LevelGroup newGroup = GetGroup(PMWrapper.currentLevel);
 
@@ -28,6 +34,10 @@ public class SceneController : MonoBehaviour, IPMLevelChanged
 			SceneManager.UnloadSceneAsync(currentGroup.sceneName);
 			SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
 			currentGroup = newGroup;
+		}
+		else
+		{
+			levelController.LoadLevel(PMWrapper.currentLevel, caseNumber);
 		}
 	}
 
