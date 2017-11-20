@@ -150,9 +150,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0.5171013
-    y: 0.15720296
+    y: 0.157202
     width: 0.4043542
-    height: 0.71892595
+    height: 0.718926
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -198,48 +198,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theRect: {fileID: 2050615452}
   runInEditor: 1
---- !u!1001 &694272323
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4302629006757456, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7ceac77967249114d82492c0de0b68f2, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &743548327
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,12 +358,12 @@ Prefab:
     - target: {fileID: 224530725715853656, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.104187
+      value: -3.1042175
       objectReference: {fileID: 0}
     - target: {fileID: 224314059236835266, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.000022888184
+      value: 0.000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 224455287182288486, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -415,7 +373,7 @@ Prefab:
     - target: {fileID: 224474961581268778, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.104187
+      value: -3.1042175
       objectReference: {fileID: 0}
     - target: {fileID: 224645762696646802, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -425,7 +383,7 @@ Prefab:
     - target: {fileID: 114986743780736258, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: numberOfLevels
-      value: 20
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bd9a032a92352a8409c89a2cbff30035, type: 2}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Item
 {
 	public string type { get; set; }
-	public int amount { get; set; }
+	public int count { get; set; }
 }
 
 public class Car

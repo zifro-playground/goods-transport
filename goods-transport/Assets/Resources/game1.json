@@ -1,89 +1,268 @@
 ﻿{
-	"levels": [
-		{
-			"id": "2VAD1",
-			"cases": [
-				{
-					"number": 1,
-					"cars": [
+  "levels":
+  [
+    {
+      "id": "2VAD1",
+      "cases":
+      [
+        {
+          "number": 1,
+          "cars":
+          [
             {
               "items":
               [
                 {
-                	"type": "lamp",
-                	"amount": 15
+                  "type": "lampor",
+                  "count": 15
                 },
                 {
-                	"type": "palm",
-                	"amount": 2
+                  "type": "palmer",
+                  "count": 2
                 },
                 {
-                	"type": "table",
-                	"amount": 0
+                  "type": "bord",
+                  "count": 0
                 },
                 {
-                	"type": "tree",
-                	"amount": 0
+                  "type": "granar",
+                  "count": 0
                 }
               ]
             }
-					]
-				},
-				{
-					"number": 2,
-					"cars": [
-						{
-							"items": 
-							[
-								{
-                	"type": "lamp",
-                	"amount": 13
-                },
-                {
-                	"type": "palm",
-                	"amount": 4
-                },
-                {
-                	"type": "table",
-                	"amount": 0
-                },
-                {
-                	"type": "tree",
-                	"amount": 0
-                }
-							]
-						}
-					]
-				},
-				{
-					"number": 3,
-					"cars": [
-						{
-							"items":
+          ]
+        },
+        {
+          "number": 2,
+          "cars":
+          [
+            {
+              "items":
               [
-              	{
-                	"type": "lamp",
-                	"amount": 5
+                {
+                  "type": "lampor",
+                  "count": 13
                 },
                 {
-                	"type": "palm",
-                	"amount": 1
+                  "type": "palmer",
+                  "count": 4
                 },
                 {
-                	"type": "table",
-                	"amount": 0
+                  "type": "bord",
+                  "count": 0
                 },
                 {
-                	"type": "tree",
-                	"amount": 0
+                  "type": "granar",
+                  "count": 0
                 }
-							]
-						}
-					]
-				}
-			]
-		}
-	]
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 5
+                },
+                {
+                  "type": "palmer",
+                  "count": 1
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2VAD2",
+      "cases":
+      [
+        {
+          "number": 1,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 15
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 2
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 10
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 3
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 4
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 6
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3VAD1",
+      "cases":
+      [
+        {
+          "number": 1,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 15
+                },
+                {
+                  "type": "palmer",
+                  "count": 2
+                },
+                {
+                  "type": "bord",
+                  "count": 4
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 11
+                },
+                {
+                  "type": "palmer",
+                  "count": 5
+                },
+                {
+                  "type": "bord",
+                  "count": 6
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 7
+                },
+                {
+                  "type": "palmer",
+                  "count": 8
+                },
+                {
+                  "type": "bord",
+                  "count": 3
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
 
 

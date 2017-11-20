@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelBuilder : MonoBehaviour {
 
@@ -11,39 +12,46 @@ public class LevelBuilder : MonoBehaviour {
 	public GameObject lamp;
 	public GameObject table;
 
-	[Header("Options")]
-	public float boxSpacing;
-
 	private Case caseData;
+	private List<GameObject> activeObjects = new List<GameObject>();
 
 	public void LoadLevel(Case caseData)
 	{
 		this.caseData = caseData;
 
-		// TODO Delete last level
 		// TODO Change precode
-		// TODO Set current level answer
-		// TODO create new level assets
 
-		SetLevelAnswere();
+		RemoveOldAssets();
 		CreateAssets();
+		SetPrecode();
+		SetLevelAnswere();
+	}
+
+	private void RemoveOldAssets()
+	{
+		foreach (GameObject obj in activeObjects)
+		{
+			Destroy(obj);
+		}
+		activeObjects.Clear();
 	}
 
 	private void CreateAssets()
 	{
-		GameObject sectionObj = null;
-		GameObject gridObj;
+		GameObject sectionObj;
+		GameObject gridObj = null;
 
 		foreach (Car car in caseData.cars)
 		{
 			foreach (Item item in car.items)
 			{
 
-				if (item.amount > 0)
+				if (item.count > 0)
 				{
 					sectionObj = Instantiate(section);
+					activeObjects.Add(sectionObj);
 
-					if (item.type == "palm" || item.type == "tree")
+					if (item.type == "palmer" || item.type == "granar")
 					{
 						gridObj = Instantiate(grid3x3);
 					}
@@ -52,12 +60,13 @@ public class LevelBuilder : MonoBehaviour {
 						gridObj = Instantiate(grid4x4);
 					}
 					gridObj.transform.SetParent(sectionObj.transform);
+					activeObjects.Add(gridObj);
 				}
 				
 			}
 		}
-		if(sectionObj != null)
-			CalculatePositionMatrix(sectionObj, 3, 3);
+		if(gridObj != null)
+			CalculatePositionMatrix(gridObj, 3, 3);
 	}
 
 	private void SetLevelAnswere()
@@ -66,20 +75,35 @@ public class LevelBuilder : MonoBehaviour {
 
 		foreach (Item item in caseData.cars[0].items)
 		{
-			itemsInCar += item.amount;
+			itemsInCar += item.count;
 		}
 
 		PMWrapper.SetCurrentLevelAnswere(Compiler.VariableTypes.number, new string[] { itemsInCar.ToString() });
 	}
 
+	private void SetPrecode()
+	{
+		string precode = "";
+
+		foreach (Item item in caseData.cars[0].items)
+		{
+			if (item.count > 0)
+				precode += item.type + " = " + item.count + "\n";
+		}
+		PMWrapper.preCode = precode.Trim();
+	}
+
 	private void CalculatePositionMatrix(GameObject gameObject, int n, int m)
 	{
-		Bounds bounds = gameObject.GetComponent<MeshFilter>().mesh.bounds;
+		Bounds bounds = gameObject.GetComponent<MeshRenderer>().bounds;
 
 		float xMin = bounds.min.x;
 		float xMax = bounds.max.x;
 		float yMin = bounds.min.y;
 		float yMax = bounds.max.y;
+
+		// Should be substituted by something more general like a ratio between boxSize and boxSpacing
+		float boxSpacing = 0.27f;
 
 		float boxSizeX = (bounds.size.x - boxSpacing * (m - 1)) / m;
 		float boxSizeY = (bounds.size.y - boxSpacing * (n - 1)) / n;
@@ -90,11 +114,12 @@ public class LevelBuilder : MonoBehaviour {
 		{
 			for (int j = 0; j < m; j++)
 			{
+				//print(xMin + boxSizeX / 2 + i * (boxSizeX + boxSpacing));
 				float xPos = xMin + boxSizeX/2 + i*(boxSizeX + boxSpacing);
-				float yPos = yMax - boxSizeY/2 - i*(boxSizeY + boxSpacing);
+				float yPos = yMax - boxSizeY/2 - j*(boxSizeY + boxSpacing);
 				positionMatrix[i, j] = new Vector2(xPos, yPos);
-				print("i: " + i + " j: " + j + " -------------------");
-				print(positionMatrix[i, j]);
+				GameObject obj = Instantiate(palm, new Vector3(positionMatrix[i, j].x, positionMatrix[i, j].y, 0), Quaternion.identity);
+				activeObjects.Add(obj);
 			}
 		}
 	}
