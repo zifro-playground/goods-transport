@@ -261,100 +261,39 @@
           ]
         }
       ]
+    },
+    {
+      "id": "FRUL1",
+      "cases":
+      [
+        {
+          "number": 1,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 7
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 0
+                }
+              ]
+            }
+          ]
+        },
+      ]
     }
   ]
 }
-
-
-/*,
-		{
-			"id": "2VAD2",
-			"cases": [
-				{
-					"number": 1,
-					"cars": [
-						{
-							"items":
-              {
-								"lampor": 15,
-								"palmer": 2,
-								"sum": 17
-							}
-						}
-					]
-				},
-				{
-					"number": 2,
-					"cars": [
-						{
-							"items":
-              {
-								"lampor": 10,
-								"palmer": 3,
-								"sum": 13
-							}
-						}
-					]
-				},
-				{
-					"number": 3,
-					"cars": [
-						{
-							"items":
-              {
-								"lampor": 4,
-								"palmer": 6,
-								"sum": 10
-							}
-						}
-					]
-				}
-			]
-		},
-		{
-			"id": "3VAD1",
-			"cases": [
-				{
-					"number": 1,
-					"cars": [
-						{
-							"items":
-              [
-								{ "lampor": 15 },
-								{ "palmer": 2 },
-								{ "stolar": 4 },
-								{ "sum": 21 }
-							]
-						}
-					]
-				},
-				{
-					"number": 2,
-					"cars": [
-						{
-							"items":
-              [
-								{ "lampor": 11 },
-								{ "palmer": 5 },
-								{ "stolar": 6 },
-								{ "sum": 22 }
-							]
-						}
-					]
-				},
-				{
-					"number": 3,
-					"cars": [
-						{
-							"items":
-              [
-								{ "lampor": 7 },
-								{ "palmer": 8 },
-								{ "stolar": 3 },
-								{ "sum": 18 }
-							]
-						}
-					]
-				}
-			]
-		}*/

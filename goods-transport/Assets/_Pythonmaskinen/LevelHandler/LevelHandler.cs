@@ -57,13 +57,15 @@ namespace PM.Level {
 				if (levelsBuilt >= PMWrapper.numOfLevels)
 					throw new Exception("There are more files specified in settings-master then in the UI numberOfLevels");
 
-				levels [i] = new Level ();
-				levels [i].answere = new LevelAnswere ();
+				levels[levelsBuilt] = new Level
+				{
+					answere = new LevelAnswere()
+				};
 
 
 
 				string settingsFileName = textRows[i].Trim();
-				levels [i].BuildLevelSettings (i, settingsFileName);
+				levels [levelsBuilt].BuildLevelSettings (i, settingsFileName);
 
 				levelsBuilt++;
 			}

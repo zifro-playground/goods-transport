@@ -2,3 +2,4 @@ taskdescription: Lasta av alla palmer från bilen
 startcode: for i in range(7):\n\tlasta_av_palm()
 rowlimit: 20
 smartbuttons: lasta_av_palm()
+functions: UnloadPalm
