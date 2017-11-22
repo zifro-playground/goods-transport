@@ -21,9 +21,11 @@ GameObject:
   - component: {fileID: 4504140241262986}
   - component: {fileID: 33379664893617698}
   - component: {fileID: 23649783896945194}
+  - component: {fileID: 65301947699177492}
+  - component: {fileID: 114253520765860306}
   m_Layer: 0
   m_Name: Palm
-  m_TagString: Untagged
+  m_TagString: Palm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224785205009126}
   m_LocalRotation: {x: 0.000000081460335, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 0.3, z: -3}
+  m_LocalPosition: {x: -0.99, y: 0.3, z: -1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,3 +84,28 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224785205009126}
   m_Mesh: {fileID: 4300014, guid: 3c194996c339d924da783df01f21eb69, type: 3}
+--- !u!65 &65301947699177492
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1224785205009126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7, y: 1.5, z: 0.7}
+  m_Center: {x: 0, y: 0.7, z: 0}
+--- !u!114 &114253520765860306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1224785205009126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b6a99db5ccaa748aa07f8bff18f748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUnloading: 0
+  unloadingSpeed: 0.1

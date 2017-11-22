@@ -6,7 +6,7 @@
       "cases":
       [
         {
-          "number": 1,
+          "number": 0,
           "cars":
           [
             {
@@ -33,7 +33,7 @@
           ]
         },
         {
-          "number": 2,
+          "number": 1,
           "cars":
           [
             {
@@ -60,7 +60,7 @@
           ]
         },
         {
-          "number": 3,
+          "number": 2,
           "cars":
           [
             {
@@ -93,7 +93,7 @@
       "cases":
       [
         {
-          "number": 1,
+          "number": 0,
           "cars":
           [
             {
@@ -120,7 +120,7 @@
           ]
         },
         {
-          "number": 2,
+          "number": 1,
           "cars":
           [
             {
@@ -147,7 +147,7 @@
           ]
         },
         {
-          "number": 3,
+          "number": 2,
           "cars":
           [
             {
@@ -180,7 +180,7 @@
       "cases":
       [
         {
-          "number": 1,
+          "number": 0,
           "cars":
           [
             {
@@ -207,7 +207,7 @@
           ]
         },
         {
-          "number": 2,
+          "number": 1,
           "cars":
           [
             {
@@ -234,7 +234,7 @@
           ]
         },
         {
-          "number": 3,
+          "number": 2,
           "cars":
           [
             {
@@ -267,7 +267,7 @@
       "cases":
       [
         {
-          "number": 1,
+          "number": 0,
           "cars":
           [
             {
@@ -292,7 +292,166 @@
               ]
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "FREM1",
+      "cases":
+      [
+        {
+          "number": 0,
+          "cars":
+          [
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 4
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 8
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 8
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 4
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 5
+                }
+              ]
+            },
+            {
+              "items":
+              [
+                {
+                  "type": "lampor",
+                  "count": 0
+                },
+                {
+                  "type": "palmer",
+                  "count": 0
+                },
+                {
+                  "type": "bord",
+                  "count": 0
+                },
+                {
+                  "type": "granar",
+                  "count": 8
+                }
+              ]
+            }
+          ]
+        }
       ]
     }
   ]

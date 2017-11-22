@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4785935738578874}
   - component: {fileID: 33620503089046982}
   - component: {fileID: 23126976259440560}
+  - component: {fileID: 114587325881991660}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -82,3 +83,16 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1463277176742934}
   m_Mesh: {fileID: 4300002, guid: 3c194996c339d924da783df01f21eb69, type: 3}
+--- !u!114 &114587325881991660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1463277176742934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2b6a99db5ccaa748aa07f8bff18f748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isUnloading: 0
+  unloadingSpeed: 0.1

@@ -10,7 +10,7 @@ LevelSettings/settings-FRUL1
 //LevelSettings/settings-FRUL2
 //LevelSettings/settings-FRUL3
 //LevelSettings/settings-FRUL4
-//LevelSettings/settings-FREM1
+LevelSettings/settings-FREM1
 //LevelSettings/settings-FREM2
 //LevelSettings/settings-CTHC1
 //LevelSettings/settings-CTHC2

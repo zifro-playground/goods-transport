@@ -1,29 +1,48 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Newtonsoft.Json;
 
 public class SceneController : MonoBehaviour, IPMCaseSwitched
 {
-	private LevelController levelController;
+	public string gameDataFileName;
+
+	public Case caseData;
+	private GameData gameData;
 
 	private LevelGroup[] allGroups = new LevelGroup[3]
 	{
-		new LevelGroup(0, 7, "Scene1"),
-		new LevelGroup(8, 11, "Scene2"),
-		new LevelGroup(12, 19, "Scene3")
+		new LevelGroup(0, 2, "Scene1"),
+		//new LevelGroup(4, 11, "Scene2"),
+		new LevelGroup(3, 3, "Scene2"),
+		//new LevelGroup(12, 19, "Scene3")
+		new LevelGroup(4, 19, "Scene2")
 	};
 	private LevelGroup currentGroup;
 
 	void Awake()
 	{
-		levelController = GetComponent<LevelController>();
-
-		levelController.LoadGameData();
+		LoadGameData();
 
 		SceneManager.LoadScene("Scene1", LoadSceneMode.Additive);
 		currentGroup = allGroups[0];
 	}
+
+	private void LoadGameData()
+	{
+		//Debug.Log(Application.streamingAssetsPath + path);
+		//string fullPath = Path.Combine(Application.streamingAssetsPath, path);
+
+		TextAsset jsonAsset = Resources.Load<TextAsset>(gameDataFileName);
+
+		if (jsonAsset == null)
+			throw new Exception("Could not find the file \"" + gameDataFileName + "\" that should contain game data in json format.");
+
+		string jsonString = jsonAsset.text;
+
+		gameData = JsonConvert.DeserializeObject<GameData>(jsonString);
+	}
+
 	
 	public void OnPMCaseSwitched(int caseNumber)
 	{
@@ -32,13 +51,21 @@ public class SceneController : MonoBehaviour, IPMCaseSwitched
 		if (currentGroup.sceneName != newGroup.sceneName)
 		{
 			SceneManager.UnloadSceneAsync(currentGroup.sceneName);
-			SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
+			SceneManager.LoadScene(newGroup.sceneName, LoadSceneMode.Additive);
+			LoadLevel(PMWrapper.currentLevel, caseNumber);
 			currentGroup = newGroup;
 		}
 		else
 		{
-			levelController.LoadLevel(PMWrapper.currentLevel, caseNumber);
+			LoadLevel(PMWrapper.currentLevel, caseNumber);
 		}
+	}
+
+	private void LoadLevel(int level, int caseNumber)
+	{
+		caseData = gameData.levels[level].cases[caseNumber];
+
+		GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().LoadLevel(caseData);
 	}
 
 	private LevelGroup GetGroup(int level)
