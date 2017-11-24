@@ -21,16 +21,6 @@
                   "type": "palmer",
 									"count": 2,
 									"rows": 1
-                },
-                {
-                  "type": "bord",
-									"count": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-									"count": 0,
-									"rows": 0
                 }
               ]
             }
@@ -41,7 +31,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -72,7 +62,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -109,7 +99,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -140,7 +130,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -171,7 +161,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -208,7 +198,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -239,7 +229,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -270,7 +260,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -306,7 +296,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -343,7 +333,7 @@
           "cars":
           [
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -368,7 +358,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -393,7 +383,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -418,7 +408,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -443,7 +433,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -468,7 +458,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",
@@ -493,7 +483,7 @@
               ]
             },
             {
-              "items":
+              "sections":
               [
                 {
                   "type": "lampor",

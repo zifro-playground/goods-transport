@@ -14,10 +14,16 @@ public class LevelController : MonoBehaviour {
 	public GameObject lampPrefab;
 	public GameObject tablePrefab;
 
-	[Space]
-	public Case caseData;
-	public List<GameObject> itemsToUnload = new List<GameObject>();
+	[Header("Distances")]
+	public float boxSpacing = 0.5f;
+	public float carPadding = 0.3f;
+	private float boxLength = 1; // is set from CreateAssets()
 
+	[HideInInspector]
+	public Case caseData;
+
+	[HideInInspector]
+	public List<GameObject> itemsToUnload = new List<GameObject>();
 	private List<GameObject> activeObjects = new List<GameObject>();
 
 	private Dictionary<string, GameObject> itemType;
@@ -34,7 +40,6 @@ public class LevelController : MonoBehaviour {
 			itemType.Add("stolar", tablePrefab);
 		}
 	}
-
 	public void LoadLevel(Case caseData)
 	{
 		this.caseData = caseData;
@@ -45,7 +50,6 @@ public class LevelController : MonoBehaviour {
 		SetPrecode();
 		SetLevelAnswer();
 	}
-
 	private void RemoveOldAssets()
 	{
 		foreach (GameObject obj in activeObjects)
@@ -55,30 +59,33 @@ public class LevelController : MonoBehaviour {
 		activeObjects.Clear();
 		itemsToUnload.Clear();
 	}
-
 	private void CreateAssets()
 	{
+		float boxLength = boxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
+
 		foreach (Car car in caseData.cars)
 		{
 			GameObject carObj = Instantiate(carPrefab);
-			Mesh carMesh = carObj.GetComponent<MeshFilter>().mesh;
-			Vector3[] carVertices = carMesh.vertices;
-			Vector3[] newVertices = new Vector3[carVertices.Length];
 
-			int i = 0;
-			foreach (Vector3 vertex in carVertices)
+			RescaleCar(car, carObj);
+
+			float carLeftEnd = carObj.GetComponent<Renderer>().bounds.min.x;
+			float sectionLeftEnd = carLeftEnd;
+
+			for (int i = 0; i < car.sections.Count; i++)
 			{
-				Vector3 v = vertex;
-				v.x = v.x * 2;
-				v.y = v.y * 2;
-				v.z = v.z * 2;
-				newVertices[i] = v;
-				i++;
-			}
+				Section section = car.sections[i];
 
-			carMesh.vertices = newVertices;
-			carMesh.RecalculateNormals();
-			carMesh.RecalculateBounds();
+				for (int j = 1; j < section.rows + 1; j++)
+				{
+					GameObject boxRow = Instantiate(boxRowPrefab);
+					float rowCenter = sectionLeftEnd + carPadding + boxLength * ((2 * (float)j - 1) / 2) + boxSpacing * (j - 1);
+					boxRow.transform.position = new Vector3(rowCenter, 0, 0);
+				}
+
+				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
+				sectionLeftEnd += sectionLength;
+			}
 		}
 
 		/*GameObject sectionObj;
@@ -126,7 +133,6 @@ public class LevelController : MonoBehaviour {
 		}
 		PMWrapper.preCode = precode.Trim();
 	}
-
 	private void SetLevelAnswer()
 	{
 		IWinController[] winControllers = PM.UISingleton.FindInterfaces<IWinController>();
@@ -137,7 +143,6 @@ public class LevelController : MonoBehaviour {
 
 		winControllers[0].SetLevelAnswer(caseData);
 	}
-
 	private Vector3[,] CalculatePositionMatrix(GameObject gameObject, int n, int m)
 	{
 		Bounds bounds = gameObject.GetComponent<MeshRenderer>().bounds;
@@ -167,7 +172,6 @@ public class LevelController : MonoBehaviour {
 		}
 		return positionMatrix;
 	}
-
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject itemPrefab, int itemCount)
 	{
 		int a = 0;
@@ -186,5 +190,27 @@ public class LevelController : MonoBehaviour {
 				b += 1;
 			}
 		}
+	}
+	private void RescaleCar(Car carData, GameObject carObj)
+	{
+		Vector3 carSize = carObj.GetComponent<Renderer>().bounds.size;
+
+		int sectionCount = 0;
+		int rowsInCar = 0;
+		int boxSpacingsNeeded = 0;
+
+		foreach (Section section in carData.sections) {
+			rowsInCar += section.rows;
+			if (section.count > 0)
+				sectionCount++;
+			boxSpacingsNeeded += section.rows - 1;
+		}
+		float newCarWidth = 4 * boxLength + 3 * boxSpacing + 2 * carPadding;
+		float newCarLength = rowsInCar * boxLength + boxSpacing * boxSpacingsNeeded + 2 * carPadding * sectionCount;
+
+		float scaleFactorLength = newCarLength / carSize.x;
+		float scaleFactorWidth = newCarWidth / carSize.z;
+
+		carObj.transform.localScale = new Vector3(scaleFactorLength, 0.2f, scaleFactorWidth);
 	}
 }
