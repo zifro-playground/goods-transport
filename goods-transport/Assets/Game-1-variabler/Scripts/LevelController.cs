@@ -61,7 +61,24 @@ public class LevelController : MonoBehaviour {
 		foreach (Car car in caseData.cars)
 		{
 			GameObject carObj = Instantiate(carPrefab);
-			carObj.GetComponent<Renderer>().bounds.size //= new Vector3(1, 1, 1);
+			Mesh carMesh = carObj.GetComponent<MeshFilter>().mesh;
+			Vector3[] carVertices = carMesh.vertices;
+			Vector3[] newVertices = new Vector3[carVertices.Length];
+
+			int i = 0;
+			foreach (Vector3 vertex in carVertices)
+			{
+				Vector3 v = vertex;
+				v.x = v.x * 2;
+				v.y = v.y * 2;
+				v.z = v.z * 2;
+				newVertices[i] = v;
+				i++;
+			}
+
+			carMesh.vertices = newVertices;
+			carMesh.RecalculateNormals();
+			carMesh.RecalculateBounds();
 		}
 
 		/*GameObject sectionObj;
