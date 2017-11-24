@@ -5,13 +5,14 @@ using UnityEngine;
 public class LevelController : MonoBehaviour {
 
 	[Header("Prefabs")]
-	public GameObject section;
+	public GameObject carPrefab;
+	public GameObject boxRowPrefab;
 	public GameObject grid3x3;
 	public GameObject grid4x4;
-	public GameObject palm;
-	public GameObject tree;
-	public GameObject lamp;
-	public GameObject table;
+	public GameObject palmPrefab;
+	public GameObject treePrefab;
+	public GameObject lampPrefab;
+	public GameObject tablePrefab;
 
 	[Space]
 	public Case caseData;
@@ -26,11 +27,11 @@ public class LevelController : MonoBehaviour {
 		{
 			itemType = new Dictionary<string, GameObject>();
 
-			itemType.Add("palmer", palm);
-			itemType.Add("granar", tree);
-			itemType.Add("bord", table);
-			itemType.Add("lampor", lamp);
-			itemType.Add("stolar", table);
+			itemType.Add("palmer", palmPrefab);
+			itemType.Add("granar", treePrefab);
+			itemType.Add("bord", tablePrefab);
+			itemType.Add("lampor", lampPrefab);
+			itemType.Add("stolar", tablePrefab);
 		}
 	}
 
@@ -57,7 +58,13 @@ public class LevelController : MonoBehaviour {
 
 	private void CreateAssets()
 	{
-		GameObject sectionObj;
+		foreach (Car car in caseData.cars)
+		{
+			GameObject carObj = Instantiate(carPrefab);
+			carObj.GetComponent<Renderer>().bounds.size //= new Vector3(1, 1, 1);
+		}
+
+		/*GameObject sectionObj;
 		GameObject gridObj = null;
 
 		Vector3[,] positionMatrix3x3 = CalculatePositionMatrix(grid3x3, 3, 3);
@@ -88,17 +95,17 @@ public class LevelController : MonoBehaviour {
 				}
 				
 			}
-		}
+		}*/
 	}
 
 	private void SetPrecode()
 	{
 		string precode = "";
 
-		foreach (Item item in caseData.cars[0].items)
+		foreach (Section section in caseData.cars[0].sections)
 		{
-			if (item.count > 0)
-				precode += item.type + " = " + item.count + "\n";
+			if (section.count > 0)
+				precode += section.type + " = " + section.count + "\n";
 		}
 		PMWrapper.preCode = precode.Trim();
 	}

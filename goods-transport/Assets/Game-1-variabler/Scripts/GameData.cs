@@ -1,14 +1,15 @@
 using System.Collections.Generic;
 
-public class Item
+public class Section
 {
 	public string type { get; set; }
 	public int count { get; set; }
+	public int rows { get; set; }
 }
 
 public class Car
 {
-	public List<Item> items { get; set; }
+	public List<Section> sections { get; set; }
 }
 
 public class Case

@@ -20,9 +20,9 @@ public class WinControllerScene2 : MonoBehaviour, IWinController, IPMCompilerSto
 		{
 			int itemsToUnload = 0;
 
-			foreach (Item item in caseData.cars[0].items)
+			foreach (Section section in caseData.cars[0].sections)
 			{
-				itemsToUnload += item.count;
+				itemsToUnload += section.count;
 			}
 
 			if (itemsToUnload == itemsUnloaded)
