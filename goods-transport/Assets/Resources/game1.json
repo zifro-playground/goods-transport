@@ -6,7 +6,6 @@
       "cases":
       [
         {
-          "number": 0,
           "cars":
           [
             {
@@ -14,20 +13,19 @@
               [
                 {
                   "type": "lampor",
-									"itemCount": 11,
-									"rows": 3
+                  "itemCount": 11,
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
-									"itemCount": 2,
-									"rows": 1
+                  "itemCount": 7,
+                  "rows": 3
                 }
               ]
             }
           ]
         },
         {
-          "number": 1,
           "cars":
           [
             {
@@ -35,30 +33,19 @@
               [
                 {
                   "type": "lampor",
-									"itemCount": 9,
-									"rows": 3
+                  "itemCount": 9,
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
                   "itemCount": 4,
-									"rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-									"rows": 0
+                  "rows": 2
                 }
               ]
             }
           ]
         },
         {
-          "number": 2,
           "cars":
           [
             {
@@ -67,22 +54,12 @@
                 {
                   "type": "lampor",
                   "itemCount": 5,
-									"rows": 2
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
                   "itemCount": 1,
-									"rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-									"rows": 0
+				  "rows": 3
                 }
               ]
             }
@@ -95,7 +72,6 @@
       "cases":
       [
         {
-          "number": 0,
           "cars":
           [
             {
@@ -126,7 +102,6 @@
           ]
         },
         {
-          "number": 1,
           "cars":
           [
             {
@@ -157,7 +132,6 @@
           ]
         },
         {
-          "number": 2,
           "cars":
           [
             {
@@ -194,7 +168,6 @@
       "cases":
       [
         {
-          "number": 0,
           "cars":
           [
             {
@@ -225,7 +198,6 @@
           ]
         },
         {
-          "number": 1,
           "cars":
           [
             {
@@ -256,7 +228,6 @@
           ]
         },
         {
-          "number": 2,
           "cars":
           [
             {
@@ -292,7 +263,6 @@
       "cases":
       [
         {
-          "number": 0,
           "cars":
           [
             {
@@ -329,7 +299,6 @@
       "cases":
       [
         {
-          "number": 0,
           "cars":
           [
             {

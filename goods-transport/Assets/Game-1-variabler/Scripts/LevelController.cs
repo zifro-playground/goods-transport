@@ -93,7 +93,7 @@ public class LevelController : MonoBehaviour {
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
-					boxRow.transform.position = new Vector3(rowCenter, 0, carWidthCenter);
+					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 				}
 				PlaceItems(itemPositions, carObj, itemType[section.type], section.itemCount);
 
@@ -139,7 +139,7 @@ public class LevelController : MonoBehaviour {
 		float scaleFactorLength = newCarLength / carSize.x;
 		float scaleFactorWidth = newCarWidth / carSize.z;
 
-		carObj.transform.localScale = new Vector3(scaleFactorLength, 0.2f, scaleFactorWidth);
+		carObj.transform.localScale = new Vector3(scaleFactorLength, 0.3f, scaleFactorWidth);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{

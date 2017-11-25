@@ -14,7 +14,6 @@ public class Car
 
 public class Case
 {
-	public int number { get; set; }
 	public List<Car> cars { get; set; }
 }
 

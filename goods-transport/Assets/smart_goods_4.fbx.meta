@@ -1,77 +1,83 @@
 fileFormatVersion: 2
-guid: 3c194996c339d924da783df01f21eb69
-timeCreated: 1511095552
+guid: d7768781a70a94c94b899e8b21c7a911
+timeCreated: 1511627967
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: 3x3
-    100002: 4x4
-    100004: Car
-    100006: Car_2
-    100008: Extra
-    100010: Lamp
-    100012: Palm
-    100014: //RootNode
-    100016: Table
-    100018: Tree
-    400000: 3x3
-    400002: 4x4
-    400004: Car
-    400006: Car_2
-    400008: Extra
-    400010: Lamp
-    400012: Palm
-    400014: //RootNode
-    400016: Table
-    400018: Tree
-    2300000: 3x3
-    2300002: 4x4
-    2300004: Car
-    2300006: Car_2
-    2300008: Extra
-    2300010: Lamp
-    2300012: Palm
-    2300014: Table
-    2300016: Tree
-    3300000: 3x3
-    3300002: 4x4
-    3300004: Car
-    3300006: Car_2
-    3300008: Extra
-    3300010: Lamp
-    3300012: Palm
-    3300014: Table
-    3300016: Tree
-    4300000: Extra
-    4300002: Lamp
-    4300004: Table
-    4300006: Car_2
-    4300008: 4x4
-    4300010: 3x3
-    4300012: Tree
-    4300014: Palm
+    100000: blades
+    100002: body
+    100004: cone
+    100006: Lamp
+    100008: Palm
+    100010: //RootNode
+    100012: Table
+    100014: top
+    100016: Tree
+    400000: blades
+    400002: body
+    400004: cone
+    400006: Lamp
+    400008: Palm
+    400010: //RootNode
+    400012: Table
+    400014: top
+    400016: Tree
+    2300000: blades
+    2300002: body
+    2300004: cone
+    2300006: Lamp
+    2300008: Palm
+    2300010: Table
+    2300012: top
+    2300014: Tree
+    3300000: blades
+    3300002: body
+    3300004: cone
+    3300006: Lamp
+    3300008: Palm
+    3300010: Table
+    3300012: top
+    3300014: Tree
+    4300000: Lamp
+    4300002: cone
+    4300004: Tree
+    4300006: body
+    4300008: Table
+    4300010: top
+    4300012: Palm
+    4300014: blades
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Bark
-    second: {fileID: 2100000, guid: 97fb936905253b64491ed0633c40234c, type: 2}
+      name: furniture
+    second: {fileID: 2100000, guid: 2a0fa10b2f84a4efc85500d83ae689de, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Leaves
-    second: {fileID: 2100000, guid: aeb6e9a2f4577964c8b8f215020ef4f2, type: 2}
+      name: green_palm
+    second: {fileID: 2100000, guid: ee26ebc3daf7f4efb81737858852f527, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 9575dfcb5e52339479b530c308e622f3, type: 2}
+      name: green_tree
+    second: {fileID: 2100000, guid: e2b05bd554cd74c109d7004897483906, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: palm1_t
-    second: {fileID: 2100000, guid: b40d31a8effe7334cbda45c02f39a8fd, type: 2}
+      name: lamp_top
+    second: {fileID: 2100000, guid: a5bb0f95a659e489ab41dc377f166c9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: stem_palm
+    second: {fileID: 2100000, guid: 14e39fb79e77047e0ae5dac58aaca23e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: table_top
+    second: {fileID: 2100000, guid: 376e81171606f4f89999dd1137336d22, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -124,7 +130,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
