@@ -11,6 +11,7 @@ public class LevelController : MonoBehaviour {
 	public GameObject treePrefab;
 	public GameObject lampPrefab;
 	public GameObject tablePrefab;
+	public GameObject chairPrefab;
 
 	[Header("Distances")]
 	public float boxSpacing = 0.5f;
