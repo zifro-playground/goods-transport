@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class Section
 {
 	public string type { get; set; }
-	public int count { get; set; }
+	public int itemCount { get; set; }
 	public int rows { get; set; }
 }
 

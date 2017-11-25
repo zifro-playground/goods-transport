@@ -1,7 +1,7 @@
 ﻿using PM;
 using UnityEngine;
 
-public class WinControllerScene2 : MonoBehaviour, IWinController, IPMCompilerStopped
+public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStopped
 {
 	public int itemsUnloaded = 0;
 
@@ -22,7 +22,7 @@ public class WinControllerScene2 : MonoBehaviour, IWinController, IPMCompilerSto
 
 			foreach (Section section in caseData.cars[0].sections)
 			{
-				itemsToUnload += section.count;
+				itemsToUnload += section.itemCount;
 			}
 
 			if (itemsToUnload == itemsUnloaded)
@@ -33,5 +33,10 @@ public class WinControllerScene2 : MonoBehaviour, IWinController, IPMCompilerSto
 	public void SetLevelAnswer(Case caseData)
 	{
 		// This level does not use the AnswerFunction
+	}
+
+	public void SetPrecode(Case caseData)
+	{
+		// This level needs no special precode
 	}
 }

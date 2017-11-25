@@ -14,10 +14,14 @@ public class EmptyCar : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		List<GameObject> itemsToUnload = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().itemsToUnload;
-		foreach (GameObject item in itemsToUnload)
+		Queue<GameObject> carsToUnload = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().activeCars;
+
+		GameObject currentCar = carsToUnload.Dequeue();
+
+		foreach (UnloadableItem item in currentCar.GetComponentsInChildren<UnloadableItem>())
 		{
-			item.GetComponent<UnloadableItem>().isUnloading = true;
+			if (item != null)
+				item.isUnloading = true;
 		}
 		return new Compiler.Variable();
 	}

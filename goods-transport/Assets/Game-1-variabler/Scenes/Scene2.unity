@@ -216,8 +216,8 @@ GameObject:
   - component: {fileID: 519156424}
   - component: {fileID: 519156425}
   m_Layer: 0
-  m_Name: WinController
-  m_TagString: WinController
+  m_Name: SceneController
+  m_TagString: SceneController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a53f4f2b90245f74eb9c89f007ae0727, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemsUnloaded: 0
 --- !u!1 &656466915
 GameObject:
   m_ObjectHideFlags: 0

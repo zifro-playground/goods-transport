@@ -42,8 +42,6 @@ namespace PM.Level {
 
 			string[] textRows = masterAsset.text.Split(linebreaks, StringSplitOptions.RemoveEmptyEntries);
 
-			// TODO set PMWrapper.numOfLevels to textRows.Length when nothing is dependent on numOfLevels in Awake()
-
 			levels = new Level[PMWrapper.numOfLevels];
 			int levelsBuilt = 0;
 
@@ -53,30 +51,32 @@ namespace PM.Level {
 				if (textRows[i].StartsWith("//") || textRows[i].StartsWith("#"))
 					continue;
 
-				// Could also be removed as comment after for
+				// Check if there are more settings specified in master then there are levels
 				if (levelsBuilt >= PMWrapper.numOfLevels)
-					throw new Exception("There are more files specified in settings-master then in the UI numberOfLevels");
+					throw new Exception("There are more files specified in settings-master then in the UI numberOfLevels. Use // to comment out row");
 
 				levels[levelsBuilt] = new Level
 				{
-					answere = new LevelAnswere()
+					levelAnswer = new LevelAnswer()
 				};
 
 
-
 				string settingsFileName = textRows[i].Trim();
-				levels [levelsBuilt].BuildLevelSettings (i, settingsFileName);
+				levels [levelsBuilt].BuildLevelSettings (levelsBuilt, settingsFileName);
 
 				levelsBuilt++;
 			}
-
-			// Could be removed when dependent objects have been integrated to the new app flow.
+			
 			if (levelsBuilt != PMWrapper.numOfLevels)
 				throw new Exception("The number of levels in settings-master.txt does not match the specified number in the UI.");
 		}
 
-		public void OnPMCompilerStopped(PM.HelloCompiler.StopStatus status){
-			if (status == HelloCompiler.StopStatus.RuntimeError){
+		public void OnPMCompilerStopped(PM.HelloCompiler.StopStatus status)
+		{
+			currentLevel.levelAnswer.compilerHasBeenStopped = true;
+
+			if (status == HelloCompiler.StopStatus.RuntimeError)
+			{
 				// TODO Animate currentCaseButton to red
 				currentLevel.caseHandler.CaseFailed();
 

@@ -14,7 +14,7 @@ public class UnloadPalm : Compiler.Function
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
 		GameObject.FindGameObjectWithTag("Palm").GetComponent<UnloadableItem>().isUnloading = true;
-		GameObject.FindGameObjectWithTag("WinController").GetComponent<WinControllerScene2>().itemsUnloaded += 1;
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<Scene2Controller>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}
 }

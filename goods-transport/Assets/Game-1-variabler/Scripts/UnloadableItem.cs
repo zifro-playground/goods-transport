@@ -3,7 +3,7 @@
 public class UnloadableItem : MonoBehaviour
 {
 	public bool isUnloading = false;
-	public float unloadingSpeed = 0.1f;
+	public float unloadingSpeed = 3f;
 	
 	void Update ()
 	{

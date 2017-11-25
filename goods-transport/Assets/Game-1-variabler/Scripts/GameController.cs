@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 
-public class SceneController : MonoBehaviour, IPMCaseSwitched
+public class GameController : MonoBehaviour, IPMCaseSwitched
 {
 	public string gameDataFileName;
 

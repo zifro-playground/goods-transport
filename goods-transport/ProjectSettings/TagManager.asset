@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Palm
-  - WinController
   - continue(temp)
   - LevelController
+  - SceneController
   layers:
   - Default
   - TransparentFX

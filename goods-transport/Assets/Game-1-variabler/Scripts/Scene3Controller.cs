@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using PM;
 
-public class WinControllerScene3 : MonoBehaviour, IWinController, IPMCompilerStopped
+public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped
 {
+	[HideInInspector]
 	public int carsUnloaded = 0;
 
 	private bool levelShouldBeAnswered = false;
@@ -31,6 +32,20 @@ public class WinControllerScene3 : MonoBehaviour, IWinController, IPMCompilerSto
 
 	public void SetLevelAnswer(Case caseData)
 	{
+		int itemsInCars = 0;
+		foreach (Car car in caseData.cars)
+		{
+			foreach (Section section in car.sections)
+			{
+				itemsInCars += section.itemCount;
+			}
+		}
+		PMWrapper.SetCaseAnswer(itemsInCars);
+	}
 
+	public void SetPrecode(Case caseData)
+	{
+		string precode = "antal_bilar = " + caseData.cars.Count;
+		PMWrapper.preCode = precode;
 	}
 }
