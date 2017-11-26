@@ -331,7 +331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c855ea4eea0d846a42e012ef0fd662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 1489445243031736, guid: e47973bbeab89574c9d71386188ddba5, type: 2}
+  carPrefab: {fileID: 1422357962495422, guid: 2853960ae6fd24a75ab39c6554d2af5e, type: 2}
   boxRowPrefab: {fileID: 1816890561007966, guid: b22356f0817d66345995a3f3511a812b,
     type: 2}
   palmPrefab: {fileID: 1854416307798104, guid: 850240cd6e130774086831be94421a46, type: 2}
