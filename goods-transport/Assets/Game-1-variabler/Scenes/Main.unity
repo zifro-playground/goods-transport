@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -145,7 +145,7 @@ Camera:
   m_GameObject: {fileID: 224700616}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
@@ -336,7 +336,7 @@ MonoBehaviour:
     type: 2}
   palmPrefab: {fileID: 1854416307798104, guid: 850240cd6e130774086831be94421a46, type: 2}
   treePrefab: {fileID: 1624339758170216, guid: 0372f0ac27cec664291d831fe5973bdd, type: 2}
-  lampPrefab: {fileID: 1458374724297354, guid: b5297551aefe8a54ebed73b693ede981, type: 2}
+  lampPrefab: {fileID: 1158850515424876, guid: b5297551aefe8a54ebed73b693ede981, type: 2}
   tablePrefab: {fileID: 1584486104668270, guid: 46d4547d2b2093a44a2d2e5a9f8d6fab,
     type: 2}
   chairPrefab: {fileID: 1944635786735238, guid: 36a5530df8ea84557be56c8b754db4ea,
@@ -414,7 +414,7 @@ Prefab:
     - target: {fileID: 224590286020334158, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.699585
+      value: -3.6995544
       objectReference: {fileID: 0}
     - target: {fileID: 224049092798739746, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
