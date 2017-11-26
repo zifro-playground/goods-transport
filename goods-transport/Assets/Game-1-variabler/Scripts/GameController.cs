@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 		//new LevelGroup(4, 11, "Scene2"),
 		new LevelGroup(3, 3, "Scene2"),
 		//new LevelGroup(12, 19, "Scene3")
-		new LevelGroup(4, 19, "Scene2")
+		new LevelGroup(4, 19, "Scene3")
 	};
 	private LevelGroup currentGroup;
 

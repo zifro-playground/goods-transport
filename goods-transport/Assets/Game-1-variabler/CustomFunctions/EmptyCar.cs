@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using PM;
 
 public class EmptyCar : Compiler.Function
 {
@@ -16,7 +15,7 @@ public class EmptyCar : Compiler.Function
 	{
 		Queue<GameObject> carsToUnload = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().activeCars;
 
-		GameObject currentCar = carsToUnload.Dequeue();
+		GameObject currentCar = carsToUnload.Peek();
 
 		foreach (UnloadableItem item in currentCar.GetComponentsInChildren<UnloadableItem>())
 		{

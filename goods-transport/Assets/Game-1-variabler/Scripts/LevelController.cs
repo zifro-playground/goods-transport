@@ -14,6 +14,7 @@ public class LevelController : MonoBehaviour {
 	public GameObject chairPrefab;
 
 	[Header("Distances")]
+	public float carSpacing = 1;
 	public float boxSpacing = 0.5f;
 	public float carPadding = 0.4f;
 	private float boxLength = 1; // is set from CreateAssets()
@@ -61,6 +62,7 @@ public class LevelController : MonoBehaviour {
 	private void CreateAssets()
 	{
 		float boxLength = boxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
+		float previousCarPosition = 0;
 
 		foreach (Car car in caseData.cars)
 		{
@@ -69,8 +71,14 @@ public class LevelController : MonoBehaviour {
 
 			RescaleCar(car, carObj);
 
+			// Position car in queue
+			float carPosX = previousCarPosition > 0 ? previousCarPosition + carSpacing : 0;
+			carObj.transform.position = new Vector3(carPosX, 0, 0);
+
+			// Place the rows of boxes and their items in car
 			Bounds carBounds = carObj.GetComponent<Renderer>().bounds;
 
+			float carLength = carBounds.size.x;
 			float carWidthCenter = carBounds.center.z;
 			float carLeftEnd = carBounds.min.x;
 			float sectionLeftEnd = carLeftEnd;
@@ -101,6 +109,7 @@ public class LevelController : MonoBehaviour {
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
 				sectionLeftEnd += sectionLength;
 			}
+			previousCarPosition = carObj.transform.position.x + carLength + carSpacing;
 		}
 	}
 
@@ -115,9 +124,6 @@ public class LevelController : MonoBehaviour {
 		sceneControllers[0].SetLevelAnswer(caseData);
 		sceneControllers[0].SetPrecode(caseData);
 	}
-	private void SetLevelAnswer()
-	{
-	}
 
 	private void RescaleCar(Car carData, GameObject carObj)
 	{
@@ -131,12 +137,14 @@ public class LevelController : MonoBehaviour {
 		{
 			rowsInCar += section.rows;
 			if (section.itemCount > 0)
+			{
 				sectionCount++;
-			boxSpacingsNeeded += section.rows - 1;
+				boxSpacingsNeeded += section.rows - 1;
+			}
 		}
 		float newCarWidth = 4 * boxLength + 3 * boxSpacing + 2 * carPadding;
-		float newCarLength = rowsInCar * boxLength + boxSpacing * boxSpacingsNeeded + 2 * carPadding * sectionCount;
-
+		float newCarLength = rowsInCar * boxLength + boxSpacingsNeeded * boxSpacing + 2 * sectionCount * carPadding;
+		
 		float scaleFactorLength = newCarLength / carSize.x;
 		float scaleFactorWidth = newCarWidth / carSize.z;
 

@@ -8,7 +8,7 @@ public class UnloadableItem : MonoBehaviour
 	void Update ()
 	{
 		if (isUnloading)
-			transform.Translate(transform.up * unloadingSpeed * PMWrapper.speedMultiplier);
+			transform.Translate(-transform.up * unloadingSpeed * PMWrapper.speedMultiplier);
 
 		if (transform.position.y > 3)
 		{

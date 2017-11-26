@@ -59,7 +59,7 @@
                 {
                   "type": "palmer",
                   "itemCount": 1,
-				  "rows": 3
+                  "rows": 3
                 }
               ]
             }
@@ -80,22 +80,22 @@
                 {
                   "type": "lampor",
                   "itemCount": 15,
-									"rows": 4
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 },
                 {
                   "type": "bord",
                   "itemCount": 2,
-									"rows": 1
+                  "rows": 1
                 },
                 {
                   "type": "granar",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 }
               ]
             }
@@ -110,22 +110,22 @@
                 {
                   "type": "lampor",
                   "itemCount": 10,
-									"rows": 3
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 },
                 {
                   "type": "bord",
                   "itemCount": 3,
-									"rows": 1
+                  "rows": 1
                 },
                 {
                   "type": "granar",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 }
               ]
             }
@@ -140,22 +140,22 @@
                 {
                   "type": "lampor",
                   "itemCount": 4,
-									"rows": 1
+                  "rows": 1
                 },
                 {
                   "type": "palmer",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 },
                 {
                   "type": "bord",
                   "itemCount": 6,
-									"rows": 2
+                  "rows": 2
                 },
                 {
                   "type": "granar",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 }
               ]
             }
@@ -176,22 +176,17 @@
                 {
                   "type": "lampor",
                   "itemCount": 14,
-									"rows": 4
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
                   "itemCount": 2,
-									"rows": 1
+                  "rows": 1
                 },
                 {
                   "type": "bord",
                   "itemCount": 4,
-									"rows": 1
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-									"rows": 0
+                  "rows": 1
                 }
               ]
             }
@@ -206,22 +201,17 @@
                 {
                   "type": "lampor",
                   "itemCount": 11,
-									"rows": 3
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
                   "itemCount": 5,
-									"rows": 2
+                  "rows": 2
                 },
                 {
                   "type": "bord",
                   "itemCount": 6,
-									"rows": 2
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-									"rows": 0
+                  "rows": 2
                 }
               ]
             }
@@ -236,21 +226,17 @@
                 {
                   "type": "lampor",
                   "itemCount": 7,
-									"rows": 2
+                  "rows": 2
                 },
                 {
                   "type": "palmer",
                   "itemCount": 8,
-									"rows": 4
+                  "rows": 4
                 },
                 {
                   "type": "bord",
                   "itemCount": 3,
-									"rows": 1
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0
+                  "rows": 1
                 }
               ]
             }
@@ -271,22 +257,22 @@
                 {
                   "type": "lampor",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 },
                 {
                   "type": "palmer",
                   "itemCount": 7,
-									"rows": 2
+                  "rows": 2
                 },
                 {
                   "type": "bord",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 },
                 {
                   "type": "granar",
                   "itemCount": 0,
-									"rows": 0
+                  "rows": 0
                 }
               ]
             }
@@ -306,23 +292,18 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 2,
+                  "rows": 1
                 },
                 {
                   "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
                   "itemCount": 4,
-									"rows": 1
+                  "rows": 1
                 }
               ]
             },
@@ -331,98 +312,18 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 2,
+                  "rows": 1
                 },
                 {
                   "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 5,
-									"rows": 2
-                }
-              ]
-            },
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 8,
-									"rows": 2
-                }
-              ]
-            },
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 7,
-									"rows": 2
-                }
-              ]
-            },
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
                   "itemCount": 4,
-									"rows": 1
+                  "rows": 1
                 }
               ]
             },
@@ -431,23 +332,18 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 2,
+                  "rows": 1
                 },
                 {
                   "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 5,
-									"rows": 2
+                  "itemCount": 4,
+                  "rows": 1
                 }
               ]
             },
@@ -456,23 +352,78 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 2,
+                  "rows": 1
                 },
                 {
                   "type": "bord",
-                  "itemCount": 0,
-									"rows": 0
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
-                  "type": "granar",
-                  "itemCount": 8,
-									"rows": 2
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
                 }
               ]
             }
