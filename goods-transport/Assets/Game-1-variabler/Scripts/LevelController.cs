@@ -148,7 +148,7 @@ public class LevelController : MonoBehaviour {
 		float scaleFactorLength = newCarLength / carSize.x;
 		float scaleFactorWidth = newCarWidth / carSize.z;
 
-		carObj.transform.localScale = new Vector3(scaleFactorLength, 0.3f, scaleFactorWidth);
+		carObj.transform.localScale = new Vector3(scaleFactorLength, 0.4f, scaleFactorWidth);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{
