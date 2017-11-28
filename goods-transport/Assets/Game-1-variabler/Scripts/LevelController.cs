@@ -23,7 +23,7 @@ public class LevelController : MonoBehaviour {
 	public Case caseData;
 
 	[HideInInspector]
-	public Queue<GameObject> activeCars = new Queue<GameObject>();
+	public LinkedList<GameObject> activeCars = new LinkedList<GameObject>();
 
 	private Dictionary<string, GameObject> itemType;
 	private void BuildItemDictionary()
@@ -67,12 +67,12 @@ public class LevelController : MonoBehaviour {
 		foreach (Car car in caseData.cars)
 		{
 			GameObject carObj = Instantiate(carPrefab);
-			activeCars.Enqueue(carObj);
+			activeCars.AddLast(carObj);
 
 			RescaleCar(car, carObj);
 
 			// Position car in queue
-			float carPosX = previousCarPosition > 0 ? previousCarPosition + carSpacing : 0;
+			float carPosX = previousCarPosition;
 			carObj.transform.position = new Vector3(carPosX, 0, 0);
 
 			// Place the rows of boxes and their items in car

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23868187649745402}
   - component: {fileID: 114412283456715272}
   m_Layer: 0
-  m_Name: lamp
+  m_Name: Lamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUnloading: 0
-  unloadingSpeed: 3
+  unloadingSpeed: 0.2

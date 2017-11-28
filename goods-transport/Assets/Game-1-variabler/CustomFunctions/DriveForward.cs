@@ -14,19 +14,32 @@ public class DriveForward : Compiler.Function
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
 		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-		Queue<GameObject> carsToMove = controller.activeCars;
+		LinkedList<GameObject> carsToMove = controller.activeCars;
 
-		foreach (GameObject carObj in carsToMove)
+		float firstCarLength = carsToMove.First.Value.GetComponent<Renderer>().bounds.extents.x;
+		float secondCarLength = 0;
+
+		if (carsToMove.First.Next != null)
 		{
-			CarMovement car = carObj.GetComponent<CarMovement>();
+			secondCarLength = carsToMove.First.Next.Value.GetComponent<Renderer>().bounds.extents.x;
+		}
+		
+		float distance = firstCarLength + controller.carSpacing + secondCarLength;
+
+		LinkedListNode<GameObject> carNode = carsToMove.First;
+		bool shouldDestroy = true;
+
+		while (carNode != null)
+		{
+			CarMovement car = carNode.Value.GetComponent<CarMovement>();
 			if (car != null)
 			{
-				float distance = carObj.GetComponent<Renderer>().bounds.size.x + controller.carSpacing;
-				car.MoveForward(distance);
+				car.MoveForward(distance, shouldDestroy);
+				shouldDestroy = false;
 			}
+			carNode = carNode.Next;
 		}
-		GameObject firstCar = carsToMove.Dequeue();
-		GameObject.Destroy(firstCar);
+		carsToMove.RemoveFirst();
 
 		return new Compiler.Variable();
 	}

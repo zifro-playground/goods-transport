@@ -2,27 +2,32 @@
 
 public class CarMovement : MonoBehaviour 
 {
-	public float speed = 1;
+	public float speed = 0.3f;
 
+	private bool shouldDestroy = false;
 	private bool isMoving = false;
-	private float targetPos = 0;
+	private Vector3 targetPos;
 
 	private void Update()
 	{
 		if (isMoving)
 		{
 			transform.Translate(-transform.right * PMWrapper.speedMultiplier * speed);
-			if (transform.position.x < targetPos)
+			if (transform.position.x < targetPos.x)
 			{
 				isMoving = false;
+				transform.position = targetPos;
 				PMWrapper.UnpauseWalker();
+				if (shouldDestroy)
+					Destroy(gameObject);
 			}
 		}
 	}
 
-	public void MoveForward(float distance)
+	public void MoveForward(float distance, bool shouldDestroy)
 	{
-		targetPos = transform.position.x - distance;
+		targetPos = new Vector3(transform.position.x - distance, transform.position.y, transform.position.z);
 		isMoving = true;
+		this.shouldDestroy = shouldDestroy;
 	}
 }

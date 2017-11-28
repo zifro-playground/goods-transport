@@ -21,11 +21,11 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			int carsToUnload = 0;
+			bool levelShouldBeAnswered = UISingleton.instance.compiler.addedFunctions.Contains(new AnswerFunction());
 
-			carsToUnload += caseData.cars.Count;
+			int carsToUnload = caseData.cars.Count;
 
-			if (carsToUnload == carsUnloaded)
+			if (carsToUnload == carsUnloaded && !levelShouldBeAnswered)
 				PMWrapper.SetCaseCompleted();
 		}
 	}
