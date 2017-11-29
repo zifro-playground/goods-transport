@@ -430,6 +430,157 @@
           ]
         }
       ]
+    },
+    {
+      "id": "CTRV1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
