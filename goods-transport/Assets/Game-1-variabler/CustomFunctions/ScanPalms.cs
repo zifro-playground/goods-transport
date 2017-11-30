@@ -1,11 +1,11 @@
 ﻿using Compiler;
 using UnityEngine;
 
-public class ScanChairs : Compiler.Function 
+public class ScanPalms : Compiler.Function
 {
-	public ScanChairs()
+	public ScanPalms()
 	{
-		this.name = "scanna_antal_stolar";
+		this.name = "scanna_antal_palmer";
 		this.inputParameterAmount.Add(0);
 		this.pauseWalker = true;
 		this.hasReturnVariable = false;
@@ -19,16 +19,16 @@ public class ScanChairs : Compiler.Function
 		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
 		scanner.Scan(carToScan);
 
-		int chairCount = 0;
+		int palmCount = 0;
 
 		foreach (Transform child in carToScan.transform)
 		{
-			if (child.CompareTag("Chair"))
-				chairCount++;
+			if (child.CompareTag("Palm"))
+				palmCount++;
 		}
 
-		scanner.SetDisplayText(chairCount.ToString());
+		scanner.SetDisplayText(palmCount.ToString());
 
-		return new Variable("chaircount", chairCount);
+		return new Variable("palmCount", palmCount);
 	}
 }

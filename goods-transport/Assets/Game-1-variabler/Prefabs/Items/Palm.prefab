@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114896140735550464}
   m_Layer: 0
   m_Name: Palm
-  m_TagString: Untagged
+  m_TagString: Palm
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

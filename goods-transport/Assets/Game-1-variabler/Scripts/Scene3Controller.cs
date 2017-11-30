@@ -21,7 +21,14 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			bool levelShouldBeAnswered = UISingleton.instance.compiler.addedFunctions.Contains(new AnswerFunction());
+			bool levelShouldBeAnswered = false;
+
+			// Should be moved to PMWrapper
+			foreach(Compiler.Function fun in UISingleton.instance.compiler.addedFunctions)
+			{
+				if (fun.GetType() == new AnswerFunction().GetType())
+					levelShouldBeAnswered = true;
+			}
 
 			int carsToUnload = caseData.cars.Count;
 

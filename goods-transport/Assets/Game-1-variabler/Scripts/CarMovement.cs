@@ -12,8 +12,8 @@ public class CarMovement : MonoBehaviour
 	{
 		if (isMoving)
 		{
-			transform.Translate(-transform.right * PMWrapper.speedMultiplier * speed);
-			if (transform.position.x < targetPos.x)
+			transform.Translate(transform.right * PMWrapper.speedMultiplier * speed);
+			if (transform.position.x > targetPos.x)
 			{
 				isMoving = false;
 				transform.position = targetPos;
@@ -26,7 +26,7 @@ public class CarMovement : MonoBehaviour
 
 	public void MoveForward(float distance, bool shouldDestroy)
 	{
-		targetPos = new Vector3(transform.position.x - distance, transform.position.y, transform.position.z);
+		targetPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
 		isMoving = true;
 		this.shouldDestroy = shouldDestroy;
 	}

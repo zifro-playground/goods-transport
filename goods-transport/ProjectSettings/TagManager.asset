@@ -4,11 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Palm
   - continue(temp)
   - LevelController
   - SceneController
   - Scanner
+  - Chair
+  - Tree
+  - Lamp
+  - Table
+  - Palm
   layers:
   - Default
   - TransparentFX

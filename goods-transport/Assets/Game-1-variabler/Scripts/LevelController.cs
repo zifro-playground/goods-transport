@@ -102,14 +102,14 @@ public class LevelController : MonoBehaviour {
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
-					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
+					boxRow.transform.position = new Vector3(rowCenter, 0.2f, carWidthCenter);
 				}
 				PlaceItems(itemPositions, carObj, itemType[section.type], section.itemCount);
 
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
 				sectionLeftEnd += sectionLength;
 			}
-			previousCarPosition = carObj.transform.position.x + carLength + carSpacing;
+			previousCarPosition = carObj.transform.position.x - carLength - carSpacing;
 		}
 	}
 

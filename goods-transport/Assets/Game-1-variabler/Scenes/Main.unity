@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!124 &224700618
 Behaviour:
   m_ObjectHideFlags: 0
@@ -149,10 +149,10 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.5174211
-    y: 0.15716648
-    width: 0.4046446
-    height: 0.7190001
+    x: 0.500625
+    y: 0.13665685
+    width: 0.4475
+    height: 0.6850078
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a63e1cf17805946a88ff7227cbf88c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theRect: {fileID: 0}
+  theRect: {fileID: 990214978}
   runInEditor: 1
 --- !u!1 &743548327
 GameObject:
@@ -304,6 +304,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &990214978 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224838045396460620, guid: bd9a032a92352a8409c89a2cbff30035,
+    type: 2}
+  m_PrefabInternal: {fileID: 1726243142}
 --- !u!1 &1462502209
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +419,7 @@ Prefab:
     - target: {fileID: 224590286020334158, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.699585
+      value: -3.6995544
       objectReference: {fileID: 0}
     - target: {fileID: 224049092798739746, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
