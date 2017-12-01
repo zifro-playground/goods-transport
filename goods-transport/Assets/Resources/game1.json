@@ -407,7 +407,7 @@
       ]
     },
     {
-      "id": "X",
+      "id": "1MUV1",
       "cases":
       [
         {
@@ -417,19 +417,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
+                  "type": "palmer",
                   "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "rows": 6
                 }
               ]
             }
@@ -442,19 +432,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 11,
-                  "rows": 3
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 5,
-                  "rows": 2
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 6,
-                  "rows": 2
+                  "itemCount": 24,
+                  "rows": 6
                 }
               ]
             }
@@ -467,19 +447,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 7,
-                  "rows": 2
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 8,
-                  "rows": 4
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 3,
-                  "rows": 1
+                  "itemCount": 19,
+                  "rows": 6
                 }
               ]
             }
