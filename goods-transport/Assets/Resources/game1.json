@@ -1,4 +1,4 @@
-﻿{
+{
   "levels":
   [
     {
@@ -523,24 +523,132 @@
               "sections":
               [
                 {
+                  "type": "palmer",
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FRUL2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
                   "type": "lampor",
-                  "itemCount": 0,
-                  "rows": 0
-                },
+                  "itemCount": 15,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FRUL3",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
                 {
                   "type": "palmer",
-                  "itemCount": 7,
-                  "rows": 2
-                },
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
                 {
-                  "type": "bord",
-                  "itemCount": 0,
-                  "rows": 0
-                },
+                  "type": "palmer",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
                 {
-                  "type": "granar",
-                  "itemCount": 0,
-                  "rows": 0
+                  "type": "palmer",
+                  "itemCount": 3,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FRUL4",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 5,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 8,
+                  "rows": 6
                 }
               ]
             }
