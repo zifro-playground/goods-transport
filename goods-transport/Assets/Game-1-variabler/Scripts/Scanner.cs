@@ -44,7 +44,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 	{
 		isScanning = true;
 
-		Bounds carBounds = obj.GetComponent<Renderer>().bounds;
+		Bounds carBounds = MyLibrary.CalculateBoundsInChildren(obj);
 		float carFront = carBounds.max.x;
 		float carRear = carBounds.min.x;
 

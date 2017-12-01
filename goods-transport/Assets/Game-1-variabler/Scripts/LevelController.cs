@@ -37,7 +37,7 @@ public class LevelController : MonoBehaviour {
 			itemType.Add("granar", treePrefab);
 			itemType.Add("bord", tablePrefab);
 			itemType.Add("lampor", lampPrefab);
-			itemType.Add("stolar", tablePrefab);
+			itemType.Add("stolar", chairPrefab);
 		}
 	}
 
@@ -48,7 +48,8 @@ public class LevelController : MonoBehaviour {
 		BuildItemDictionary();
 		RemoveOldAssets();
 		CreateAssets();
-		SetPrecodeAndAnswer();
+		SetPrecode();
+		SetAnswer();
 	}
 
 	private void RemoveOldAssets()
@@ -68,6 +69,8 @@ public class LevelController : MonoBehaviour {
 		foreach (Car carData in caseData.cars)
 		{
 			GameObject carObj = new GameObject("Car");
+			carObj.AddComponent<CarMovement>();
+
 			GameObject platform = Instantiate(carPlatformPrefab);
 			GameObject front = Instantiate(carFrontPrefab);
 
@@ -101,16 +104,17 @@ public class LevelController : MonoBehaviour {
 					GameObject boxRow = Instantiate(boxRowPrefab);
 					boxRow.transform.SetParent(carObj.transform);
 
-					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 					float rowCenter = sectionLeftEnd + carPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * boxSpacing;
+					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 					
+					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
+
 					for (int k = 1; k <= 4; k++)
 					{
 						float colCenter = platformBounds.min.z + carPadding + ((2 * (float)k - 1) / 2) * boxLength + (k - 1) * boxSpacing;
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
-					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 				}
 				PlaceItems(itemPositions, carObj, itemType[section.type], section.itemCount);
 

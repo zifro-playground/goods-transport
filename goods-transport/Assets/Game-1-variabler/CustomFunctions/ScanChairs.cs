@@ -17,19 +17,9 @@ public class ScanChairs : Compiler.Function
 		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 
 		GameObject car = controller.activeCars.First.Value;
-		GameObject carPlatform = null;
-
-		// Find the car platform to focus on when scanning
-		foreach (Transform child in car.transform)
-		{
-			if (child.gameObject.CompareTag("CarPlatform"))
-				carPlatform = child.gameObject;
-		}
-		if (carPlatform == null)
-			throw new Exception("Could not find any child of first car in queue with tag \"CarPlatform\".");
 
 		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
-		scanner.Scan(carPlatform);
+		scanner.Scan(car);
 
 		int chairCount = 0;
 

@@ -16,12 +16,14 @@ public class DriveForward : Compiler.Function
 		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 		LinkedList<GameObject> carsToMove = controller.activeCars;
 
-		float firstCarLength = carsToMove.First.Value.GetComponent<Renderer>().bounds.extents.x;
+		Bounds firstCarBounds = MyLibrary.CalculateBoundsInChildren(carsToMove.First.Value);
+		float firstCarLength = firstCarBounds.extents.x;
 		float secondCarLength = 0;
 
 		if (carsToMove.First.Next != null)
 		{
-			secondCarLength = carsToMove.First.Next.Value.GetComponent<Renderer>().bounds.extents.x;
+			Bounds secondCarBounds = MyLibrary.CalculateBoundsInChildren(carsToMove.First.Next.Value);
+			secondCarLength = secondCarBounds.extents.x;
 		}
 		
 		float distance = firstCarLength + controller.carSpacing + secondCarLength;

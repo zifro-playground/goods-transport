@@ -15,6 +15,7 @@ public class Car
 public class Case
 {
 	public List<Car> cars { get; set; }
+	public int answer { get; set; }
 }
 
 public class Level
