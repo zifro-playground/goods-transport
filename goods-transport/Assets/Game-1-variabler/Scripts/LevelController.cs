@@ -120,8 +120,11 @@ public class LevelController : MonoBehaviour {
 			previousCarPosition = carObj.transform.position.x - carLength - carSpacing;
 		}
 	}
-
-	private void SetPrecodeAndAnswer()
+	private void SetAnswer()
+	{
+		PMWrapper.SetCaseAnswer(caseData.answer);
+	}
+	private void SetPrecode()
 	{
 		ISceneController[] sceneControllers = PM.UISingleton.FindInterfaces<ISceneController>();
 		if (sceneControllers.Length > 1)
@@ -129,7 +132,6 @@ public class LevelController : MonoBehaviour {
 		if (sceneControllers.Length < 1)
 			throw new Exception("Could not find any class that implements ISceneController.");
 
-		sceneControllers[0].SetLevelAnswer(caseData);
 		sceneControllers[0].SetPrecode(caseData);
 	}
 
@@ -159,7 +161,7 @@ public class LevelController : MonoBehaviour {
 		float scaleFactorWidthFront = newCarWidth / frontSize.z;
 
 		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 0.5f, scaleFactorWidthPlatform);
-		carFront.transform.localScale = new Vector3(1, 1, scaleFactorWidthFront);
+		carFront.transform.localScale = new Vector3(1.5f, 1.5f, scaleFactorWidthFront);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{

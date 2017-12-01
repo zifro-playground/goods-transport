@@ -1,11 +1,11 @@
 LevelSettings/settings-2VAD1
 LevelSettings/settings-2VAD2
 LevelSettings/settings-3VAD1
-//LevelSettings/settings-2KAD1
-//LevelSettings/settings-2KAD2
+LevelSettings/settings-2KAD1
+LevelSettings/settings-2KAD2
 //LevelSettings/settings-3KSU1
-//LevelSettings/settings-1MUV1
-//LevelSettings/settings-2MUV1
+LevelSettings/settings-1MUV1
+LevelSettings/settings-2MUV1
 LevelSettings/settings-FRUL1
 //LevelSettings/settings-FRUL2
 //LevelSettings/settings-FRUL3
