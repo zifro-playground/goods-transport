@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -149,10 +149,10 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.500625
-    y: 0.13665685
-    width: 0.4475
-    height: 0.6850078
+    x: 0.5010566
+    y: 0.13654447
+    width: 0.4478858
+    height: 0.6844444
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
@@ -336,7 +336,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c855ea4eea0d846a42e012ef0fd662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPrefab: {fileID: 1422357962495422, guid: 2853960ae6fd24a75ab39c6554d2af5e, type: 2}
+  carPlatformPrefab: {fileID: 1778304852213010, guid: bc57458f61b8c6344a64119ac9a21953,
+    type: 2}
+  carFrontPrefab: {fileID: 1263668506044726, guid: 3445250b1a29901468b2fcc2b22bc3bb,
+    type: 2}
   boxRowPrefab: {fileID: 1816890561007966, guid: b22356f0817d66345995a3f3511a812b,
     type: 2}
   palmPrefab: {fileID: 1854416307798104, guid: 850240cd6e130774086831be94421a46, type: 2}
@@ -419,7 +422,7 @@ Prefab:
     - target: {fileID: 224590286020334158, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.6995544
+      value: -3.6995697
       objectReference: {fileID: 0}
     - target: {fileID: 224049092798739746, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -429,7 +432,7 @@ Prefab:
     - target: {fileID: 224049092798739746, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224048160497074068, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -439,7 +442,7 @@ Prefab:
     - target: {fileID: 224048160497074068, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 235
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224140417718032434, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -449,7 +452,7 @@ Prefab:
     - target: {fileID: 224140417718032434, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224723468433592830, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -459,7 +462,7 @@ Prefab:
     - target: {fileID: 224723468433592830, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 115
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224077016613907050, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -469,7 +472,7 @@ Prefab:
     - target: {fileID: 224077016613907050, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -148.75027
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224455587370690914, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -479,7 +482,7 @@ Prefab:
     - target: {fileID: 224455587370690914, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -148.75027
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224009442802133512, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
@@ -489,7 +492,7 @@ Prefab:
     - target: {fileID: 224009442802133512, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -148.75024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114986743780736258, guid: bd9a032a92352a8409c89a2cbff30035,
         type: 2}

@@ -1,21 +1,31 @@
 fileFormatVersion: 2
-guid: 192829211d9d049de87ef867f49ee7cb
-timeCreated: 1511731965
+guid: 85f9fbeb73e1d294ab779643e715e407
+timeCreated: 1512126231
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: top
     400000: //RootNode
+    400002: top
     2300000: //RootNode
+    2300002: top
     3300000: //RootNode
-    4300000: Car with display
+    3300002: top
+    4300000: Scanner
+    4300002: top
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: bc06d8cbd0c924a1db61f0ad673ec785, type: 2}
+      name: scanner
+    second: {fileID: 2100000, guid: bb3eaaaba4be94beb8092683147ef1f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: scanner_beamer
+    second: {fileID: 2100000, guid: 1090714dc27fe455ca26046cabd2cc38, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
