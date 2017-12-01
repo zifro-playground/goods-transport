@@ -23,7 +23,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 18
         },
         {
           "cars":
@@ -43,7 +44,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 13
         },
         {
           "cars":
@@ -63,7 +65,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 6
         }
       ]
     },
@@ -79,27 +82,18 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 15,
-                  "rows": 4
+                  "itemCount": 12,
+                  "rows": 3
                 },
                 {
-                  "type": "palmer",
-                  "itemCount": 0,
-                  "rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-                  "rows": 0
+                  "type": "stolar",
+                  "itemCount": 7,
+                  "rows": 3
                 }
               ]
             }
-          ]
+          ],
+          "answer": 19
         },
         {
           "cars":
@@ -113,23 +107,14 @@
                   "rows": 3
                 },
                 {
-                  "type": "palmer",
-                  "itemCount": 0,
-                  "rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 3,
-                  "rows": 1
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-                  "rows": 0
+                  "type": "stolar",
+                  "itemCount": 5,
+                  "rows": 3
                 }
               ]
             }
-          ]
+          ],
+          "answer": 15
         },
         {
           "cars":
@@ -139,27 +124,18 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 14,
+                  "rows": 4
                 },
                 {
-                  "type": "palmer",
-                  "itemCount": 0,
-                  "rows": 0
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 6,
+                  "type": "stolar",
+                  "itemCount": 7,
                   "rows": 2
-                },
-                {
-                  "type": "granar",
-                  "itemCount": 0,
-                  "rows": 0
                 }
               ]
             }
-          ]
+          ],
+          "answer": 21
         }
       ]
     },
@@ -175,72 +151,75 @@
               [
                 {
                   "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 11,
-                  "rows": 3
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 5,
-                  "rows": 2
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 6,
-                  "rows": 2
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
                   "itemCount": 7,
                   "rows": 2
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 8,
-                  "rows": 4
+                  "itemCount": 7,
+                  "rows": 2
                 },
                 {
-                  "type": "bord",
+                  "type": "stolar",
                   "itemCount": 3,
-                  "rows": 1
+                  "rows": 2
                 }
               ]
             }
-          ]
+          ],
+          "answer": 17
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 5,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 1,
+                  "rows": 2
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 8,
+                  "rows": 2
+                }
+              ]
+            }
+          ],
+          "answer": 14
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 6,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 8,
+                  "rows": 2
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 5,
+                  "rows": 2
+                }
+              ]
+            }
+          ],
+          "answer": 19
         }
       ]
     },
@@ -271,7 +250,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 18
         },
         {
           "cars":
@@ -296,7 +276,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 14
         },
         {
           "cars":
@@ -321,7 +302,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 10
         }
       ]
     },
@@ -352,7 +334,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 17
         },
         {
           "cars":
@@ -423,7 +406,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 98
         },
         {
           "cars":
@@ -438,7 +422,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 168
         },
         {
           "cars":
@@ -453,12 +438,13 @@
                 }
               ]
             }
-          ]
+          ],
+          "answer": 133
         }
       ]
     },
     {
-      "id": "X",
+      "id": "2MUV1",
       "cases":
       [
         {
@@ -468,48 +454,19 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
+                  "type": "granar",
                   "itemCount": 11,
                   "rows": 3
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 5,
-                  "rows": 2
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 6,
-                  "rows": 2
+                  "itemCount": 8,
+                  "rows": 3
                 }
               ]
             }
-          ]
+          ],
+          "answer": 283
         },
         {
           "cars":
@@ -518,23 +475,40 @@
               "sections":
               [
                 {
-                  "type": "lampor",
+                  "type": "granar",
                   "itemCount": 7,
-                  "rows": 2
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 8,
-                  "rows": 4
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 3,
-                  "rows": 1
+                  "itemCount": 12,
+                  "rows": 3
                 }
               ]
             }
-          ]
+          ],
+          "answer": 193
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 15,
+                  "rows": 4
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 6,
+                  "rows": 2
+                }
+              ]
+            }
+          ],
+          "answer": 177
         }
       ]
     },
