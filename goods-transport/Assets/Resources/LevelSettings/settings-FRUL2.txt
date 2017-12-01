@@ -1,3 +1,4 @@
-taskdescription: Lasta av alla palmer från bilen
-rowlimit: 20
-smartbuttons: lasta_av_palm()
+taskdescription: Lasta av alla lampor från bilen
+rowlimit: 10
+smartbuttons: lasta_av_lampa()
+functions: UnloadLamp

@@ -667,19 +667,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 22,
+                  "rows": 6
                 }
               ]
             },
@@ -687,19 +677,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 17,
+                  "rows": 6
                 }
               ]
             },
@@ -707,19 +687,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
+                  "type": "granar",
                   "itemCount": 4,
-                  "rows": 1
+                  "rows": 6
                 }
               ]
             },
@@ -727,19 +697,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 15,
+                  "rows": 6
                 }
               ]
             },
@@ -747,19 +707,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 18,
+                  "rows": 6
                 }
               ]
             },
@@ -767,19 +717,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 24,
+                  "rows": 6
                 }
               ]
             },
@@ -787,19 +727,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "type": "granar",
+                  "itemCount": 13,
+                  "rows": 6
                 }
               ]
             }
@@ -818,19 +748,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 21,
+                  "rows": 6
                 }
               ]
             },
@@ -838,19 +758,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 17,
+                  "rows": 6
                 }
               ]
             },
@@ -858,19 +768,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 18,
+                  "rows": 6
                 }
               ]
             },
@@ -878,19 +778,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 13,
+                  "rows": 6
                 }
               ]
             },
@@ -898,19 +788,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 24,
+                  "rows": 6
                 }
               ]
             },
@@ -918,19 +798,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 3,
+                  "rows": 6
                 }
               ]
             },
@@ -938,19 +808,9 @@
               "sections":
               [
                 {
-                  "type": "lampor",
-                  "itemCount": 14,
-                  "rows": 4
-                },
-                {
                   "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 1
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 4,
-                  "rows": 1
+                  "itemCount": 19,
+                  "rows": 6
                 }
               ]
             }
