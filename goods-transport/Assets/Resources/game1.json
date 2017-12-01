@@ -245,6 +245,330 @@
       ]
     },
     {
+      "id": "2KAD1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 5,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 6,
+                  "rows": 2
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 3,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 2
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 4,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 1,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 8,
+                  "rows": 2
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 1,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2KAD2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 6,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 8,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 3,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 8,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 3,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 5,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 6,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 7,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 8,
+                  "rows": 4
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 3,
+                  "rows": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "X",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 1
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 6,
+                  "rows": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 7,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 8,
+                  "rows": 4
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 3,
+                  "rows": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": "FRUL1",
       "cases":
       [
