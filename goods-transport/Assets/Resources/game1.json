@@ -738,7 +738,108 @@
       ]
     },
     {
-      "id": "CTRV1",
+      "id": "FREM2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 14,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 7,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 13,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 9,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CTHC1",
       "cases":
       [
         {
@@ -749,7 +850,7 @@
               [
                 {
                   "type": "palmer",
-                  "itemCount": 21,
+                  "itemCount": 12,
                   "rows": 6
                 }
               ]
@@ -759,6 +860,58 @@
               [
                 {
                   "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "answer": 60
+        }
+      ]
+    },
+    {
+      "id": "CTHC2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
                   "itemCount": 17,
                   "rows": 6
                 }
@@ -768,7 +921,171 @@
               "sections":
               [
                 {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "answer": 119
+        }
+      ]
+    },
+    {
+      "id": "CTHC3",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
                   "type": "palmer",
+                  "itemCount": 10,
+                  "rows": 4
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 10,
+                  "rows": 4
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 10,
+                  "rows": 4
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 10,
+                  "rows": 4
+                },
+                {
+                  "type": "stolar",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            }
+          ],
+          "answer": 68
+        }
+      ]
+    },
+    {
+      "id": "CTRV1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
                   "itemCount": 18,
                   "rows": 6
                 }
@@ -778,7 +1095,7 @@
               "sections":
               [
                 {
-                  "type": "palmer",
+                  "type": "bord",
                   "itemCount": 13,
                   "rows": 6
                 }
@@ -788,18 +1105,30 @@
               "sections":
               [
                 {
-                  "type": "palmer",
+                  "type": "bord",
                   "itemCount": 24,
                   "rows": 6
                 }
               ]
-            },
+            }
+          ],
+          "answer": 93
+        }
+      ]
+    },
+    {
+      "id": "CTRV2",
+      "cases":
+      [
+        {
+          "cars":
+          [
             {
               "sections":
               [
                 {
-                  "type": "palmer",
-                  "itemCount": 3,
+                  "type": "granar",
+                  "itemCount": 13,
                   "rows": 6
                 }
               ]
@@ -808,13 +1137,196 @@
               "sections":
               [
                 {
-                  "type": "palmer",
+                  "type": "granar",
+                  "itemCount": 5,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 23,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 14,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 16,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
                   "itemCount": 19,
                   "rows": 6
                 }
               ]
             }
-          ]
+          ],
+          "answer": 101
+        }
+      ]
+    },
+    {
+      "id": "CTRV3",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 6,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 13,
+                  "rows": 4
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 18,
+                  "rows": 5
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 1,
+                  "rows": 1
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 14,
+                  "rows": 4
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 10,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 3,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 15,
+                  "rows": 4
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 4,
+                  "rows": 1
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 20,
+                  "rows": 5
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 10,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "answer": 159
         }
       ]
     }

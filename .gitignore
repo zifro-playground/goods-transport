@@ -6,7 +6,7 @@
 /goods-transport/Assets/AssetStoreTools*
 
 # Visual Studio 2015 cache directory
-/.vs/
+/goods-transport/.vs/
 
 # Self made folders
 [Bb]ackups/
