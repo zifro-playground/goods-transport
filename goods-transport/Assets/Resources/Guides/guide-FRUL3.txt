@@ -1,0 +1,1 @@
+1: Denna gång använder vi variabeln <b>palmer</b> för att se till att lasta av exakt så många palmer som kommer på bilen.

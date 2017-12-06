@@ -1,0 +1,2 @@
+1: Här skapas en <b>for-slinga</b>.
+2: Detta kommando kommer att köras 11 gånger.

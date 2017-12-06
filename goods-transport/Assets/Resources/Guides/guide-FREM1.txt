@@ -1,0 +1,4 @@
+1: Hur många bilar som finns i kön finns sparat i variabeln <b>antal_bilar</b>.
+2: "Upprepa en gång för varje bil i kön:"
+3: Först tömmer vi bilen på varor.
+4: Sen kör vi fram nästa bil i kön.
