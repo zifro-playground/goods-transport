@@ -454,19 +454,19 @@
               "sections":
               [
                 {
-                  "type": "granar",
+                  "type": "palmer",
                   "itemCount": 11,
                   "rows": 3
                 },
                 {
-                  "type": "palmer",
+                  "type": "granar",
                   "itemCount": 8,
                   "rows": 3
                 }
               ]
             }
           ],
-          "answer": 283
+          "answer": 173
         },
         {
           "cars":
@@ -475,12 +475,12 @@
               "sections":
               [
                 {
-                  "type": "granar",
+                  "type": "palmer",
                   "itemCount": 7,
                   "rows": 3
                 },
                 {
-                  "type": "palmer",
+                  "type": "granar",
                   "itemCount": 12,
                   "rows": 3
                 }

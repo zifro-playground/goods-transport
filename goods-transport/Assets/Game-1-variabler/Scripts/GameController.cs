@@ -12,11 +12,11 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 
 	private LevelGroup[] allGroups = new LevelGroup[3]
 	{
-		new LevelGroup(0, 3, "Scene1"),
+		new LevelGroup(0, 6, "Scene1"),
 		//new LevelGroup(4, 11, "Scene2"),
-		new LevelGroup(4, 11, "Scene2"),
+		new LevelGroup(7, 10, "Scene2"),
 		//new LevelGroup(12, 19, "Scene3")
-		new LevelGroup(12, 19, "Scene3")
+		new LevelGroup(11, 19, "Scene3")
 	};
 	private LevelGroup currentGroup;
 
