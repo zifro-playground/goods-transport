@@ -1,7 +1,7 @@
-taskdescription: Töm alla bilar på palmer. Hur många palmer kom med bilarna?
-startcode: totalt_palmer = 0\nfor i in range(antal_bilar):\n\tpalmer = scanna_antal_palmer()\n\ttöm_bilen()\n\tkör_framåt()\n\ttotalt_palmer = totalt_palmer + palmer\nsvara(totalt_palmer)
-precode: antal_bilar = 7
+taskdescription: Töm alla bilar på bord. Hur många bord kom med bilarna?
+precode: antal_bilar = 5
+startcode: totalt_bord = 0\nfor i in range(antal_bilar):\n\tbord = scanna_antal_bord()\n\ttöm_bilen()\n\tkör_framåt()\n\ttotalt_bord = totalt_bord + bord\nsvara(totalt_bord)
 rowlimit: 20
-smartbuttons: töm_bilen(), kör_framåt(), svara(), scanna_antal_palmer()
-functions: ScanPalms, EmptyCar, DriveForward
+smartbuttons: töm_bilen(), kör_framåt(), svara(), scanna_antal_bord()
+functions: ScanTables, EmptyCar, DriveForward
 

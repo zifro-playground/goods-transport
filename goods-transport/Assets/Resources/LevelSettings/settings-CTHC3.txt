@@ -1,4 +1,5 @@
 taskdescription: Töm alla bilar på alla varor. Hur många varor kom med bilarna?
-precode: antal_bilar = 7
+precode: antal_bilar = 4
 rowlimit: 20
-smartbuttons: töm_bilen(), åk_framåt, svara()
+smartbuttons: töm_bilen(), kör_framåt(), svara()
+functions: EmptyCar, DriveForward
