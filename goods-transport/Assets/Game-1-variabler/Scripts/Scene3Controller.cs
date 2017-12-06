@@ -37,19 +37,6 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		}
 	}
 
-	public void SetLevelAnswer(Case caseData)
-	{
-		int itemsInCars = 0;
-		foreach (Car car in caseData.cars)
-		{
-			foreach (Section section in car.sections)
-			{
-				itemsInCars += section.itemCount;
-			}
-		}
-		PMWrapper.SetCaseAnswer(itemsInCars);
-	}
-
 	public void SetPrecode(Case caseData)
 	{
 		string precode = "antal_bilar = " + caseData.cars.Count;

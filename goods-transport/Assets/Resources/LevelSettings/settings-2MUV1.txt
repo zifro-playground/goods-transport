@@ -1,5 +1,4 @@
 taskdescription: Hur mycket väger träden totalt?
-precode: palmer = 12\ngranar = 10
 rowlimit: 20
 casecount: 3
 smartbuttons: svara()
