@@ -1065,7 +1065,7 @@
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "chair",
                   "itemCount": 21,
                   "rows": 6
                 }
@@ -1075,7 +1075,7 @@
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "chair",
                   "itemCount": 17,
                   "rows": 6
                 }
@@ -1085,7 +1085,7 @@
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "chair",
                   "itemCount": 18,
                   "rows": 6
                 }
@@ -1095,7 +1095,7 @@
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "chair",
                   "itemCount": 13,
                   "rows": 6
                 }
@@ -1105,7 +1105,7 @@
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "chair",
                   "itemCount": 24,
                   "rows": 6
                 }
