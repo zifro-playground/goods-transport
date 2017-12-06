@@ -1,5 +1,6 @@
 taskdescription: Töm alla bilar på palmer. Hur många palmer kom med bilarna?
 precode: antal_bilar = 7
-startcode: palmer = 0\nfor i in range(antal_bilar):\n\ttöm_bilen()\n\tpalmer = palmer + 5\nåk_framåt()\nsvara(palmer)
+startcode: palmer = 0\nfor i in range(antal_bilar):\n\ttöm_bilen()\n\tpalmer = palmer + 12\n\tkör_framåt()\nsvara(palmer)
 rowlimit: 20
 smartbuttons: töm_bilen(), åk_framåt, svara()
+functions: EmptyCar, DriveForward

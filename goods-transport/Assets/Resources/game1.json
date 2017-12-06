@@ -251,7 +251,7 @@
               ]
             }
           ],
-          "answer": 18
+          "answer": 13
         },
         {
           "cars":
@@ -277,7 +277,7 @@
               ]
             }
           ],
-          "answer": 14
+          "answer": 11
         },
         {
           "cars":
@@ -303,7 +303,7 @@
               ]
             }
           ],
-          "answer": 10
+          "answer": 9
         }
       ]
     },
@@ -335,57 +335,55 @@
               ]
             }
           ],
-          "answer": 17
+          "answer": 9
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "stolar",
-                  "itemCount": 8,
-                  "rows": 2
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 2,
-                  "rows": 2
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 7,
-                  "rows": 2
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "stolar",
+									"itemCount": 8,
+									"rows": 2
+								},
+								{
+									"type": "palmer",
+									"itemCount": 2,
+									"rows": 2
+								},
+								{
+									"type": "bord",
+									"itemCount": 7,
+									"rows": 2
+								}
+							]
+						}
+					],
+					"answer": 15
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "stolar",
-                  "itemCount": 3,
-                  "rows": 2
-                },
-                {
-                  "type": "palmer",
-                  "itemCount": 5,
-                  "rows": 2
-                },
-                {
-                  "type": "bord",
-                  "itemCount": 5,
-                  "rows": 2
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "stolar",
+									"itemCount": 3,
+									"rows": 2
+								},
+								{
+									"type": "palmer",
+									"itemCount": 5,
+									"rows": 2
+								},
+								{
+									"type": "bord",
+									"itemCount": 5,
+									"rows": 2
+								}
+							]
+						}
+					],
+					"answer": 8
         }
       ]
     },
@@ -559,49 +557,46 @@
       "cases":
       [
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "palmer",
-                  "itemCount": 11,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "palmer",
+									"itemCount": 11,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "palmer = 11"
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "palmer",
-                  "itemCount": 17,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "palmer",
+									"itemCount": 17,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "palmer = 17"
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "palmer",
-                  "itemCount": 3,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "palmer",
+									"itemCount": 3,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "palmer = 3"
         }
       ]
     },
@@ -610,49 +605,46 @@
       "cases":
       [
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 17,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "lampor",
+									"itemCount": 17,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "lampor = 17"
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 5,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "lampor",
+									"itemCount": 5,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "lampor = 5"
         },
         {
-          "cars":
-          [
-            {
-              "sections":
-              [
-                {
-                  "type": "lampor",
-                  "itemCount": 8,
-                  "rows": 6
-                }
-              ]
-            }
-          ]
+					"cars": [
+						{
+							"sections": [
+								{
+									"type": "lampor",
+									"itemCount": 8,
+									"rows": 6
+								}
+							]
+						}
+					],
+					"precode": "lampor = 8"
         }
       ]
     },

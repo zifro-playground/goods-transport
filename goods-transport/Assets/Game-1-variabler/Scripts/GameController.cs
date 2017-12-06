@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
+using System.Collections;
 
 public class GameController : MonoBehaviour, IPMCaseSwitched
 {
@@ -50,15 +51,27 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 
 		if (currentGroup.sceneName != newGroup.sceneName)
 		{
-			SceneManager.UnloadSceneAsync(currentGroup.sceneName);
-			SceneManager.LoadScene(newGroup.sceneName, LoadSceneMode.Additive);
-			LoadLevel(PMWrapper.currentLevel, caseNumber);
+			StartCoroutine(UnloadCurrentScene(newGroup, caseNumber));
 			currentGroup = newGroup;
 		}
 		else
 		{
 			LoadLevel(PMWrapper.currentLevel, caseNumber);
 		}
+	}
+
+	private IEnumerator UnloadCurrentScene(LevelGroup newGroup, int caseNumber)
+	{
+		AsyncOperation async = SceneManager.UnloadSceneAsync(currentGroup.sceneName);
+		yield return async;
+		StartCoroutine(LoadNextScene(newGroup, caseNumber));
+	}
+
+	private IEnumerator LoadNextScene(LevelGroup newGroup, int caseNumber)
+	{
+		AsyncOperation async = SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
+		yield return async;
+		LoadLevel(PMWrapper.currentLevel, caseNumber);
 	}
 
 	private void LoadLevel(int level, int caseNumber)

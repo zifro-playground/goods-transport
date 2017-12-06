@@ -6,18 +6,18 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 	public int itemsUnloaded = 0;
 
 	LevelController levelController;
-	Case caseData;
-
+	
 	private void Start()
 	{
 		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-		caseData = levelController.caseData;
 	}
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
+			Case caseData = levelController.caseData;
+
 			int itemsToUnload = 0;
 
 			foreach (Section section in caseData.cars[0].sections)
@@ -28,15 +28,12 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 			if (itemsToUnload == itemsUnloaded)
 				PMWrapper.SetCaseCompleted();
 		}
-	}
-
-	public void SetLevelAnswer(Case caseData)
-	{
-		// This level does not use the AnswerFunction
+		itemsUnloaded = 0;
 	}
 
 	public void SetPrecode(Case caseData)
 	{
-		// This level needs no special precode
+		if (caseData.precode != null)
+			PMWrapper.preCode = caseData.precode;
 	}
 }

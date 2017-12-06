@@ -6,21 +6,20 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 	[HideInInspector]
 	public int carsUnloaded = 0;
 
-	private bool levelShouldBeAnswered = false;
-
-	LevelController levelController;
-	Case caseData;
+	private LevelController levelController;
 
 	private void Start()
 	{
 		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-		caseData = levelController.caseData;
 	}
+
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
+			Case caseData = levelController.caseData;
+
 			bool levelShouldBeAnswered = false;
 
 			// Should be moved to PMWrapper
@@ -31,10 +30,11 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 			}
 
 			int carsToUnload = caseData.cars.Count;
-
+			Debug.Log("target: " + carsToUnload + " actual: " + carsUnloaded);
 			if (carsToUnload == carsUnloaded && !levelShouldBeAnswered)
 				PMWrapper.SetCaseCompleted();
 		}
+		carsUnloaded = 0;
 	}
 
 	public void SetPrecode(Case caseData)
