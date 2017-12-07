@@ -12,7 +12,9 @@ public class CarMovement : MonoBehaviour
 	{
 		if (isMoving)
 		{
-			transform.Translate(transform.right * PMWrapper.speedMultiplier * speed);
+			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+
+			transform.Translate(transform.right * speed * gameSpeedExp);
 			if (transform.position.x > targetPos.x)
 			{
 				isMoving = false;

@@ -13,7 +13,12 @@ public class UnloadPalm : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("Palm").GetComponent<UnloadableItem>().isUnloading = true;
+		GameObject palm = GameObject.FindGameObjectWithTag("Palm");
+
+		if (palm == null)
+			PMWrapper.RaiseError(lineNumber, "Hittade ingen palm att lasta av.");
+
+		palm.GetComponent<UnloadableItem>().isUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<Scene2Controller>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}

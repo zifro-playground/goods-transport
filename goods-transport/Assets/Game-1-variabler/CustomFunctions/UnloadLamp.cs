@@ -13,7 +13,12 @@ public class UnloadLamp : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("Lamp").GetComponent<UnloadableItem>().isUnloading = true;
+		GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
+
+		if (lamp == null)
+			PMWrapper.RaiseError(lineNumber, "Hittade ingen lampa att lasta av.");
+
+		lamp.GetComponent<UnloadableItem>().isUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<Scene2Controller>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}

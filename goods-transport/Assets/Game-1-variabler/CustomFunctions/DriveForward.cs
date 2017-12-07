@@ -16,6 +16,9 @@ public class DriveForward : Compiler.Function
 		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 		LinkedList<GameObject> carsToMove = controller.activeCars;
 
+		if (carsToMove.Count == 0)
+			PMWrapper.RaiseError(lineNumber, "Hittar ingen bil att köra framåt.");
+
 		Bounds firstCarBounds = MyLibrary.CalculateBoundsInChildren(carsToMove.First.Value);
 		float firstCarLength = firstCarBounds.extents.x;
 		float secondCarLength = 0;

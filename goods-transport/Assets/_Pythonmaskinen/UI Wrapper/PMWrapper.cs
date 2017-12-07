@@ -294,7 +294,9 @@ public static class PMWrapper {
 
 
 	public static int currentCase {
-		get { return UISingleton.instance.levelHandler.currentLevel.caseHandler.currentCase; }
+		get {
+			return UISingleton.instance.levelHandler.currentLevel.caseHandler.currentCase;
+		}
 	}
 
 	/// <summary>

@@ -30,9 +30,15 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 			}
 
 			int carsToUnload = caseData.cars.Count;
-			Debug.Log("target: " + carsToUnload + " actual: " + carsUnloaded);
+
 			if (carsToUnload == carsUnloaded && !levelShouldBeAnswered)
 				PMWrapper.SetCaseCompleted();
+
+			if (carsUnloaded < carsToUnload)
+			{
+				string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";
+				PMWrapper.RaiseError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
+			}
 		}
 		carsUnloaded = 0;
 	}

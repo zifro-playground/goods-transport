@@ -16,8 +16,12 @@ public class EmptyCar : Compiler.Function
 		LinkedList<GameObject> carsToUnload = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().activeCars;
 
 		GameObject currentCar = carsToUnload.First.Value;
+		UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();
 
-		foreach (UnloadableItem item in currentCar.GetComponentsInChildren<UnloadableItem>())
+		if (itemsToUnload.Length == 0)
+			PMWrapper.RaiseError(lineNumber, "Kan inte tömma en tom bil. Kom ihåg att köra fram nästa bil innan du tömmer igen.");
+
+		foreach (UnloadableItem item in itemsToUnload)
 		{
 			if (item != null)
 				item.isUnloading = true;

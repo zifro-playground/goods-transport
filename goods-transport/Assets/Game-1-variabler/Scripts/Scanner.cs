@@ -23,8 +23,10 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 	{
 		if (isScanning)
 		{
+			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+
 			Vector3 targetDir = targetPos - scanner.position;
-			float step = speed * Time.deltaTime;
+			float step = speed * gameSpeedExp * Time.deltaTime;
 			Vector3 newDir = Vector3.RotateTowards(scanner.forward, targetDir, step, 0);
 
 			scanner.rotation = Quaternion.LookRotation(newDir);

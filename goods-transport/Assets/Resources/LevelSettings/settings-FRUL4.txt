@@ -1,5 +1,6 @@
 taskdescription: Lasta av alla lampor från bilen
 rowlimit: 10
 casecount: 3
+gamespeed: 1
 smartbuttons: lasta_av_lampa()
 functions: UnloadLamp

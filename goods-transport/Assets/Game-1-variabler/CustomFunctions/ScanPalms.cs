@@ -16,6 +16,9 @@ public class ScanPalms : Compiler.Function
 	{
 		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 
+		if (controller.activeCars.Count == 0)
+			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");
+
 		GameObject car = controller.activeCars.First.Value;
 		GameObject carPlatform = null;
 

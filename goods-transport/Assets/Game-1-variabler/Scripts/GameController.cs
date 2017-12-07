@@ -3,10 +3,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 using System.Collections;
+using PM;
 
-public class GameController : MonoBehaviour, IPMCaseSwitched
+public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 {
 	public string gameDataFileName;
+	public LevelController levelController;
 
 	public Case caseData;
 	private GameData gameData;
@@ -14,9 +16,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 	private LevelGroup[] allGroups = new LevelGroup[3]
 	{
 		new LevelGroup(0, 6, "Scene1"),
-		//new LevelGroup(4, 11, "Scene2"),
 		new LevelGroup(7, 10, "Scene2"),
-		//new LevelGroup(12, 19, "Scene3")
 		new LevelGroup(11, 19, "Scene3")
 	};
 	private LevelGroup currentGroup;
@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 	{
 		caseData = gameData.levels[level].cases[caseNumber];
 
-		GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().LoadLevel(caseData);
+		levelController.LoadLevel(caseData);
 	}
 
 	private LevelGroup GetGroup(int level)
@@ -89,5 +89,10 @@ public class GameController : MonoBehaviour, IPMCaseSwitched
 				return group;
 		}
 		throw new Exception("Current level number \"" + level + "\" does not fit into any existing group intervall");
+	}
+
+	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	{
+		LoadLevel(PMWrapper.currentLevel, 0);
 	}
 }

@@ -13,7 +13,12 @@ public class UnloadChair : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("Chair").GetComponent<UnloadableItem>().isUnloading = true;
+		GameObject chair = GameObject.FindGameObjectWithTag("Chair");
+
+		if (chair == null)
+			PMWrapper.RaiseError(lineNumber, "Hittade ingen stol att lasta av.");
+
+		chair.GetComponent<UnloadableItem>().isUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<Scene2Controller>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}
