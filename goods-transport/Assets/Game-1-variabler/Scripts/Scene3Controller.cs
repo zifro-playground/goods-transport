@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using PM;
 
-public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMWrongAnswer
 {
 	[HideInInspector]
 	public int carsUnloaded = 0;
 
 	private LevelController levelController;
+	private Case caseData;
 
 	private void Start()
 	{
 		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 	}
-
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
@@ -20,24 +20,16 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		{
 			Case caseData = levelController.caseData;
 
-			bool levelShouldBeAnswered = false;
-
-			// Should be moved to PMWrapper
-			foreach(Compiler.Function fun in UISingleton.instance.compiler.addedFunctions)
-			{
-				if (fun.GetType() == new AnswerFunction().GetType())
-					levelShouldBeAnswered = true;
-			}
-
 			int carsToUnload = caseData.cars.Count;
-
-			if (carsToUnload == carsUnloaded && !levelShouldBeAnswered)
-				PMWrapper.SetCaseCompleted();
 
 			if (carsUnloaded < carsToUnload)
 			{
 				string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";
-				PMWrapper.RaiseError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
+				PMWrapper.RaiseTaskError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
+			}
+			if (carsToUnload == carsUnloaded && !PMWrapper.levelShouldBeAnswered)
+			{
+				PMWrapper.SetCaseCompleted();
 			}
 		}
 		carsUnloaded = 0;
@@ -45,7 +37,19 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 
 	public void SetPrecode(Case caseData)
 	{
+		this.caseData = caseData;
 		string precode = "antal_bilar = " + caseData.cars.Count;
 		PMWrapper.preCode = precode;
+	}
+
+	public void OnPMWrongAnswer(string answer)
+	{
+		int correctAnswer = caseData.answer;
+		int guess = int.Parse(answer.Replace(".", ""));
+
+		if (guess < correctAnswer)
+			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
+		else if (guess > correctAnswer)
+			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
 	}
 }

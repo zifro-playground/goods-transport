@@ -31,7 +31,7 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 			if (itemsUnloaded < itemsToUnload)
 			{
 				string itemsSingularOrPlural = itemsToUnload - itemsUnloaded == 1 ? (itemsToUnload - itemsUnloaded) + " vara" : (itemsToUnload - itemsUnloaded) + " varor";
-				PMWrapper.RaiseError("Alla varor blev inte avlastade. Nu är det " + itemsSingularOrPlural + " som inte lastas av.");
+				PMWrapper.RaiseTaskError("Alla varor blev inte avlastade. Nu är det " + itemsSingularOrPlural + " som inte lastas av.");
 			}
 		}
 		itemsUnloaded = 0;
