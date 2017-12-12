@@ -28,12 +28,14 @@ namespace PM.Level
 			type = VariableTypes.number;
 			this.answer = answers.Select(ans => ans.ToString()).ToArray();
 		}
+
 		public LevelAnswer(params string[] answers)
 		{
 			parameterAmount = answers.Length;
 			type = VariableTypes.textString;
 			this.answer = answers;
 		}
+
 		public LevelAnswer(params bool[] answers)
 		{
 			parameterAmount = answers.Length;
