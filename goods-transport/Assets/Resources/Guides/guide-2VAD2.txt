@@ -1,1 +1,1 @@
-1: Nu är det din tur!
+3: Nu är det din tur!
