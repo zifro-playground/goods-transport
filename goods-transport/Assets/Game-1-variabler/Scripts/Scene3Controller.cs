@@ -21,7 +21,7 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 			Case caseData = levelController.caseData;
 
 			int carsToUnload = caseData.cars.Count;
-
+			print(carsUnloaded);
 			if (carsUnloaded < carsToUnload)
 			{
 				string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";

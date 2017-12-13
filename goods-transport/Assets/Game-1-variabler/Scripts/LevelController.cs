@@ -45,7 +45,7 @@ public class LevelController : MonoBehaviour {
 	public void LoadLevel(Case caseData)
 	{
 		this.caseData = caseData;
-
+		
 		BuildItemDictionary();
 		RemoveOldAssets();
 		CreateAssets();

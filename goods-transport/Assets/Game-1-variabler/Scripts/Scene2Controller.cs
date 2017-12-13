@@ -17,7 +17,8 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
 			Case caseData = levelController.caseData;
-
+			print("Precode: " + caseData.precode);
+			
 			int itemsToUnload = 0;
 
 			foreach (Section section in caseData.cars[0].sections)
@@ -25,14 +26,15 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 				itemsToUnload += section.itemCount;
 			}
 
-			if (itemsToUnload == itemsUnloaded)
-				PMWrapper.SetCaseCompleted();
-
 			if (itemsUnloaded < itemsToUnload)
 			{
 				string itemsSingularOrPlural = itemsToUnload - itemsUnloaded == 1 ? (itemsToUnload - itemsUnloaded) + " vara" : (itemsToUnload - itemsUnloaded) + " varor";
 				PMWrapper.RaiseTaskError("Alla varor blev inte avlastade. Nu är det " + itemsSingularOrPlural + " som inte lastas av.");
 			}
+
+			if (itemsToUnload == itemsUnloaded)
+				PMWrapper.SetCaseCompleted();
+
 		}
 		itemsUnloaded = 0;
 	}
