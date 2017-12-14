@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Scene1Controller : MonoBehaviour, ISceneController, IPMWrongAnswer
+public class Scene1Controller : MonoBehaviour, ISceneController, IPMWrongAnswer, IPMCorrectAnswer
 {
 	Case caseData;
 
@@ -27,5 +27,10 @@ public class Scene1Controller : MonoBehaviour, ISceneController, IPMWrongAnswer
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
 		else if (guess > correctAnswer)
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
+	}
+
+	public void OnPMCorrectAnswer(string answer)
+	{
+		PMWrapper.SetCaseCompleted();
 	}
 }

@@ -1,24 +1,29 @@
 ﻿using PM;
 using UnityEngine;
 
-public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
 	public int itemsUnloaded = 0;
 
 	LevelController levelController;
-	
+	Case caseData;
+
+
 	private void Start()
 	{
 		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
+		caseData = levelController.caseData;
+	}
+
+	public void OnPMCompilerStarted()
+	{
+		caseData = levelController.caseData;
 	}
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
-		{
-			Case caseData = levelController.caseData;
-			print("Precode: " + caseData.precode);
-			
+		{			
 			int itemsToUnload = 0;
 
 			foreach (Section section in caseData.cars[0].sections)
@@ -44,4 +49,5 @@ public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		if (caseData.precode != null)
 			PMWrapper.preCode = caseData.precode;
 	}
+
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using PM;
 
-public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMWrongAnswer
+public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer
 {
 	[HideInInspector]
 	public int carsUnloaded = 0;
@@ -14,25 +14,20 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 	}
 
+	public void OnPMCompilerStarted()
+	{
+		carsUnloaded = 0;
+	}
+
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			Case caseData = levelController.caseData;
-
-			int carsToUnload = caseData.cars.Count;
-			print(carsUnloaded);
-			if (carsUnloaded < carsToUnload)
+			if (!PMWrapper.levelShouldBeAnswered)
 			{
-				string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";
-				PMWrapper.RaiseTaskError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
-			}
-			if (carsToUnload == carsUnloaded && !PMWrapper.levelShouldBeAnswered)
-			{
-				PMWrapper.SetCaseCompleted();
+				WinIfCarsUnloaded();
 			}
 		}
-		carsUnloaded = 0;
 	}
 
 	public void SetPrecode(Case caseData)
@@ -52,4 +47,27 @@ public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStop
 		else if (guess > correctAnswer)
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
 	}
+
+	public void OnPMCorrectAnswer(string answer)
+	{
+		WinIfCarsUnloaded();
+	}
+
+	private void WinIfCarsUnloaded()
+	{
+		Case caseData = levelController.caseData;
+
+		int carsToUnload = caseData.cars.Count;
+
+		if (carsUnloaded < carsToUnload)
+		{
+			string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";
+			PMWrapper.RaiseTaskError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
+		}
+		if (carsToUnload == carsUnloaded)
+		{
+			PMWrapper.SetCaseCompleted();
+		}
+	}
+
 }
