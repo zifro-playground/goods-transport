@@ -42,7 +42,7 @@ public class LevelController : MonoBehaviour {
 		}
 	}
 
-	public void LoadLevel(Case caseData)
+	public void LoadCase(Case caseData)
 	{
 		this.caseData = caseData;
 		

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Scene1Controller : MonoBehaviour, ISceneController, IPMWrongAnswer, IPMCorrectAnswer
+public class SceneController1_1 : MonoBehaviour, ISceneController, IPMWrongAnswer, IPMCorrectAnswer
 {
 	Case caseData;
 

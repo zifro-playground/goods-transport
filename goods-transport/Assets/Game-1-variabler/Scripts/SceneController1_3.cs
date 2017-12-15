@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using PM;
 
-public class Scene3Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer
+public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer
 {
 	[HideInInspector]
 	public int carsUnloaded = 0;

@@ -1,7 +1,7 @@
 ﻿using PM;
 using UnityEngine;
 
-public class Scene2Controller : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
+public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
 	public int itemsUnloaded = 0;
 

@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 		}
 		else
 		{
-			LoadLevel(PMWrapper.currentLevel, caseNumber);
+			LoadCase(PMWrapper.currentLevel, caseNumber);
 		}
 	}
 
@@ -74,14 +74,14 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 	{
 		AsyncOperation async = SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
 		yield return async;
-		LoadLevel(PMWrapper.currentLevel, caseNumber);
+		LoadCase(PMWrapper.currentLevel, caseNumber);
 	}
 
-	private void LoadLevel(int level, int caseNumber)
+	private void LoadCase(int level, int caseNumber)
 	{
 		caseData = gameData.levels[level].cases[caseNumber];
 
-		levelController.LoadLevel(caseData);
+		levelController.LoadCase(caseData);
 	}
 
 	private LevelGroup GetGroup(int level)
@@ -96,6 +96,6 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
-		LoadLevel(PMWrapper.currentLevel, 0);
+		LoadCase(PMWrapper.currentLevel, 0);
 	}
 }

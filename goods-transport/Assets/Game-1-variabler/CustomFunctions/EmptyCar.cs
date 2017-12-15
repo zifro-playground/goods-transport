@@ -26,7 +26,7 @@ public class EmptyCar : Compiler.Function
 			if (item != null)
 				item.isUnloading = true;
 		}
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<Scene3Controller>().carsUnloaded += 1;
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_3>().carsUnloaded += 1;
 
 		return new Compiler.Variable();
 	}
