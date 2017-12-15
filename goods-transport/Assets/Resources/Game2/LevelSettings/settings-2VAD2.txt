@@ -1,0 +1,4 @@
+taskdescription: Hur många varor finns i bilen?
+rowlimit: 20
+casecount: 3
+smartbuttons: svara()

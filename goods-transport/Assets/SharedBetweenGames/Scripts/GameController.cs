@@ -9,24 +9,27 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 {
 	public string gameDataFileName;
 	public LevelController levelController;
+	public LevelGroup[] levelGroups;
 
 	public Case caseData;
 	private GameData gameData;
 
-	private LevelGroup[] allGroups = new LevelGroup[3]
+	[Serializable]
+	public struct LevelGroup
 	{
-		new LevelGroup(0, 6, "Scene1"),
-		new LevelGroup(7, 10, "Scene2"),
-		new LevelGroup(11, 19, "Scene3")
-	};
+		public int startLevel;
+		public int endLevel;
+		public string sceneName;
+	}
+
 	private LevelGroup currentGroup;
 
 	void Awake()
 	{
 		LoadGameData();
 
-		SceneManager.LoadScene("Scene1", LoadSceneMode.Additive);
-		currentGroup = allGroups[0];
+		SceneManager.LoadScene(levelGroups[0].sceneName, LoadSceneMode.Additive);
+		currentGroup = levelGroups[0];
 	}
 
 	private void LoadGameData()
@@ -83,7 +86,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 
 	private LevelGroup GetGroup(int level)
 	{
-		foreach (LevelGroup group in allGroups)
+		foreach (LevelGroup group in levelGroups)
 		{
 			if (level >= group.startLevel && level <= group.endLevel)
 				return group;
