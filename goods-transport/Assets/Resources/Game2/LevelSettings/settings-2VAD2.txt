@@ -1,4 +1,6 @@
 taskdescription: Hur många varor finns i bilen?
 rowlimit: 20
+startcode: for i in range(bilar):\n\tvarusort = scanna_sort()\n\tif varusort == "lampor":\n\t\tåk_till_vänster()\n\telse:\n\t\tkör_framåt()
 casecount: 3
-smartbuttons: svara()
+smartbuttons: scanna_sort(), åk_till_vänster(), kör_framåt()
+functions: ScanType, DriveForward

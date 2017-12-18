@@ -13,7 +13,7 @@ public class EmptyCar : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		LinkedList<GameObject> carsToUnload = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>().activeCars;
+		LinkedList<GameObject> carsToUnload = LevelController.activeCars;
 
 		GameObject currentCar = carsToUnload.First.Value;
 		UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();

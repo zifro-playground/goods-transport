@@ -5,6 +5,7 @@ public class SceneController2_1 : MonoBehaviour, ISceneController
 {
 	public void SetPrecode(Case caseData)
 	{
-		PMWrapper.preCode = caseData.precode;
+		if (caseData.precode != null)
+			PMWrapper.preCode = caseData.precode;
 	}
 }

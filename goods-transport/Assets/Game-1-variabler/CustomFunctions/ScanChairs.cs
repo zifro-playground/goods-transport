@@ -14,9 +14,7 @@ public class ScanChairs : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-
-		GameObject car = controller.activeCars.First.Value;
+		GameObject car = LevelController.activeCars.First.Value;
 
 		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
 		scanner.Scan(car);
@@ -29,7 +27,7 @@ public class ScanChairs : Compiler.Function
 				chairCount++;
 		}
 
-		scanner.SetDisplayText(chairCount.ToString());
+		scanner.SetDisplayText(chairCount);
 
 		return new Variable("chaircount", chairCount);
 	}

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using PM;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour {
@@ -193,6 +192,9 @@ public class LevelController : MonoBehaviour {
 
 	public static GameObject GetFirstCar()
 	{
+		if (activeCars.Count == 0)
+			return null;
+
 		return activeCars.First.Value;
 	}
 }

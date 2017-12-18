@@ -13,8 +13,7 @@ public class DriveForward : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-		LinkedList<GameObject> carsToMove = controller.activeCars;
+		LinkedList<GameObject> carsToMove = LevelController.activeCars;
 
 		if (carsToMove.Count == 0)
 			PMWrapper.RaiseError(lineNumber, "Hittar ingen bil att köra framåt.");
@@ -29,6 +28,7 @@ public class DriveForward : Compiler.Function
 			secondCarLength = secondCarBounds.extents.x;
 		}
 		
+		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
 		float distance = firstCarLength + controller.carSpacing + secondCarLength;
 
 		LinkedListNode<GameObject> carNode = carsToMove.First;
