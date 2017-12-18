@@ -25,7 +25,7 @@ public class LevelController : MonoBehaviour {
 	public Case caseData;
 
 	[HideInInspector]
-	public LinkedList<GameObject> activeCars = new LinkedList<GameObject>();
+	public static LinkedList<GameObject> activeCars = new LinkedList<GameObject>();
 
 	private Dictionary<string, GameObject> itemType;
 	private void BuildItemDictionary()
@@ -189,5 +189,10 @@ public class LevelController : MonoBehaviour {
 				b += 1;
 			}
 		}
+	}
+
+	public static GameObject GetFirstCar()
+	{
+		return activeCars.First.Value;
 	}
 }
