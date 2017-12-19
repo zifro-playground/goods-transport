@@ -24,7 +24,6 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
-		//Debug.Log("The left queue has " + leftQueue.Count + " cars in it.");
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
 			bool correct = CorrectSorting();

@@ -6,20 +6,23 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Game-1-variabler/Scenes/Main.unity
+    path: Assets/Game-1-variabler/Scenes/Game1-Main.unity
     guid: dfe1a25f6bbd90a4980e441b8db2d9e1
   - enabled: 1
-    path: Assets/Game-1-variabler/Scenes/Scene1.unity
+    path: Assets/Game-1-variabler/Scenes/Game1-Scene1.unity
     guid: 34c84c8fd6952cc43b09a84276358e2f
   - enabled: 1
-    path: Assets/Game-1-variabler/Scenes/Scene2.unity
+    path: Assets/Game-1-variabler/Scenes/Game1-Scene2.unity
     guid: 4273d46c6b224c442b7953615820bd06
   - enabled: 1
-    path: Assets/Game-1-variabler/Scenes/Scene3.unity
+    path: Assets/Game-1-variabler/Scenes/Game1-Scene3.unity
     guid: 4fb2f280bab799b4aa26beab1e70a49b
   - enabled: 1
-    path: Assets/Game-2-if/Scenes/Main.unity
+    path: Assets/Game-2-if/Scenes/Game2-Main.unity
     guid: 8c0d850f125258e4fbdb048f3dd01821
   - enabled: 1
     path: Assets/Game-2-if/Scenes/Game2-Scene1.unity
     guid: c9e4a93795d51f841a2e7522f0579b52
+  - enabled: 1
+    path: Assets/Game-2-if/Scenes/Game2-Scene2.unity
+    guid: ba57d8a1e47eac644911d9092b569678
