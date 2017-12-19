@@ -13,7 +13,9 @@ public class DriveStraight : Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		Debug.Log("Åker rakt");
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().forwardQueue.Add(CarQueue.GetFirstCar());
+		CarQueue.DriveQueueForward(lineNumber);
+
 		return new Variable();
 	}
 }

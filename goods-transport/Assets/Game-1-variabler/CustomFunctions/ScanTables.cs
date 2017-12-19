@@ -14,7 +14,7 @@ public class ScanTables : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		GameObject car = LevelController.activeCars.First.Value;
+		GameObject car = CarQueue.GetFirstCar();
 
 		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
 		scanner.Scan(car);

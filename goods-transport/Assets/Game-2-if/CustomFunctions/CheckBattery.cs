@@ -13,8 +13,7 @@ public class CheckBattery : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		int batteryLevel = 100;
-		Debug.Log("Kollar batteriet... Nuvarande nivå är: " + batteryLevel);
+		int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().batteryLevel;
 
 		return new Variable("BatteryLevel", batteryLevel);
 	}

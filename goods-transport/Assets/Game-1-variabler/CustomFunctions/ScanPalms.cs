@@ -14,7 +14,7 @@ public class ScanPalms : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		GameObject car = LevelController.GetFirstCar();
+		GameObject car = CarQueue.GetFirstCar();
 
 		if (car == null)
 			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");

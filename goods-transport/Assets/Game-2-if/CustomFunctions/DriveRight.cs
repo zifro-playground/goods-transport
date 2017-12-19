@@ -13,7 +13,9 @@ public class DriveRight : Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		Debug.Log("Åker höger");
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().rightQueue.Add(CarQueue.GetFirstCar());
+		CarQueue.DriveQueueForward(lineNumber);
+
 		return new Variable();
 	}
 }

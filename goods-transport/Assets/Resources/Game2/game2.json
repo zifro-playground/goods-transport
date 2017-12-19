@@ -21,55 +21,76 @@
                   "itemCount": 7,
                   "rows": 3
                 }
-              ]
-            }
-          ],
-          "precode": "antal_bilar = 1",
-          "answer": 18
-        },
-        {
-          "cars":
-          [
+              ],
+              "batteryLevel": 100
+            },
             {
               "sections":
               [
                 {
                   "type": "lampor",
-                  "itemCount": 9,
-                  "rows": 4
+                  "itemCount": 11,
+                  "rows": 3
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 4,
-                  "rows": 2
+                  "itemCount": 7,
+                  "rows": 3
                 }
-              ]
-            }
-          ],
-          "precode": "antal_bilar = 1",
-          "answer": 13
-        },
-        {
-          "cars":
-          [
+              ],
+              "batteryLevel": 75
+            },
             {
               "sections":
               [
                 {
                   "type": "lampor",
-                  "itemCount": 5,
+                  "itemCount": 11,
                   "rows": 3
                 },
                 {
                   "type": "palmer",
-                  "itemCount": 1,
+                  "itemCount": 7,
                   "rows": 3
                 }
-              ]
+              ],
+              "batteryLevel": 38
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 44
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 12
             }
           ],
-          "precode": "antal_bilar = 1",
-          "answer": 6
+          "precode": "antal_bilar = 5",
+          "chargeTrigger": 40
         }
       ]
     },
@@ -131,7 +152,13 @@
               ]
             }
           ],
-          "precode": "bilar = 5"
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "palmer"
+          }
         }
       ]
     },
@@ -193,7 +220,13 @@
               ]
             }
           ],
-          "precode": "bilar = 5"
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
         },
         {
           "cars":
@@ -249,7 +282,13 @@
               ]
             }
           ],
-          "precode": "bilar = 5"
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
         },
         {
           "cars":
@@ -305,7 +344,13 @@
               ]
             }
           ],
-          "precode": "bilar = 5"
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
         }
       ]
     }
