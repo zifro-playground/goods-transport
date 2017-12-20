@@ -1,0 +1,5 @@
+// guide-master for game 1 - variables
+// Example: Game1/Guides/guide-2VAD1
+-
+-
+-
