@@ -62,6 +62,13 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 	public void SetDisplayText(string text)
 	{
 		display.text = text;
+		// TODO change the size of the display?
+	}
+
+	public void SetDisplayText(int text)
+	{
+		display.text = text.ToString();
+		// TODO change the size of the display?
 	}
 
 	private void DisableScanner()

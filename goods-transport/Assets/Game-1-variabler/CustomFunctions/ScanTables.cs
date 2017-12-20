@@ -14,9 +14,7 @@ public class ScanTables : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-
-		GameObject car = controller.activeCars.First.Value;
+		GameObject car = CarQueue.GetFirstCar();
 
 		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
 		scanner.Scan(car);
@@ -29,7 +27,7 @@ public class ScanTables : Compiler.Function
 				tableCount++;
 		}
 
-		scanner.SetDisplayText(tableCount.ToString());
+		scanner.SetDisplayText(tableCount);
 
 		return new Variable("tablecount", tableCount);
 	}

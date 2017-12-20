@@ -6,14 +6,6 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 	[HideInInspector]
 	public int carsUnloaded = 0;
 
-	private LevelController levelController;
-	private Case caseData;
-
-	private void Start()
-	{
-		levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-	}
-
 	public void OnPMCompilerStarted()
 	{
 		carsUnloaded = 0;
@@ -32,14 +24,13 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void SetPrecode(Case caseData)
 	{
-		this.caseData = caseData;
 		string precode = "antal_bilar = " + caseData.cars.Count;
 		PMWrapper.preCode = precode;
 	}
 
 	public void OnPMWrongAnswer(string answer)
 	{
-		int correctAnswer = caseData.answer;
+		int correctAnswer = LevelController.caseData.answer;
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
@@ -55,9 +46,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private void WinIfCarsUnloaded()
 	{
-		Case caseData = levelController.caseData;
-
-		int carsToUnload = caseData.cars.Count;
+		int carsToUnload = LevelController.caseData.cars.Count;
 
 		if (carsUnloaded < carsToUnload)
 		{

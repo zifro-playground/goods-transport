@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using PM;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour {
@@ -21,30 +20,29 @@ public class LevelController : MonoBehaviour {
 	public float carPadding = 0.4f;
 	private float boxLength = 1; // is set from CreateAssets()
 
-	[HideInInspector]
-	public Case caseData;
+	private GameObject queue;
 
 	[HideInInspector]
-	public LinkedList<GameObject> activeCars = new LinkedList<GameObject>();
+	public static Case caseData;
 
-	private Dictionary<string, GameObject> itemType;
+	private Dictionary<string, GameObject> itemTypeToPrefab;
 	private void BuildItemDictionary()
 	{
-		if (itemType == null)
+		if (itemTypeToPrefab == null)
 		{
-			itemType = new Dictionary<string, GameObject>();
+			itemTypeToPrefab = new Dictionary<string, GameObject>();
 
-			itemType.Add("palmer", palmPrefab);
-			itemType.Add("granar", treePrefab);
-			itemType.Add("bord", tablePrefab);
-			itemType.Add("lampor", lampPrefab);
-			itemType.Add("stolar", chairPrefab);
+			itemTypeToPrefab.Add("palmer", palmPrefab);
+			itemTypeToPrefab.Add("granar", treePrefab);
+			itemTypeToPrefab.Add("bord", tablePrefab);
+			itemTypeToPrefab.Add("lampor", lampPrefab);
+			itemTypeToPrefab.Add("stolar", chairPrefab);
 		}
 	}
 
-	public void LoadCase(Case caseData)
+	public void LoadCase(Case newCaseData)
 	{
-		this.caseData = caseData;
+		caseData = newCaseData;
 		
 		BuildItemDictionary();
 		RemoveOldAssets();
@@ -55,15 +53,15 @@ public class LevelController : MonoBehaviour {
 
 	private void RemoveOldAssets()
 	{
-		foreach (GameObject obj in activeCars)
-		{
-			Destroy(obj);
-		}
-		activeCars.Clear();
+		CarQueue.RemoveAllCars();
+		Destroy(queue);
 	}
 
 	private void CreateAssets()
 	{
+		queue = new GameObject("Queue");
+		queue.AddComponent<CarQueue>();
+
 		float boxLength = boxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
 		float previousCarPosition = 0;
 
@@ -71,6 +69,10 @@ public class LevelController : MonoBehaviour {
 		{
 			GameObject carObj = new GameObject("Car");
 			carObj.AddComponent<CarMovement>();
+			carObj.AddComponent<CarInfo>();
+			carObj.GetComponent<CarInfo>().batteryLevel = carData.batteryLevel;
+
+			carObj.transform.SetParent(queue.transform);
 
 			GameObject platform = Instantiate(carPlatformPrefab);
 			GameObject front = Instantiate(carFrontPrefab);
@@ -79,7 +81,6 @@ public class LevelController : MonoBehaviour {
 			front.transform.SetParent(carObj.transform);
 
 			RescaleCar(carData, platform, front);
-			activeCars.AddLast(carObj);
 
 			// Position car in queue
 			float carPosX = previousCarPosition;
@@ -117,7 +118,8 @@ public class LevelController : MonoBehaviour {
 					}
 
 				}
-				PlaceItems(itemPositions, carObj, itemType[section.type], section.itemCount);
+				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
+				carObj.GetComponent<CarInfo>().cargoType = section.type;
 
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
 				sectionLeftEnd += sectionLength;

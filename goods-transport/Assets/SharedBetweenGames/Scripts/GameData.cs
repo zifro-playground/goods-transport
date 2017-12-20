@@ -10,6 +10,14 @@ public class Section
 public class Car
 {
 	public List<Section> sections { get; set; }
+	public int batteryLevel { get; set; }
+}
+
+public class Sorting
+{
+	public string leftType { get; set; }
+	public string rightType { get; set; }
+	public string forwardType { get; set; }
 }
 
 public class Case
@@ -17,6 +25,8 @@ public class Case
 	public List<Car> cars { get; set; }
 	public int answer { get; set; }
 	public string precode { get; set; }
+	public Sorting correctSorting { get; set; }
+	public int chargeTrigger { get; set; }
 }
 
 public class Level

@@ -14,12 +14,11 @@ public class ScanPalms : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
+		GameObject car = CarQueue.GetFirstCar();
 
-		if (controller.activeCars.Count == 0)
+		if (car == null)
 			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");
 
-		GameObject car = controller.activeCars.First.Value;
 		GameObject carPlatform = null;
 
 		// Find the car platform to focus on when scanning
@@ -42,7 +41,7 @@ public class ScanPalms : Compiler.Function
 				palmCount++;
 		}
 
-		scanner.SetDisplayText(palmCount.ToString());
+		scanner.SetDisplayText(palmCount);
 
 		return new Variable("palmCount", palmCount);
 	}

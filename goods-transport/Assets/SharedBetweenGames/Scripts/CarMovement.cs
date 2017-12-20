@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CarMovement : MonoBehaviour 
+public class CarMovement : MonoBehaviour
 {
 	public float speed = 0.3f;
 
@@ -30,6 +30,6 @@ public class CarMovement : MonoBehaviour
 	{
 		targetPos = new Vector3(transform.position.x + distance, transform.position.y, transform.position.z);
 		isMoving = true;
-		this.shouldDestroy = shouldDestroy;
+		//this.shouldDestroy = shouldDestroy;
 	}
 }

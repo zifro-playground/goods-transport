@@ -1,210 +1,360 @@
 {
-	"levels": [
-		{
-			"id": "2VAD1",
-			"cases": [
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 11,
-									"rows": 3
-								},
-								{
-									"type": "palmer",
-									"itemCount": 7,
-									"rows": 3
-								}
-							]
-						}
-					],
-					"precode": "antal_bilar = 1",
-					"answer": 18
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 9,
-									"rows": 4
-								},
-								{
-									"type": "palmer",
-									"itemCount": 4,
-									"rows": 2
-								}
-							]
-						}
-					],
-					"precode": "antal_bilar = 1",
-					"answer": 13
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 5,
-									"rows": 3
-								},
-								{
-									"type": "palmer",
-									"itemCount": 1,
-									"rows": 3
-								}
-							]
-						}
-					],
-					"precode": "antal_bilar = 1",
-					"answer": 6
-				}
-			]
-		},
-		{
-			"id": "2VAD2",
-			"cases": [
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 12,
-									"rows": 3
-								},
-								{
-									"type": "stolar",
-									"itemCount": 7,
-									"rows": 3
-								}
-							]
-						}
-					],
-					"answer": 19
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 10,
-									"rows": 3
-								},
-								{
-									"type": "stolar",
-									"itemCount": 5,
-									"rows": 3
-								}
-							]
-						}
-					],
-					"answer": 15
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 14,
-									"rows": 4
-								},
-								{
-									"type": "stolar",
-									"itemCount": 7,
-									"rows": 2
-								}
-							]
-						}
-					],
-					"answer": 21
-				}
-			]
-		},
-		{
-			"id": "3VAD1",
-			"cases": [
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 7,
-									"rows": 2
-								},
-								{
-									"type": "palmer",
-									"itemCount": 7,
-									"rows": 2
-								},
-								{
-									"type": "stolar",
-									"itemCount": 3,
-									"rows": 2
-								}
-							]
-						}
-					],
-					"answer": 17
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 5,
-									"rows": 3
-								},
-								{
-									"type": "palmer",
-									"itemCount": 1,
-									"rows": 2
-								},
-								{
-									"type": "stolar",
-									"itemCount": 8,
-									"rows": 2
-								}
-							]
-						}
-					],
-					"answer": 14
-				},
-				{
-					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 6,
-									"rows": 2
-								},
-								{
-									"type": "palmer",
-									"itemCount": 8,
-									"rows": 2
-								},
-								{
-									"type": "stolar",
-									"itemCount": 5,
-									"rows": 2
-								}
-							]
-						}
-					],
-					"answer": 19
-				}
-			]
-		}
-	]
+  "levels":
+  [
+    {
+      "id": "2VAD1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 100
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 75
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 38
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 44
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ],
+              "batteryLevel": 12
+            }
+          ],
+          "precode": "antal_bilar = 5",
+          "chargeTrigger": 40
+        }
+      ]
+    },
+    {
+      "id": "2VAD2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "palmer"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3VAD1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
+        }
+      ]
+    }
+  ]
 }
 
 // 16 levels that can be used

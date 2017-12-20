@@ -1,5 +1,6 @@
 taskdescription: Hur många varor finns i bilen?
-startcode: varor = lampor + palmer\nsvara(varor)
+startcode: for i in range(antal_bilar):\n\tbatterinivå = kolla_batterinivå()\n\tif batterinivå < 40:\n\t\tladda_bil()\n\tkör_framåt()
 rowlimit: 20
-casecount: 3
-smartbuttons: svara()
+casecount: 1
+smartbuttons: kolla_batterinivå(), ladda_bil(), kör_framåt()
+functions: CheckBattery, ChargeCar, DriveForward
