@@ -167,4 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isUnloading: 0
-  unloadingSpeed: 0.2
+  unloadingSpeed: 0.3

@@ -176,7 +176,7 @@ public class LevelController : MonoBehaviour {
 			throw new Exception("There are too few rows in comparison to the itemCount in car.");
 
 		int a = 0;
-		int b = 0;
+		int b = positionMatrix.GetLength(1) - 1;
 		for (int i = 0; i < itemCount; i++)
 		{
 			GameObject obj = Instantiate(itemPrefab);
@@ -188,7 +188,7 @@ public class LevelController : MonoBehaviour {
 			if (a >= positionMatrix.GetLength(0))
 			{
 				a = 0;
-				b += 1;
+				b -= 1;
 			}
 		}
 	}
