@@ -21,7 +21,8 @@
                   "itemCount": 7,
                   "rows": 3
                 }
-              ]
+              ],
+							"color": "green"
             }
           ],
           "answer": 18
@@ -524,8 +525,7 @@
 									"itemCount": 11,
 									"rows": 6
 								}
-							],
-							"color": "red"
+							]
             }
           ]
         }

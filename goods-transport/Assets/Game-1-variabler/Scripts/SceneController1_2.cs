@@ -10,7 +10,7 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void OnPMCompilerStarted()
 	{
-		// Can not be loaded in OnCompilerStopped since it switches case and replaces LevelController.caseData with data from case 0
+		// Can not be loaded in OnCompilerStopped since the method also switches case and replaces LevelController.caseData with data from case 0
 		caseData = LevelController.caseData;
 	}
 
@@ -24,8 +24,6 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 			{
 				itemsToUnload += section.itemCount;
 			}
-
-			print("itemsToUnload: " + itemsToUnload + " itemsUnloaded " + itemsUnloaded);
 
 			if (itemsUnloaded < itemsToUnload)
 			{

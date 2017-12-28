@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,8 @@ public class LevelController : MonoBehaviour {
 
 	[Header("Materials")]
 	public Material Red;
+	public Material Green;
+	public Material Blue;
 
 	[Header("Distances")]
 	public float carSpacing = 1;
@@ -49,6 +52,8 @@ public class LevelController : MonoBehaviour {
 		colorToMaterial = new Dictionary<string, Material>();
 
 		colorToMaterial.Add("red", Red);
+		colorToMaterial.Add("green", Green);
+		colorToMaterial.Add("blue", Blue);
 	}
 
 	public void LoadCase(Case newCaseData)
@@ -214,11 +219,16 @@ public class LevelController : MonoBehaviour {
 
 		if (carData.color == null)
 		{
-			// TODO set random color
-			material = Red;
+			material = GetRandomMaterial();
+		}
+		else if (!colorToMaterial.ContainsKey(carData.color))
+		{
+			Debug.Log("Warning! The color \"" + carData.color + "\" specified in json is not supported.");
+			material = GetRandomMaterial();
 		}
 		else
 		{
+
 			material = colorToMaterial[carData.color];
 		}
 
@@ -227,5 +237,11 @@ public class LevelController : MonoBehaviour {
 			Renderer rend = obj.GetComponent<Renderer>();
 			rend.material = material;
 		}
+	}
+	private Material GetRandomMaterial()
+	{
+		int randomIndex = UnityEngine.Random.Range(0, colorToMaterial.Keys.Count);
+		string color = colorToMaterial.Keys.ElementAt(randomIndex);
+		return colorToMaterial[color];
 	}
 }
