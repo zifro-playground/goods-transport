@@ -11,6 +11,7 @@ public class Car
 {
 	public List<Section> sections { get; set; }
 	public int batteryLevel { get; set; }
+	public string color { get; set; }
 }
 
 public class Sorting

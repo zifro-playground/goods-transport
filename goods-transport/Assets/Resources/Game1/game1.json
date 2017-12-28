@@ -518,14 +518,14 @@
           "cars":
           [
             {
-              "sections":
-              [
-                {
-                  "type": "palmer",
-                  "itemCount": 11,
-                  "rows": 6
-                }
-              ]
+							"sections": [
+								{
+									"type": "palmer",
+									"itemCount": 11,
+									"rows": 6
+								}
+							],
+							"color": "red"
             }
           ]
         }

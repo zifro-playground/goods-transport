@@ -1,9 +1,18 @@
-﻿using PM;
+﻿using System;
+using PM;
 using UnityEngine;
 
-public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
 	public int itemsUnloaded = 0;
+
+	private Case caseData;
+
+	public void OnPMCompilerStarted()
+	{
+		// Can not be loaded in OnCompilerStopped since it switches case and replaces LevelController.caseData with data from case 0
+		caseData = LevelController.caseData;
+	}
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
@@ -11,10 +20,12 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		{			
 			int itemsToUnload = 0;
 
-			foreach (Section section in LevelController.caseData.cars[0].sections)
+			foreach (Section section in caseData.cars[0].sections)
 			{
 				itemsToUnload += section.itemCount;
 			}
+
+			print("itemsToUnload: " + itemsToUnload + " itemsUnloaded " + itemsUnloaded);
 
 			if (itemsUnloaded < itemsToUnload)
 			{

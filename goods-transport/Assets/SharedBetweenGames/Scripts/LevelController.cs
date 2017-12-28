@@ -14,6 +14,9 @@ public class LevelController : MonoBehaviour {
 	public GameObject tablePrefab;
 	public GameObject chairPrefab;
 
+	[Header("Materials")]
+	public Material Red;
+
 	[Header("Distances")]
 	public float carSpacing = 1;
 	public float boxSpacing = 0.5f;
@@ -40,11 +43,21 @@ public class LevelController : MonoBehaviour {
 		}
 	}
 
+	private Dictionary<string, Material> colorToMaterial;
+	private void BuildColorDictionary()
+	{
+		colorToMaterial = new Dictionary<string, Material>();
+
+		colorToMaterial.Add("red", Red);
+	}
+
 	public void LoadCase(Case newCaseData)
 	{
 		caseData = newCaseData;
 		
 		BuildItemDictionary();
+		BuildColorDictionary();
+
 		RemoveOldAssets();
 		CreateAssets();
 		SetPrecode();
@@ -76,6 +89,8 @@ public class LevelController : MonoBehaviour {
 
 			GameObject platform = Instantiate(carPlatformPrefab);
 			GameObject front = Instantiate(carFrontPrefab);
+
+			SetCarMaterial(carData, new GameObject[] { platform, front });
 
 			platform.transform.SetParent(carObj.transform);
 			front.transform.SetParent(carObj.transform);
@@ -190,6 +205,27 @@ public class LevelController : MonoBehaviour {
 				a = 0;
 				b -= 1;
 			}
+		}
+	}
+
+	private void SetCarMaterial(Car carData, params GameObject[] objects)
+	{
+		Material material;
+
+		if (carData.color == null)
+		{
+			// TODO set random color
+			material = Red;
+		}
+		else
+		{
+			material = colorToMaterial[carData.color];
+		}
+
+		foreach (GameObject obj in objects)
+		{
+			Renderer rend = obj.GetComponent<Renderer>();
+			rend.material = material;
 		}
 	}
 }
