@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -256,7 +256,7 @@ Prefab:
         type: 2}
       propertyPath: carFrontPrefab
       value: 
-      objectReference: {fileID: 1263668506044726, guid: 3445250b1a29901468b2fcc2b22bc3bb,
+      objectReference: {fileID: 1706001209424536, guid: 36fb299bdfcbe174289e1b85da0c3de1,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 89d5bca969533774cbdb5220ac40251f, type: 2}
@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &743548328
 Light:
   m_ObjectHideFlags: 0
@@ -456,7 +456,7 @@ Prefab:
     - target: {fileID: 224826740196440030, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 224375313687469690, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -466,7 +466,7 @@ Prefab:
     - target: {fileID: 224375313687469690, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 235
       objectReference: {fileID: 0}
     - target: {fileID: 224798046438077428, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -476,7 +476,7 @@ Prefab:
     - target: {fileID: 224798046438077428, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 224627817055343580, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -486,7 +486,7 @@ Prefab:
     - target: {fileID: 224627817055343580, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 224606643059271430, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -496,7 +496,7 @@ Prefab:
     - target: {fileID: 224606643059271430, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -148.75027
       objectReference: {fileID: 0}
     - target: {fileID: 224191301835766582, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -506,7 +506,7 @@ Prefab:
     - target: {fileID: 224191301835766582, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -148.75027
       objectReference: {fileID: 0}
     - target: {fileID: 224151508601108990, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -516,7 +516,7 @@ Prefab:
     - target: {fileID: 224151508601108990, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -148.75024
       objectReference: {fileID: 0}
     - target: {fileID: 224001847468986644, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}

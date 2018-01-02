@@ -1,41 +1,41 @@
 fileFormatVersion: 2
-guid: a1924d7a87fe07549875348a13dc6690
-timeCreated: 1514487896
+guid: 0149a875f6e9dc94eb3ad64b61dc072c
+timeCreated: 1514903264
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Wheel
+    100002: Wheel.001
     400000: //RootNode
-    400002: Wheel
+    400002: Wheel.001
     2300000: //RootNode
-    2300002: Wheel
+    2300002: Wheel.001
     3300000: //RootNode
-    3300002: Wheel
-    4300000: Eco_front
-    4300002: Wheel
+    3300002: Wheel.001
+    4300000: Eco_front.001
+    4300002: Wheel.001
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Chassi
-    second: {fileID: 2100000, guid: 1f4fe945ddd7da54cbd264cd838cb317, type: 2}
+      name: Chassi.001
+    second: {fileID: 2100000, guid: 6435abe748acd8846b96dfc0a343dd0d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Rim
-    second: {fileID: 2100000, guid: ea07a83650cc5c94683c9b508817537e, type: 2}
+      name: Material.001
+    second: {fileID: 2100000, guid: 36efddff9d259a142a09ae18c0b43053, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tire
-    second: {fileID: 2100000, guid: 1cc98e4889e0b04469c81bfe0fd36f10, type: 2}
+      name: Material.003
+    second: {fileID: 2100000, guid: 64ae7077374175f4dbb9157953c1c475, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: window
-    second: {fileID: 2100000, guid: 26cae87f00a36864a811455f01d1b757, type: 2}
+      name: Tire.001
+    second: {fileID: 2100000, guid: 71097981eab802949bd9f32c2864b4a4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -86,7 +86,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 0
+    tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0
