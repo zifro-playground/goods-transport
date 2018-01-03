@@ -30,7 +30,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void OnPMWrongAnswer(string answer)
 	{
-		int correctAnswer = LevelController.caseData.answer;
+		int correctAnswer = LevelController.CaseData.answer;
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
@@ -46,7 +46,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private void WinIfCarsUnloaded()
 	{
-		int carsToUnload = LevelController.caseData.cars.Count;
+		int carsToUnload = LevelController.CaseData.cars.Count;
 
 		if (carsUnloaded < carsToUnload)
 		{

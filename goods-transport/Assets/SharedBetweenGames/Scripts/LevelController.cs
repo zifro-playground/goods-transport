@@ -3,17 +3,18 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour {
-
+public class LevelController : MonoBehaviour
+{
 	[Header("Prefabs")]
-	public GameObject carPlatformPrefab;
-	public GameObject carFrontPrefab;
-	public GameObject boxRowPrefab;
-	public GameObject palmPrefab;
-	public GameObject treePrefab;
-	public GameObject lampPrefab;
-	public GameObject tablePrefab;
-	public GameObject chairPrefab;
+	public GameObject CarPrefab;
+	public GameObject CarPlatformPrefab;
+	public GameObject CarFrontPrefab;
+	public GameObject BoxRowPrefab;
+	public GameObject PalmPrefab;
+	public GameObject TreePrefab;
+	public GameObject LampPrefab;
+	public GameObject TablePrefab;
+	public GameObject ChairPrefab;
 
 	[Header("Materials")]
 	public Material Red;
@@ -21,44 +22,48 @@ public class LevelController : MonoBehaviour {
 	public Material Blue;
 
 	[Header("Distances")]
-	public float carSpacing = 1;
-	public float boxSpacing = 0.5f;
-	public float carPadding = 0.4f;
-	private float boxLength = 1; // is set from CreateAssets()
+	public float CarSpacing = 1.5f;
+	public float BoxSpacing = 0.5f;
+	public float CarPadding = 0.4f;
+	private const float BoxLength = 1; // is set from CreateAssets()
 
 	private GameObject queue;
 
 	[HideInInspector]
-	public static Case caseData;
+	public static Case CaseData;
 
 	private Dictionary<string, GameObject> itemTypeToPrefab;
 	private void BuildItemDictionary()
 	{
 		if (itemTypeToPrefab == null)
 		{
-			itemTypeToPrefab = new Dictionary<string, GameObject>();
+			itemTypeToPrefab = new Dictionary<string, GameObject>
+			{
+				{"palmer", PalmPrefab},
+				{"granar", TreePrefab},
+				{"bord", TablePrefab},
+				{"lampor", LampPrefab},
+				{"stolar", ChairPrefab}
+			};
 
-			itemTypeToPrefab.Add("palmer", palmPrefab);
-			itemTypeToPrefab.Add("granar", treePrefab);
-			itemTypeToPrefab.Add("bord", tablePrefab);
-			itemTypeToPrefab.Add("lampor", lampPrefab);
-			itemTypeToPrefab.Add("stolar", chairPrefab);
 		}
 	}
 
 	private Dictionary<string, Material> colorToMaterial;
 	private void BuildColorDictionary()
 	{
-		colorToMaterial = new Dictionary<string, Material>();
+		colorToMaterial = new Dictionary<string, Material>
+		{
+			{"red", Red},
+			{"green", Green},
+			{"blue", Blue}
+		};
 
-		colorToMaterial.Add("red", Red);
-		colorToMaterial.Add("green", Green);
-		colorToMaterial.Add("blue", Blue);
 	}
 
 	public void LoadCase(Case newCaseData)
 	{
-		caseData = newCaseData;
+		CaseData = newCaseData;
 		
 		BuildItemDictionary();
 		BuildColorDictionary();
@@ -80,20 +85,18 @@ public class LevelController : MonoBehaviour {
 		queue = new GameObject("Queue");
 		queue.AddComponent<CarQueue>();
 
-		float boxLength = boxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
+		float boxLength = BoxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
 		float previousCarPosition = 0;
 
-		foreach (Car carData in caseData.cars)
+		foreach (Car carData in CaseData.cars)
 		{
-			GameObject carObj = new GameObject("Car");
-			carObj.AddComponent<CarMovement>();
-			carObj.AddComponent<CarInfo>();
+			GameObject carObj = Instantiate(CarPrefab);
 			carObj.GetComponent<CarInfo>().batteryLevel = carData.batteryLevel;
 
 			carObj.transform.SetParent(queue.transform);
 
-			GameObject platform = Instantiate(carPlatformPrefab);
-			GameObject front = Instantiate(carFrontPrefab);
+			GameObject platform = Instantiate(CarPlatformPrefab);
+			GameObject front = Instantiate(CarFrontPrefab);
 
 			SetCarMaterial(carData, new GameObject[] { platform, front });
 
@@ -123,17 +126,17 @@ public class LevelController : MonoBehaviour {
 
 				for (int j = 1; j <= section.rows; j++)
 				{
-					GameObject boxRow = Instantiate(boxRowPrefab);
+					GameObject boxRow = Instantiate(BoxRowPrefab);
 					boxRow.transform.SetParent(carObj.transform);
 
-					float rowCenter = sectionLeftEnd + carPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * boxSpacing;
+					float rowCenter = sectionLeftEnd + CarPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * BoxSpacing;
 					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 					
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
 					for (int k = 1; k <= 4; k++)
 					{
-						float colCenter = platformBounds.min.z + carPadding + ((2 * (float)k - 1) / 2) * boxLength + (k - 1) * boxSpacing;
+						float colCenter = platformBounds.min.z + CarPadding + ((2 * (float)k - 1) / 2) * boxLength + (k - 1) * BoxSpacing;
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
@@ -141,15 +144,15 @@ public class LevelController : MonoBehaviour {
 				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
 				carObj.GetComponent<CarInfo>().cargoType = section.type;
 
-				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
+				float sectionLength = section.rows * boxLength + (section.rows - 1) * BoxSpacing  + 2 * CarPadding;
 				sectionLeftEnd += sectionLength;
 			}
-			previousCarPosition = carObj.transform.position.x - carLength - carSpacing;
+			previousCarPosition = carObj.transform.position.x - carLength - CarSpacing;
 		}
 	}
 	private void SetAnswer()
 	{
-		PMWrapper.SetCaseAnswer(caseData.answer);
+		PMWrapper.SetCaseAnswer(CaseData.answer);
 	}
 	private void SetPrecode()
 	{
@@ -159,7 +162,7 @@ public class LevelController : MonoBehaviour {
 		if (sceneControllers.Length < 1)
 			throw new Exception("Could not find any class that implements ISceneController.");
 
-		sceneControllers[0].SetPrecode(caseData);
+		sceneControllers[0].SetPrecode(CaseData);
 	}
 
 	private void RescaleCar(Car carData, GameObject carPlatform, GameObject carFront)
@@ -180,8 +183,8 @@ public class LevelController : MonoBehaviour {
 				boxSpacingsNeeded += section.rows - 1;
 			}
 		}
-		float newCarWidth = 4 * boxLength + 3 * boxSpacing + 2 * carPadding;
-		float newPlatformLength = rowsInCar * boxLength + boxSpacingsNeeded * boxSpacing + 2 * sectionCount * carPadding;
+		float newCarWidth = 4 * BoxLength + 3 * BoxSpacing + 2 * CarPadding;
+		float newPlatformLength = rowsInCar * BoxLength + boxSpacingsNeeded * BoxSpacing + 2 * sectionCount * CarPadding;
 		
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;

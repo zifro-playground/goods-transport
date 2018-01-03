@@ -14,6 +14,7 @@ TagManager:
   - Table
   - Palm
   - CarPlatform
+  - Road
   layers:
   - Default
   - TransparentFX

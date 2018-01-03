@@ -22,7 +22,7 @@ public class EmptyCar : Compiler.Function
 		foreach (UnloadableItem item in itemsToUnload)
 		{
 			if (item != null)
-				item.isUnloading = true;
+				item.IsUnloading = true;
 		}
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_3>().carsUnloaded += 1;
 

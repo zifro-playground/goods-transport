@@ -18,7 +18,7 @@ public class UnloadPalm : Compiler.Function
 		if (palm == null)
 			PMWrapper.RaiseError(lineNumber, "Hittade ingen palm att lasta av.");
 
-		palm.GetComponent<UnloadableItem>().isUnloading = true;
+		palm.GetComponent<UnloadableItem>().IsUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}

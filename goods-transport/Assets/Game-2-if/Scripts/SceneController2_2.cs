@@ -39,7 +39,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-		string correctForwardType = LevelController.caseData.correctSorting.forwardType;
+		string correctForwardType = LevelController.CaseData.correctSorting.forwardType;
 		foreach (GameObject car in forwardQueue)
 		{
 			string type = car.GetComponent<CarInfo>().cargoType;

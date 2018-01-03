@@ -18,9 +18,9 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 		{
 			int carsToCharge = 0;
 
-			foreach (Car car in LevelController.caseData.cars)
+			foreach (Car car in LevelController.CaseData.cars)
 			{
-				if (car.batteryLevel < LevelController.caseData.chargeTrigger)
+				if (car.batteryLevel < LevelController.CaseData.chargeTrigger)
 					carsToCharge++;
 			}
 			
@@ -28,10 +28,10 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 			{
 				int carsNotCharged = carsToCharge - carsCharged;
 				string carsSingularOrPlural = carsNotCharged == 1 ? "1 bil" : carsNotCharged + " bilar";
-				PMWrapper.RaiseTaskError(carsSingularOrPlural + " blev inte laddade. Alla bilar med batterinivå < " + LevelController.caseData.chargeTrigger + " ska laddas.");
+				PMWrapper.RaiseTaskError(carsSingularOrPlural + " blev inte laddade. Alla bilar med batterinivå < " + LevelController.CaseData.chargeTrigger + " ska laddas.");
 			}
 			if (carsCharged > carsToCharge)
-				PMWrapper.RaiseTaskError("För många bilar laddades. Bara bilar med batterinivå < " + LevelController.caseData.chargeTrigger + " ska laddas.");
+				PMWrapper.RaiseTaskError("För många bilar laddades. Bara bilar med batterinivå < " + LevelController.CaseData.chargeTrigger + " ska laddas.");
 			if (carsCharged == carsToCharge)
 				PMWrapper.SetCaseCompleted();
 		}

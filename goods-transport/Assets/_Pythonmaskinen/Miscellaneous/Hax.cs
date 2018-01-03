@@ -14,7 +14,7 @@ namespace PM {
 			{
 				if (Input.GetKeyDown(KeyCode.RightArrow))
 				{
-					if (PMWrapper.isDemoingLevel)
+					if (PMWrapper.IsDemoingLevel)
 						UISingleton.instance.manusPlayer.SetIsManusPlaying(false);
 					else
 					{
@@ -28,14 +28,19 @@ namespace PM {
 				}
 				else if (Input.GetKeyDown(KeyCode.LeftArrow))
 				{
-					if (PMWrapper.isDemoingLevel)
+					if (PMWrapper.IsDemoingLevel)
+					{
 						UISingleton.instance.manusPlayer.SetIsManusPlaying(false);
+					}
 					else
-						PMWrapper.currentLevel -= 1;
+					{
+						if(PMWrapper.currentLevel > 0)
+							PMWrapper.currentLevel -= 1;
+					}
 				}
 				else if (Input.GetKeyDown(KeyCode.UpArrow))
 				{
-					if (PMWrapper.isDemoingLevel)
+					if (PMWrapper.IsDemoingLevel)
 						UISingleton.instance.manusPlayer.SetIsManusPlaying(false);
 					else
 						PMWrapper.unlockedLevel = PMWrapper.numOfLevels - 1;

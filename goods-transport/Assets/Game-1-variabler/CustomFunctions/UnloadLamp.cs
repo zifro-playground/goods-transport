@@ -18,7 +18,7 @@ public class UnloadLamp : Compiler.Function
 		if (lamp == null)
 			PMWrapper.RaiseError(lineNumber, "Hittade ingen lampa att lasta av.");
 
-		lamp.GetComponent<UnloadableItem>().isUnloading = true;
+		lamp.GetComponent<UnloadableItem>().IsUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}

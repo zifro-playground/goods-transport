@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23516072078392074}
   - component: {fileID: 114602285881855212}
   m_Layer: 0
-  m_Name: chair
+  m_Name: Chair
   m_TagString: Chair
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,5 +166,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b6a99db5ccaa748aa07f8bff18f748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isUnloading: 0
-  unloadingSpeed: 0.3
+  IsUnloading: 0
+  UnloadingSpeed: 0.2

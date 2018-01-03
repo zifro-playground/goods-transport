@@ -7,6 +7,6 @@ public class CarInfo : MonoBehaviour
 
 	private void OnEnable()
 	{
-		CarQueue.cars.AddLast(gameObject);
+		CarQueue.Cars.AddLast(gameObject);
 	}
 }

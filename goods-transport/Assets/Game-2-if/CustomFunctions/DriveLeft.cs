@@ -16,6 +16,9 @@ public class DriveLeft : Function
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().leftQueue.Add(CarQueue.GetFirstCar());
 		CarQueue.DriveQueueForward(lineNumber);
 
+		Transform target = GameObject.FindGameObjectWithTag("Road").GetComponent<Road>().LeftEndPoint;
+		CarQueue.GetFirstCar().GetComponent<CarMovement>().SetNavigationTarget(target);
+
 		return new Variable();
 	}
 }

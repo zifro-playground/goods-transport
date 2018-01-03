@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carPlatformPrefab: {fileID: 1778304852213010, guid: bc57458f61b8c6344a64119ac9a21953,
     type: 2}
-  carFrontPrefab: {fileID: 1263668506044726, guid: 3445250b1a29901468b2fcc2b22bc3bb,
+  carFrontPrefab: {fileID: 1706001209424536, guid: 36fb299bdfcbe174289e1b85da0c3de1,
     type: 2}
   boxRowPrefab: {fileID: 1816890561007966, guid: b22356f0817d66345995a3f3511a812b,
     type: 2}
@@ -64,6 +64,9 @@ MonoBehaviour:
     type: 2}
   chairPrefab: {fileID: 1944635786735238, guid: 36a5530df8ea84557be56c8b754db4ea,
     type: 2}
-  carSpacing: 1
+  Red: {fileID: 2100000, guid: 42afb7e7f1ebef2448a6643ad885cc42, type: 2}
+  Green: {fileID: 2100000, guid: 5eb8c4cfb9b9bb441a94ce0f320a34c2, type: 2}
+  Blue: {fileID: 2100000, guid: 4f6058a275af99948b4bbd8081aff8b4, type: 2}
+  carSpacing: 1.5
   boxSpacing: 0.5
   carPadding: 0.4

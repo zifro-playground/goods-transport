@@ -18,7 +18,7 @@ public class UnloadChair : Compiler.Function
 		if (chair == null)
 			PMWrapper.RaiseError(lineNumber, "Hittade ingen stol att lasta av.");
 
-		chair.GetComponent<UnloadableItem>().isUnloading = true;
+		chair.GetComponent<UnloadableItem>().IsUnloading = true;
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
 		return new Compiler.Variable();
 	}

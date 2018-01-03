@@ -10,8 +10,8 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void OnPMCompilerStarted()
 	{
-		// Can not be loaded in OnCompilerStopped since the method also switches case and replaces LevelController.caseData with data from case 0
-		caseData = LevelController.caseData;
+		// Can not be loaded in OnCompilerStopped since the method also switches case and replaces LevelController.CaseData with data from case 0
+		caseData = LevelController.CaseData;
 	}
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
