@@ -8,13 +8,15 @@ public class DriveRight : Function
 		name = "kör_höger";
 		inputParameterAmount.Add(0);
 		hasReturnVariable = false;
-		pauseWalker = false;
+		pauseWalker = true;
 	}
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().rightQueue.Add(CarQueue.GetFirstCar());
-		CarQueue.DriveQueueForward(lineNumber);
+
+		Transform target = GameObject.FindGameObjectWithTag("Road").GetComponent<Road>().RightEndPoint;
+		CarQueue.DriveQueueForward(lineNumber, target);
 
 		return new Variable();
 	}

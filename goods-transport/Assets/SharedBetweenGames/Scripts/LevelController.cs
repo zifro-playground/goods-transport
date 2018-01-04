@@ -86,7 +86,7 @@ public class LevelController : MonoBehaviour
 		queue.AddComponent<CarQueue>();
 
 		float boxLength = BoxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
-		float previousCarPosition = 0;
+		float previousCarPositionX = 0;
 
 		foreach (Car carData in CaseData.cars)
 		{
@@ -98,7 +98,7 @@ public class LevelController : MonoBehaviour
 			GameObject platform = Instantiate(CarPlatformPrefab);
 			GameObject front = Instantiate(CarFrontPrefab);
 
-			SetCarMaterial(carData, new GameObject[] { platform, front });
+			SetCarMaterial(carData, platform, front);
 
 			platform.transform.SetParent(carObj.transform);
 			front.transform.SetParent(carObj.transform);
@@ -106,8 +106,9 @@ public class LevelController : MonoBehaviour
 			RescaleCar(carData, platform, front);
 
 			// Position car in queue
-			float carPosX = previousCarPosition;
-			carObj.transform.position = new Vector3(carPosX, 0, 0);
+			Vector3 tempPos = carObj.transform.position;
+			tempPos.x = previousCarPositionX;
+			carObj.transform.position = tempPos;
 
 			// Place the rows of boxes and their items in car
 			Bounds platformBounds = platform.GetComponent<Renderer>().bounds;
@@ -119,10 +120,9 @@ public class LevelController : MonoBehaviour
 			float carLeftEnd = platformBounds.min.x;
 			float sectionLeftEnd = carLeftEnd;
 
-			for (int i = 0; i < carData.sections.Count; i++)
+			foreach (Section section in carData.sections)
 			{
-				Section section = carData.sections[i];
-				Vector3[,] itemPositions = new Vector3[section.rows, 4];
+				var itemPositions = new Vector3[section.rows, 4];
 
 				for (int j = 1; j <= section.rows; j++)
 				{
@@ -147,7 +147,7 @@ public class LevelController : MonoBehaviour
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * BoxSpacing  + 2 * CarPadding;
 				sectionLeftEnd += sectionLength;
 			}
-			previousCarPosition = carObj.transform.position.x - carLength - CarSpacing;
+			previousCarPositionX = carObj.transform.position.x - carLength - CarSpacing;
 		}
 	}
 	private void SetAnswer()

@@ -6,5 +6,5 @@ public class Road : MonoBehaviour
 	public Transform MiddelEndPoint;
 	public Transform RightEndPoint;
 
-	
+	public Transform ShortEndPoint;
 }

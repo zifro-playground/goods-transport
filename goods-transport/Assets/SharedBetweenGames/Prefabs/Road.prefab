@@ -21,12 +21,13 @@ GameObject:
   - component: {fileID: 4411695803159954}
   - component: {fileID: 33419510542387170}
   - component: {fileID: 23597966396169896}
+  - component: {fileID: 114004859945689690}
   m_Layer: 0
   m_Name: Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1538120995591602
 GameObject:
@@ -43,7 +44,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!1 &1644346927896590
 GameObject:
@@ -57,6 +58,21 @@ GameObject:
   - component: {fileID: 23230343489199612}
   m_Layer: 0
   m_Name: EndpointMiddle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 8
+  m_IsActive: 1
+--- !u!1 &1679046679834560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4826159437756302}
+  m_Layer: 0
+  m_Name: ShortEndPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +93,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &4040187521915740
 Transform:
@@ -131,9 +147,23 @@ Transform:
   - {fileID: 4342579103250924}
   - {fileID: 4040187521915740}
   - {fileID: 4317919184563040}
+  - {fileID: 4826159437756302}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!4 &4826159437756302
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679046679834560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4411695803159954}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23083258649587508
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -299,3 +329,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1644346927896590}
   m_Mesh: {fileID: 4300006, guid: 46641b0a71befbb41a856c1a9644b3ff, type: 3}
+--- !u!114 &114004859945689690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1418854630296304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0133781c7044c974ebe35df3c385fa02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftEndPoint: {fileID: 4342579103250924}
+  MiddelEndPoint: {fileID: 4040187521915740}
+  RightEndPoint: {fileID: 4317919184563040}
+  ShortEndPoint: {fileID: 4826159437756302}

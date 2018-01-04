@@ -6,11 +6,12 @@ using UnityEngine.AI;
 
 public class CarMovement : MonoBehaviour
 {
-	public float Speed = 0.3f;
+	public float Speed = 22f;
 
+	private bool isFirstCar;
 	private bool shouldDestroy;
-	private bool moveByUpdate;
-	private Vector3 targetPos;
+	private bool isMoving;
+	private bool driveStraight;
 
 	private NavMeshAgent agent;
 
@@ -21,33 +22,40 @@ public class CarMovement : MonoBehaviour
 
 	private void Update()
 	{
-		if (moveByUpdate)
+		if (isMoving)
 		{
 			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+			agent.speed = Speed * gameSpeedExp;
+			agent.acceleration = Speed * gameSpeedExp;
 
-			transform.Translate(transform.right * Speed * gameSpeedExp);
-			if (transform.position.x > targetPos.x)
+			if (driveStraight)
 			{
-				moveByUpdate = false;
-				transform.position = targetPos;
-				PMWrapper.UnpauseWalker();
+				Vector3 tempPosition = transform.position;
+				tempPosition.z = 0;
+				transform.position = tempPosition;
+			}
+
+			if (Vector3.Distance(transform.position, agent.destination) < 0.5f)
+			{
+				isMoving = false;
+
+				if (isFirstCar)
+					PMWrapper.UnpauseWalker();
+
 				if (shouldDestroy)
-					Destroy(gameObject);
+					agent.enabled = false;
 			}
 		}
 	}
 
-	public void MoveForward(float distance, bool shouldDestroyAtTarget)
+	public void SetNavigationTarget(Transform target, bool isFirst)
 	{
-		targetPos = transform.position;
-		targetPos.x += distance;
-		moveByUpdate = true;
-		this.shouldDestroy = shouldDestroyAtTarget;
-	}
+		isMoving = true;
+		isFirstCar = isFirst;
+		shouldDestroy = isFirst;
+		driveStraight = !isFirst;
 
-	public void SetNavigationTarget(Transform target)
-	{
-		moveByUpdate = false;
+		agent.updateRotation = isFirst;
 		agent.SetDestination(target.position);
 	}
 }

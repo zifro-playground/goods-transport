@@ -5,36 +5,25 @@ public class CarQueue : MonoBehaviour
 {
 	public static LinkedList<GameObject> Cars = new LinkedList<GameObject>();
 
-	public static void DriveQueueForward(int lineNumber)
+	public static void DriveQueueForward(int lineNumber, Transform endTarget)
 	{
-		if (Cars.Count == 0)
-			PMWrapper.RaiseError(lineNumber, "Hittar ingen bil att köra framåt.");
-
-		Bounds firstCarBounds = MyLibrary.CalculateBoundsInChildren(Cars.First.Value);
-		float firstCarLength = firstCarBounds.extents.x;
-		float secondCarLength = 0;
-
-		if (Cars.First.Next != null)
+		var carNode = Cars.Last;
+		while (carNode != null)
 		{
-			Bounds secondCarBounds = MyLibrary.CalculateBoundsInChildren(Cars.First.Next.Value);
-			secondCarLength = secondCarBounds.extents.x;
-		}
-
-		LevelController controller = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelController>();
-		float distance = firstCarLength + controller.CarSpacing + secondCarLength;
-
-		bool shouldDestroy = true;
-
-		foreach (GameObject car in Cars)
-		{
-			CarMovement carMovement = car.GetComponent<CarMovement>();
-			if (carMovement != null)
+			CarMovement carMovement = carNode.Value.GetComponent<CarMovement>();
+			if (carNode.Previous != null)
 			{
-				carMovement.MoveForward(distance, shouldDestroy);
-				shouldDestroy = false;
+				Transform target = carNode.Previous.Value.transform;
+				carMovement.SetNavigationTarget(target, false);
 			}
+			else
+			{
+				carMovement.SetNavigationTarget(endTarget, true);
+				Cars.RemoveFirst();
+			}
+
+			carNode = carNode.Previous;
 		}
-		Cars.RemoveFirst();
 	}
 
 	public static GameObject GetFirstCar()
@@ -49,7 +38,8 @@ public class CarQueue : MonoBehaviour
 	{
 		foreach (GameObject obj in Cars)
 		{
-			Destroy(obj);
+			if (obj.name != "TestCar")
+				Destroy(obj);
 		}
 		Cars.Clear();
 	}
