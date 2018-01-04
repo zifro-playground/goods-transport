@@ -13,7 +13,8 @@ public class ChargeCar : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_1>().carsCharged++;
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_1>().CarsCharged++;
+		
 
 		return new Variable();
 	}

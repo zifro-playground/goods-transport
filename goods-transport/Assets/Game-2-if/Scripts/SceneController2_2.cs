@@ -42,7 +42,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		string correctForwardType = LevelController.CaseData.correctSorting.forwardType;
 		foreach (GameObject car in forwardQueue)
 		{
-			string type = car.GetComponent<CarInfo>().cargoType;
+			string type = car.GetComponent<CarInfo>().CargoType;
 			if (type != correctForwardType)
 			{
 				PMWrapper.RaiseTaskError("Något blev felsorterat.");

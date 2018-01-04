@@ -91,7 +91,8 @@ public class LevelController : MonoBehaviour
 		foreach (Car carData in CaseData.cars)
 		{
 			GameObject carObj = Instantiate(CarPrefab);
-			carObj.GetComponent<CarInfo>().batteryLevel = carData.batteryLevel;
+			CarInfo carInfo = carObj.GetComponent<CarInfo>();
+			carInfo.BatteryLevel = carData.batteryLevel;
 
 			carObj.transform.SetParent(queue.transform);
 
@@ -142,7 +143,7 @@ public class LevelController : MonoBehaviour
 
 				}
 				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
-				carObj.GetComponent<CarInfo>().cargoType = section.type;
+				carInfo.CargoType = section.type;
 
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * BoxSpacing  + 2 * CarPadding;
 				sectionLeftEnd += sectionLength;

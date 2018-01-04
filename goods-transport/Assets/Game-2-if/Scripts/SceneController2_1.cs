@@ -1,10 +1,10 @@
-﻿using System;
-using PM;
+﻿using PM;
 using UnityEngine;
 
-public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
-	public int carsCharged = 0;
+	public int CarsCharged;
+	private int carsToCharge;
 
 	public void SetPrecode(Case caseData)
 	{
@@ -12,30 +12,35 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 			PMWrapper.preCode = caseData.precode;
 	}
 
+
+
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			int carsToCharge = 0;
-
-			foreach (Car car in LevelController.CaseData.cars)
+			if (CarsCharged < carsToCharge)
 			{
-				if (car.batteryLevel < LevelController.CaseData.chargeTrigger)
-					carsToCharge++;
-			}
-			
-			if (carsCharged < carsToCharge)
-			{
-				int carsNotCharged = carsToCharge - carsCharged;
+				int carsNotCharged = carsToCharge - CarsCharged;
 				string carsSingularOrPlural = carsNotCharged == 1 ? "1 bil" : carsNotCharged + " bilar";
 				PMWrapper.RaiseTaskError(carsSingularOrPlural + " blev inte laddade. Alla bilar med batterinivå < " + LevelController.CaseData.chargeTrigger + " ska laddas.");
 			}
-			if (carsCharged > carsToCharge)
+			if (CarsCharged > carsToCharge)
 				PMWrapper.RaiseTaskError("För många bilar laddades. Bara bilar med batterinivå < " + LevelController.CaseData.chargeTrigger + " ska laddas.");
-			if (carsCharged == carsToCharge)
+			if (CarsCharged == carsToCharge)
 				PMWrapper.SetCaseCompleted();
 		}
 
-		carsCharged = 0;
+		CarsCharged = 0;
+	}
+
+	public void OnPMCompilerStarted()
+	{
+		carsToCharge = 0;
+
+		foreach (Car car in LevelController.CaseData.cars)
+		{
+			if (car.batteryLevel < LevelController.CaseData.chargeTrigger)
+				carsToCharge++;
+		}
 	}
 }

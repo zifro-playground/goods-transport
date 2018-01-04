@@ -2,8 +2,8 @@
 
 public class CarInfo : MonoBehaviour
 {
-	public string cargoType;
-	public int batteryLevel;
+	public string CargoType;
+	public int BatteryLevel;
 
 	private void OnEnable()
 	{
