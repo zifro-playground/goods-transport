@@ -30,7 +30,7 @@ public class ScanPalms : Compiler.Function
 		if (carPlatform == null)
 			throw new Exception("Could not find any child of first car in queue with tag \"CarPlatform\".");
 
-		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
+		Scanner scanner = Scanner.Instance;
 		scanner.Scan(carPlatform);
 
 		int palmCount = 0;

@@ -15,7 +15,7 @@ public class DriveLeft : Function
 	{
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().leftQueue.Add(CarQueue.GetFirstCar());
 
-		Transform target = GameObject.FindGameObjectWithTag("Road").GetComponent<Road>().LeftEndPoint;
+		Transform target = Road.Instance.LeftEndPoint;
 		CarQueue.DriveQueueForward(lineNumber, target);
 		
 		return new Variable();

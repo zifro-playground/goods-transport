@@ -1,0 +1,207 @@
+fileFormatVersion: 2
+guid: 2e8a7c8c09a2ea5429c03584de18244b
+timeCreated: 1515140511
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: DoorFrameLeft
+    100002: DoorFrameMiddle
+    100004: DoorFrameRight
+    100006: DoorLeft
+    100008: DoorMiddle
+    100010: DoorRight
+    100012: EndpointLeft
+    100014: EndpointMiddle
+    100016: EndpointRight
+    100018: Hogaffelvag
+    100020: Lager
+    100022: SignLeft
+    100024: SignMiddle
+    100026: SignRight
+    100028: //RootNode
+    400000: DoorFrameLeft
+    400002: DoorFrameMiddle
+    400004: DoorFrameRight
+    400006: DoorLeft
+    400008: DoorMiddle
+    400010: DoorRight
+    400012: EndpointLeft
+    400014: EndpointMiddle
+    400016: EndpointRight
+    400018: Hogaffelvag
+    400020: Lager
+    400022: SignLeft
+    400024: SignMiddle
+    400026: SignRight
+    400028: //RootNode
+    2300000: DoorFrameLeft
+    2300002: DoorFrameMiddle
+    2300004: DoorFrameRight
+    2300006: DoorLeft
+    2300008: DoorMiddle
+    2300010: DoorRight
+    2300012: EndpointLeft
+    2300014: EndpointMiddle
+    2300016: EndpointRight
+    2300018: Hogaffelvag
+    2300020: Lager
+    2300022: SignLeft
+    2300024: SignMiddle
+    2300026: SignRight
+    3300000: DoorFrameLeft
+    3300002: DoorFrameMiddle
+    3300004: DoorFrameRight
+    3300006: DoorLeft
+    3300008: DoorMiddle
+    3300010: DoorRight
+    3300012: EndpointLeft
+    3300014: EndpointMiddle
+    3300016: EndpointRight
+    3300018: Hogaffelvag
+    3300020: Lager
+    3300022: SignLeft
+    3300024: SignMiddle
+    3300026: SignRight
+    4300000: Lager
+    4300002: DoorFrameLeft
+    4300004: DoorLeft
+    4300006: DoorFrameMiddle
+    4300008: DoorMiddle
+    4300010: DoorFrameRight
+    4300012: DoorRight
+    4300014: SignLeft
+    4300016: SignMiddle
+    4300018: SignRight
+    4300020: Hogaffelvag
+    4300022: EndpointLeft
+    4300024: EndpointMiddle
+    4300026: EndpointRight
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door
+    second: {fileID: 2100000, guid: decbb94c713194a47baa95b214674769, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_buffer_frame
+    second: {fileID: 2100000, guid: 32e180a9793a47d48b51af1882354346, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_frame
+    second: {fileID: 2100000, guid: 609215936ee03df4394c3eb87b14017a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lager
+    second: {fileID: 2100000, guid: de9f9f592846fea4bb028b6027d3d2be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Markering
+    second: {fileID: 2100000, guid: 528ab3771b89e7448a5df173f52ae003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: efa2e203733d33b4d9cddb0205c206cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: b26c2099d772c1744bb462d9e482a755, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Roof
+    second: {fileID: 2100000, guid: 5d2cc3fa83aa1c34697d982f25d61512, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sign
+    second: {fileID: 2100000, guid: 69e5a7e18ebb1b24fa0d805c27b62834, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Vag
+    second: {fileID: 2100000, guid: 5391fe3e2f6791b49b60de804a1d2599, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

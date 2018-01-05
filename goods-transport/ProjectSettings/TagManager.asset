@@ -14,8 +14,6 @@ TagManager:
   - Table
   - Palm
   - CarPlatform
-  - Road
-  - ChargeStation
   layers:
   - Default
   - TransparentFX

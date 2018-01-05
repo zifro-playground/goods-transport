@@ -16,7 +16,7 @@ public class ScanChairs : Compiler.Function
 	{
 		GameObject car = CarQueue.GetFirstCar();
 
-		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
+		Scanner scanner = Scanner.Instance;
 		scanner.Scan(car);
 
 		int chairCount = 0;

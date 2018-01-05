@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class ChargeStation : MonoBehaviour
 {
+	public static ChargeStation Instance;
+
 	public Transform ChargeArm;
 	public Text Display;
 
@@ -16,6 +18,11 @@ public class ChargeStation : MonoBehaviour
 
 	private const int FullBatteryLevel = 100;
 	private int currentCarBatteryLevel;
+
+	private void Start()
+	{
+		Instance = this;
+	}
 
 	private void Update()
 	{
@@ -65,10 +72,10 @@ public class ChargeStation : MonoBehaviour
 
 	public void CheckBattery(bool shouldCharge)
 	{
+		currentCarBatteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
 		if (shouldCharge)
 		{
 			LowerChargeArm();
-			currentCarBatteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
 			charging = true;
 		}
 		else

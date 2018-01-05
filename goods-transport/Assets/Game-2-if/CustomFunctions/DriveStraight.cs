@@ -15,7 +15,7 @@ public class DriveStraight : Function
 	{
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().forwardQueue.Add(CarQueue.GetFirstCar());
 
-		Transform target = GameObject.FindGameObjectWithTag("Road").GetComponent<Road>().MiddelEndPoint;
+		Transform target = Road.Instance.MiddelEndPoint;
 		CarQueue.DriveQueueForward(lineNumber, target);
 
 		return new Variable();

@@ -16,7 +16,7 @@ public class CheckBattery : Compiler.Function
 		int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
 		bool shouldCharge = batteryLevel < LevelController.CaseData.chargeTrigger;
 
-		GameObject.FindGameObjectWithTag("ChargeStation").GetComponent<ChargeStation>().CheckBattery(shouldCharge);
+		ChargeStation.Instance.CheckBattery(shouldCharge);
 
 		return new Variable("BatteryLevel", batteryLevel);
 	}

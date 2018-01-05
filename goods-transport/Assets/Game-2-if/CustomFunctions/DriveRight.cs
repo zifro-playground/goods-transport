@@ -15,7 +15,7 @@ public class DriveRight : Function
 	{
 		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().rightQueue.Add(CarQueue.GetFirstCar());
 
-		Transform target = GameObject.FindGameObjectWithTag("Road").GetComponent<Road>().RightEndPoint;
+		Transform target = Road.Instance.RightEndPoint;
 		CarQueue.DriveQueueForward(lineNumber, target);
 
 		return new Variable();

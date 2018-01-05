@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1114a0afbc5cb2b43857d5cfa10637a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cargoType: 
-  batteryLevel: 0
+  CargoType: 
+  BatteryLevel: 0
 --- !u!195 &195812792511815700
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -75,7 +75,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1163889366112496}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.3
+  m_Radius: 3
   m_Speed: 22
   m_Acceleration: 20
   avoidancePriority: 50

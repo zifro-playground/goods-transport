@@ -16,7 +16,7 @@ public class ScanTables : Compiler.Function
 	{
 		GameObject car = CarQueue.GetFirstCar();
 
-		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
+		Scanner scanner = Scanner.Instance;
 		scanner.Scan(car);
 
 		int tableCount = 0;

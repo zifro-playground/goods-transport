@@ -17,7 +17,7 @@ public class ScanType : Function {
 	{
 		GameObject firstCar = CarQueue.GetFirstCar();
 
-		Scanner scanner = GameObject.FindGameObjectWithTag("Scanner").GetComponent<Scanner>();
+		Scanner scanner = Scanner.Instance;
 		scanner.Scan(firstCar);
 
 		Dictionary<string, int> typesFound = new Dictionary<string, int>();
