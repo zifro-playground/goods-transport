@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 79c2f7fc4a54b694ea1e6e0680228c75
-timeCreated: 1515072377
+guid: 7582c908d32b80a4ea0dd173086bf81c
+timeCreated: 1515351765
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -20,42 +20,42 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeArmBlue
-    second: {fileID: 2100000, guid: bb28671b3235c3f4b8d50fbe9c969c8f, type: 2}
+    second: {fileID: 2100000, guid: 2672f1381584b304abb6f444c28522fd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeArmWhite
-    second: {fileID: 2100000, guid: c7480b1f45ee550418b49349f875be4e, type: 2}
+    second: {fileID: 2100000, guid: 238beea4f1ea2a446a74e276b01052e7, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeDisplay
-    second: {fileID: 2100000, guid: 8b0aecbe4652abf429ca5ce424c76f50, type: 2}
+    second: {fileID: 2100000, guid: 2ac25f55730c8674cbea273ec12e5a44, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeLogoFrame
-    second: {fileID: 2100000, guid: 6e134545f665ff249a484bc6801a0671, type: 2}
+    second: {fileID: 2100000, guid: 1eb656a50ea263e4b8a18633817484be, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeMinus
-    second: {fileID: 2100000, guid: 90a651ecdda323540b3f9beb6cadd92f, type: 2}
+    second: {fileID: 2100000, guid: ae9f5586b2a71d44989c98ecc91fb390, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargePlus
-    second: {fileID: 2100000, guid: 3d70ff9c325b8884eb06004afbc40980, type: 2}
+    second: {fileID: 2100000, guid: a33a5156e70354043a95d0b5ab7bfe3b, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeStationBlue
-    second: {fileID: 2100000, guid: 27b16f2001695bb449371c8376ce0977, type: 2}
+    second: {fileID: 2100000, guid: 7d31d346e260e1a45944122aabfb3380, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: ChargeStationWhite
-    second: {fileID: 2100000, guid: 78ff114c01417b94ab2040b8de216138, type: 2}
+    second: {fileID: 2100000, guid: 83dc90681e8eb2d4bb5cd539182c5449, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
