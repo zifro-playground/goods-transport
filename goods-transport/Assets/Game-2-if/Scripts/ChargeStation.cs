@@ -11,10 +11,11 @@ public class ChargeStation : MonoBehaviour
 	public float RotationSpeed = 50f;
 	private Vector3 targetDir;
 
-	private bool rotatingChargeArm;
+	private bool isRotatingChargeArm;
 	private bool armIsDown;
-	private bool charging;
-	private bool checkingBattery;
+	private bool isCharging;
+	private bool isCheckingBattery;
+	private bool willCharge;
 
 	private const int FullBatteryLevel = 100;
 	private int currentCarBatteryLevel;
@@ -26,57 +27,95 @@ public class ChargeStation : MonoBehaviour
 
 	private void Update()
 	{
-		if (rotatingChargeArm)
+		if (PMWrapper.IsCompilerUserPaused)
+			return;
+
+		if (isRotatingChargeArm)
+			RotateArm();
+
+		if (isCharging && !isRotatingChargeArm)
+			Charge();
+
+		if (isCheckingBattery)
+			CheckBattery();
+	}
+
+	private void CheckBattery()
+	{
+		Display.text = currentCarBatteryLevel.ToString();
+		
+		if (!willCharge)
 		{
-			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-			float step = RotationSpeed * gameSpeedExp * Time.deltaTime;
-			
-			Vector3 newDir = Vector3.RotateTowards(ChargeArm.forward, targetDir, step, 0);
-
-			ChargeArm.rotation = Quaternion.LookRotation(newDir);
-
-			if(Vector3.Angle(ChargeArm.forward, targetDir) < 0.5f)
-			{
-				rotatingChargeArm = false;
-				
-				if (!charging && !armIsDown)
-				{
-					checkingBattery = false;
-					Display.text = "";
-					PMWrapper.UnpauseWalker();
-				}
-
-				if (!charging && armIsDown)
-					checkingBattery = true;
-			}
-		}
-
-		if (charging && !rotatingChargeArm)
-		{
-			currentCarBatteryLevel++;
-			Display.text = currentCarBatteryLevel.ToString();
-
-			if (currentCarBatteryLevel >= FullBatteryLevel)
-			{
-				charging = false;
-				RaiseChargeArm();
-			}
-		}
-
-		if (checkingBattery)
-		{
-			Display.text = currentCarBatteryLevel.ToString();
 			RaiseChargeArm();
 		}
+		else
+		{
+			PMWrapper.UnpauseWalker();
+		}
+
+		isCheckingBattery = false;
+	}
+
+	private void Charge()
+	{
+		currentCarBatteryLevel++;
+		Display.text = currentCarBatteryLevel.ToString();
+
+		if (currentCarBatteryLevel >= FullBatteryLevel)
+		{
+			isCharging = false;
+			RaiseChargeArm();
+		}
+	}
+
+	private void RotateArm()
+	{
+		float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+		float step = RotationSpeed * gameSpeedExp * Time.deltaTime;
+
+		Vector3 newDir = Vector3.RotateTowards(ChargeArm.forward, targetDir, step, 0);
+
+		ChargeArm.rotation = Quaternion.LookRotation(newDir);
+
+		if (Vector3.Angle(ChargeArm.forward, targetDir) < 0.5f)
+		{
+			isRotatingChargeArm = false;
+
+			if (armIsDown)
+			{
+				ChargeArm.eulerAngles = new Vector3(180, 0, 180);
+				isCheckingBattery = true;
+			}
+			else
+			{
+				ChargeArm.eulerAngles = new Vector3(270, 0, 180);
+				Display.text = "";
+				PMWrapper.UnpauseWalker();
+			}
+		}
+	}
+
+	private void LowerChargeArm()
+	{
+		targetDir = -Vector3.forward;
+		isRotatingChargeArm = true;
+		armIsDown = true;
+	}
+
+	private void RaiseChargeArm()
+	{
+		targetDir = Vector3.up;
+		isRotatingChargeArm = true;
+		armIsDown = false;
 	}
 
 	public void CheckBattery(bool shouldCharge)
 	{
 		currentCarBatteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
+		willCharge = shouldCharge;
 		if (shouldCharge)
 		{
 			LowerChargeArm();
-			charging = true;
 		}
 		else
 		{
@@ -84,17 +123,8 @@ public class ChargeStation : MonoBehaviour
 		}
 	}
 
-	private void LowerChargeArm()
+	public void ChargeBattery()
 	{
-		targetDir = -Vector3.forward;
-		rotatingChargeArm = true;
-		armIsDown = true;
-	}
-
-	private void RaiseChargeArm()
-	{
-		targetDir = Vector3.up;
-		rotatingChargeArm = true;
-		armIsDown = false;
+		isCharging = true;
 	}
 }

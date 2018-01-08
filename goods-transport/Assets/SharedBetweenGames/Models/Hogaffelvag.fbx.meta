@@ -1,58 +1,31 @@
 fileFormatVersion: 2
-guid: 46641b0a71befbb41a856c1a9644b3ff
-timeCreated: 1514997020
+guid: 09837f572f2860244a233309c55eac93
+timeCreated: 1515427282
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: ChargeArm
-    100002: EndpointLeft
-    100004: EndpointMiddle
-    100006: EndpointRight
-    100008: Hogaffelvag
-    100010: //RootNode
-    400000: ChargeArm
-    400002: EndpointLeft
-    400004: EndpointMiddle
-    400006: EndpointRight
-    400008: Hogaffelvag
-    400010: //RootNode
-    2300000: ChargeArm
-    2300002: EndpointLeft
-    2300004: EndpointMiddle
-    2300006: EndpointRight
-    2300008: Hogaffelvag
-    3300000: ChargeArm
-    3300002: EndpointLeft
-    3300004: EndpointMiddle
-    3300006: EndpointRight
-    3300008: Hogaffelvag
+    100000: EndpointLeft
+    100002: EndpointMiddle
+    100004: EndpointRight
+    100006: //RootNode
+    400000: EndpointLeft
+    400002: EndpointMiddle
+    400004: EndpointRight
+    400006: //RootNode
+    2300000: EndpointLeft
+    2300002: EndpointMiddle
+    2300004: EndpointRight
+    2300006: //RootNode
+    3300000: EndpointLeft
+    3300002: EndpointMiddle
+    3300004: EndpointRight
+    3300006: //RootNode
     4300000: Hogaffelvag
-    4300002: EndpointRight
-    4300004: EndpointLeft
+    4300002: EndpointLeft
+    4300004: EndpointRight
     4300006: EndpointMiddle
-    4300008: ChargeArm
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ChargeArmBlue
-    second: {fileID: 2100000, guid: bb28671b3235c3f4b8d50fbe9c969c8f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ChargeArmWhite
-    second: {fileID: 2100000, guid: c7480b1f45ee550418b49349f875be4e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ChargeMinus
-    second: {fileID: 2100000, guid: 90a651ecdda323540b3f9beb6cadd92f, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ChargePlus
-    second: {fileID: 2100000, guid: 3d70ff9c325b8884eb06004afbc40980, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

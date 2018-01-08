@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1834143744569662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.4, z: 3.85}
+  m_LocalPosition: {x: 0, y: -0.45, z: 3.74}
   m_LocalScale: {x: 4, y: 3, z: 2.33}
   m_Children:
   - {fileID: 4910057543160510}
@@ -341,7 +341,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '"lampor"'
+  m_Text: 
 --- !u!222 &222884229066188048
 CanvasRenderer:
   m_ObjectHideFlags: 1
