@@ -353,6 +353,207 @@
           }
         }
       ]
+    },
+    {
+      "id": "NyBana",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+						"leftBounds": {
+							"lower": 0,
+							"upper": 10
+						},
+							"rightBounds": {
+							"lower": 11,
+							"upper": 20
+						},
+							"forwardBounds":{
+							"lower": 21,
+							"upper": 24
+						}
+						}
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
+        },
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftType": "lampor",
+            "rightType": "bord",
+            "forwardType": "stolar"
+          }
+        }
+      ]
     }
   ]
 }
