@@ -65,7 +65,7 @@
             }
           ],
           "precode": "antal_bilar = 5",
-          "chargeTrigger": 40
+          "chargeBound": 40
         }
       ]
     },
@@ -130,9 +130,15 @@
           "precode": "bilar = 5",
           "correctSorting":
           {
-            "leftType": "palmer",
-            "rightType": "none",
-            "forwardType": "whatever"
+						"leftQueue": {
+							"type": "palmer"
+						},
+						"rightQueue": {
+							"type": "none"
+						},
+						"forwardQueue": {
+							"type": "whatever"
+						}
           }
         }
       ]
@@ -194,33 +200,38 @@
                 }
               ]
             },
+						{
+							"sections": [
+								{
+									"type": "bord",
+									"itemCount": 12,
+									"rows": 6
+								}
+							]
+						},
             {
               "sections":
               [
                 {
-                  "type": "bord",
+                  "type": "palmer",
                   "itemCount": 12,
                   "rows": 6
                 }
-              ],
-              {
-                "sections":
-                [
-                  {
-                    "type": "palmer",
-                    "itemCount": 12,
-                    "rows": 6
-                  }
-                ]
-              }
+              ]
             }
           ],
           "precode": "bilar = 7",
           "correctSorting":
           {
-            "leftType": "palmer",
-            "rightType": "granar",
-            "forwardType": "whatever"
+						"leftQueue": {
+							"type": "palmer"
+						},
+						"rightQueue": {
+							"type": "granar"
+						},
+						"forwardQueue": {
+							"type": "whatever"
+						}
           }
         }
       ]
@@ -296,15 +307,16 @@
           "precode": "bilar = 6",
           "correctSorting":
           {
-						"leftBounds": {
+						"leftQueue": {
 							"lower": 0,
 							"upper": 0
-						},
-						"rightBounds": {
+						}
+						,
+						"rightQueue": {
 							"lower": 21,
 							"upper": 24
 						},
-						"forwardBounds":{
+						"forwardQueue":{
 							"lower": 1,
 							"upper": 20
 						}

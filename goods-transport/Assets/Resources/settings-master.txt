@@ -1,10 +1,10 @@
 // settings-master for game 2 - if
 
-Game2/LevelSettings/settings-2VAD1
-Game2/LevelSettings/settings-2VAD2
-Game2/LevelSettings/settings-3VAD1
+Game2/LevelSettings/settings-BAT40
+Game2/LevelSettings/settings-SOPA1
+Game2/LevelSettings/settings-SOELF
+Game2/LevelSettings/settings-SONOP
 
-//LevelSettings/settings-2KAD1
 //LevelSettings/settings-2KAD2
 //LevelSettings/settings-3KSU1
 //LevelSettings/settings-1MUV1

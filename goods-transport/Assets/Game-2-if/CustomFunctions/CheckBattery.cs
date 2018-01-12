@@ -14,7 +14,7 @@ public class CheckBattery : Compiler.Function
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
 		int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
-		bool shouldCharge = batteryLevel < LevelController.CaseData.chargeTrigger;
+		bool shouldCharge = batteryLevel < LevelController.CaseData.chargeBound;
 
 		ChargeStation.Instance.CheckBattery(shouldCharge);
 

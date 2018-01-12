@@ -14,20 +14,30 @@ public class Car
 	public string color { get; set; }
 }
 
+public class SortedQueue
+{
+	public int lowerBound { get; set; }
+	public int upperBound { get; set; }
+
+	public string type { get; set; }
+}
+
 public class Sorting
 {
-	public string leftType { get; set; }
-	public string rightType { get; set; }
-	public string forwardType { get; set; }
+	public SortedQueue leftQueue { get; set; }
+	public SortedQueue rightQueue { get; set; }
+	public SortedQueue forwardQueue { get; set; }
 }
 
 public class Case
 {
 	public List<Car> cars { get; set; }
-	public int answer { get; set; }
+
 	public string precode { get; set; }
+
 	public Sorting correctSorting { get; set; }
-	public int chargeTrigger { get; set; }
+	public int answer { get; set; }
+	public int chargeBound { get; set; }
 }
 
 public class Level

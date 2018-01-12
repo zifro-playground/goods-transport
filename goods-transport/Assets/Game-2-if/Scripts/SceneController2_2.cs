@@ -26,9 +26,9 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			bool correct = CorrectSorting();
+			bool correctSorted = CorrectSorting();
 
-			if (correct)
+			if (correctSorted)
 				PMWrapper.SetCaseCompleted();
 		}
 		
@@ -39,11 +39,27 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-		string correctForwardType = LevelController.CaseData.correctSorting.forwardType;
-		foreach (GameObject car in forwardQueue)
+		string correctForwardType = LevelController.CaseData.correctSorting.forwardQueue.type;
+		if (!CorrectQueue(correctForwardType, forwardQueue))
+			return false;
+
+		string correctRightType = LevelController.CaseData.correctSorting.rightQueue.type;
+		if (!CorrectQueue(correctRightType, rightQueue))
+			return false;
+
+		string correctLeftType = LevelController.CaseData.correctSorting.leftQueue.type;
+		if (!CorrectQueue(correctLeftType, leftQueue))
+			return false;
+
+		return true;
+	}
+
+	private bool CorrectQueue(string correctType, List<GameObject> queue)
+	{
+		foreach (GameObject car in queue)
 		{
 			string type = car.GetComponent<CarInfo>().CargoType;
-			if (type != correctForwardType)
+			if ((type != correctType && correctType != "whatever") || correctType == "none")
 			{
 				PMWrapper.RaiseTaskError("Något blev felsorterat.");
 				return false;
