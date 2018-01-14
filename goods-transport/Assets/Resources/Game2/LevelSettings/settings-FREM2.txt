@@ -1,5 +1,0 @@
-taskdescription: Töm alla bilar på palmer
-precode: antal_bilar = 9
-rowlimit: 20
-smartbuttons: töm_bilen(), kör_framåt()
-functions: EmptyCar, DriveForward

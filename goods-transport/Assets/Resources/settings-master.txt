@@ -1,6 +1,9 @@
 // settings-master for game 2 - if
 
 Game2/LevelSettings/settings-BAT40
+Game2/LevelSettings/settings-BAT80
+Game2/LevelSettings/settings-BAT50
+Game2/LevelSettings/settings-BAT67
 Game2/LevelSettings/settings-SOPA1
 Game2/LevelSettings/settings-SOELF
 Game2/LevelSettings/settings-SONOP

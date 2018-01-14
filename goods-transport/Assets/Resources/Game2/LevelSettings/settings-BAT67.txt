@@ -1,0 +1,6 @@
+taskdescription: Ladda bilen om den har mindre än två tredjedelars batteri.
+startcode:
+rowlimit: 20
+casecount: 1
+smartbuttons: kolla_batterinivå(), ladda_bil(), kör_framåt()
+functions: CheckBattery, ChargeCar, DriveForward

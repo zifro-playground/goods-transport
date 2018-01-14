@@ -1,6 +1,6 @@
 taskdescription: Ladda bilen om den har mindre än 40% batteri.
-startcode: for i in range(antal_bilar):\n\tbatterinivå = kolla_batterinivå()\n\tif batterinivå < 40:\n\t\tladda_bil()\n\tkör_framåt()
-rowlimit: 20
+startcode: for i in range(antal_bilar):\n\tbatteri = kolla_batterinivå()\n\tif batteri < 40:\n\t\tladda_bil()\n\tkör_framåt()
+rowlimit: 10
 casecount: 1
 smartbuttons: kolla_batterinivå(), ladda_bil(), kör_framåt()
 functions: CheckBattery, ChargeCar, DriveForward
