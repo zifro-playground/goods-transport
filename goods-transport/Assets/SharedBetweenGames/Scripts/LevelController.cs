@@ -93,6 +93,7 @@ public class LevelController : MonoBehaviour
 			GameObject carObj = Instantiate(CarPrefab);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
 			carInfo.BatteryLevel = carData.batteryLevel;
+			carInfo.ItemsInCar = 0;
 
 			carObj.transform.SetParent(queue.transform);
 
@@ -143,6 +144,7 @@ public class LevelController : MonoBehaviour
 
 				}
 				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
+				carInfo.ItemsInCar += section.itemCount;
 				carInfo.CargoType = section.type;
 
 				float sectionLength = section.rows * boxLength + (section.rows - 1) * BoxSpacing  + 2 * CarPadding;

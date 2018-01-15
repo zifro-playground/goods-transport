@@ -471,13 +471,16 @@
           "precode": "bilar = 7",
           "correctSorting":
           {
-            "leftQueue": {
+            "leftQueue":
+            {
               "type": "palmer"
             },
-            "rightQueue": {
+            "rightQueue":
+            {
               "type": "granar"
             },
-            "forwardQueue": {
+            "forwardQueue":
+            {
               "type": "whatever"
             }
           }
@@ -555,18 +558,20 @@
           "precode": "bilar = 6",
           "correctSorting":
           {
-            "leftQueue": {
-              "lower": 0,
-              "upper": 0
-            }
-            ,
-            "rightQueue": {
-              "lower": 21,
-              "upper": 24
+            "leftQueue":
+            {
+              "lowerBound": 0,
+              "upperBound": 0
             },
-            "forwardQueue":{
-              "lower": 1,
-              "upper": 20
+            "rightQueue":
+            {
+              "lowerBound": 21,
+              "upperBound": 24
+            },
+            "forwardQueue":
+            {
+              "lowerBound": 1,
+              "upperBound": 20
             }
           }
         }

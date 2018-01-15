@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 public class Section
@@ -14,6 +15,12 @@ public class Car
 	public string color { get; set; }
 }
 
+public class TypeDefinition
+{
+    public string name { get; set; }
+    public List<string> types { get; set; }
+}
+
 public class SortedQueue
 {
 	public int lowerBound { get; set; }
@@ -24,6 +31,8 @@ public class SortedQueue
 
 public class Sorting
 {
+	public List<TypeDefinition> typeDefinitions { get; set; }
+
 	public SortedQueue leftQueue { get; set; }
 	public SortedQueue rightQueue { get; set; }
 	public SortedQueue forwardQueue { get; set; }

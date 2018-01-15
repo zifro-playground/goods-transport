@@ -13,7 +13,7 @@ public class DriveRight : Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().rightQueue.Add(CarQueue.GetFirstCar());
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_2>().RightQueue.Add(CarQueue.GetFirstCar());
 
 		Transform target = Road.Instance.RightEndPoint;
 		CarQueue.DriveQueueForward(lineNumber, target);
