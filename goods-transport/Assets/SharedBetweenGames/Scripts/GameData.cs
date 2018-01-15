@@ -21,7 +21,7 @@ public class TypeDefinition
     public List<string> types { get; set; }
 }
 
-public class SortedQueue
+public class CorrectSortedQueue
 {
 	public int lowerBound { get; set; }
 	public int upperBound { get; set; }
@@ -33,9 +33,9 @@ public class Sorting
 {
 	public List<TypeDefinition> typeDefinitions { get; set; }
 
-	public SortedQueue leftQueue { get; set; }
-	public SortedQueue rightQueue { get; set; }
-	public SortedQueue forwardQueue { get; set; }
+	public CorrectSortedQueue leftQueue { get; set; }
+	public CorrectSortedQueue rightQueue { get; set; }
+	public CorrectSortedQueue forwardQueue { get; set; }
 }
 
 public class Case
