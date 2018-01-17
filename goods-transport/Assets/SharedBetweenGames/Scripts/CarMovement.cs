@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 
-public class CarMovement : MonoBehaviour
+public class CarMovement : MonoBehaviour, IPMCompilerUserUnpaused, IPMCompilerUserPaused
 {
 	public float Speed = 22f;
 
@@ -22,7 +22,7 @@ public class CarMovement : MonoBehaviour
 
 	private void Update()
 	{
-		if (isMoving)
+		if (isMoving && !PMWrapper.IsCompilerUserPaused)
 		{
 			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
 			agent.speed = Speed * gameSpeedExp;
@@ -57,5 +57,17 @@ public class CarMovement : MonoBehaviour
 
 		agent.updateRotation = isFirst;
 		agent.SetDestination(target.position);
+	}
+
+	public void OnPMCompilerUserUnpaused()
+	{
+		float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+		agent.speed = Speed * gameSpeedExp;
+	}
+
+	public void OnPMCompilerUserPaused()
+	{
+		print("Pause compiler");
+		agent.speed = 0;
 	}
 }

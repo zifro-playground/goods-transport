@@ -18,6 +18,8 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 			if (correctSorted)
 				PMWrapper.SetCaseCompleted();
+			else
+				PMWrapper.RaiseTaskError("Något blev felsorterat.");
 		}
 
 		SortedQueue.ResetQueues();
@@ -46,11 +48,8 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 		{
 			int itemsInCar = car.GetComponent<CarInfo>().ItemsInCar;
 
-			if (itemsInCar > bounds.upperBound && itemsInCar < bounds.lowerBound)
-			{
-				PMWrapper.RaiseTaskError("Något blev felsorterat.");
+			if (itemsInCar > bounds.upperBound || itemsInCar < bounds.lowerBound)
 				return false;
-			}
 		}
 		return true;
 	}
