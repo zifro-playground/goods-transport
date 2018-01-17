@@ -13,8 +13,8 @@ public class DriveForward : Compiler.Function
 
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
-		Transform target = Road.Instance.ShortEndPoint;
-		CarQueue.DriveQueueForward(lineNumber, target);
+		CarQueue.DriveQueueForward();
+		CarQueue.DriveFirstCarShort();
 
 		return new Compiler.Variable();
 	}

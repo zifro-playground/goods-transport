@@ -2,72 +2,93 @@
 using UnityEngine;
 using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(Animator))]
 
-public class CarMovement : MonoBehaviour, IPMCompilerUserUnpaused, IPMCompilerUserPaused
+public class CarMovement : MonoBehaviour
 {
-	public float Speed = 22f;
+	public float QueueSpeed = 22f;
+	public float AnimationSpeed = 8f;
+	
+	private bool isMovingByScript;
+	private bool isMovingByAnimation;
 
-	private bool isFirstCar;
-	private bool shouldDestroy;
-	private bool isMoving;
-	private bool driveStraight;
+	private Vector3 targetPosition;
 
-	private NavMeshAgent agent;
+	private Animator animator;
 
 	private void Start()
 	{
-		agent = GetComponent<NavMeshAgent>();
+		animator = GetComponent<Animator>();
+		animator.enabled = false;
 	}
 
 	private void Update()
 	{
-		if (isMoving && !PMWrapper.IsCompilerUserPaused)
+		if (isMovingByAnimation)
 		{
 			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-			agent.speed = Speed * gameSpeedExp;
-			agent.acceleration = Speed * gameSpeedExp;
+			animator.speed = AnimationSpeed * gameSpeedExp;
 
-			if (driveStraight)
+			if (!AnimatorIsPlaying())
 			{
-				Vector3 tempPosition = transform.position;
-				tempPosition.z = 0;
-				transform.position = tempPosition;
+				PMWrapper.UnpauseWalker();
+				isMovingByAnimation = false;
 			}
+		}
 
-			if (Vector3.Distance(transform.position, agent.destination) < 0.5f)
+		if (isMovingByScript && !PMWrapper.IsCompilerUserPaused)
+		{
+			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+
+			transform.Translate(new Vector3(0, 0, QueueSpeed * gameSpeedExp * Time.deltaTime));
+
+			if (Vector3.Distance(transform.position, targetPosition) < 2 * (QueueSpeed * gameSpeedExp * Time.deltaTime))
 			{
-				isMoving = false;
-
-				if (isFirstCar)
-					PMWrapper.UnpauseWalker();
-
-				if (shouldDestroy)
-					agent.enabled = false;
+				isMovingByScript = false;
+				transform.position = targetPosition;
 			}
 		}
 	}
 
-	public void SetNavigationTarget(Transform target, bool isFirst)
+	private bool AnimatorIsPlaying()
 	{
-		isMoving = true;
-		isFirstCar = isFirst;
-		shouldDestroy = isFirst;
-		driveStraight = !isFirst;
-
-		agent.updateRotation = isFirst;
-		agent.SetDestination(target.position);
+		return animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 &&
+		       (animator.GetCurrentAnimatorStateInfo(0).IsName("DriveLeft") ||
+		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveStraight") ||
+		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveRight"));
 	}
 
-	public void OnPMCompilerUserUnpaused()
+	private void PlayAnimation(string animationName)
 	{
-		float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-		agent.speed = Speed * gameSpeedExp;
+		isMovingByAnimation = true;
+
+		animator.enabled = true;
+		animator.SetTrigger(animationName);
 	}
 
-	public void OnPMCompilerUserPaused()
+	public void DriveLeft()
 	{
-		print("Pause compiler");
-		agent.speed = 0;
+		PlayAnimation("DriveLeft");
+	}
+
+	public void DriveStraight()
+	{
+		PlayAnimation("DriveStraight");
+	}
+
+	public void DriveRight()
+	{
+		PlayAnimation("DriveRight");
+	}
+
+	public void DriveShort()
+	{
+		PlayAnimation("DriveShort");
+	}
+
+	public void DriveForward(Transform target)
+	{
+		isMovingByScript = true;
+		targetPosition = target.position;
 	}
 }

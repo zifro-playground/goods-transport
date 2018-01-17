@@ -15,8 +15,8 @@ public class DriveRight : Function
 	{
 		SortedQueue.RightQueue.Add(CarQueue.GetFirstCar());
 
-		Transform target = Road.Instance.RightEndPoint;
-		CarQueue.DriveQueueForward(lineNumber, target);
+		CarQueue.DriveQueueForward();
+		CarQueue.DriveFirstCarRight();
 
 		return new Variable();
 	}

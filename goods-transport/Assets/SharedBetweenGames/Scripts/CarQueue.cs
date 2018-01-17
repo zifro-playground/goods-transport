@@ -5,7 +5,7 @@ public class CarQueue : MonoBehaviour
 {
 	public static LinkedList<GameObject> Cars = new LinkedList<GameObject>();
 
-	public static void DriveQueueForward(int lineNumber, Transform endTarget)
+	public static void DriveQueueForward()
 	{
 		var carNode = Cars.Last;
 		while (carNode != null)
@@ -14,16 +14,35 @@ public class CarQueue : MonoBehaviour
 			if (carNode.Previous != null)
 			{
 				Transform target = carNode.Previous.Value.transform;
-				carMovement.SetNavigationTarget(target, false);
-			}
-			else
-			{
-				carMovement.SetNavigationTarget(endTarget, true);
-				Cars.RemoveFirst();
+				carMovement.DriveForward(target);
 			}
 
 			carNode = carNode.Previous;
 		}
+	}
+
+	public static void DriveFirstCarLeft()
+	{
+		GetFirstCar().GetComponent<CarMovement>().DriveLeft();
+		Cars.RemoveFirst();
+	}
+
+	public static void DriveFirstCarStraight()
+	{
+		GetFirstCar().GetComponent<CarMovement>().DriveStraight();
+		Cars.RemoveFirst();
+	}
+
+	public static void DriveFirstCarRight()
+	{
+		GetFirstCar().GetComponent<CarMovement>().DriveRight();
+		Cars.RemoveFirst();
+	}
+
+	public static void DriveFirstCarShort()
+	{
+		GetFirstCar().GetComponent<CarMovement>().DriveShort();
+		Cars.RemoveFirst();
 	}
 
 	public static GameObject GetFirstCar()
