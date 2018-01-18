@@ -925,7 +925,100 @@
       ]
     },
     {
-      "id": "SONOP",
+      "id": "2SOR3",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 19,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 23,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 7",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "lampor"
+            },
+            "rightQueue": {
+              "type": "skog"
+            },
+            "forwardQueue": {
+              "type": "whatever"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SONO1",
       "cases":
       [
         {

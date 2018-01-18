@@ -1,0 +1,5 @@
+taskdescription: Kör alla lampor rakt fram, alla granar åt höger och resten av varorna åt vänster.
+rowlimit: 20
+startcode:
+smartbuttons: scanna_sort(), kör_vänster(), kör_framåt()
+functions: ScanType, DriveStraight, DriveLeft
