@@ -64,7 +64,7 @@
               "batteryLevel": 99
             }
           ],
-          "precode": "antal_bilar = 5",
+          "precode": "bilar = 5",
           "chargeBound": 40
         }
       ]
@@ -165,7 +165,7 @@
               "batteryLevel": 93
             }
           ],
-          "precode": "antal_bilar = 8",
+          "precode": "bilar = 8",
           "chargeBound": 80
         }
       ]
@@ -255,7 +255,7 @@
               "batteryLevel": 5
             }
           ],
-          "precode": "antal_bilar = 7",
+          "precode": "bilar = 7",
           "chargeBound": 50
         }
       ]
@@ -312,7 +312,7 @@
               "batteryLevel": 71
             }
           ],
-          "precode": "antal_bilar = 4",
+          "precode": "bilar = 4",
           "chargeBound": 67
         }
       ]
@@ -386,6 +386,238 @@
             },
             "forwardQueue": {
               "type": "whatever"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SOTR1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 22,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 5",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "granar"
+            },
+            "rightQueue": {
+              "type": "none"
+            },
+            "forwardQueue": {
+              "type": "whatever"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SOLA1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 22,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 19,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 6",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "granar"
+            },
+            "rightQueue": {
+              "type": "none"
+            },
+            "forwardQueue": {
+              "type": "whatever"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "SOPA2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 10,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 22,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 6",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "whatever"
+            },
+            "rightQueue": {
+              "type": "none"
+            },
+            "forwardQueue": {
+              "type": "palmer"
             }
           }
         }
@@ -482,6 +714,211 @@
             "forwardQueue":
             {
               "type": "whatever"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2SOR1",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 7",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "whatever"
+            },
+            "rightQueue": {
+              "type": "granar"
+            },
+            "forwardQueue": {
+              "type": "lampor"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "2SOR2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "bord",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 18,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "granar",
+                  "itemCount": 19,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 23,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections": [
+                {
+                  "type": "bord",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "stolar",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            }
+          ],
+          "precode": "bilar = 9",
+          "correctSorting":
+          {
+            "leftQueue": {
+              "type": "stolar"
+            },
+            "rightQueue": {
+              "type": "whatever"
+            },
+            "forwardQueue": {
+              "type": "bord"
             }
           }
         }
