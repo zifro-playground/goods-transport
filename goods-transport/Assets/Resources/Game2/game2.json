@@ -1,8 +1,7 @@
 {
   "levels":
   [
-    {
-      "id": "BAT40",
+    { "id": "BAT40",
       "cases":
       [
         {
@@ -69,8 +68,7 @@
         }
       ]
     },
-    {
-      "id": "BAT80",
+    { "id": "BAT80",
       "cases":
       [
         {
@@ -170,8 +168,7 @@
         }
       ]
     },
-    {
-      "id": "BAT50",
+    { "id": "BAT50",
       "cases":
       [
         {
@@ -260,8 +257,7 @@
         }
       ]
     },
-    {
-      "id": "BAT67",
+    { "id": "BAT67",
       "cases":
       [
         {
@@ -317,8 +313,7 @@
         }
       ]
     },
-    {
-      "id": "SOPA1",
+    { "id": "SOPA1",
       "cases":
       [
         {
@@ -391,8 +386,7 @@
         }
       ]
     },
-    {
-      "id": "SOTR1",
+    { "id": "SOTR1",
       "cases":
       [
         {
@@ -455,8 +449,7 @@
         }
       ]
     },
-    {
-      "id": "SOLA1",
+    { "id": "SOLA1",
       "cases":
       [
         {
@@ -539,8 +532,7 @@
         }
       ]
     },
-    {
-      "id": "SOPA2",
+    { "id": "SOPA2",
       "cases":
       [
         {
@@ -623,8 +615,7 @@
         }
       ]
     },
-    {
-      "id": "SOELF",
+    { "id": "SOELF",
       "cases":
       [
         {
@@ -719,8 +710,7 @@
         }
       ]
     },
-    {
-      "id": "2SOR1",
+    { "id": "2SOR1",
       "cases":
       [
         {
@@ -812,8 +802,7 @@
         }
       ]
     },
-    {
-      "id": "2SOR2",
+    { "id": "2SOR2",
       "cases":
       [
         {
@@ -924,8 +913,7 @@
         }
       ]
     },
-    {
-      "id": "2SOR3",
+    { "id": "2SOR3",
       "cases":
       [
         {
@@ -1017,8 +1005,7 @@
         }
       ]
     },
-    {
-      "id": "SONO1",
+    { "id": "SONO1",
       "cases":
       [
         {
@@ -1106,1109 +1093,528 @@
           }
         }
       ]
-    }
-  ]
-}
+    },
+    { "id": "SONO2",
+      "cases":
+      [
+        {
+          "cars":
+          [
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 16,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 13,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 19,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 24,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 22,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 17,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 7,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 18,
+                    "rows": 6
+                  }
+                ]
+              },
+              {
+                "sections":
+                [
+                  {
+                    "type": "lampor",
+                    "itemCount": 24,
+                    "rows": 6
+                  }
+                ]
+              }
 
-// 16 levels that can be used
-/*
-{
-  "id": "2KAD1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
+          ],
+          "precode": "bilar = 9",
+          "correctSorting":
+          {
+            "leftQueue":
             {
-              "type": "stolar",
-              "itemCount": 5,
-              "rows": 2
+              "lowerBound": 1,
+              "upperBound": 18
             },
+            "rightQueue":
             {
-              "type": "palmer",
-              "itemCount": 6,
-              "rows": 2
+              "lowerBound": 19,
+              "upperBound": 24
             },
+            "forwardQueue":
             {
-              "type": "granar",
-              "itemCount": 7,
-              "rows": 2
+              "lowerBound": 0,
+              "upperBound": 0
             }
-          ]
-        }
-      ],
-      "answer": 13
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 3,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 2
-            },
-            {
-              "type": "granar",
-              "itemCount": 4,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 11
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 1,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 8,
-              "rows": 2
-            },
-            {
-              "type": "granar",
-              "itemCount": 1,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 9
-    }
-  ]
-},
-{
-  "id": "2KAD2",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 6,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 8,
-              "rows": 2
-            },
-            {
-              "type": "bord",
-              "itemCount": 3,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 9
-    },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "stolar",
-              "itemCount": 8,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 2,
-              "rows": 2
-            },
-            {
-              "type": "bord",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 15
-    },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "stolar",
-              "itemCount": 3,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 5,
-              "rows": 2
-            },
-            {
-              "type": "bord",
-              "itemCount": 5,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 8
-    }
-  ]
-},
-{
-  "id": "1MUV1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 14,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 98
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 24,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 168
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 19,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 133
-    }
-  ]
-},
-{
-  "id": "2MUV1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 11,
-              "rows": 3
-            },
-            {
-              "type": "granar",
-              "itemCount": 8,
-              "rows": 3
-            }
-          ]
-        }
-      ],
-      "answer": 173
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 3
-            },
-            {
-              "type": "granar",
-              "itemCount": 12,
-              "rows": 3
-            }
-          ]
-        }
-      ],
-      "answer": 193
-    },
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 15,
-              "rows": 4
-            },
-            {
-              "type": "granar",
-              "itemCount": 6,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 177
-    }
-  ]
-},
-{
-  "id": "FRUL1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 11,
-              "rows": 6
-            }
-          ]
+          }
         }
       ]
-    }
-  ]
-},
-{
-  "id": "FRUL2",
-  "cases":
-  [
-    {
-      "cars":
+    },
+    { "id": "SONO3",
+      "cases":
       [
         {
-          "sections":
+          "cars":
           [
             {
-              "type": "lampor",
-              "itemCount": 15,
-              "rows": 6
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 24,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 20,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 4,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 6,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 20,
+                  "rows": 6
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 19,
+                  "rows": 6
+                }
+              ]
             }
-          ]
+          ],
+          "precode": "bilar = 8",
+          "correctSorting":
+          {
+            "leftQueue":
+            {
+              "lowerBound": 0,
+              "upperBound": 4
+            },
+            "rightQueue":
+            {
+              "lowerBound": 21,
+              "upperBound": 24
+            },
+            "forwardQueue":
+            {
+              "lowerBound": 5,
+              "upperBound": 20
+            }
+          }
         }
       ]
-    }
-  ]
-},
-{
-  "id": "FRUL3",
-  "cases":
-  [
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "palmer",
-              "itemCount": 11,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "palmer = 11"
     },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "palmer",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "palmer = 17"
-    },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "palmer",
-              "itemCount": 3,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "palmer = 3"
-    }
-  ]
-},
-{
-  "id": "FRUL4",
-  "cases":
-  [
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "lampor = 17"
-    },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "lampor",
-              "itemCount": 5,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "lampor = 5"
-    },
-    {
-      "cars": [
-        {
-          "sections": [
-            {
-              "type": "lampor",
-              "itemCount": 8,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "precode": "lampor = 8"
-    }
-  ]
-},
-{
-  "id": "FREM1",
-  "cases":
-  [
-    {
-      "cars":
+    { "id": "SONO4",
+      "cases":
       [
         {
-          "sections":
+          "cars":
           [
             {
-              "type": "granar",
-              "itemCount": 22,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 6
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 4,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 22,
+                  "rows": 6
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 15,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 21,
+                  "rows": 6
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 18,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 4,
+                  "rows": 6
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 24,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 24,
+                  "rows": 24
+                }
+              ]
+            },
             {
-              "type": "granar",
-              "itemCount": 13,
-              "rows": 6
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 23,
+                  "rows": 6
+                }
+              ]
             }
-          ]
+          ],
+          "precode": "bilar = 7",
+          "correctSorting":
+          {
+            "leftQueue":
+            {
+              "lowerBound": 7,
+              "upperBound": 21
+            },
+            "rightQueue":
+            {
+              "lowerBound": 22,
+              "upperBound": 24
+            },
+            "forwardQueue":
+            {
+              "lowerBound": 0,
+              "upperBound": 6
+            }
+          }
         }
       ]
-    }
-  ]
-},
-{
-  "id": "FREM2",
-  "cases":
-  [
-    {
-      "cars":
+    },
+    { "id": "SONO5",
+      "cases":
       [
         {
-          "sections":
+          "cars":
           [
             {
-              "type": "palmer",
-              "itemCount": 14,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 21,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 0,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 0,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 7,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 11,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 3,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 6,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 18,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 7,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 11,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 24,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 11,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 13,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 9,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 11,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 9,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 5,
+                  "rows": 3
+                }
+              ]
+            },
             {
-              "type": "palmer",
-              "itemCount": 17,
-              "rows": 6
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 12,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 12,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 11,
+                  "rows": 3
+                }
+              ]
+            },
+            {
+              "sections":
+              [
+                {
+                  "type": "palmer",
+                  "itemCount": 0,
+                  "rows": 3
+                },
+                {
+                  "type": "granar",
+                  "itemCount": 8,
+                  "rows": 3
+                }
+              ]
             }
-          ]
+          ],
+          "precode": "bilar = 11",
+          "correctSorting":
+          {
+            "leftQueue":
+            {
+              "lowerBound": 10,
+              "upperBound": 20
+            },
+            "rightQueue":
+            {
+              "lowerBound": 21,
+              "upperBound": 24
+            },
+            "forwardQueue":
+            {
+              "lowerBound": 0,
+              "upperBound": 9
+            }
+          }
         }
       ]
-    }
-  ]
-},
-{
-  "id": "CTHC1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 60
-    }
-  ]
-},
-{
-  "id": "CTHC2",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "lampor",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 119
-    }
-  ]
-},
-{
-  "id": "CTHC3",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 10,
-              "rows": 4
-            },
-            {
-              "type": "stolar",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 10,
-              "rows": 4
-            },
-            {
-              "type": "stolar",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 10,
-              "rows": 4
-            },
-            {
-              "type": "stolar",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 10,
-              "rows": 4
-            },
-            {
-              "type": "stolar",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        }
-      ],
-      "answer": 68
-    }
-  ]
-},
-{
-  "id": "CTRV1",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 21,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 17,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 18,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 13,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 24,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 93
-    }
-  ]
-},
-{
-  "id": "CTRV2",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 13,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 5,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 23,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 14,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 16,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 11,
-              "rows": 6
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "palmer",
-              "itemCount": 19,
-              "rows": 6
-            }
-          ]
-        }
-      ],
-      "answer": 101
-    }
-  ]
-},
-{
-  "id": "CTRV3",
-  "cases":
-  [
-    {
-      "cars":
-      [
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 6,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 13,
-              "rows": 4
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 11,
-              "rows": 3
-            },
-            {
-              "type": "palmer",
-              "itemCount": 12,
-              "rows": 3
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 18,
-              "rows": 5
-            },
-            {
-              "type": "palmer",
-              "itemCount": 1,
-              "rows": 1
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 14,
-              "rows": 4
-            },
-            {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 2
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 10,
-              "rows": 3
-            },
-            {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 3
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 3,
-              "rows": 2
-            },
-            {
-              "type": "palmer",
-              "itemCount": 15,
-              "rows": 4
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 4,
-              "rows": 1
-            },
-            {
-              "type": "palmer",
-              "itemCount": 20,
-              "rows": 5
-            }
-          ]
-        },
-        {
-          "sections":
-          [
-            {
-              "type": "stolar",
-              "itemCount": 10,
-              "rows": 3
-            },
-            {
-              "type": "palmer",
-              "itemCount": 7,
-              "rows": 3
-            }
-          ]
-        }
-      ],
-      "answer": 152
     }
   ]
 }
-*/

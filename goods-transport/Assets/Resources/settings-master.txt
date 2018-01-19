@@ -14,7 +14,7 @@ Game2/LevelSettings/settings-2SOR2
 Game2/LevelSettings/settings-2SOR3
 //	SCENE 3: 12-12 (16)
 Game2/LevelSettings/settings-SONO1
-// Game2/LevelSettings/settings-SONO2
-// Game2/LevelSettings/settings-SONO3
-// Game2/LevelSettings/settings-SONO4
-// Game2/LevelSettings/settings-SONO5
+Game2/LevelSettings/settings-SONO2
+Game2/LevelSettings/settings-SONO3
+Game2/LevelSettings/settings-SONO4
+Game2/LevelSettings/settings-SONO5

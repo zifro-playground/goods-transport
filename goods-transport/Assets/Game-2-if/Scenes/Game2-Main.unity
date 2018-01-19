@@ -179,7 +179,7 @@ Prefab:
     - target: {fileID: 114311671575859312, guid: bd6d8385892b60b45b49885f745b9038,
         type: 2}
       propertyPath: levelGroups.Array.data[2].endLevel
-      value: 12
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114311671575859312, guid: bd6d8385892b60b45b49885f745b9038,
         type: 2}
@@ -524,7 +524,7 @@ Prefab:
     - target: {fileID: 224326501610990258, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.4387817
+      value: 1.4387512
       objectReference: {fileID: 0}
     - target: {fileID: 224326501610990258, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
@@ -544,7 +544,7 @@ Prefab:
     - target: {fileID: 114639331556912418, guid: fbc1040b8261d44e8ab6fbfed18dcbda,
         type: 2}
       propertyPath: numberOfLevels
-      value: 13
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fbc1040b8261d44e8ab6fbfed18dcbda, type: 2}
