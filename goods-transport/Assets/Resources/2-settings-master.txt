@@ -1,0 +1,20 @@
+// 	SCENE 1: 0-3
+Game2/LevelSettings/settings-BAT40
+Game2/LevelSettings/settings-BAT80
+Game2/LevelSettings/settings-BAT50
+Game2/LevelSettings/settings-BAT67
+// 	SCENE 2: 4-11
+Game2/LevelSettings/settings-SOPA1
+Game2/LevelSettings/settings-SOTR1
+Game2/LevelSettings/settings-SOLA1
+Game2/LevelSettings/settings-SOPA2
+Game2/LevelSettings/settings-SOELF
+Game2/LevelSettings/settings-2SOR1
+Game2/LevelSettings/settings-2SOR2
+Game2/LevelSettings/settings-2SOR3
+//	SCENE 3: 12-12 (16)
+Game2/LevelSettings/settings-SONO1
+Game2/LevelSettings/settings-SONO2
+Game2/LevelSettings/settings-SONO3
+Game2/LevelSettings/settings-SONO4
+Game2/LevelSettings/settings-SONO5
