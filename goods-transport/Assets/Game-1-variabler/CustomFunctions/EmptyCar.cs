@@ -14,6 +14,10 @@ public class EmptyCar : Compiler.Function
 	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
 	{
 		GameObject currentCar = CarQueue.GetFirstCar();
+
+		if (currentCar == null)
+			PMWrapper.RaiseError(lineNumber, "Hittade ingen bil att tömma. ");
+
 		UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();
 
 		if (itemsToUnload.Length == 0)
