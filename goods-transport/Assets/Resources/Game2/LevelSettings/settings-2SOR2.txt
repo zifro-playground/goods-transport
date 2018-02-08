@@ -1,5 +1,5 @@
 taskdescription: Kör alla stolar åt vänster, alla bord rakt fram och resten av varorna åt höger.
 rowlimit: 20
 startcode:
-smartbuttons: scanna_sort(), kör_vänster(), kör_framåt()
-functions: ScanType, DriveStraight, DriveLeft
+smartbuttons: scanna_sort(), kör_vänster(), kör_höger(), kör_rakt()
+functions: ScanType, DriveStraight, DriveLeft, DriveRight

@@ -24,7 +24,7 @@ namespace PM.Guide {
 			int guidesBuilt = 0;
 
 			for (int i = 0; i < textRows.Length; i++) {
-
+				
 				if (guidesBuilt >= PMWrapper.numOfLevels)
 					break;
 
@@ -45,12 +45,13 @@ namespace PM.Guide {
 		}
 
 		public static LevelGuide BuildFromPath(string path) {
-			TextAsset asset = Resources.Load<TextAsset>(path);
+			TextAsset asset = Resources.Load<TextAsset>("Assets/Resources/" + path);
 
 			if (asset == null)
 				return null;
 			try {
-				return BuildFromString("Assets/Resources/Guides" + asset.name, asset.text);
+				Debug.Log(asset.name + " " + asset.text);
+				return BuildFromString(asset.name, asset.text);
 			} catch (Exception err) {
 				Debug.Log (err);
 				return null;
@@ -70,7 +71,8 @@ namespace PM.Guide {
 			for (int i = 0; i < rows.Count; i++) {
 
 				// Comments
-				if (rows[i].StartsWith("//") || rows[i].StartsWith("#")) continue;
+				if (rows[i].StartsWith("//") || rows[i].StartsWith("#"))
+					continue;
 
 				// get index of colon and split into target and guidemessage
 				int colonIndex = rows[i].IndexOf(":");

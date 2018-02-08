@@ -1,21 +1,18 @@
-// guide-master for game 1 - variables
-Game1/Guides/guide-2VAD1
-Game1/Guides/guide-2VAD2
+// guide-master for game 2 - if
+Game2/Guides/guide-BAT40
+Game2/Guides/guide-BAT80
+-
+-
+Game2/Guides/guide-SOPA1
 -
 -
 -
-//-
-Game1/Guides/guide-1MUV1
-Game1/Guides/guide-2MUV1
-Game1/Guides/guide-FRUL1
+Game2/Guides/guide-SOELF
 -
-Game1/Guides/guide-FRUL3
 -
-Game1/Guides/guide-FREM1
 -
-Game1/Guides/guide-CTHC1
+Game2/Guides/guide-SONO1
 -
-Game1/Guides/guide-CTHC3
-Game1/Guides/guide-CTRV1
+-
 -
 -

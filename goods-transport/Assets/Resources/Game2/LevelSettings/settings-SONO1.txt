@@ -1,5 +1,5 @@
 taskdescription: Kör alla bilar med mer än 20 palmer åt höger och resten rakt fram.
 rowlimit: 20
 startcode: for i in range(bilar):\n\tpalmer = scanna_antal_palmer()\n\tif palmer > 20:\n\t\tkör_höger()\n\telse:\n\t\tkör_rakt()
-smartbuttons: kör_rakt(), kör_höger(), kör_vänster, scanna_palmer()
+smartbuttons: kör_rakt(), kör_höger(), kör_vänster, scanna_antal_palmer()
 functions: DriveStraight, DriveRight, DriveLeft, ScanPalms
