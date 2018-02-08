@@ -1,0 +1,6 @@
+﻿3: <b>scanna_sort()</b> används för att lista ut vilken sort bilen har.
+3: Det finns 5 sorter: <b>"palmer"</b>, <b>"granar"</b>, <b>"bord"</b>, <b>"stolar"</b> och <b>"lampor"</b>.
+4: Kom ihåg att använda <b>==</b> för att jämföra variabeln <b>varusort</b> med värdet <b>"palmer"</b>.
+4: Kom även ihåg att värdet <b>"palmer"</b> är en text och därför får vi inte glömma citattecken.
+6: Alla bilar som inte har <b>"palmer"</b> åker <b>rakt fram</b>.
+play: Kör!

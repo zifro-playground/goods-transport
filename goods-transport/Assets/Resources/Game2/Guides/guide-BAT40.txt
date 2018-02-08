@@ -1,4 +1,5 @@
-1: For-slingan kör ett varv för varje bil i kön.
-2: <b>kolla_batterinivå()</b> hämtar bilens batterinivå och sparar värdet i en variabel med namnet <b>batterinivå</b>.
-3: Om batterinivån är <b>mindre än</b> 40 så laddas bilen.
-5: Oavsett om bilen laddats eller inte så kommer den åka framåt.
+ï»¿2: For-slingan kÃ¶r ett varv fÃ¶r varje bil i kÃ¶n.
+3: <b>kolla_batterinivÃ¥()</b> hÃ¤mtar bilens batterinivÃ¥ och sparar vÃ¤rdet i en variabel med namnet <b>batterinivÃ¥</b>.
+4: Om batterinivÃ¥n Ã¤r <b>mindre Ã¤n</b> 40 sÃ¥ laddas bilen.
+6: Oavsett om bilen laddats eller inte sÃ¥ kommer den Ã¥ka framÃ¥t.
+play: KÃ¶r!
