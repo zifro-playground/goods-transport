@@ -1,4 +1,4 @@
-taskdescription: Töm alla bilar på lampor. Hur många lampor kom med bilarna?
+taskdescription: Töm alla bilar på lampor. Hur många lampor kom med bilarna? Varje bil innehåller lika många lampor.
 rowlimit: 20
 smartbuttons: töm_bilen(), kör_framåt(), svara()
 functions: EmptyCar, DriveForward

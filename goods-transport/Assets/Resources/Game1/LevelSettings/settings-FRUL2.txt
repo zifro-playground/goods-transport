@@ -1,4 +1,4 @@
-taskdescription: Lasta av alla lampor från bilen
+taskdescription: Lasta av alla lampor från bilen.
 rowlimit: 10
 gamespeed: 1
 smartbuttons: lasta_av_lampa()
