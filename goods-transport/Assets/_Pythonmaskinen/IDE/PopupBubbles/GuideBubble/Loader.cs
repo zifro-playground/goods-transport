@@ -4,18 +4,15 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 
-namespace PM.Guide
-{
+namespace PM.Guide {
 
-	public static class GuideLoader
-	{
+	public static class GuideLoader{
 
 		public const string guideResourceName = "guide-master";
 		public static readonly string[] linebreaks = new string[] { "\n\r", "\r\n", "\n", "\r" };
 		public static List<LevelGuide> allGuides = new List<LevelGuide>();
 
-		public static void BuildAll()
-		{
+		public static void BuildAll() {
 			TextAsset masterAsset = Resources.Load<TextAsset>(guideResourceName);
 
 			if (masterAsset == null)
@@ -26,8 +23,7 @@ namespace PM.Guide
 
 			int guidesBuilt = 0;
 
-			for (int i = 0; i < textRows.Length; i++)
-			{
+			for (int i = 0; i < textRows.Length; i++) {
 
 				if (guidesBuilt >= PMWrapper.numOfLevels)
 					break;
@@ -38,85 +34,68 @@ namespace PM.Guide
 
 				guideFileName = textRows[i].Trim();
 
-				LevelGuide guide = BuildFromPath(guideFileName);
-				if (guide != null)
-				{
+				LevelGuide guide = BuildFromPath (guideFileName);
+				if (guide != null) {
 					guide.level = guidesBuilt;
-					allGuides.Add(guide);
+					allGuides.Add (guide);
 				}
 
 				guidesBuilt++;
 			}
 		}
 
-		public static LevelGuide BuildFromPath(string path)
-		{
+		public static LevelGuide BuildFromPath(string path) {
 			TextAsset asset = Resources.Load<TextAsset>(path);
-			if (path.Contains("2VAD1"))
-			{
-				Debug.Log(asset.text.Length);
-				Debug.Log(path);
-			}
 
 			if (asset == null)
 				return null;
-			try
-			{
+			try {
 				return BuildFromString("Assets/Resources/Guides" + asset.name, asset.text);
-			}
-			catch (Exception err)
-			{
-				Debug.Log(err);
+			} catch (Exception err) {
+				Debug.Log (err);
 				return null;
 			}
 		}
 
 
-		private static LevelGuide BuildFromString(string filename, string fileText)
-		{
+		private static LevelGuide BuildFromString(string filename, string fileText) {
 			List<string> rows = new List<string>(fileText.Split(linebreaks, StringSplitOptions.RemoveEmptyEntries));
-			LevelGuide levelGuide = new LevelGuide();
+			LevelGuide levelGuide = new LevelGuide ();
 
 			//Target target;
 			string target = "";
 			int lineNumber = 0;
 			string guideMessage = "";
 
-			for (int i = 0; i < rows.Count; i++)
-			{
+			for (int i = 0; i < rows.Count; i++) {
 
 				// Comments
 				if (rows[i].StartsWith("//") || rows[i].StartsWith("#")) continue;
 
 				// get index of colon and split into target and guidemessage
 				int colonIndex = rows[i].IndexOf(":");
-				target = rows[i].Substring(0, colonIndex).Trim().ToLower();
-				guideMessage = rows[i].Substring(colonIndex + 1).Trim();
+				target = rows [i].Substring (0, colonIndex).Trim().ToLower();
+				guideMessage = rows[i].Substring(colonIndex+1).Trim();
 
 				// Check if target is a number
-				Match match = Regex.Match(target, @"^[0-9]+$");
-
-				if (match.Success)
-				{
-					int.TryParse(target, out lineNumber);
-					levelGuide.guides.Add(new Guide(target, guideMessage, lineNumber));
-				}
-				else
-				{
+				Match match = Regex.Match (target, @"^[0-9]+$");
+			
+				if (match.Success) {
+					int.TryParse (target, out lineNumber);
+					levelGuide.guides.Add (new Guide (target, guideMessage, lineNumber));
+				} else {
 					levelGuide.guides.Add(new Guide(target, guideMessage));
 				}
 			}
 			// Return no levelGuide if it has no guides
 			if (levelGuide.guides.Count == 0)
 				return null;
-
+			
 			return levelGuide;
 		}
 
-		public static LevelGuide GetCurrentLevelGuide()
-		{
-			foreach (LevelGuide guide in allGuides)
-			{
+		public static LevelGuide GetCurrentLevelGuide(){
+			foreach (LevelGuide guide in allGuides) {
 				if (guide.level == PMWrapper.currentLevel)
 					return guide;
 			}
