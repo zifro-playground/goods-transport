@@ -132,7 +132,7 @@ public class LevelController : MonoBehaviour
 					boxRow.transform.SetParent(carObj.transform);
 
 					float rowCenter = sectionLeftEnd + CarPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * BoxSpacing;
-					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
+					boxRow.transform.position = new Vector3(rowCenter, 0f, carWidthCenter);
 					
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
@@ -171,7 +171,6 @@ public class LevelController : MonoBehaviour
 	private void RescaleCar(Car carData, GameObject carPlatform, GameObject carFront)
 	{
 		Vector3 platformSize = carPlatform.GetComponent<Renderer>().bounds.size;
-		Vector3 frontSize = carFront.GetComponent<Renderer>().bounds.size;
 
 		int sectionCount = 0;
 		int rowsInCar = 0;
@@ -191,10 +190,8 @@ public class LevelController : MonoBehaviour
 		
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;
-		float scaleFactorWidthFront = newCarWidth / frontSize.z;
 
-		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 0.5f, scaleFactorWidthPlatform);
-		carFront.transform.localScale = new Vector3(1.5f, 1.5f, scaleFactorWidthFront);
+		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 1f, scaleFactorWidthPlatform);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{
