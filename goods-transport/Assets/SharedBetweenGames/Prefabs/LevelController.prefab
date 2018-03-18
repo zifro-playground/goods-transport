@@ -51,22 +51,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c855ea4eea0d846a42e012ef0fd662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPlatformPrefab: {fileID: 1778304852213010, guid: bc57458f61b8c6344a64119ac9a21953,
+  CarPrefab: {fileID: 1163889366112496, guid: bd8638fb807ef5d408bda73dffe85e84, type: 2}
+  CarPlatformPrefab: {fileID: 1343662327011168, guid: 452252dce5b3be54da5e057479c56169,
     type: 2}
-  carFrontPrefab: {fileID: 1706001209424536, guid: 36fb299bdfcbe174289e1b85da0c3de1,
+  CarFrontPrefab: {fileID: 1821851709188626, guid: 22784bdecb58af549a4b5e1d946ed929,
     type: 2}
-  boxRowPrefab: {fileID: 1816890561007966, guid: b22356f0817d66345995a3f3511a812b,
+  BoxRowPrefab: {fileID: 1974380078472916, guid: ad9100ec62e58a54f8922282b765ff80,
     type: 2}
-  palmPrefab: {fileID: 1854416307798104, guid: 850240cd6e130774086831be94421a46, type: 2}
-  treePrefab: {fileID: 1624339758170216, guid: 0372f0ac27cec664291d831fe5973bdd, type: 2}
-  lampPrefab: {fileID: 1158850515424876, guid: b5297551aefe8a54ebed73b693ede981, type: 2}
-  tablePrefab: {fileID: 1584486104668270, guid: 46d4547d2b2093a44a2d2e5a9f8d6fab,
+  PalmPrefab: {fileID: 1854416307798104, guid: 850240cd6e130774086831be94421a46, type: 2}
+  TreePrefab: {fileID: 1624339758170216, guid: 0372f0ac27cec664291d831fe5973bdd, type: 2}
+  LampPrefab: {fileID: 1158850515424876, guid: b5297551aefe8a54ebed73b693ede981, type: 2}
+  TablePrefab: {fileID: 1584486104668270, guid: 46d4547d2b2093a44a2d2e5a9f8d6fab,
     type: 2}
-  chairPrefab: {fileID: 1944635786735238, guid: 36a5530df8ea84557be56c8b754db4ea,
+  ChairPrefab: {fileID: 1944635786735238, guid: 36a5530df8ea84557be56c8b754db4ea,
     type: 2}
   Red: {fileID: 2100000, guid: 42afb7e7f1ebef2448a6643ad885cc42, type: 2}
   Green: {fileID: 2100000, guid: 5eb8c4cfb9b9bb441a94ce0f320a34c2, type: 2}
   Blue: {fileID: 2100000, guid: 4f6058a275af99948b4bbd8081aff8b4, type: 2}
-  carSpacing: 1.5
-  boxSpacing: 0.5
-  carPadding: 0.4
+  CarSpacing: 1.5
+  BoxSpacing: 0.5
+  CarPadding: 0.5
