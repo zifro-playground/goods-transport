@@ -100,7 +100,7 @@ public class LevelController : MonoBehaviour
 			GameObject platform = Instantiate(CarPlatformPrefab);
 			GameObject front = Instantiate(CarFrontPrefab);
 
-			SetCarMaterial(carData, platform, front);
+			SetCarMaterial(carData, front);
 
 			platform.transform.SetParent(carObj.transform);
 			front.transform.SetParent(carObj.transform);
