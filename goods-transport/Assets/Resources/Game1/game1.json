@@ -31,8 +31,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 9,
@@ -43,7 +42,8 @@
                   "itemCount": 4,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 13
@@ -52,8 +52,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 5,
@@ -64,7 +63,8 @@
                   "itemCount": 1,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 6
@@ -79,8 +79,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 12,
@@ -91,7 +90,8 @@
                   "itemCount": 7,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 19
@@ -100,8 +100,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 10,
@@ -112,7 +111,8 @@
                   "itemCount": 5,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "green"
             }
           ],
           "answer": 15
@@ -121,8 +121,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 14,
@@ -133,7 +132,8 @@
                   "itemCount": 7,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 21
@@ -148,8 +148,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 7,
@@ -165,7 +164,8 @@
                   "itemCount": 3,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 17
@@ -174,12 +174,11 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 5,
-                  "rows": 3
+                  "rows": 2
                 },
                 {
                   "type": "palmer",
@@ -191,7 +190,8 @@
                   "itemCount": 8,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 14
@@ -200,8 +200,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 6,
@@ -217,7 +216,8 @@
                   "itemCount": 5,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "green"
             }
           ],
           "answer": 19
@@ -232,8 +232,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 5,
@@ -249,7 +248,8 @@
                   "itemCount": 7,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "green"
             }
           ],
           "answer": 13
@@ -258,8 +258,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 3,
@@ -275,7 +274,8 @@
                   "itemCount": 4,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 11
@@ -284,8 +284,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 1,
@@ -301,7 +300,8 @@
                   "itemCount": 1,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 9
@@ -316,8 +316,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 6,
@@ -333,56 +332,59 @@
                   "itemCount": 3,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 9
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "stolar",
-									"itemCount": 8,
-									"rows": 2
-								},
-								{
-									"type": "palmer",
-									"itemCount": 2,
-									"rows": 2
-								},
-								{
-									"type": "bord",
-									"itemCount": 7,
-									"rows": 2
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "stolar",
+                  "itemCount": 8,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 2,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 7,
+                  "rows": 2
+                }
+              ],
+              "color": "green"
+            }
 					],
 					"answer": 15
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "stolar",
-									"itemCount": 3,
-									"rows": 2
-								},
-								{
-									"type": "palmer",
-									"itemCount": 5,
-									"rows": 2
-								},
-								{
-									"type": "bord",
-									"itemCount": 5,
-									"rows": 2
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "stolar",
+                  "itemCount": 3,
+                  "rows": 2
+                },
+                {
+                  "type": "palmer",
+                  "itemCount": 5,
+                  "rows": 2
+                },
+                {
+                  "type": "bord",
+                  "itemCount": 5,
+                  "rows": 2
+                }
+              ],
+              "color": "blue"
+            }
 					],
 					"answer": 8
         }
@@ -396,14 +398,14 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 14,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 98
@@ -412,14 +414,14 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 24,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             }
           ],
           "answer": 168
@@ -428,14 +430,14 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 19,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 133
@@ -450,8 +452,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 11,
@@ -462,7 +463,8 @@
                   "itemCount": 8,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "green"
             }
           ],
           "answer": 173
@@ -471,8 +473,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 7,
@@ -483,7 +484,8 @@
                   "itemCount": 12,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "blue"
             }
           ],
           "answer": 193
@@ -492,8 +494,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 15,
@@ -504,7 +505,8 @@
                   "itemCount": 6,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "red"
             }
           ],
           "answer": 177
@@ -519,13 +521,14 @@
           "cars":
           [
             {
-							"sections": [
-								{
-									"type": "palmer",
-									"itemCount": 11,
-									"rows": 6
-								}
-							]
+              "sections": [
+                {
+                  "type": "palmer",
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ],
+              "color": "blue"
             }
           ]
         }
@@ -539,14 +542,14 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 15,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             }
           ]
         }
@@ -558,43 +561,46 @@
       [
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "palmer",
-									"itemCount": 11,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "palmer",
+                  "itemCount": 11,
+                  "rows": 6
+                }
+              ],
+              "color": "green"
+            }
 					],
 					"precode": "palmer = 11"
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "palmer",
-									"itemCount": 17,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "palmer",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ],
+              "color": "red"
+            }
 					],
 					"precode": "palmer = 17"
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "palmer",
-									"itemCount": 3,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "palmer",
+                  "itemCount": 3,
+                  "rows": 6
+                }
+              ],
+              "color": "blue"
+            }
 					],
 					"precode": "palmer = 3"
         }
@@ -606,43 +612,46 @@
       [
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 17,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 17,
+                  "rows": 6
+                }
+              ],
+              "color": "red"
+            }
 					],
 					"precode": "lampor = 17"
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 5,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 5,
+                  "rows": 6
+                }
+              ],
+              "color": "green"
+            }
 					],
 					"precode": "lampor = 5"
         },
         {
 					"cars": [
-						{
-							"sections": [
-								{
-									"type": "lampor",
-									"itemCount": 8,
-									"rows": 6
-								}
-							]
-						}
+            {
+              "sections": [
+                {
+                  "type": "lampor",
+                  "itemCount": 8,
+                  "rows": 6
+                }
+              ],
+              "color": "blue"
+            }
 					],
 					"precode": "lampor = 8"
         }
@@ -656,24 +665,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "granar",
                   "itemCount": 22,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "blue"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "granar",
                   "itemCount": 17,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
               "sections":
@@ -737,24 +746,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 14,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 21,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             },
             {
               "sections":
@@ -838,24 +847,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 12,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 12,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "blue"
             },
             {
               "sections":
@@ -900,24 +909,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 17,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "lampor",
                   "itemCount": 17,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
               "sections":
@@ -982,8 +991,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 10,
@@ -994,11 +1002,11 @@
                   "itemCount": 7,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "blue"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 10,
@@ -1009,7 +1017,8 @@
                   "itemCount": 7,
                   "rows": 2
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
               "sections":
@@ -1054,24 +1063,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 21,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 17,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             },
             {
               "sections":
@@ -1116,24 +1125,24 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 13,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "blue"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "palmer",
                   "itemCount": 5,
                   "rows": 6
                 }
-              ]
+              ],
+              "color": "red"
             },
             {
               "sections":
@@ -1198,8 +1207,7 @@
           "cars":
           [
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 6,
@@ -1210,11 +1218,11 @@
                   "itemCount": 13,
                   "rows": 4
                 }
-              ]
+              ],
+              "color": "green"
             },
             {
-              "sections":
-              [
+              "sections": [
                 {
                   "type": "stolar",
                   "itemCount": 11,
@@ -1225,7 +1233,8 @@
                   "itemCount": 12,
                   "rows": 3
                 }
-              ]
+              ],
+              "color": "red"
             },
             {
               "sections":

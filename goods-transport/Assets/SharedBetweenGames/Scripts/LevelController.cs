@@ -115,7 +115,7 @@ public class LevelController : MonoBehaviour
 			// Place the rows of boxes and their items in car
 			Bounds platformBounds = platform.GetComponent<Renderer>().bounds;
 			Bounds frontBounds = front.GetComponent<Renderer>().bounds;
-			front.transform.position = new Vector3(platformBounds.max.x, platformBounds.min.y, platformBounds.center.z);
+			front.transform.position = new Vector3(platformBounds.max.x, platformBounds.min.y-0.25f, platformBounds.center.z);
 
 			float carLength = platformBounds.size.x + frontBounds.size.x;
 			float carWidthCenter = platformBounds.center.z;
@@ -132,7 +132,7 @@ public class LevelController : MonoBehaviour
 					boxRow.transform.SetParent(carObj.transform);
 
 					float rowCenter = sectionLeftEnd + CarPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * BoxSpacing;
-					boxRow.transform.position = new Vector3(rowCenter, 0f, carWidthCenter);
+					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 					
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
@@ -191,7 +191,7 @@ public class LevelController : MonoBehaviour
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;
 
-		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 1f, scaleFactorWidthPlatform);
+		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 2.3f, scaleFactorWidthPlatform);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{
