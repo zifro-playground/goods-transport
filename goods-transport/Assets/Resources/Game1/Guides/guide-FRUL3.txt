@@ -1,2 +1,2 @@
-1: Nu använder vi variabeln med namn <b>palmer</b> för att lasta av exakt så många palmer som kommer på bilen.
+1: Nu använder vi variabeln med namn <b>palmer</b> för att lasta av exakt så många palmer som kommer på tåget.
 2: Eftersom variabeln med namn <b>palmer</b> har värdet <b>11</b> kommer for-slingan lasta av <b>11</b> palmer.

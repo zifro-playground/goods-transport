@@ -1,6 +1,6 @@
-taskdescription: Ladda bilen om den har mindre än 80% batteri.
+taskdescription: Ladda tåget om den har mindre än 80% batteri.
 startcode:
 rowlimit: 20
 casecount: 1
-smartbuttons: kolla_batterinivå(), ladda_bil(), kör_framåt()
+smartbuttons: kolla_batterinivå(), ladda_tåg(), kör_framåt()
 functions: CheckBattery, ChargeCar, DriveForward

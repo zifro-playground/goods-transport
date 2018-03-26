@@ -1,4 +1,4 @@
-taskdescription: Kör alla bilar med mer än 20 palmer åt höger, mindre än 5 palmer åt vänster och resten rakt fram.
+taskdescription: Kör alla tåg med mer än 20 palmer åt höger, mindre än 5 palmer åt vänster och resten rakt fram.
 rowlimit: 20
 startcode:
 smartbuttons: kör_rakt(), kör_höger(), kör_vänster(), scanna_antal_palmer()

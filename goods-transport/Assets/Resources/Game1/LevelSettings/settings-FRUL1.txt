@@ -1,4 +1,4 @@
-taskdescription: Lasta av alla palmer från bilen.
+taskdescription: Lasta av alla palmer från tåget.
 startcode: for i in range(11):\n\tlasta_av_palm()
 rowlimit: 10
 gamespeed: 1

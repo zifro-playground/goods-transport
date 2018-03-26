@@ -1,1 +1,1 @@
-1: <b>For-slinga</b> här gör att koden under kommer att köras 11 gånger.
+1: <b>For-slingan</b> här gör att *lasta_av_palm()* kommer att köras 11 gånger.

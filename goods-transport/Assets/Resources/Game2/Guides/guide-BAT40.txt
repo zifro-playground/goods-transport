@@ -1,5 +1,5 @@
-﻿2: For-slingan kör ett varv för varje bil i kön.
-3: <b>kolla_batterinivå()</b> hämtar bilens batterinivå och sparar värdet i en variabel med namnet <b>batterinivå</b>.
-4: Om batterinivån är <b>mindre än</b> 40 så laddas bilen.
-6: Oavsett om bilen laddats eller inte så kommer den åka framåt.
+﻿2: For-slingan kör ett varv för varje tåg i kön.
+3: <b>kolla_batterinivå()</b> hämtar tågets batterinivå och sparar värdet i en variabel med namnet <b>batterinivå</b>.
+4: Om batterinivån är <b>mindre än</b> 40 så laddas tåget.
+6: Oavsett om tåget laddats eller inte så kommer det åka framåt.
 play: Kör!

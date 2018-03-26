@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EmptyCar : Compiler.Function
 {
 	public EmptyCar()
 	{
-		this.name = "töm_bilen";
+		this.name = "töm_tåg";
 		this.inputParameterAmount.Add(0);
 		this.hasReturnVariable = false;
 		this.pauseWalker = true;
@@ -16,12 +15,12 @@ public class EmptyCar : Compiler.Function
 		GameObject currentCar = CarQueue.GetFirstCar();
 
 		if (currentCar == null)
-			PMWrapper.RaiseError(lineNumber, "Hittade ingen bil att tömma. ");
+			PMWrapper.RaiseError(lineNumber, "Hittade inget tåg att tömma. ");
 
 		UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();
 
 		if (itemsToUnload.Length == 0)
-			PMWrapper.RaiseError(lineNumber, "Kan inte tömma en tom bil. Kom ihåg att köra fram nästa bil innan du tömmer igen.");
+			PMWrapper.RaiseError(lineNumber, "Kan inte tömma ett tomt tåg. Kom ihåg att köra fram nästa tåg innan du tömmer igen.");
 
 		foreach (UnloadableItem item in itemsToUnload)
 		{

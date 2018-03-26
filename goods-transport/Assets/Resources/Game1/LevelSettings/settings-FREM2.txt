@@ -1,5 +1,5 @@
-taskdescription: Töm alla bilar på palmer.
-precode: antal_bilar = 9
+taskdescription: Töm alla tåg på palmer.
+precode: antal_tåg = 9
 rowlimit: 20
-smartbuttons: töm_bilen(), kör_framåt()
+smartbuttons: töm_tåg(), kör_framåt()
 functions: EmptyCar, DriveForward

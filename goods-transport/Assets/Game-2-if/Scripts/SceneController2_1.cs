@@ -21,11 +21,10 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 			if (CarsCharged < carsToCharge)
 			{
 				int carsNotCharged = carsToCharge - CarsCharged;
-				string carsSingularOrPlural = carsNotCharged == 1 ? "1 bil" : carsNotCharged + " bilar";
-				PMWrapper.RaiseTaskError(carsSingularOrPlural + " blev inte laddade. Alla bilar med batterinivå < " + LevelController.CaseData.chargeBound + " ska laddas.");
+				PMWrapper.RaiseTaskError(carsNotCharged + " tåg laddades inte. Alla tåg med batterinivå < " + LevelController.CaseData.chargeBound + " ska laddas.");
 			}
 			if (CarsCharged > carsToCharge)
-				PMWrapper.RaiseTaskError("För många bilar laddades. Bara bilar med batterinivå < " + LevelController.CaseData.chargeBound + " ska laddas.");
+				PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + LevelController.CaseData.chargeBound + " ska laddas.");
 			if (CarsCharged == carsToCharge)
 				PMWrapper.SetCaseCompleted();
 		}

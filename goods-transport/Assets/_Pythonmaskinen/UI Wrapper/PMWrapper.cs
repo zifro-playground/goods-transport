@@ -463,6 +463,7 @@ public static class PMWrapper
 	public static void RaiseTaskError(string message)
 	{
 		UISingleton.instance.taskDescription.ShowTaskError(message);
+        UISingleton.instance.levelHandler.currentLevel.caseHandler.CaseFailed();
 		StopCompiler();
 	}
 
