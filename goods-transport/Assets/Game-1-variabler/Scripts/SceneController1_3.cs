@@ -24,7 +24,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void SetPrecode(Case caseData)
 	{
-		string precode = "antal_bilar = " + caseData.cars.Count;
+		string precode = "antal_tåg = " + caseData.cars.Count;
 		PMWrapper.preCode = precode;
 	}
 
@@ -50,8 +50,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 		if (carsUnloaded < carsToUnload)
 		{
-			string carSingularOrPlural = carsToUnload - carsUnloaded == 1 ? (carsToUnload - carsUnloaded) + " bil" : (carsToUnload - carsUnloaded) + " bilar";
-			PMWrapper.RaiseTaskError("Alla bilar blev inte tömda. Nu är det " + carSingularOrPlural + " som inte töms.");
+			PMWrapper.RaiseTaskError("Alla tåg tömdes inte. Nu är det " + (carsToUnload - carsUnloaded) + " som inte töms.");
 		}
 		if (carsToUnload == carsUnloaded)
 		{

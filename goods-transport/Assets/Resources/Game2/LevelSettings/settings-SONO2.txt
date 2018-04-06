@@ -1,4 +1,4 @@
-taskdescription: Kör alla bilar med mer än 18 lampor åt höger och resten åt vänster.
+taskdescription: Kör alla tåg med mer än 18 lampor åt höger och resten åt vänster.
 rowlimit: 20
 startcode:
 smartbuttons: kör_rakt(), kör_höger(), kör_vänster(), scanna_antal_lampor()

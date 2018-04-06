@@ -1,4 +1,4 @@
-taskdescription: Hur många palmer finns i bilen?
+taskdescription: Hur många palmer finns på tåget?
 precode: varor = 8\nstolar = 3\nbord = 1
 rowlimit: 20
 casecount: 3

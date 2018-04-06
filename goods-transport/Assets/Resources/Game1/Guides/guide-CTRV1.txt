@@ -1,5 +1,5 @@
 2: Variabeln <b>totalt_stolar</b> kommer hålla koll på hur många stolar vi lastat av. Till en början har vi inte lastat av några stolar alls.
-4: <b>Nytt!</b> Här scannar vi och kollar hur många stolar som kom i den här bilen. Antalet som scannern hittar sparas i variabeln <b>stolar</b>.
-5: Vi tömmer bilen, som vanligt.
-6: Sedan adderar vi antalet stolar i bilen till <b>totalt_stolar</b>.
-7: Vi avslutar med att köra fram nästa bil i kön.
+4: <b>Nytt!</b> Här scannar vi och kollar hur många stolar som kom med tåget. Antalet som scannern hittar sparas i variabeln <b>stolar</b>.
+5: Vi tömmer tåget, som vanligt.
+6: Sedan adderar vi antalet stolar i tåget till <b>totalt_stolar</b>.
+7: Vi avslutar med att köra fram nästa tåg i kön.

@@ -100,7 +100,7 @@ public class LevelController : MonoBehaviour
 			GameObject platform = Instantiate(CarPlatformPrefab);
 			GameObject front = Instantiate(CarFrontPrefab);
 
-			SetCarMaterial(carData, platform, front);
+			SetCarMaterial(carData, front);
 
 			platform.transform.SetParent(carObj.transform);
 			front.transform.SetParent(carObj.transform);
@@ -115,7 +115,7 @@ public class LevelController : MonoBehaviour
 			// Place the rows of boxes and their items in car
 			Bounds platformBounds = platform.GetComponent<Renderer>().bounds;
 			Bounds frontBounds = front.GetComponent<Renderer>().bounds;
-			front.transform.position = new Vector3(platformBounds.max.x, platformBounds.min.y, platformBounds.center.z);
+			front.transform.position = new Vector3(platformBounds.max.x, platformBounds.min.y-0.25f, platformBounds.center.z);
 
 			float carLength = platformBounds.size.x + frontBounds.size.x;
 			float carWidthCenter = platformBounds.center.z;
@@ -171,7 +171,6 @@ public class LevelController : MonoBehaviour
 	private void RescaleCar(Car carData, GameObject carPlatform, GameObject carFront)
 	{
 		Vector3 platformSize = carPlatform.GetComponent<Renderer>().bounds.size;
-		Vector3 frontSize = carFront.GetComponent<Renderer>().bounds.size;
 
 		int sectionCount = 0;
 		int rowsInCar = 0;
@@ -180,21 +179,23 @@ public class LevelController : MonoBehaviour
 		foreach (Section section in carData.sections)
 		{
 			rowsInCar += section.rows;
-			if (section.itemCount > 0)
+			if (section.itemCount >= 0)
 			{
 				sectionCount++;
 				boxSpacingsNeeded += section.rows - 1;
 			}
+            else
+            {
+                throw new Exception("The itemCount in a section can not be negative (in level: " + PMWrapper.currentLevel + ")");
+            }
 		}
 		float newCarWidth = 4 * BoxLength + 3 * BoxSpacing + 2 * CarPadding;
 		float newPlatformLength = rowsInCar * BoxLength + boxSpacingsNeeded * BoxSpacing + 2 * sectionCount * CarPadding;
 		
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;
-		float scaleFactorWidthFront = newCarWidth / frontSize.z;
 
-		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 0.5f, scaleFactorWidthPlatform);
-		carFront.transform.localScale = new Vector3(1.5f, 1.5f, scaleFactorWidthFront);
+		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 2.3f, scaleFactorWidthPlatform);
 	}
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{

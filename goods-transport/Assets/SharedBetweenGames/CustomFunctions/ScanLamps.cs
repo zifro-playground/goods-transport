@@ -19,19 +19,8 @@ public class ScanLamps : Function
 		if (car == null)
 			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");
 
-		GameObject carPlatform = null;
-
-		// Find the car platform to focus on when scanning
-		foreach (Transform child in car.transform)
-		{
-			if (child.gameObject.CompareTag("CarPlatform"))
-				carPlatform = child.gameObject;
-		}
-		if (carPlatform == null)
-			throw new Exception("Could not find any child of first car in queue with tag \"CarPlatform\".");
-
 		Scanner scanner = Scanner.Instance;
-		scanner.Scan(carPlatform);
+		scanner.Scan(car);
 
 		int lampCount = 0;
 

@@ -5,7 +5,7 @@ public class ChargeCar : Compiler.Function
 {
 	public ChargeCar()
 	{
-		this.name = "ladda_bil";
+		this.name = "ladda_tåg";
 		this.inputParameterAmount.Add(0);
 		this.hasReturnVariable = false;
 		this.pauseWalker = true;
