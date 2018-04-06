@@ -179,11 +179,15 @@ public class LevelController : MonoBehaviour
 		foreach (Section section in carData.sections)
 		{
 			rowsInCar += section.rows;
-			if (section.itemCount > 0)
+			if (section.itemCount >= 0)
 			{
 				sectionCount++;
 				boxSpacingsNeeded += section.rows - 1;
 			}
+            else
+            {
+                throw new Exception("The itemCount in a section can not be negative (in level: " + PMWrapper.currentLevel + ")");
+            }
 		}
 		float newCarWidth = 4 * BoxLength + 3 * BoxSpacing + 2 * CarPadding;
 		float newPlatformLength = rowsInCar * BoxLength + boxSpacingsNeeded * BoxSpacing + 2 * sectionCount * CarPadding;
