@@ -20,6 +20,8 @@ public class ChargeStation : MonoBehaviour
 	private const int FullBatteryLevel = 100;
 	private int currentCarBatteryLevel;
 
+    private CarInfo currentCarInfo;
+
 	private void Start()
 	{
 		Instance = this;
@@ -58,6 +60,8 @@ public class ChargeStation : MonoBehaviour
 
 	private void Charge()
 	{
+        currentCarInfo.BatteryLevel++;
+
 		currentCarBatteryLevel++;
 		Display.text = currentCarBatteryLevel.ToString();
 
@@ -126,5 +130,6 @@ public class ChargeStation : MonoBehaviour
 	public void ChargeBattery()
 	{
 		isCharging = true;
-	}
+        currentCarInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
+    }
 }

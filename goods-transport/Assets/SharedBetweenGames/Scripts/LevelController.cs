@@ -92,6 +92,7 @@ public class LevelController : MonoBehaviour
 		{
 			GameObject carObj = Instantiate(CarPrefab);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
+            carInfo.StartBatteryLevel = carData.batteryLevel;
 			carInfo.BatteryLevel = carData.batteryLevel;
 			carInfo.ItemsInCar = 0;
 
