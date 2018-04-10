@@ -13,9 +13,30 @@ public class ChargeCar : Compiler.Function
 
 	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
 	{
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController2_1>().CarsCharged++;
+        SetCarCharged();
 		ChargeStation.Instance.ChargeBattery();
 
 		return new Variable();
 	}
+
+    private void SetCarCharged()
+    {
+        var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
+        int chargeBound = LevelController.CaseData.chargeBound;
+
+        if (carInfo.HasBeenCharged)
+            return;
+
+        if (carInfo.StartBatteryLevel < chargeBound)
+        {
+            SceneController2_1.correctlyCharged++;
+        }
+        else
+        {
+            if (carInfo.StartBatteryLevel != 100)
+                SceneController2_1.falselyCharged++;
+        }
+
+        carInfo.HasBeenCharged = true;
+    }
 }
