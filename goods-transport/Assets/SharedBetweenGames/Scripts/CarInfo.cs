@@ -12,7 +12,6 @@ public class CarInfo : MonoBehaviour
 
 	private void OnEnable()
 	{
-        CarQueue.ActiveCars.Add(gameObject);
 		CarQueue.Cars.AddLast(gameObject);
         
         HasBeenCharged = false;
