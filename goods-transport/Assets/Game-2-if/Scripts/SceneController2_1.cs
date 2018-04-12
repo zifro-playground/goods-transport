@@ -24,7 +24,9 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	public void OnPMCompilerStarted()
 	{
-		carsToCharge = 0;
+        Scanner.Instance.DisplayText.gameObject.SetActive(true);
+
+        carsToCharge = 0;
         correctlyCharged = 0;
         falselyCharged = 0;
 
