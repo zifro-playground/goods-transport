@@ -45,11 +45,12 @@ public class ChargeStation : MonoBehaviour
     private void MoveWalls(Direction direction)
     {
         var move = Vector3.zero;
+        float gameSpeedExp = MyLibrary.LinearToExponential(0, 1f, 10, PMWrapper.speedMultiplier);
 
         if (direction == Direction.Up)
-            move = Vector3.up * Time.deltaTime * WallSpeed;
+            move = Vector3.up * Time.deltaTime * gameSpeedExp * WallSpeed;
         else if (direction == Direction.Down)
-            move = Vector3.down * Time.deltaTime * WallSpeed;
+            move = Vector3.down * Time.deltaTime * gameSpeedExp * WallSpeed;
 
         Walls.transform.Translate(move);
 
