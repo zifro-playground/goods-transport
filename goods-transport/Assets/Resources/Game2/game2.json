@@ -63,7 +63,7 @@
               "batteryLevel": 99
             }
           ],
-          "precode": "antal_tag = 5",
+          "precode": "antal_tåg = 5",
           "chargeBound": 40
         }
       ]
@@ -163,7 +163,7 @@
               "batteryLevel": 93
             }
           ],
-          "precode": "antal_tag = 8",
+          "precode": "antal_tåg = 8",
           "chargeBound": 80
         }
       ]
@@ -252,7 +252,7 @@
               "batteryLevel": 5
             }
           ],
-          "precode": "antal_tag = 7",
+          "precode": "antal_tåg = 7",
           "chargeBound": 50
         }
       ]
@@ -308,7 +308,7 @@
               "batteryLevel": 71
             }
           ],
-          "precode": "antal_tag = 4",
+          "precode": "antal_tåg = 4",
           "chargeBound": 67
         }
       ]
@@ -370,7 +370,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 5",
+          "precode": "antal_tåg = 5",
           "correctSorting":
           {
             "leftQueue": {
@@ -433,7 +433,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 4",
+          "precode": "antal_tåg = 4",
           "correctSorting":
           {
             "leftQueue": {
@@ -516,7 +516,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 6",
+          "precode": "antal_tåg = 6",
           "correctSorting":
           {
             "leftQueue": {
@@ -599,7 +599,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 6",
+          "precode": "antal_tåg = 6",
           "correctSorting":
           {
             "leftQueue": {
@@ -691,7 +691,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 7",
+          "precode": "antal_tåg = 7",
           "correctSorting":
           {
             "leftQueue":
@@ -786,7 +786,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 7",
+          "precode": "antal_tåg = 7",
           "correctSorting":
           {
             "leftQueue": {
@@ -897,7 +897,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 9",
+          "precode": "antal_tåg = 9",
           "correctSorting":
           {
             "leftQueue": {
@@ -989,7 +989,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 7",
+          "precode": "antal_tåg = 7",
           "correctSorting":
           {
             "leftQueue": {
@@ -1072,7 +1072,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 6",
+          "precode": "antal_tåg = 6",
           "correctSorting":
           {
             "leftQueue":
@@ -1192,7 +1192,7 @@
               }
 
           ],
-          "precode": "antal_tag = 9",
+          "precode": "antal_tåg = 9",
           "correctSorting":
           {
             "leftQueue":
@@ -1301,7 +1301,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 8",
+          "precode": "antal_tåg = 8",
           "correctSorting":
           {
             "leftQueue":
@@ -1400,7 +1400,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 7",
+          "precode": "antal_tåg = 7",
           "correctSorting":
           {
             "leftQueue":
@@ -1594,7 +1594,7 @@
               ]
             }
           ],
-          "precode": "antal_tag = 11",
+          "precode": "antal_tåg = 11",
           "correctSorting":
           {
             "leftQueue":
