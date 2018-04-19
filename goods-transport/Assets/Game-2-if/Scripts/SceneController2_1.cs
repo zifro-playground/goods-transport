@@ -65,25 +65,3 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
         }
     }
 }
-
-    {
-        int chargeBound = LevelController.CaseData.chargeBound;
-
-        if (correctlyCharged == carsToCharge)
-        {
-            if (falselyCharged > 0)
-                PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
-            else
-                PMWrapper.SetCaseCompleted();
-        }
-        else
-        {
-            if (correctlyCharged + falselyCharged == carsToCharge)
-                PMWrapper.RaiseTaskError("Fel tåg laddades.");
-            else if (correctlyCharged + falselyCharged < carsToCharge)
-                PMWrapper.RaiseTaskError("För få tåg laddades. Alla tåg med batterinivå < " + chargeBound + " ska laddas.");
-            else
-                PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
-        }
-    }
-}
