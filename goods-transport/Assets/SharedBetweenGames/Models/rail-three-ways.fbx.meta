@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: eec1c1b08daf19846a32223825a05e56
-timeCreated: 1523518587
+guid: 6f7dd7a95e83eb647af4cfef414c0f37
+timeCreated: 1524137312
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: Railroad.005
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Cube
+    4300000: Cube.001
   externalObjects: {}
   materials:
     importMaterials: 1
