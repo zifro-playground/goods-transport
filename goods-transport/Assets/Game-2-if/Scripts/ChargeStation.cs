@@ -82,8 +82,9 @@ public class ChargeStation : MonoBehaviour
 
 	public void CheckBattery(int currentBatteryLevel)
 	{
+		SceneController2_1.checkChargeCounter++;
 		Display.text = currentBatteryLevel.ToString();
-        PMWrapper.UnpauseWalker();
+        	PMWrapper.UnpauseWalker();
 	}
 
 	public void ChargeBattery()
