@@ -29,12 +29,12 @@ public class ChargeCar : Compiler.Function
 
         if (carInfo.StartBatteryLevel < chargeBound)
         {
-            SceneController2_1.correctlyCharged++;
+            SceneController2_1.CorrectlyCharged++;
         }
         else
         {
             if (carInfo.StartBatteryLevel != 100)
-                SceneController2_1.falselyCharged++;
+                SceneController2_1.FalselyCharged++;
         }
 
         carInfo.HasBeenCharged = true;

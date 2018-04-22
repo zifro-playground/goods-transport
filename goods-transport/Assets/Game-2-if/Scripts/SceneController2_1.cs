@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
-    public static int correctlyCharged = 0;
-    public static int falselyCharged = 0;
-	public static int checkChargeCounter = 0;
+    public static int CorrectlyCharged = 0;
+    public static int FalselyCharged = 0;
+	public static int CheckChargeCounter = 0;
 
     private int carsToCharge;
 	private int carsToCheck;
@@ -29,9 +29,9 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
         Scanner.Instance.DisplayText.gameObject.SetActive(true);
 
         carsToCharge = 0;
-        correctlyCharged = 0;
-        falselyCharged = 0;
-		checkChargeCounter = 0;
+        CorrectlyCharged = 0;
+        FalselyCharged = 0;
+		CheckChargeCounter = 0;
 		carsToCheck = 0;
 		foreach (Car car in LevelController.CaseData.cars)
 		{
@@ -45,20 +45,20 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
     {
         int chargeBound = LevelController.CaseData.chargeBound;
 
-        if (correctlyCharged == carsToCharge)
+        if (CorrectlyCharged == carsToCharge)
         {
-			if (falselyCharged > 0)
+			if (FalselyCharged > 0)
 				PMWrapper.RaiseTaskError ("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
-			else if (checkChargeCounter < carsToCheck)
-				PMWrapper.RaiseTaskError ("För få batterinivålev kollade. Alla tås batterinivååte kollas fö att vi ska vet om tået ska bli laddat.");
+			else if (CheckChargeCounter < carsToCheck)
+				PMWrapper.RaiseTaskError ("Alla tåg kollades inte. Se till att köra kolla_batterinivå() för varje tåg.");
             else
                 PMWrapper.SetCaseCompleted();
         }
         else
         {
-            if (correctlyCharged + falselyCharged == carsToCharge)
+            if (CorrectlyCharged + FalselyCharged == carsToCharge)
                 PMWrapper.RaiseTaskError("Fel tåg laddades.");
-            else if (correctlyCharged + falselyCharged < carsToCharge)
+            else if (CorrectlyCharged + FalselyCharged < carsToCharge)
                 PMWrapper.RaiseTaskError("För få tåg laddades. Alla tåg med batterinivå < " + chargeBound + " ska laddas.");
             else
                 PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
