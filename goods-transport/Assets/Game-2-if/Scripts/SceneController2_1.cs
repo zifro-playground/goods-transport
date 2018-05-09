@@ -33,6 +33,7 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
         FalselyCharged = 0;
 		CheckChargeCounter = 0;
 		carsToCheck = 0;
+
 		foreach (Car car in LevelController.CaseData.cars)
 		{
 			carsToCheck++;

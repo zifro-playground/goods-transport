@@ -2,12 +2,11 @@
 using PM;
 using UnityEngine;
 
-public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
 {
-	public List<GameObject> LeftQueue;
-	public List<GameObject> RightQueue;
-	public List<GameObject> ForwardQueue;
+	public static int CarsSorted;
 
+	private int carsToSort;
 
 	public void SetPrecode(Case caseData)
 	{
@@ -15,40 +14,37 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 			PMWrapper.preCode = caseData.precode;
 	}
 
-	private void ResetQueues()
+	public void OnPMCompilerStarted()
 	{
-		LeftQueue.Clear();
-		RightQueue.Clear();
-		ForwardQueue.Clear();
+		CarsSorted = 0;
+		carsToSort = LevelController.CaseData.cars.Count;
 	}
 
 	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
 	{
 		if (status == HelloCompiler.StopStatus.Finished)
 		{
-			bool correctSorted = CorrectSorting();
-
-			if (correctSorted)
+			if (CarsSorted < carsToSort)
+				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");
+			else if (CorrectSorting())
 				PMWrapper.SetCaseCompleted();
 		}
 		
-
-
-		ResetQueues();
+		SortedQueue.ResetQueues();
 	}
 
 	private bool CorrectSorting()
 	{
 		string correctForwardType = LevelController.CaseData.correctSorting.forwardQueue.type;
-		if (!CorrectQueue(correctForwardType, ForwardQueue))
+		if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue))
 			return false;
 
 		string correctRightType = LevelController.CaseData.correctSorting.rightQueue.type;
-		if (!CorrectQueue(correctRightType, RightQueue))
+		if (!CorrectQueue(correctRightType, SortedQueue.RightQueue))
 			return false;
 
 		string correctLeftType = LevelController.CaseData.correctSorting.leftQueue.type;
-		if (!CorrectQueue(correctLeftType, LeftQueue))
+		if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue))
 			return false;
 
 		return true;
@@ -73,11 +69,15 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private string FindTypeFromDefinition(string type)
 	{
-		foreach (var typeDefinition in LevelController.CaseData.correctSorting.typeDefinitions)
-		{
-			if (typeDefinition.types.Contains(type))
+		var typeDefinitions = LevelController.CaseData.correctSorting.typeDefinitions;
+
+		if (typeDefinitions != null) { 
+			foreach (var typeDefinition in typeDefinitions)
 			{
-				return typeDefinition.name;
+				if (typeDefinition.types.Contains(type))
+				{
+					return typeDefinition.name;
+				}
 			}
 		}
 
