@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using PM;
 using UnityEngine;
 
@@ -35,37 +36,73 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-		string correctForwardType = LevelController.CaseData.correctSorting.forwardQueue.type;
-		if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue))
+	    string correctLeftType = LevelController.CaseData.correctSorting.leftQueue.type;
+	    if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue, "åt vänster"))
+	        return false;
+
+	    string correctForwardType = LevelController.CaseData.correctSorting.forwardQueue.type;
+	    if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue, "rakt fram"))
 			return false;
 
-		string correctRightType = LevelController.CaseData.correctSorting.rightQueue.type;
-		if (!CorrectQueue(correctRightType, SortedQueue.RightQueue))
+	    string correctRightType = LevelController.CaseData.correctSorting.rightQueue.type;
+	    if (!CorrectQueue(correctRightType, SortedQueue.RightQueue, "åt höger"))
 			return false;
 
-		string correctLeftType = LevelController.CaseData.correctSorting.leftQueue.type;
-		if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue))
-			return false;
-
-		return true;
+	    return true;
 	}
 
-	private bool CorrectQueue(string correctType, List<GameObject> queue)
+	private bool CorrectQueue(string correctType, List<GameObject> queue, string direction)
 	{
-		foreach (GameObject car in queue)
-		{
-			string cargoType = car.GetComponent<CarInfo>().CargoType;
+	    if (!CorrectNumberOfCarsInQueue(correctType, queue, direction))
+	        return false;
 
-			cargoType = FindTypeFromDefinition(cargoType);
+	    if (!CorrectTypesInQueue(correctType, queue, direction))
+	        return false;
 
-			if ((cargoType != correctType && correctType != "whatever") || correctType == "none")
-			{
-				PMWrapper.RaiseTaskError("Något blev felsorterat.");
-				return false;
-			}
-		}
-		return true;
+        return true;
 	}
+
+    private bool CorrectNumberOfCarsInQueue(string correctType, List<GameObject> queue, string direction)
+    {
+        if (correctType != "none" && correctType != "whatever")
+        {
+            var correctNumberOfCars = 0;
+            foreach (var car in LevelController.CaseData.cars)
+            {
+                if (car.sections.First().type == correctType)
+                    correctNumberOfCars++;
+            }
+
+            if (queue.Count < correctNumberOfCars)
+            {
+                PMWrapper.RaiseTaskError("För få varor sorterades " + direction);
+                return false;
+            }
+            if (queue.Count > correctNumberOfCars)
+            {
+                PMWrapper.RaiseTaskError("För många varor sorterade " + direction);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private bool CorrectTypesInQueue(string correctType, List<GameObject> queue, string direction)
+    {
+        foreach (GameObject car in queue)
+        {
+            string cargoType = car.GetComponent<CarInfo>().CargoType;
+
+            cargoType = FindTypeFromDefinition(cargoType);
+
+            if ((cargoType != correctType && correctType != "whatever") || correctType == "none")
+            {
+                PMWrapper.RaiseTaskError("Något blev felsorterat i kön " + direction + ".");
+                return false;
+            }
+        }
+        return true;
+    }
 
 	private string FindTypeFromDefinition(string type)
 	{
@@ -80,7 +117,6 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 				}
 			}
 		}
-
 		return type;
 	}
 }

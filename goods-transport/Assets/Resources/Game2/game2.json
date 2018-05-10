@@ -520,10 +520,10 @@
           "correctSorting":
           {
             "leftQueue": {
-              "type": "granar"
+              "type": "none"
             },
             "rightQueue": {
-              "type": "none"
+              "type": "lampor"
             },
             "forwardQueue": {
               "type": "whatever"
@@ -609,7 +609,7 @@
               "type": "none"
             },
             "forwardQueue": {
-              "type": "palmer"
+              "type": "stolar"
             }
           }
         }
@@ -990,13 +990,19 @@
             }
           ],
           "precode": "antal_tåg = 7",
-          "correctSorting":
+          "correctSorting": 
           {
+            "typeDefinitions": [
+              {
+                "name": "träd",
+                "types": [ "palmer", "granar" ]
+              }
+            ],
             "leftQueue": {
               "type": "lampor"
             },
             "rightQueue": {
-              "type": "skog"
+              "type": "träd"
             },
             "forwardQueue": {
               "type": "whatever"
