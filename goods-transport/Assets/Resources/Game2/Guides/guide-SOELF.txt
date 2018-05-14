@@ -1,4 +1,4 @@
 ﻿4: Om varusorten är <b>"palmer"</b> kommer tåget åka <b>vänster</b>.
-6: Här använder vi <b>elif</b> för att kunna testa om något tåg har <b>"granar"</b>. I så fall åker den <b>höger</b>.
-8: De tåg som varken har <b>"palmer"</b> eller <b>"granar"</b> åker <b>rakt</b>.
+6: Använd <b>elif</b> för att även testa om tåget har <b>"granar"</b>. I så fall åker det <b>höger</b>.
+8: De tåg som varken har <b>"palmer"</b> eller <b>"granar"</b> åker <b>rakt fram</b>.
 play: Kör!
