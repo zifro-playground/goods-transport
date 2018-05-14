@@ -1,5 +1,5 @@
 taskdescription: Kör alla lampor åt höger och resten av varorna rakt fram.
 rowlimit: 20
 startcode:
-smartbuttons: kör_vänster(), kör_höger(), kör_rakt(), scanna_sort()
+smartbuttons: kör_vänster(), kör_rakt(), kör_höger(), scanna_sort()
 functions: ScanType, DriveStraight, DriveLeft, DriveRight

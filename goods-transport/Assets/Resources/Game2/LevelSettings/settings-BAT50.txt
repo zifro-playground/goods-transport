@@ -1,4 +1,4 @@
-taskdescription: Ladda tåget om den har mindre än 50% batteri.
+taskdescription: Ladda tåget om batterinivån är mindre än 50 %.
 startcode:
 rowlimit: 20
 casecount: 1
