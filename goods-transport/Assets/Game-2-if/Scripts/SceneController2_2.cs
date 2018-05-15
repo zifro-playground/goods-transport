@@ -69,7 +69,9 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
             var correctNumberOfCars = 0;
             foreach (var car in LevelController.CaseData.cars)
             {
-                if (car.sections.First().type == correctType)
+	            var currentType = FindTypeFromDefinition(car.sections.First().type);
+
+				if (currentType == correctType)
                     correctNumberOfCars++;
             }
 
@@ -111,6 +113,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		if (typeDefinitions != null) { 
 			foreach (var typeDefinition in typeDefinitions)
 			{
+				//print("Type: " + type);
 				if (typeDefinition.types.Contains(type))
 				{
 					return typeDefinition.name;
