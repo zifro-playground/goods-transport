@@ -1,5 +1,5 @@
 taskdescription: Kör alla tåg med mer än 20 palmer åt höger och resten rakt fram.
 rowlimit: 20
 startcode: for i in range(antal_tåg):\n\tpalmer = scanna_antal_palmer()\n\tif palmer > 20:\n\t\tkör_höger()\n\telse:\n\t\tkör_rakt()
-smartbuttons: kör_vänster, kör_rakt(), kör_höger(), scanna_antal_palmer()
+smartbuttons: kör_vänster(), kör_rakt(), kör_höger(), scanna_antal_palmer()
 functions: DriveStraight, DriveRight, DriveLeft, ScanPalms
