@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using Compiler;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanType : Function {
+public class ScanType : ClrFunction {
 
-	public ScanType()
+	public ScanType() : base("scanna_sort")
 	{
-		name = "scanna_sort";
-		inputParameterAmount.Add(0);
-		hasReturnVariable = true;
-		pauseWalker = true;
 	}
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
+	public override IScriptType Invoke(params IScriptType[] arguments)
 	{
 		GameObject firstCar = CarQueue.GetFirstCar();
 
@@ -27,7 +24,7 @@ public class ScanType : Function {
 		{
 			if (t.CompareTag("Palm"))
 				type = "palmer";
-				
+
 			else if (t.CompareTag("Table"))
 				type = "bord";
 
@@ -49,6 +46,6 @@ public class ScanType : Function {
 
 		scanner.SetDisplayText(type);
 
-		return new Variable("type", type);
+		return Processor.Factory.Create(type);
 	}
 }

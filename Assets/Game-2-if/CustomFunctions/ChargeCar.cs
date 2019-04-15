@@ -1,23 +1,18 @@
-﻿using Compiler;
+﻿using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ChargeCar : Compiler.Function
+public class ChargeCar : ClrYieldingFunction
 {
-	public ChargeCar()
-	{
-		this.name = "ladda_tåg";
-		this.inputParameterAmount.Add(0);
-		this.hasReturnVariable = false;
-		this.pauseWalker = true;
-	}
+    public ChargeCar() : base("ladda_tåg")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
         SetCarCharged();
-		ChargeStation.Instance.ChargeBattery();
-
-		return new Variable();
-	}
+        ChargeStation.Instance.ChargeBattery();
+    }
 
     private void SetCarCharged()
     {

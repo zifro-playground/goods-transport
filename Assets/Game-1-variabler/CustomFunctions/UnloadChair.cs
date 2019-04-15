@@ -1,25 +1,21 @@
-﻿using UnityEngine;
-using PM;
+﻿using Mellis;
+using Mellis.Core.Interfaces;
+using UnityEngine;
 
-public class UnloadChair : Compiler.Function
+public class UnloadChair : ClrYieldingFunction
 {
-	public UnloadChair()
-	{
-		this.name = "lasta_av_stol";
-		this.inputParameterAmount.Add(0);
-		this.hasReturnVariable = false;
-		this.pauseWalker = true;
-	}
+    public UnloadChair() : base("lasta_av_stol")
+    {
+    }
 
-	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
-	{
-		GameObject chair = GameObject.FindGameObjectWithTag("Chair");
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        var chair = GameObject.FindGameObjectWithTag("Chair");
 
-		if (chair == null)
-			PMWrapper.RaiseError(lineNumber, "Hittade ingen stol att lasta av.");
+        if (chair == null)
+            PMWrapper.RaiseError("Hittade ingen stol att lasta av.");
 
-		chair.GetComponent<UnloadableItem>().IsUnloading = true;
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
-		return new Compiler.Variable();
-	}
+        chair.GetComponent<UnloadableItem>().IsUnloading = true;
+        GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
+    }
 }

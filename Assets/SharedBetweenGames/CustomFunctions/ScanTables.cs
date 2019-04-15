@@ -1,34 +1,29 @@
 ﻿using System;
-using Compiler;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanTables : Compiler.Function
+public class ScanTables : ClrYieldingFunction
 {
-	public ScanTables()
-	{
-		this.name = "scanna_antal_bord";
-		this.inputParameterAmount.Add(0);
-		this.pauseWalker = true;
-		this.hasReturnVariable = false;
-	}
+    public ScanTables() : base("scanna_antal_bord")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-		GameObject car = CarQueue.GetFirstCar();
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        GameObject car = CarQueue.GetFirstCar();
 
-		Scanner scanner = Scanner.Instance;
-		scanner.Scan(car);
+        Scanner scanner = Scanner.Instance;
+        scanner.Scan(car);
 
-		int tableCount = 0;
+        int tableCount = 0;
 
-		foreach (Transform child in car.transform)
-		{
-			if (child.CompareTag("Table"))
-				tableCount++;
-		}
+        foreach (Transform child in car.transform)
+        {
+            if (child.CompareTag("Table"))
+                tableCount++;
+        }
 
-		scanner.SetDisplayText(tableCount);
-
-		return new Variable("tablecount", tableCount);
-	}
+        scanner.SetDisplayText(tableCount);
+    }
 }

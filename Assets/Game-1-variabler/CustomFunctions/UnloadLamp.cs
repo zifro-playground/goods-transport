@@ -1,25 +1,21 @@
-﻿using UnityEngine;
-using PM;
+﻿using Mellis;
+using Mellis.Core.Interfaces;
+using UnityEngine;
 
-public class UnloadLamp : Compiler.Function
+public class UnloadLamp : ClrYieldingFunction
 {
-	public UnloadLamp()
-	{
-		this.name = "lasta_av_lampa";
-		this.inputParameterAmount.Add(0);
-		this.hasReturnVariable = false;
-		this.pauseWalker = true;
-	}
+    public UnloadLamp() : base("lasta_av_lampa")
+    {
+    }
 
-	public override Compiler.Variable runFunction(Compiler.Scope currentScope, Compiler.Variable[] inputParas, int lineNumber)
-	{
-		GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
 
-		if (lamp == null)
-			PMWrapper.RaiseError(lineNumber, "Hittade ingen lampa att lasta av.");
+        if (lamp == null)
+            PMWrapper.RaiseError("Hittade ingen lampa att lasta av.");
 
-		lamp.GetComponent<UnloadableItem>().IsUnloading = true;
-		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
-		return new Compiler.Variable();
-	}
+        lamp.GetComponent<UnloadableItem>().IsUnloading = true;
+        GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
+    }
 }

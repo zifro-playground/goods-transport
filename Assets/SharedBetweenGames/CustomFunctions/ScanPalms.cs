@@ -1,37 +1,32 @@
 ﻿using System;
-using Compiler;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanPalms : Compiler.Function
+public class ScanPalms : ClrYieldingFunction
 {
-	public ScanPalms()
-	{
-		this.name = "scanna_antal_palmer";
-		this.inputParameterAmount.Add(0);
-		this.pauseWalker = true;
-		this.hasReturnVariable = false;
-	}
+    public ScanPalms() : base("scanna_antal_palmer")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-		GameObject car = CarQueue.GetFirstCar();
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        GameObject car = CarQueue.GetFirstCar();
 
-		if (car == null)
-			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");
+        if (car == null)
+            PMWrapper.RaiseError("Kan inte hitta något att scanna.");
 
-		Scanner scanner = Scanner.Instance;
-		scanner.Scan(car);
+        Scanner scanner = Scanner.Instance;
+        scanner.Scan(car);
 
-		int palmCount = 0;
+        int palmCount = 0;
 
-		foreach (Transform child in car.transform)
-		{
-			if (child.CompareTag("Palm"))
-				palmCount++;
-		}
+        foreach (Transform child in car.transform)
+        {
+            if (child.CompareTag("Palm"))
+                palmCount++;
+        }
 
-		scanner.SetDisplayText(palmCount);
-
-		return new Variable("palmCount", palmCount);
-	}
+        scanner.SetDisplayText(palmCount);
+    }
 }

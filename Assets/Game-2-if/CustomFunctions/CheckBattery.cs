@@ -1,22 +1,19 @@
-﻿using Compiler;
+﻿using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class CheckBattery : Compiler.Function
+public class CheckBattery : ClrFunction
 {
-	public CheckBattery()
-	{
-		this.name = "kolla_batterinivå";
-		this.inputParameterAmount.Add(0);
-		this.hasReturnVariable = true;
-		this.pauseWalker = true;
-	}
+    public CheckBattery() : base("kolla_batterinivå")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-		int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
+    public override IScriptType Invoke(params IScriptType[] arguments)
+    {
+        int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
 
-		ChargeStation.Instance.CheckBattery(batteryLevel);
+        ChargeStation.Instance.CheckBattery(batteryLevel);
 
-		return new Variable("BatteryLevel", batteryLevel);
-	}
+        return Processor.Factory.Create(batteryLevel);
+    }
 }
