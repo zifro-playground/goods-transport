@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.Animations;
+#endif
 
 public class HierarchyRecorder : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class HierarchyRecorder : MonoBehaviour
 	// Checkbox to start/stop the recording.
 	public bool record = false;
 
+#if UNITY_EDITOR
 	// The main feature: the actual recorder.
 	private GameObjectRecorder m_Recorder;
 
@@ -45,4 +48,5 @@ public class HierarchyRecorder : MonoBehaviour
 			m_Recorder.ResetRecording();
 		}
 	}
+#endif
 }
