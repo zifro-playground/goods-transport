@@ -1,26 +1,27 @@
 ﻿using System;
+using GameData;
 using PM;
 using UnityEngine;
 
-public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
+public class SceneController1_2 : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 {
-	public int itemsUnloaded = 0;
-
-	private Case caseData;
-
-	public void OnPMCompilerStarted()
+	static SceneController1_2()
 	{
-		// Can not be loaded in OnCompilerStopped since the method also switches case and replaces LevelController.CaseData with data from case 0
-		caseData = LevelController.CaseData;
+		Main.RegisterFunction(new UnloadPalm());
+		Main.RegisterFunction(new UnloadLamp());
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+    public int itemsUnloaded = 0;
+
+	private GoodsCaseDefinition caseDef;
+
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{			
 			int itemsToUnload = 0;
 
-			foreach (Section section in caseData.cars[0].sections)
+			foreach (var section in caseDef.cars[0].sections)
 			{
 				itemsToUnload += section.itemCount;
 			}
@@ -39,10 +40,8 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		itemsUnloaded = 0;
 	}
 
-	public void SetPrecode(Case caseData)
+	public void OnPMCaseSwitched(int caseNumber)
 	{
-		if (caseData.precode != null)
-			PMWrapper.preCode = caseData.precode;
+		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
 	}
-
 }

@@ -1,34 +1,29 @@
 ﻿using System;
-using Compiler;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanChairs : Compiler.Function 
+public class ScanChairs : ClrYieldingFunction
 {
-	public ScanChairs()
-	{
-		this.name = "scanna_antal_stolar";
-		this.inputParameterAmount.Add(0);
-		this.pauseWalker = true;
-		this.hasReturnVariable = false;
-	}
+    public ScanChairs() : base("scanna_antal_stolar")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-		GameObject car = CarQueue.GetFirstCar();
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        GameObject car = CarQueue.GetFirstCar();
 
-		Scanner scanner = Scanner.Instance;
-		scanner.Scan(car);
+        Scanner scanner = Scanner.Instance;
+        scanner.Scan(car);
 
-		int chairCount = 0;
+        int chairCount = 0;
 
-		foreach (Transform child in car.transform)
-		{
-			if (child.CompareTag("Chair"))
-				chairCount++;
-		}
+        foreach (Transform child in car.transform)
+        {
+            if (child.CompareTag("Chair"))
+                chairCount++;
+        }
 
-		scanner.SetDisplayText(chairCount);
-
-		return new Variable("chaircount", chairCount);
-	}
+        scanner.SetDisplayText(chairCount);
+    }
 }

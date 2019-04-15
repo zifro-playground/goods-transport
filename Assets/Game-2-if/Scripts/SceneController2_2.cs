@@ -1,29 +1,39 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GameData;
 using PM;
 using UnityEngine;
 
-public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
+public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMCaseSwitched
 {
-	public static int CarsSorted;
-
-	private int carsToSort;
-
-	public void SetPrecode(Case caseData)
+	static SceneController2_2()
 	{
-		if (caseData.precode != null)
-			PMWrapper.preCode = caseData.precode;
+		Main.RegisterFunction(new ScanType());
+		Main.RegisterFunction(new DriveStraight());
+		Main.RegisterFunction(new DriveLeft());
+		Main.RegisterFunction(new DriveRight());
 	}
 
+    public static int CarsSorted;
+
+	private int carsToSort;
+	private GoodsCaseDefinition caseDef;
+
+
+	public void OnPMCaseSwitched(int caseNumber)
+	{
+		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+	}
+	
 	public void OnPMCompilerStarted()
 	{
 		CarsSorted = 0;
-		carsToSort = LevelController.CaseData.cars.Count;
+		carsToSort = caseDef.cars.Count;
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{
 			if (CarsSorted < carsToSort)
 				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");
@@ -36,15 +46,15 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-	    string correctLeftType = LevelController.CaseData.correctSorting.leftQueue.type;
+	    string correctLeftType = caseDef.correctSorting.leftQueue.type;
 	    if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue, "åt vänster"))
 	        return false;
 
-	    string correctForwardType = LevelController.CaseData.correctSorting.forwardQueue.type;
+	    string correctForwardType = caseDef.correctSorting.forwardQueue.type;
 	    if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue, "rakt fram"))
 			return false;
 
-	    string correctRightType = LevelController.CaseData.correctSorting.rightQueue.type;
+	    string correctRightType = caseDef.correctSorting.rightQueue.type;
 	    if (!CorrectQueue(correctRightType, SortedQueue.RightQueue, "åt höger"))
 			return false;
 
@@ -67,7 +77,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
         if (correctType != "none" && correctType != "whatever")
         {
             var correctNumberOfCars = 0;
-            foreach (var car in LevelController.CaseData.cars)
+            foreach (var car in caseDef.cars)
             {
 	            var currentType = FindTypeFromDefinition(car.sections.First().type);
 
@@ -108,7 +118,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private string FindTypeFromDefinition(string type)
 	{
-		var typeDefinitions = LevelController.CaseData.correctSorting.typeDefinitions;
+		var typeDefinitions = caseDef.correctSorting.typeDefinitions;
 
 		if (typeDefinitions != null) { 
 			foreach (var typeDefinition in typeDefinitions)

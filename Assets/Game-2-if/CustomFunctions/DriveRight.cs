@@ -1,23 +1,19 @@
-﻿using Compiler;
+﻿using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class DriveRight : Function
+public class DriveRight : ClrYieldingFunction
 {
-	public DriveRight()
+	public DriveRight() : base("kör_höger")
 	{
-		name = "kör_höger";
-		inputParameterAmount.Add(0);
-		hasReturnVariable = false;
-		pauseWalker = true;
 	}
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
+	public override void InvokeEnter(params IScriptType[] arguments)
 	{
-		SortedQueue.RightQueue.Add(CarQueue.GetFirstCar());
+		SortedQueue.LeftQueue.Add(CarQueue.GetFirstCar());
 
 		CarQueue.DriveQueueForward();
 		CarQueue.DriveFirstCarRight();
-
-		return new Variable();
-	}
+		SceneController2_2.CarsSorted++;
+    }
 }

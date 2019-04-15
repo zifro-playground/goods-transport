@@ -1,37 +1,32 @@
 ﻿using System;
-using Compiler;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanLamps : Function
+public class ScanLamps : ClrYieldingFunction
 {
-	public ScanLamps()
-	{
-		name = "scanna_antal_lampor";
-		inputParameterAmount.Add(0);
-		pauseWalker = true;
-		hasReturnVariable = false;
-	}
+    public ScanLamps() : base("scanna_antal_lampor")
+    {
+    }
 
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-		GameObject car = CarQueue.GetFirstCar();
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        GameObject car = CarQueue.GetFirstCar();
 
-		if (car == null)
-			PMWrapper.RaiseError(lineNumber, "Kan inte hitta något att scanna.");
+        if (car == null)
+            PMWrapper.RaiseError("Kan inte hitta något att scanna.");
 
-		Scanner scanner = Scanner.Instance;
-		scanner.Scan(car);
+        Scanner scanner = Scanner.Instance;
+        scanner.Scan(car);
 
-		int lampCount = 0;
+        int lampCount = 0;
 
-		foreach (Transform child in car.transform)
-		{
-			if (child.CompareTag("Lamp"))
-				lampCount++;
-		}
+        foreach (Transform child in car.transform)
+        {
+            if (child.CompareTag("Lamp"))
+                lampCount++;
+        }
 
-		scanner.SetDisplayText(lampCount);
-
-		return new Variable("lampCount", lampCount);
-	}
+        scanner.SetDisplayText(lampCount);
+    }
 }

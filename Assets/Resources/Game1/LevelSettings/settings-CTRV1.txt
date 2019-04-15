@@ -1,6 +1,0 @@
-taskdescription: Töm alla tåg på stolar. Hur många stolar kom totalt med tågen?
-startcode: totalt_stolar = 0\nfor i in range(antal_tåg):\n\tstolar = scanna_antal_stolar()\n\ttöm_tåg()\n\ttotalt_stolar = totalt_stolar + stolar\n\tkör_framåt()\nsvara(totalt_stolar)
-precode: antal_tåg = 7
-rowlimit: 20
-smartbuttons: töm_tåg(), kör_framåt(), svara(), scanna_antal_stolar()
-functions: EmptyCar, DriveForward, ScanChairs

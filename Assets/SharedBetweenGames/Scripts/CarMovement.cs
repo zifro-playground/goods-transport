@@ -30,7 +30,7 @@ public class CarMovement : MonoBehaviour
 	{
 		if (isMovingByAnimation)
 		{
-			if (PMWrapper.IsCompilerUserPaused)
+			if (PMWrapper.isCompilerUserPaused)
 			{
 				animator.speed = 0;
 			}
@@ -42,13 +42,13 @@ public class CarMovement : MonoBehaviour
 
 			if (!AnimatorIsPlaying() && OperationsRunning == 1)
 			{
-				PMWrapper.UnpauseWalker();
+				PMWrapper.ResolveYield();
 				isMovingByAnimation = false;
 				OperationsRunning = 0;
 			}
 		}
 
-		if (isMovingByScript && !PMWrapper.IsCompilerUserPaused)
+		if (isMovingByScript && !PMWrapper.isCompilerUserPaused)
 		{
 			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
 
@@ -82,19 +82,16 @@ public class CarMovement : MonoBehaviour
 
 	public void DriveLeft()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveLeft");
 	}
 
 	public void DriveStraight()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveStraight");
 	}
 
 	public void DriveRight()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveRight");
 	}
 

@@ -1,26 +1,12 @@
-﻿using UnityEngine;
+﻿using GameData;
+using UnityEngine;
 
-public class SceneController1_1 : MonoBehaviour, ISceneController, IPMWrongAnswer, IPMCorrectAnswer
+public class SceneController1_1 : MonoBehaviour, IPMWrongAnswer, IPMCorrectAnswer, IPMCaseSwitched
 {
-	Case caseData;
-
-	public void SetPrecode(Case caseData)
-	{
-		this.caseData = caseData;
-
-		string precode = "";
-
-		foreach (Section section in caseData.cars[0].sections)
-		{
-			if (section.itemCount > 0)
-				precode += section.type + " = " + section.itemCount + "\n";
-		}
-		PMWrapper.preCode = precode.Trim();
-    }
+	private int correctAnswer;
 
 	public void OnPMWrongAnswer(string answer)
 	{
-		int correctAnswer = caseData.answer;
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
@@ -33,4 +19,18 @@ public class SceneController1_1 : MonoBehaviour, ISceneController, IPMWrongAnswe
 	{
 		PMWrapper.SetCaseCompleted();
 	}
+
+    public void OnPMCaseSwitched(int caseNumber)
+    {
+	    var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+        string precode = "";
+
+        foreach (SectionData section in caseDef.cars[0].sections)
+        {
+            if (section.itemCount > 0)
+                precode += section.type + " = " + section.itemCount + "\n";
+        }
+        PMWrapper.preCode = precode.Trim();
+        correctAnswer = caseDef.answer;
+    }
 }

@@ -1,5 +1,0 @@
-taskdescription: Töm alla tåg på varor. Hur många varor kom med tågen?
-precode: antal_tåg = 8
-rowlimit: 20
-smartbuttons: töm_tåg(), kör_framåt(), svara(), scanna_antal_palmer(), scanna_antal_stolar()
-functions: ScanPalms, ScanChairs, EmptyCar, DriveForward

@@ -1,8 +1,0 @@
-taskdescription: Lasta av alla palmer från tåget.
-precode: palmer = 11
-startcode: for i in range(palmer):\n\tlasta_av_palm()
-rowlimit: 10
-casecount: 3
-gamespeed: 1
-smartbuttons: lasta_av_palm()
-functions: UnloadPalm

@@ -1,18 +1,31 @@
 ﻿using System.Collections.Generic;
+using GameData;
 using PM;
 using UnityEngine;
 
-public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwitched
 {
-	public void SetPrecode(Case caseData)
-	{
-		if (caseData.precode != null)
-			PMWrapper.preCode = caseData.precode;
-	}
+    static SceneController2_3()
+    {
+        Main.RegisterFunction(new DriveStraight());
+        Main.RegisterFunction(new DriveLeft());
+        Main.RegisterFunction(new DriveRight());
+        Main.RegisterFunction(new ScanPalms());
+        Main.RegisterFunction(new ScanLamps());
+        Main.RegisterFunction(new ScanTrees());
+    }
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+    private GoodsCaseDefinition caseDef;
+
+
+    public void OnPMCaseSwitched(int caseNumber)
+    {
+        caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+    }
+
+    public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{
 			if (CorrectSorting())
 				PMWrapper.SetCaseCompleted();
@@ -23,22 +36,22 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-	    var leftBounds = LevelController.CaseData.correctSorting.leftQueue;
+	    var leftBounds = caseDef.correctSorting.leftQueue;
 	    if (!CorrectQueue(leftBounds, SortedQueue.LeftQueue, "åt vänster"))
 	        return false;
 
-        var forwardBounds = LevelController.CaseData.correctSorting.forwardQueue;
+        var forwardBounds = caseDef.correctSorting.forwardQueue;
         if (!CorrectQueue(forwardBounds, SortedQueue.ForwardQueue, "rakt fram"))
             return false;
 
-        var rightBounds = LevelController.CaseData.correctSorting.rightQueue;
+        var rightBounds = caseDef.correctSorting.rightQueue;
         if (!CorrectQueue(rightBounds, SortedQueue.RightQueue, "åt höger"))
             return false;
 
         return true;
 	}
 
-	private bool CorrectQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+	private bool CorrectQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
 	{
 	    if (!CorrectNumberOfCarsInQueue(bounds, queue, direction))
 	        return false;
@@ -49,10 +62,10 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
         return true;
 	}
 
-    private bool CorrectNumberOfCarsInQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+    private bool CorrectNumberOfCarsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
         var correctNumberOfCars = 0;
-        foreach (var car in LevelController.CaseData.cars)
+        foreach (var car in caseDef.cars)
         {
             var itemsInCar = 0;
             foreach (var carSection in car.sections)
@@ -77,7 +90,7 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
         return true;
     }
 
-    private bool CorrectBoundsInQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+    private bool CorrectBoundsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
         foreach (GameObject car in queue)
         {

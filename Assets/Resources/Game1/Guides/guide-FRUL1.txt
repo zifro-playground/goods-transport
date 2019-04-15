@@ -1,1 +1,0 @@
-1: <b>For-slingan</b> här gör att *lasta_av_palm()* kommer att köras 11 gånger.

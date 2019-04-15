@@ -1,0 +1,15 @@
+{
+    "name": "ZifroPlayground.Goods.Game1Variabler",
+    "references": [
+        "ZifroPlayground.UI",
+        "ZifroPlayground.Goods"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

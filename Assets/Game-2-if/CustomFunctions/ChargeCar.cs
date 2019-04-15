@@ -1,28 +1,26 @@
-﻿using Compiler;
+﻿using GameData;
+using Mellis;
+using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ChargeCar : Compiler.Function
+public class ChargeCar : ClrYieldingFunction
 {
-	public ChargeCar()
-	{
-		this.name = "ladda_tåg";
-		this.inputParameterAmount.Add(0);
-		this.hasReturnVariable = false;
-		this.pauseWalker = true;
-	}
-
-	public override Variable runFunction(Scope currentScope, Variable[] inputParas, int lineNumber)
-	{
-        SetCarCharged();
-		ChargeStation.Instance.ChargeBattery();
-
-		return new Variable();
-	}
-
-    private void SetCarCharged()
+    public ChargeCar() : base("ladda_tåg")
     {
+    }
+
+    public override void InvokeEnter(params IScriptType[] arguments)
+    {
+        SetCarCharged();
+        ChargeStation.Instance.ChargeBattery();
+    }
+
+    private static void SetCarCharged()
+    {
+        var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[PMWrapper.currentCase].caseDefinition;
+        int chargeBound = caseDef.chargeBound;
+
         var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
-        int chargeBound = LevelController.CaseData.chargeBound;
 
         if (carInfo.HasBeenCharged)
             return;

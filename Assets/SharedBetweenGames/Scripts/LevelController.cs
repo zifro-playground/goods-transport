@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using GameData;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour
+public class LevelController : MonoBehaviour, IPMCaseSwitched
 {
 	[Header("Prefabs")]
 	public GameObject CarPrefab;
@@ -28,9 +30,6 @@ public class LevelController : MonoBehaviour
 	private const float BoxLength = 1; // is set from CreateAssets()
 
 	private GameObject queue;
-
-	[HideInInspector]
-	public static Case CaseData;
 
 	private Dictionary<string, GameObject> itemTypeToPrefab;
 	private void BuildItemDictionary()
@@ -61,26 +60,13 @@ public class LevelController : MonoBehaviour
 
 	}
 
-	public void LoadCase(Case newCaseData)
-	{
-		CaseData = newCaseData;
-		
-		BuildItemDictionary();
-		BuildColorDictionary();
-
-		RemoveOldAssets();
-		CreateAssets();
-		SetPrecode();
-		SetAnswer();
-	}
-
 	private void RemoveOldAssets()
 	{
 		CarQueue.RemoveAllCars();
 		Destroy(queue);
 	}
 
-	private void CreateAssets()
+	private void CreateAssets(GoodsCaseDefinition caseDef)
 	{
 		queue = new GameObject("Queue");
 		queue.AddComponent<CarQueue>();
@@ -88,23 +74,18 @@ public class LevelController : MonoBehaviour
 		float boxLength = BoxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
 		float previousCarPositionX = 0;
 
-		foreach (Car carData in CaseData.cars)
+		foreach (CarData carData in caseDef.cars)
 		{
-			GameObject carObj = Instantiate(CarPrefab);
+			GameObject carObj = Instantiate(CarPrefab, queue.transform, true);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
             carInfo.StartBatteryLevel = carData.batteryLevel;
 			carInfo.BatteryLevel = carData.batteryLevel;
 			carInfo.ItemsInCar = 0;
 
-			carObj.transform.SetParent(queue.transform);
-
-			GameObject platform = Instantiate(CarPlatformPrefab);
-			GameObject front = Instantiate(CarFrontPrefab);
+			GameObject platform = Instantiate(CarPlatformPrefab, carObj.transform, true);
+			GameObject front = Instantiate(CarFrontPrefab, carObj.transform, true);
 
 			SetCarMaterial(carData, front);
-
-			platform.transform.SetParent(carObj.transform);
-			front.transform.SetParent(carObj.transform);
 
 			RescaleCar(carData, platform, front);
 
@@ -123,14 +104,13 @@ public class LevelController : MonoBehaviour
 			float carLeftEnd = platformBounds.min.x;
 			float sectionLeftEnd = carLeftEnd;
 
-			foreach (Section section in carData.sections)
+			foreach (SectionData section in carData.sections)
 			{
 				var itemPositions = new Vector3[section.rows, 4];
 
 				for (int j = 1; j <= section.rows; j++)
 				{
-					GameObject boxRow = Instantiate(BoxRowPrefab);
-					boxRow.transform.SetParent(carObj.transform);
+					GameObject boxRow = Instantiate(BoxRowPrefab, carObj.transform, true);
 
 					float rowCenter = sectionLeftEnd + CarPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * BoxSpacing;
 					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
@@ -154,22 +134,8 @@ public class LevelController : MonoBehaviour
 			previousCarPositionX = carObj.transform.position.x - carLength - CarSpacing;
 		}
 	}
-	private void SetAnswer()
-	{
-		PMWrapper.SetCaseAnswer(CaseData.answer);
-	}
-	private void SetPrecode()
-	{
-		ISceneController[] sceneControllers = PM.UISingleton.FindInterfaces<ISceneController>();
-		if (sceneControllers.Length > 1)
-			throw new Exception("There are more than one class that implements ISceneController in current scene.");
-		if (sceneControllers.Length < 1)
-			throw new Exception("Could not find any class that implements ISceneController.");
 
-		sceneControllers[0].SetPrecode(CaseData);
-	}
-
-	private void RescaleCar(Car carData, GameObject carPlatform, GameObject carFront)
+	private void RescaleCar(CarData carData, GameObject carPlatform, GameObject carFront)
 	{
 		Vector3 platformSize = carPlatform.GetComponent<Renderer>().bounds.size;
 
@@ -177,7 +143,7 @@ public class LevelController : MonoBehaviour
 		int rowsInCar = 0;
 		int boxSpacingsNeeded = 0;
 
-		foreach (Section section in carData.sections)
+		foreach (SectionData section in carData.sections)
 		{
 			rowsInCar += section.rows;
 			if (section.itemCount >= 0)
@@ -207,9 +173,8 @@ public class LevelController : MonoBehaviour
 		int b = positionMatrix.GetLength(1) - 1;
 		for (int i = 0; i < itemCount; i++)
 		{
-			GameObject obj = Instantiate(itemPrefab);
+			GameObject obj = Instantiate(itemPrefab, parent.transform, true);
 			obj.transform.position = positionMatrix[a, b];
-			obj.transform.SetParent(parent.transform);
 
 			a += 1;
 
@@ -221,7 +186,7 @@ public class LevelController : MonoBehaviour
 		}
 	}
 
-	private void SetCarMaterial(Car carData, params GameObject[] objects)
+	private void SetCarMaterial(CarData carData, params GameObject[] objects)
 	{
 		Material material;
 
@@ -251,5 +216,19 @@ public class LevelController : MonoBehaviour
 		int randomIndex = UnityEngine.Random.Range(0, colorToMaterial.Keys.Count);
 		string color = colorToMaterial.Keys.ElementAt(randomIndex);
 		return colorToMaterial[color];
+	}
+
+	public void OnPMCaseSwitched(int caseNumber)
+	{
+		BuildItemDictionary();
+		BuildColorDictionary();
+
+		RemoveOldAssets();
+
+		var goodsCaseDefinition = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+
+		CreateAssets(goodsCaseDefinition);
+
+		PMWrapper.SetCaseAnswer(goodsCaseDefinition.answer);
 	}
 }

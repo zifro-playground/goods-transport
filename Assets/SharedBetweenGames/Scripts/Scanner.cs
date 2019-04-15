@@ -39,7 +39,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 				DisableScanner();
 				int timeActivated = Mathf.Max(1, Mathf.CeilToInt(4 * (1 - PMWrapper.speedMultiplier)));
 				StartCoroutine(ActivateDisplayForSeconds(timeActivated));
-				PMWrapper.UnpauseWalker();
+				PMWrapper.ResolveYield();
 			}
 		}
 	}
@@ -88,7 +88,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		DisplayText.gameObject.SetActive(false);
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
 		DisableScanner();
 		StopAllCoroutines();

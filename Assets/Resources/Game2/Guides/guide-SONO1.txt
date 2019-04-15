@@ -1,3 +1,0 @@
-﻿3: <b>scanna_antal_palmer()</b> räknar hur många palmer ett tåg har lastat.
-4: Kom ihåg att när vi jämför siffror behövs inga citatecken.
-play: Kör!
