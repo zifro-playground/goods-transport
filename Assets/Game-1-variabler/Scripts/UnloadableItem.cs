@@ -9,12 +9,12 @@ public class UnloadableItem : MonoBehaviour
 	{
 		float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
 
-		if (IsUnloading && !PMWrapper.IsCompilerUserPaused)
+		if (IsUnloading && !PMWrapper.isCompilerUserPaused)
 			transform.Translate(-transform.up * UnloadingSpeed * gameSpeedExp);
 
 		if (transform.position.y > 7)
 		{
-			PMWrapper.UnpauseWalker();
+			PMWrapper.ResolveYield();
 			Destroy(gameObject);
 		}
 	}

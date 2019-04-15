@@ -29,7 +29,7 @@ public class ChargeStation : MonoBehaviour
 
 	private void Update()
 	{
-		if (PMWrapper.IsCompilerUserPaused)
+		if (PMWrapper.isCompilerUserPaused)
 			return;
 
 		if (isRasingWalls)
@@ -62,7 +62,7 @@ public class ChargeStation : MonoBehaviour
         else if (direction == Direction.Down && Walls.transform.localPosition.z < -0.3f)
         {
             isLoweringWalls = false;
-            PMWrapper.UnpauseWalker();
+            PMWrapper.ResolveYield();
         }
     }
 
