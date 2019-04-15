@@ -576,6 +576,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2806670948905080031, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: gameDataFileName
+      value: Game2/game2
+      objectReference: {fileID: 0}
     - target: {fileID: 2627802218252271075, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -584,7 +589,17 @@ PrefabInstance:
     - target: {fileID: 2627802218252271075, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00015258789
+      value: -0.000030517578
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809482149576535469, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809482149576535469, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2627181363500275169, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
@@ -600,6 +615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809195347356514037, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2627832299118888095, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
@@ -759,7 +779,12 @@ PrefabInstance:
     - target: {fileID: 2626840054181419881, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000091552734
+      value: 0.00009918213
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809747548373380507, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2626856484454185705, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
@@ -781,6 +806,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2627469415840831825, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2809916080444169265, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2627535175525826077, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -789,6 +824,11 @@ PrefabInstance:
     - target: {fileID: 2627535175525826077, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2627535175525826077, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2627076938181823589, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
@@ -883,22 +923,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4, type: 3}
---- !u!1 &2841575855263107535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2841575855263107535, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1364766434957526718}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2841575855263107536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2841575855263107535}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ab736a7c1a0d154a883ab3091567f42, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updatesProjectVersion: 1
