@@ -1,4 +1,5 @@
-﻿using Mellis;
+﻿using GameData;
+using Mellis;
 using Mellis.Core.Interfaces;
 using UnityEngine;
 
@@ -14,10 +15,12 @@ public class ChargeCar : ClrYieldingFunction
         ChargeStation.Instance.ChargeBattery();
     }
 
-    private void SetCarCharged()
+    private static void SetCarCharged()
     {
+        var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[PMWrapper.currentCase].caseDefinition;
+        int chargeBound = caseDef.chargeBound;
+
         var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
-        int chargeBound = LevelController.CaseData.chargeBound;
 
         if (carInfo.HasBeenCharged)
             return;

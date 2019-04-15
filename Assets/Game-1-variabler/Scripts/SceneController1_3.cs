@@ -2,12 +2,21 @@
 using UnityEngine;
 using PM;
 
-public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer
+public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer, IPMCaseSwitched
 {
-	[HideInInspector]
-	public int carsUnloaded = 0;
+	static SceneController1_3()
+	{
+		Main.RegisterFunction(new EmptyCar());
+		Main.RegisterFunction(new DriveForward());
+		Main.RegisterFunction(new ScanChairs());
+		Main.RegisterFunction(new ScanPalms());
+	}
 
-	public void OnPMCompilerStarted()
+    [HideInInspector]
+	public int carsUnloaded = 0;
+	private GoodsCaseDefinition caseDef;
+
+    public void OnPMCompilerStarted()
 	{
 		carsUnloaded = 0;
 	}
@@ -23,15 +32,9 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 		}
 	}
 
-	public void SetPrecode(CaseData caseData)
-	{
-		string precode = "antal_tåg = " + caseData.cars.Count;
-		PMWrapper.preCode = precode;
-	}
-
 	public void OnPMWrongAnswer(string answer)
 	{
-		int correctAnswer = LevelController.CaseData.answer;
+		int correctAnswer = caseDef.answer;
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
@@ -47,7 +50,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private void WinIfCarsUnloaded()
 	{
-		int carsToUnload = LevelController.CaseData.cars.Count;
+		int carsToUnload = caseDef.cars.Count;
 
 		if (carsUnloaded < carsToUnload)
 		{
@@ -59,4 +62,8 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 		}
 	}
 
+	public void OnPMCaseSwitched(int caseNumber)
+	{
+		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+    }
 }

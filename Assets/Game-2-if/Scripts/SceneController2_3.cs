@@ -3,15 +3,27 @@ using GameData;
 using PM;
 using UnityEngine;
 
-public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerStopped
+public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwitched
 {
-	public void SetPrecode(CaseData caseData)
-	{
-		if (caseData.precode != null)
-			PMWrapper.preCode = caseData.precode;
-	}
+    static SceneController2_3()
+    {
+        Main.RegisterFunction(new DriveStraight());
+        Main.RegisterFunction(new DriveLeft());
+        Main.RegisterFunction(new DriveRight());
+        Main.RegisterFunction(new ScanPalms());
+        Main.RegisterFunction(new ScanLamps());
+        Main.RegisterFunction(new ScanTrees());
+    }
 
-	public void OnPMCompilerStopped(StopStatus status)
+    private GoodsCaseDefinition caseDef;
+
+
+    public void OnPMCaseSwitched(int caseNumber)
+    {
+        caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+    }
+
+    public void OnPMCompilerStopped(StopStatus status)
 	{
 		if (status == StopStatus.Finished)
 		{
@@ -24,15 +36,15 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private bool CorrectSorting()
 	{
-	    var leftBounds = LevelController.CaseData.correctSorting.leftQueue;
+	    var leftBounds = caseDef.correctSorting.leftQueue;
 	    if (!CorrectQueue(leftBounds, SortedQueue.LeftQueue, "åt vänster"))
 	        return false;
 
-        var forwardBounds = LevelController.CaseData.correctSorting.forwardQueue;
+        var forwardBounds = caseDef.correctSorting.forwardQueue;
         if (!CorrectQueue(forwardBounds, SortedQueue.ForwardQueue, "rakt fram"))
             return false;
 
-        var rightBounds = LevelController.CaseData.correctSorting.rightQueue;
+        var rightBounds = caseDef.correctSorting.rightQueue;
         if (!CorrectQueue(rightBounds, SortedQueue.RightQueue, "åt höger"))
             return false;
 
@@ -53,7 +65,7 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
     private bool CorrectNumberOfCarsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
         var correctNumberOfCars = 0;
-        foreach (var car in LevelController.CaseData.cars)
+        foreach (var car in caseDef.cars)
         {
             var itemsInCar = 0;
             foreach (var carSection in car.sections)

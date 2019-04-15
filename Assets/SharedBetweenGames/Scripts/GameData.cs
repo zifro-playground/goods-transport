@@ -40,25 +40,11 @@ namespace GameData
         public CorrectSortedQueueData forwardQueue { get; set; }
     }
 
-    public class CaseData
+    public class GoodsCaseDefinition : CaseDefinition
     {
         public List<CarData> cars { get; set; }
-
-        public string precode { get; set; }
-
         public SortingData correctSorting { get; set; }
         public int answer { get; set; }
         public int chargeBound { get; set; }
-    }
-
-    public class LevelData
-    {
-        public string id { get; set; }
-        public List<CaseData> cases { get; set; }
-    }
-
-    public class Data
-    {
-        public List<LevelData> levels { get; set; }
     }
 }

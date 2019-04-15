@@ -579,17 +579,22 @@ PrefabInstance:
     - target: {fileID: 2806670948905080031, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: gameDataFileName
-      value: Game2/game2
+      value: game2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806670948905080031, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2627802218252271075, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000030517578
+      value: -0.000091552734
       objectReference: {fileID: 0}
     - target: {fileID: 2627802218252271075, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000030517578
+      value: 0.000015258789
       objectReference: {fileID: 0}
     - target: {fileID: 2809482149576535469, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
@@ -779,7 +784,7 @@ PrefabInstance:
     - target: {fileID: 2626840054181419881, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00009918213
+      value: -0.00009918213
       objectReference: {fileID: 0}
     - target: {fileID: 2809747548373380507, guid: 33b8b9f1db16eda4aaa83fdeb3cab0a4,
         type: 3}

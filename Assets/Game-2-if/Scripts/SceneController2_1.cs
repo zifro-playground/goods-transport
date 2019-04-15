@@ -2,22 +2,31 @@ using GameData;
 using PM;
 using UnityEngine;
 
-public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted
+public class SceneController2_1 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMCaseSwitched
 {
+	static SceneController2_1()
+	{
+		Main.RegisterFunction(new CheckBattery());
+		Main.RegisterFunction(new ChargeCar());
+		Main.RegisterFunction(new DriveForward());
+	}
+
     public static int CorrectlyCharged = 0;
     public static int FalselyCharged = 0;
 	public static int CheckChargeCounter = 0;
 
     private int carsToCharge;
 	private int carsToCheck;
+	private GoodsCaseDefinition caseDef;
 
-    public void SetPrecode(CaseData caseData)
+
+	public void OnPMCaseSwitched(int caseNumber)
 	{
-		if (caseData.precode != null)
-			PMWrapper.preCode = caseData.precode;
+		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
 	}
 
-	public void OnPMCompilerStopped(StopStatus status)
+
+    public void OnPMCompilerStopped(StopStatus status)
 	{
 		if (status == StopStatus.Finished)
 		{
@@ -35,17 +44,17 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 		CheckChargeCounter = 0;
 		carsToCheck = 0;
 
-		foreach (CarData car in LevelController.CaseData.cars)
+		foreach (CarData car in caseDef.cars)
 		{
 			carsToCheck++;
-			if (car.batteryLevel < LevelController.CaseData.chargeBound)
+			if (car.batteryLevel < caseDef.chargeBound)
 				carsToCharge++;
 		}
 	}
 
     private void CorrectCase()
     {
-        int chargeBound = LevelController.CaseData.chargeBound;
+        int chargeBound = caseDef.chargeBound;
 
         if (CorrectlyCharged == carsToCharge)
         {
