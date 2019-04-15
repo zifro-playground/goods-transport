@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
-using UnityEditor.Experimental.Animations;
+using UnityEditor.Animations;
+#endif
 
 public class HierarchyRecorder : MonoBehaviour
 {
@@ -12,17 +14,17 @@ public class HierarchyRecorder : MonoBehaviour
 	// Checkbox to start/stop the recording.
 	public bool record = false;
 
+#if UNITY_EDITOR
 	// The main feature: the actual recorder.
 	private GameObjectRecorder m_Recorder;
 
 	void Start()
 	{
 		// Create the GameObjectRecorder.
-		m_Recorder = new GameObjectRecorder();
-		m_Recorder.root = gameObject;
+		m_Recorder = new GameObjectRecorder(gameObject);
 
 		// Set it up to record the transforms recursively.
-		m_Recorder.BindComponent<Transform>(gameObject, true);
+		m_Recorder.BindComponentsOfType<Transform>(gameObject, true);
 	}
 
 	// The recording needs to be done in LateUpdate in order
@@ -46,4 +48,5 @@ public class HierarchyRecorder : MonoBehaviour
 			m_Recorder.ResetRecording();
 		}
 	}
+#endif
 }
