@@ -14,5 +14,6 @@ public class DriveLeft : ClrYieldingFunction
 
         CarQueue.DriveQueueForward();
         CarQueue.DriveFirstCarLeft();
+		SceneController2_2.CarsSorted++;
     }
 }

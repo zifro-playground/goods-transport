@@ -1,0 +1,15 @@
+{
+    "name": "ZifroPlayground.Goods.Game2If",
+    "references": [
+        "ZifroPlayground.UI",
+        "ZifroPlayground.Goods"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": []
+}

@@ -82,19 +82,16 @@ public class CarMovement : MonoBehaviour
 
 	public void DriveLeft()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveLeft");
 	}
 
 	public void DriveStraight()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveStraight");
 	}
 
 	public void DriveRight()
 	{
-		SceneController2_2.CarsSorted++;
 		PlayAnimation("DriveRight");
 	}
 
