@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using GameData;
+using UnityEngine;
 using PM;
 
 public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer
@@ -22,7 +23,7 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 		}
 	}
 
-	public void SetPrecode(Case caseData)
+	public void SetPrecode(CaseData caseData)
 	{
 		string precode = "antal_tåg = " + caseData.cars.Count;
 		PMWrapper.preCode = precode;

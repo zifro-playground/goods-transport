@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Newtonsoft.Json;
 using System.Collections;
+using GameData;
 using PM;
+using UnityEngine.Serialization;
 
 public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 {
@@ -11,8 +13,9 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 	public LevelController levelController;
 	public LevelGroup[] levelGroups;
 
-	public Case caseData;
-	private GameData gameData;
+	[FormerlySerializedAs("gameCaseData")]
+	public CaseData caseData;
+	private Data data;
 
 	[Serializable]
 	public struct LevelGroup
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 
 		string jsonString = jsonAsset.text;
 
-		gameData = JsonConvert.DeserializeObject<GameData>(jsonString);
+		data = JsonConvert.DeserializeObject<Data>(jsonString);
 	}
 
 	
@@ -79,7 +82,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 
 	private void LoadCase(int level, int caseNumber)
 	{
-		caseData = gameData.levels[level].cases[caseNumber];
+		caseData = data.levels[level].cases[caseNumber];
 
 		levelController.LoadCase(caseData);
 	}

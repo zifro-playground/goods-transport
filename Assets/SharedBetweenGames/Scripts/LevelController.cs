@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using GameData;
 using UnityEngine;
 
 public class LevelController : MonoBehaviour
@@ -30,7 +32,7 @@ public class LevelController : MonoBehaviour
 	private GameObject queue;
 
 	[HideInInspector]
-	public static Case CaseData;
+	public static CaseData CaseData;
 
 	private Dictionary<string, GameObject> itemTypeToPrefab;
 	private void BuildItemDictionary()
@@ -61,7 +63,7 @@ public class LevelController : MonoBehaviour
 
 	}
 
-	public void LoadCase(Case newCaseData)
+	public void LoadCase(CaseData newCaseData)
 	{
 		CaseData = newCaseData;
 		
@@ -88,7 +90,7 @@ public class LevelController : MonoBehaviour
 		float boxLength = BoxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
 		float previousCarPositionX = 0;
 
-		foreach (Car carData in CaseData.cars)
+		foreach (CarData carData in CaseData.cars)
 		{
 			GameObject carObj = Instantiate(CarPrefab);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
@@ -123,7 +125,7 @@ public class LevelController : MonoBehaviour
 			float carLeftEnd = platformBounds.min.x;
 			float sectionLeftEnd = carLeftEnd;
 
-			foreach (Section section in carData.sections)
+			foreach (SectionData section in carData.sections)
 			{
 				var itemPositions = new Vector3[section.rows, 4];
 
@@ -169,7 +171,7 @@ public class LevelController : MonoBehaviour
 		sceneControllers[0].SetPrecode(CaseData);
 	}
 
-	private void RescaleCar(Car carData, GameObject carPlatform, GameObject carFront)
+	private void RescaleCar(CarData carData, GameObject carPlatform, GameObject carFront)
 	{
 		Vector3 platformSize = carPlatform.GetComponent<Renderer>().bounds.size;
 
@@ -177,7 +179,7 @@ public class LevelController : MonoBehaviour
 		int rowsInCar = 0;
 		int boxSpacingsNeeded = 0;
 
-		foreach (Section section in carData.sections)
+		foreach (SectionData section in carData.sections)
 		{
 			rowsInCar += section.rows;
 			if (section.itemCount >= 0)
@@ -221,7 +223,7 @@ public class LevelController : MonoBehaviour
 		}
 	}
 
-	private void SetCarMaterial(Car carData, params GameObject[] objects)
+	private void SetCarMaterial(CarData carData, params GameObject[] objects)
 	{
 		Material material;
 

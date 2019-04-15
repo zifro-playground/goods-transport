@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GameData;
 using PM;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 
 	private int carsToSort;
 
-	public void SetPrecode(Case caseData)
+	public void SetPrecode(CaseData caseData)
 	{
 		if (caseData.precode != null)
 			PMWrapper.preCode = caseData.precode;

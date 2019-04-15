@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using GameData;
+using UnityEngine;
 
 public interface ISceneController
 {
-	void SetPrecode(Case caseData);
+	void SetPrecode(CaseData caseDataData);
 }

@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using GameData;
 using PM;
 using UnityEngine;
 
 public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerStopped
 {
-	public void SetPrecode(Case caseData)
+	public void SetPrecode(CaseData caseData)
 	{
 		if (caseData.precode != null)
 			PMWrapper.preCode = caseData.precode;
@@ -38,7 +39,7 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
         return true;
 	}
 
-	private bool CorrectQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+	private bool CorrectQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
 	{
 	    if (!CorrectNumberOfCarsInQueue(bounds, queue, direction))
 	        return false;
@@ -49,7 +50,7 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
         return true;
 	}
 
-    private bool CorrectNumberOfCarsInQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+    private bool CorrectNumberOfCarsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
         var correctNumberOfCars = 0;
         foreach (var car in LevelController.CaseData.cars)
@@ -77,7 +78,7 @@ public class SceneController2_3 : MonoBehaviour, ISceneController, IPMCompilerSt
         return true;
     }
 
-    private bool CorrectBoundsInQueue(CorrectSortedQueue bounds, List<GameObject> queue, string direction)
+    private bool CorrectBoundsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
         foreach (GameObject car in queue)
         {

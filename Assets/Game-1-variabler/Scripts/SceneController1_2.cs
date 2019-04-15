@@ -1,4 +1,5 @@
 ﻿using System;
+using GameData;
 using PM;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 {
 	public int itemsUnloaded = 0;
 
-	private Case caseData;
+	private CaseData caseData;
 
 	public void OnPMCompilerStarted()
 	{
@@ -20,7 +21,7 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		{			
 			int itemsToUnload = 0;
 
-			foreach (Section section in caseData.cars[0].sections)
+			foreach (SectionData section in caseData.cars[0].sections)
 			{
 				itemsToUnload += section.itemCount;
 			}
@@ -39,7 +40,7 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		itemsUnloaded = 0;
 	}
 
-	public void SetPrecode(Case caseData)
+	public void SetPrecode(CaseData caseData)
 	{
 		if (caseData.precode != null)
 			PMWrapper.preCode = caseData.precode;

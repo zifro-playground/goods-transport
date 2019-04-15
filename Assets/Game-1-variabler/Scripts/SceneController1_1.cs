@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using GameData;
+using UnityEngine;
 
 public class SceneController1_1 : MonoBehaviour, ISceneController, IPMWrongAnswer, IPMCorrectAnswer
 {
-	Case caseData;
+	CaseData caseData;
 
-	public void SetPrecode(Case caseData)
+	public void SetPrecode(CaseData caseData)
 	{
 		this.caseData = caseData;
 
 		string precode = "";
 
-		foreach (Section section in caseData.cars[0].sections)
+		foreach (SectionData section in caseData.cars[0].sections)
 		{
 			if (section.itemCount > 0)
 				precode += section.type + " = " + section.itemCount + "\n";

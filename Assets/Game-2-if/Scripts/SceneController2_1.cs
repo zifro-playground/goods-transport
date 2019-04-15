@@ -1,3 +1,4 @@
+using GameData;
 using PM;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
     private int carsToCharge;
 	private int carsToCheck;
 
-    public void SetPrecode(Case caseData)
+    public void SetPrecode(CaseData caseData)
 	{
 		if (caseData.precode != null)
 			PMWrapper.preCode = caseData.precode;
@@ -34,7 +35,7 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 		CheckChargeCounter = 0;
 		carsToCheck = 0;
 
-		foreach (Car car in LevelController.CaseData.cars)
+		foreach (CarData car in LevelController.CaseData.cars)
 		{
 			carsToCheck++;
 			if (car.batteryLevel < LevelController.CaseData.chargeBound)
