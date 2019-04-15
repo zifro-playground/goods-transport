@@ -11,9 +11,9 @@ public class SceneController1_3 : MonoBehaviour, ISceneController, IPMCompilerSt
 		carsUnloaded = 0;
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{
 			if (!PMWrapper.levelShouldBeAnswered)
 			{

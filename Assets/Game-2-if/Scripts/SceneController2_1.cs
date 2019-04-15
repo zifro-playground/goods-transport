@@ -16,9 +16,9 @@ public class SceneController2_1 : MonoBehaviour, ISceneController, IPMCompilerSt
 			PMWrapper.preCode = caseData.precode;
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{
             CorrectCase();
 		}

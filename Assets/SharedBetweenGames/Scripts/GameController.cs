@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 	
 	public void OnPMCaseSwitched(int caseNumber)
 	{
-		LevelGroup newGroup = GetGroup(PMWrapper.currentLevel);
+		LevelGroup newGroup = GetGroup(PMWrapper.currentLevelIndex);
 
 		if (currentGroup.sceneName != newGroup.sceneName)
 		{
@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 		}
 		else
 		{
-			LoadCase(PMWrapper.currentLevel, caseNumber);
+			LoadCase(PMWrapper.currentLevelIndex, caseNumber);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 	{
 		AsyncOperation async = SceneManager.LoadSceneAsync(newGroup.sceneName, LoadSceneMode.Additive);
 		yield return async;
-		LoadCase(PMWrapper.currentLevel, caseNumber);
+		LoadCase(PMWrapper.currentLevelIndex, caseNumber);
 	}
 
 	private void LoadCase(int level, int caseNumber)
@@ -94,8 +94,8 @@ public class GameController : MonoBehaviour, IPMCaseSwitched, IPMCompilerStopped
 		throw new Exception("Current level number \"" + level + "\" does not fit into any existing group intervall");
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		LoadCase(PMWrapper.currentLevel, 0);
+		LoadCase(PMWrapper.currentLevelIndex, 0);
 	}
 }

@@ -14,9 +14,9 @@ public class SceneController1_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		caseData = LevelController.CaseData;
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{			
 			int itemsToUnload = 0;
 

@@ -21,9 +21,9 @@ public class SceneController2_2 : MonoBehaviour, ISceneController, IPMCompilerSt
 		carsToSort = LevelController.CaseData.cars.Count;
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		if (status == HelloCompiler.StopStatus.Finished)
+		if (status == StopStatus.Finished)
 		{
 			if (CarsSorted < carsToSort)
 				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");

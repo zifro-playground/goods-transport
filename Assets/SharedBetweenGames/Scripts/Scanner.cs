@@ -88,7 +88,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		DisplayText.gameObject.SetActive(false);
 	}
 
-	public void OnPMCompilerStopped(HelloCompiler.StopStatus status)
+	public void OnPMCompilerStopped(StopStatus status)
 	{
 		DisableScanner();
 		StopAllCoroutines();
