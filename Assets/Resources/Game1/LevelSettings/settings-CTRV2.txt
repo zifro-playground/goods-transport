@@ -1,5 +1,0 @@
-taskdescription: Töm alla tåg på palmer. Hur många palmer kom med tågen?
-precode: antal_tåg = 7
-rowlimit: 20
-smartbuttons: töm_tåg(), kör_framåt(), svara(), scanna_antal_palmer()
-functions: ScanPalms, EmptyCar, DriveForward

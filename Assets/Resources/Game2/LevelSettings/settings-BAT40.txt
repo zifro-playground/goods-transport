@@ -1,6 +1,0 @@
-taskdescription: Ladda tåget om batterinivån är mindre än 40 %.
-startcode: for i in range(antal_tåg):\n\tbatterinivå = kolla_batterinivå()\n\tif batterinivå < 40:\n\t\tladda_tåg()\n\tkör_framåt()
-rowlimit: 10
-casecount: 1
-smartbuttons: kolla_batterinivå(), ladda_tåg(), kör_framåt()
-functions: CheckBattery, ChargeCar, DriveForward

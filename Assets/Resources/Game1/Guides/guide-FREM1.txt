@@ -1,4 +1,0 @@
-1: Antalet tåg som finns i kön sparas i variabeln <b>antal_tåg</b>.
-2: "Upprepa en gång för varje tåg i kön:"
-3: Först tömmer vi tåget på varor.
-4: Sen kör vi fram nästa tåg i kön.

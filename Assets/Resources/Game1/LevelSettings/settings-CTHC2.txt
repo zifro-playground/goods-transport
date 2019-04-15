@@ -1,4 +1,0 @@
-taskdescription: Töm alla tåg på lampor. Hur många lampor kom med tågen? Varje tåg innehåller lika många lampor.
-rowlimit: 20
-smartbuttons: töm_tåg(), kör_framåt(), svara()
-functions: EmptyCar, DriveForward

@@ -1,4 +1,0 @@
-1: Här skapas en variabel med namnet <b>lampor</b> och med värdet <b>11</b>.
-2: Här skapas en variabel med namnet <b>palmer</b> och med värdet <b>7</b>.
-3: Det går bra att addera variabler med <b>+</b>.
-4: <b>svara()</b> skickar svaret på frågan till roboten.

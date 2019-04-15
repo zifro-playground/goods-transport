@@ -1,4 +1,0 @@
-taskdescription: Hur mycket väger träden totalt?
-rowlimit: 20
-casecount: 3
-smartbuttons: svara()

@@ -1,0 +1,1884 @@
+﻿{
+  "activeLevels": [
+    {
+      "levelId": "GOODS2_BAT40",
+      "sceneName": "Game2-Scene1"
+    },
+    {
+      "levelId": "GOODS2_BAT80",
+      "sceneName": "Game2-Scene1"
+    },
+    {
+      "levelId": "GOODS2_BAT50",
+      "sceneName": "Game2-Scene1"
+    },
+    {
+      "levelId": "GOODS2_BAT67",
+      "sceneName": "Game2-Scene1"
+    },
+    {
+      "levelId": "GOODS2_SOPA1",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_SOTR1",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_SOLA1",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_SOPA2",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_SOELF",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_2SOR1",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_2SOR2",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_2SOR3",
+      "sceneName": "Game2-Scene2"
+    },
+    {
+      "levelId": "GOODS2_SONO1",
+      "sceneName": "Game2-Scene3"
+    },
+    {
+      "levelId": "GOODS2_SONO2",
+      "sceneName": "Game2-Scene3"
+    },
+    {
+      "levelId": "GOODS2_SONO3",
+      "sceneName": "Game2-Scene3"
+    },
+    {
+      "levelId": "GOODS2_SONO4",
+      "sceneName": "Game2-Scene3"
+    },
+    {
+      "levelId": "GOODS2_SONO5",
+      "sceneName": "Game2-Scene3"
+    }
+  ],
+  "scenes": [
+    {
+      "sceneSettings": {
+        "availableFunctions": [
+          "CheckBattery",
+          "ChargeCar",
+          "DriveForward"
+        ]
+      },
+      "name": "Game2-Scene1",
+      "levels": [
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "chargeBound": 40,
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 22
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 34
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 45
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 40
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 99
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 5"
+              }
+            }
+          ],
+          "guideBubbles": [
+            {
+              "target": "2",
+              "text": "For-slingan kör ett varv för varje tåg i kön."
+            },
+            {
+              "target": "3",
+              "text": "<b>kolla_batterinivå()</b> hämtar tågets batterinivå och sparar värdet i en variabel med namnet <b>batterinivå</b>."
+            },
+            {
+              "target": "4",
+              "text": "Om batterinivån är <b>mindre än</b> 40 så laddas tåget."
+            },
+            {
+              "target": "6",
+              "text": "Oavsett om tåget laddas eller inte så åker det framåt."
+            },
+            {
+              "target": "play",
+              "text": "Kör!"
+            }
+          ],
+          "id": "GOODS2_BAT40",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Ladda tåget om batterinivån är mindre än 40 %."
+            },
+            "availableFunctions": [],
+            "rowLimit": 10,
+            "startCode": "for i in range(antal_tåg):\n\tbatterinivå = kolla_batterinivå()\n\tif batterinivå < 40:\n\t\tladda_tåg()\n\tkör_framåt()"
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "chargeBound": 80,
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 87
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 24
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 71
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 80
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 43
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 54
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 33
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 93
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 8"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_BAT80",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Ladda tåget om batterinivån är mindre än 80 %."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "chargeBound": 50,
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 77
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 43
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 52
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 89
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 49
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 50
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 5
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 7"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_BAT50",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Ladda tåget om batterinivån är mindre än 50 %."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "chargeBound": 67,
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 44
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 83
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 63
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ],
+                    "batteryLevel": 71
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 4"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_BAT67",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Ladda tåget om batterinivån är mindre än två tredjedelar av fullt."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        }
+      ]
+    },
+    {
+      "sceneSettings": {
+        "availableFunctions": [
+          "ScanType",
+          "DriveStraight",
+          "DriveLeft",
+          "DriveRight"
+        ]
+      },
+      "name": "Game2-Scene2",
+      "levels": [
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "palmer"
+                  },
+                  "rightQueue": {
+                    "type": "none"
+                  },
+                  "forwardQueue": {
+                    "type": "whatever"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 10,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 5"
+              }
+            }
+          ],
+          "guideBubbles": [
+            {
+              "target": "3",
+              "text": "<b>scanna_sort()</b> används för att lista ut vilken sorts varor tåget transporterar."
+            },
+            {
+              "target": "3",
+              "text": "Det finns 5 sorter: <b>\"palmer\"</b>, <b>\"granar\"</b>, <b>\"bord\"</b>, <b>\"stolar\"</b> och <b>\"lampor\"</b>."
+            },
+            {
+              "target": "4",
+              "text": "Använd <b>==</b> för att jämföra variabeln <b>varusort</b> med värdet <b>\"palmer\"</b>."
+            },
+            {
+              "target": "4",
+              "text": "Det är citattecken run <b>\"palmer\"</b> eftersom det är en text."
+            },
+            {
+              "target": "6",
+              "text": "Alla tåg som inte transporterar <b>\"palmer\"</b> åker <b>rakt fram</b>."
+            },
+            {
+              "target": "play",
+              "text": "Kör!"
+            }
+          ],
+          "id": "GOODS2_SOPA1",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla palmer åt vänster och resten av varorna rakt fram."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": "for i in range(antal_tåg):\n\tvarusort = scanna_sort()\n\tif varusort == \"palmer\":\n\t\tkör_vänster()\n\telse:\n\t\tkör_rakt()"
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "granar"
+                  },
+                  "rightQueue": {
+                    "type": "none"
+                  },
+                  "forwardQueue": {
+                    "type": "whatever"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 4"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SOTR1",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla granar åt vänster och resten av varorna rakt fram."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "none"
+                  },
+                  "rightQueue": {
+                    "type": "lampor"
+                  },
+                  "forwardQueue": {
+                    "type": "whatever"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 6"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SOLA1",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla lampor åt höger och resten av varorna rakt fram."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "whatever"
+                  },
+                  "rightQueue": {
+                    "type": "none"
+                  },
+                  "forwardQueue": {
+                    "type": "stolar"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 10,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 6"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SOPA2",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla stolar rakt fram och resten av varorna åt vänster."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "palmer"
+                  },
+                  "rightQueue": {
+                    "type": "granar"
+                  },
+                  "forwardQueue": {
+                    "type": "whatever"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "bord",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 7"
+              }
+            }
+          ],
+          "guideBubbles": [
+            {
+              "target": "4",
+              "text": "Om varusorten är <b>\"palmer\"</b> kommer tåget åka <b>vänster</b>."
+            },
+            {
+              "target": "6",
+              "text": "Använd <b>elif</b> för att även testa om tåget har <b>\"granar\"</b>. I så fall åker det <b>höger</b>."
+            },
+            {
+              "target": "8",
+              "text": "De tåg som varken har <b>\"palmer\"</b> eller <b>\"granar\"</b> åker <b>rakt fram</b>."
+            },
+            {
+              "target": "play",
+              "text": "Kör!"
+            }
+          ],
+          "id": "GOODS2_SOELF",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla palmer åt vänster, alla granar åt höger och resten av varorna rakt fram."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": "for i in range(antal_tåg):\n\tvarusort = scanna_sort()\n\tif varusort == \"palmer\":\n\t\tkör_vänster()\n\telif varusort == \"granar\":\n\t\tkör_höger()\n\telse:\n\t\tkör_rakt()"
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "whatever"
+                  },
+                  "rightQueue": {
+                    "type": "granar"
+                  },
+                  "forwardQueue": {
+                    "type": "lampor"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 7"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_2SOR1",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla lampor rakt fram, alla granar åt höger och resten av varorna åt vänster."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "type": "stolar"
+                  },
+                  "rightQueue": {
+                    "type": "whatever"
+                  },
+                  "forwardQueue": {
+                    "type": "bord"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "bord",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 23,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "bord",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 9"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_2SOR2",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla stolar åt vänster, alla bord rakt fram och resten av varorna åt höger."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "typeDefinitions": [
+                    {
+                      "name": "träd",
+                      "types": [
+                        "palmer",
+                        "granar"
+                      ]
+                    }
+                  ],
+                  "leftQueue": {
+                    "type": "lampor"
+                  },
+                  "rightQueue": {
+                    "type": "träd"
+                  },
+                  "forwardQueue": {
+                    "type": "whatever"
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "stolar",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "granar",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 23,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 7"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_2SOR3",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla träd åt höger, lampor åt vänster och resten rakt fram."
+            },
+            "availableFunctions": [],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        }
+      ]
+    },
+    {
+      "sceneSettings": {
+        "availableFunctions": [
+          "DriveStraight",
+          "DriveRight",
+          "DriveLeft"
+        ]
+      },
+      "name": "Game2-Scene3",
+      "levels": [
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "lowerBound": 0,
+                    "upperBound": 0
+                  },
+                  "rightQueue": {
+                    "lowerBound": 21,
+                    "upperBound": 24
+                  },
+                  "forwardQueue": {
+                    "lowerBound": 1,
+                    "upperBound": 20
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 4,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 23,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 6"
+              }
+            }
+          ],
+          "guideBubbles": [
+            {
+              "target": "3",
+              "text": "<b>scanna_antal_palmer()</b> räknar hur många palmer ett tåg har lastat."
+            },
+            {
+              "target": "4",
+              "text": "Kom ihåg att när vi jämför siffror behövs inga citatecken."
+            },
+            {
+              "target": "play",
+              "text": "Kör!"
+            }
+          ],
+          "id": "GOODS2_SONO1",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla tåg med mer än 20 palmer åt höger och resten rakt fram."
+            },
+            "availableFunctions": [
+              "ScanPalms"
+            ],
+            "rowLimit": 20,
+            "startCode": "for i in range(antal_tåg):\n\tpalmer = scanna_antal_palmer()\n\tif palmer > 20:\n\t\tkör_höger()\n\telse:\n\t\tkör_rakt()"
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "lowerBound": 1,
+                    "upperBound": 18
+                  },
+                  "rightQueue": {
+                    "lowerBound": 19,
+                    "upperBound": 24
+                  },
+                  "forwardQueue": {
+                    "lowerBound": 0,
+                    "upperBound": 0
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 16,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 13,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 7,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 18,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "lampor",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 9"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SONO2",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla tåg med mer än 18 lampor åt höger och resten åt vänster."
+            },
+            "availableFunctions": [
+              "ScanLamps"
+            ],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "lowerBound": 0,
+                    "upperBound": 4
+                  },
+                  "rightQueue": {
+                    "lowerBound": 21,
+                    "upperBound": 24
+                  },
+                  "forwardQueue": {
+                    "lowerBound": 5,
+                    "upperBound": 20
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 5,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 20,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 4,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 6,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 20,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 19,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 8"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SONO3",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla tåg med mer än 20 palmer åt höger, mindre än 5 palmer åt vänster och resten rakt fram."
+            },
+            "availableFunctions": [
+              "ScanPalms"
+            ],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "lowerBound": 7,
+                    "upperBound": 21
+                  },
+                  "rightQueue": {
+                    "lowerBound": 22,
+                    "upperBound": 24
+                  },
+                  "forwardQueue": {
+                    "lowerBound": 0,
+                    "upperBound": 6
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 17,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 5,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 22,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 21,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 4,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 24,
+                        "rows": 6
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 23,
+                        "rows": 6
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 7"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SONO4",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla tåg med mer än 21 palmer åt höger, mindre än 7 palmer rakt fram och resten åt vänster."
+            },
+            "availableFunctions": [
+              "ScanPalms"
+            ],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        },
+        {
+          "cases": [
+            {
+              "caseDefinition": {
+                "correctSorting": {
+                  "leftQueue": {
+                    "lowerBound": 10,
+                    "upperBound": 20
+                  },
+                  "rightQueue": {
+                    "lowerBound": 21,
+                    "upperBound": 24
+                  },
+                  "forwardQueue": {
+                    "lowerBound": 0,
+                    "upperBound": 9
+                  }
+                },
+                "cars": [
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 1,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 0,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 11,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 7,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 3,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 6,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 7,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 11,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 11,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 9,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 11,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 5,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 12,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 12,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 11,
+                        "rows": 3
+                      }
+                    ]
+                  },
+                  {
+                    "sections": [
+                      {
+                        "type": "palmer",
+                        "itemCount": 0,
+                        "rows": 3
+                      },
+                      {
+                        "type": "granar",
+                        "itemCount": 8,
+                        "rows": 3
+                      }
+                    ]
+                  }
+                ]
+              },
+              "caseSettings": {
+                "precode": "antal_tåg = 11"
+              }
+            }
+          ],
+          "guideBubbles": [],
+          "id": "GOODS2_SONO5",
+          "levelSettings": {
+            "taskDescription": {
+              "header": "Kör alla tåg med mer än 20 träd åt höger, mindre än 10 träd rakt fram och resten åt vänster."
+            },
+            "availableFunctions": [
+              "ScanPalms",
+              "ScanTrees"
+            ],
+            "rowLimit": 20,
+            "startCode": ""
+          }
+        }
+      ]
+    }
+  ],
+  "gameId": "GOODS2"
+}

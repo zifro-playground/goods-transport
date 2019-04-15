@@ -1,5 +1,0 @@
-taskdescription: Kör alla tåg med mer än 20 träd åt höger, mindre än 10 träd rakt fram och resten åt vänster.
-rowlimit: 20
-startcode:
-smartbuttons: kör_vänster(), kör_rakt(), kör_höger(), scanna_antal_palmer(), scanna_antal_granar()
-functions: DriveStraight, DriveRight, DriveLeft, ScanPalms, ScanTrees

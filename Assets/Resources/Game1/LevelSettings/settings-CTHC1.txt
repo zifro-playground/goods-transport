@@ -1,6 +1,0 @@
-taskdescription: Töm alla tåg på palmer. Hur många palmer kom med tågen? Varje tåg innehåller lika många palmer.
-precode: antal_tåg = 7
-startcode: totalt_palmer = 0\nfor i in range(antal_tåg):\n\ttöm_tåg()\n\ttotalt_palmer = totalt_palmer + 12\n\tkör_framåt()\nsvara(totalt_palmer)
-rowlimit: 20
-smartbuttons: töm_tåg(), åk_framåt, svara()
-functions: EmptyCar, DriveForward

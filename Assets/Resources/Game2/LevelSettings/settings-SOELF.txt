@@ -1,5 +1,0 @@
-taskdescription: Kör alla palmer åt vänster, alla granar åt höger och resten av varorna rakt fram.
-rowlimit: 20
-startcode: for i in range(antal_tåg):\n\tvarusort = scanna_sort()\n\tif varusort == "palmer":\n\t\tkör_vänster()\n\telif varusort == "granar":\n\t\tkör_höger()\n\telse:\n\t\tkör_rakt()
-smartbuttons: kör_vänster(), kör_rakt(), kör_höger(), scanna_sort()
-functions: ScanType, DriveStraight, DriveLeft, DriveRight

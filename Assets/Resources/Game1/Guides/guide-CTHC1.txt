@@ -1,8 +1,0 @@
-2: Variabeln <b>totalt_palmer</b> kommer hålla koll på hur många palmer vi lastat av. Till en början har vi inte lastat av några palmer alls.
-3: "Upprepa en gång för varje tåg i kön:"
-4: Vi börjar med att tömma tåget (som förut).
-5: Sedan adderar vi antalet palmer i tåget till <b>totalt_palmer</b>.
-5: Efter första tåget har <b>totalt_palmer</b> värdet 12.
-5: Sen kommer värdet att fortsätta att öka med 12 för varje tåg.
-6: Vi avslutar varvet med att köra fram nästa tåg i kön.
-7: Efter <b>5</b> varv skickar vi <b>totalt_palmer</b> till <b>svara()</b>
