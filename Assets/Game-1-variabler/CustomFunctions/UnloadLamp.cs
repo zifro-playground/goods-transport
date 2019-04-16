@@ -10,7 +10,7 @@ public class UnloadLamp : ClrYieldingFunction
 
     public override void InvokeEnter(params IScriptType[] arguments)
     {
-        GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
+        var lamp = GameObject.FindGameObjectWithTag("Lamp");
 
         if (lamp == null)
 		{

@@ -21,7 +21,7 @@ public class SceneController1_2 : MonoBehaviour, IPMCaseSwitched, IPMCompilerSto
 		{			
 			int itemsToUnload = 0;
 
-			foreach (var section in caseDef.cars[0].sections)
+			foreach (SectionData section in caseDef.cars[0].sections)
 			{
 				itemsToUnload += section.itemCount;
 			}

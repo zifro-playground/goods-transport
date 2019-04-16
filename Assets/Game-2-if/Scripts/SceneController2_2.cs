@@ -90,10 +90,10 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
     {
         if (correctType != "none" && correctType != "whatever")
         {
-            var correctNumberOfCars = 0;
-            foreach (var car in caseDef.cars)
+            int correctNumberOfCars = 0;
+            foreach (CarData car in caseDef.cars)
             {
-	            var currentType = FindTypeFromDefinition(car.sections.First().type);
+	            string currentType = FindTypeFromDefinition(car.sections.First().type);
 
 				if (currentType == correctType)
 				{
@@ -134,10 +134,10 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 
 	private string FindTypeFromDefinition(string type)
 	{
-		var typeDefinitions = caseDef.correctSorting.typeDefinitions;
+		List<TypeDefinitionData> typeDefinitions = caseDef.correctSorting.typeDefinitions;
 
 		if (typeDefinitions != null) { 
-			foreach (var typeDefinition in typeDefinitions)
+			foreach (TypeDefinitionData typeDefinition in typeDefinitions)
 			{
 				//print("Type: " + type);
 				if (typeDefinition.types.Contains(type))

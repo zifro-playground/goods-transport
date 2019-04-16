@@ -38,19 +38,19 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
 
 	private bool CorrectSorting()
 	{
-	    var leftBounds = caseDef.correctSorting.leftQueue;
+		CorrectSortedQueueData leftBounds = caseDef.correctSorting.leftQueue;
 	    if (!CorrectQueue(leftBounds, SortedQueue.LEFT_QUEUE, "åt vänster"))
 		{
 			return false;
 		}
 
-		var forwardBounds = caseDef.correctSorting.forwardQueue;
+		CorrectSortedQueueData forwardBounds = caseDef.correctSorting.forwardQueue;
         if (!CorrectQueue(forwardBounds, SortedQueue.FORWARD_QUEUE, "rakt fram"))
 		{
 			return false;
 		}
 
-		var rightBounds = caseDef.correctSorting.rightQueue;
+		CorrectSortedQueueData rightBounds = caseDef.correctSorting.rightQueue;
         if (!CorrectQueue(rightBounds, SortedQueue.RIGHT_QUEUE, "åt höger"))
 		{
 			return false;
@@ -76,11 +76,11 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
 
     private bool CorrectNumberOfCarsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
     {
-        var correctNumberOfCars = 0;
-        foreach (var car in caseDef.cars)
+        int correctNumberOfCars = 0;
+        foreach (CarData car in caseDef.cars)
         {
-            var itemsInCar = 0;
-            foreach (var carSection in car.sections)
+            int itemsInCar = 0;
+            foreach (SectionData carSection in car.sections)
             {
                 itemsInCar += carSection.itemCount;
             }

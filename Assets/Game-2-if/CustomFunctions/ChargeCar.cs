@@ -20,7 +20,7 @@ public class ChargeCar : ClrYieldingFunction
         var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[PMWrapper.currentCase].caseDefinition;
         int chargeBound = caseDef.chargeBound;
 
-        var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
+		CarInfo carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
 
         if (carInfo.hasBeenCharged)
 		{

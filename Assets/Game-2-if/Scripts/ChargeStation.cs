@@ -58,7 +58,7 @@ public class ChargeStation : MonoBehaviour
 
     private void MoveWalls(Direction direction)
     {
-        var move = Vector3.zero;
+		Vector3 move = Vector3.zero;
         float gameSpeedExp = MyLibrary.LinearToExponential(0, 1f, 10, PMWrapper.speedMultiplier);
 
         if (direction == Direction.Up)

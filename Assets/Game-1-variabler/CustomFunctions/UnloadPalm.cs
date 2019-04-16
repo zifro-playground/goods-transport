@@ -10,7 +10,7 @@ public class UnloadPalm : ClrYieldingFunction
 
     public override void InvokeEnter(params IScriptType[] arguments)
     {
-        GameObject palm = GameObject.FindGameObjectWithTag("Palm");
+        var palm = GameObject.FindGameObjectWithTag("Palm");
 
         if (palm == null)
 		{

@@ -7,7 +7,7 @@ public class CarQueue : MonoBehaviour
 
 	public static void DriveQueueForward()
 	{
-		var carNode = CARS.Last;
+		LinkedListNode<GameObject> carNode = CARS.Last;
 		while (carNode != null)
 		{
 			CarMovement carMovement = carNode.Value.GetComponent<CarMovement>();

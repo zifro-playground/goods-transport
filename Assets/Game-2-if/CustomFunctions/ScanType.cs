@@ -17,7 +17,7 @@ public class ScanType : ClrFunction {
 		Scanner scanner = Scanner.instance;
 		scanner.Scan(firstCar);
 
-		Dictionary<string, int> typesFound = new Dictionary<string, int>();
+		var typesFound = new Dictionary<string, int>();
 		string type = "";
 
 		foreach (Transform t in firstCar.transform)
