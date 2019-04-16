@@ -12,7 +12,7 @@ public class ChargeCar : ClrYieldingFunction
     public override void InvokeEnter(params IScriptType[] arguments)
     {
         SetCarCharged();
-        ChargeStation.Instance.ChargeBattery();
+        ChargeStation.instance.ChargeBattery();
     }
 
     private static void SetCarCharged()
@@ -22,23 +22,23 @@ public class ChargeCar : ClrYieldingFunction
 
         var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
 
-        if (carInfo.HasBeenCharged)
+        if (carInfo.hasBeenCharged)
 		{
 			return;
 		}
 
-		if (carInfo.StartBatteryLevel < chargeBound)
+		if (carInfo.startBatteryLevel < chargeBound)
         {
-            SceneController2_1.CorrectlyCharged++;
+            SceneController2_1.correctlyCharged++;
         }
         else
         {
-            if (carInfo.StartBatteryLevel != 100)
+            if (carInfo.startBatteryLevel != 100)
 			{
-				SceneController2_1.FalselyCharged++;
+				SceneController2_1.falselyCharged++;
 			}
 		}
 
-        carInfo.HasBeenCharged = true;
+        carInfo.hasBeenCharged = true;
     }
 }

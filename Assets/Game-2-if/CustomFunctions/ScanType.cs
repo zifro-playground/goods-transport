@@ -14,7 +14,7 @@ public class ScanType : ClrFunction {
 	{
 		GameObject firstCar = CarQueue.GetFirstCar();
 
-		Scanner scanner = Scanner.Instance;
+		Scanner scanner = Scanner.instance;
 		scanner.Scan(firstCar);
 
 		Dictionary<string, int> typesFound = new Dictionary<string, int>();

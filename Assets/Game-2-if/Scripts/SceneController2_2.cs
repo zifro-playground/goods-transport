@@ -14,7 +14,7 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		Main.RegisterFunction(new DriveRight());
 	}
 
-    public static int CarsSorted;
+    public static int carsSorted;
 
 	private int carsToSort;
 	private GoodsCaseDefinition caseDef;
@@ -27,7 +27,7 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	
 	public void OnPMCompilerStarted()
 	{
-		CarsSorted = 0;
+		carsSorted = 0;
 		carsToSort = caseDef.cars.Count;
 	}
 
@@ -35,7 +35,7 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	{
 		if (status == StopStatus.Finished)
 		{
-			if (CarsSorted < carsToSort)
+			if (carsSorted < carsToSort)
 			{
 				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");
 			}
@@ -51,19 +51,19 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	private bool CorrectSorting()
 	{
 	    string correctLeftType = caseDef.correctSorting.leftQueue.type;
-	    if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue, "åt vänster"))
+	    if (!CorrectQueue(correctLeftType, SortedQueue.LEFT_QUEUE, "åt vänster"))
 		{
 			return false;
 		}
 
 		string correctForwardType = caseDef.correctSorting.forwardQueue.type;
-	    if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue, "rakt fram"))
+	    if (!CorrectQueue(correctForwardType, SortedQueue.FORWARD_QUEUE, "rakt fram"))
 		{
 			return false;
 		}
 
 		string correctRightType = caseDef.correctSorting.rightQueue.type;
-	    if (!CorrectQueue(correctRightType, SortedQueue.RightQueue, "åt höger"))
+	    if (!CorrectQueue(correctRightType, SortedQueue.RIGHT_QUEUE, "åt höger"))
 		{
 			return false;
 		}
@@ -119,7 +119,7 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
     {
         foreach (GameObject car in queue)
         {
-            string cargoType = car.GetComponent<CarInfo>().CargoType;
+            string cargoType = car.GetComponent<CarInfo>().cargoType;
 
             cargoType = FindTypeFromDefinition(cargoType);
 

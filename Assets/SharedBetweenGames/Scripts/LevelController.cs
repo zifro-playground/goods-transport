@@ -4,30 +4,46 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using GameData;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class LevelController : MonoBehaviour, IPMCaseSwitched
 {
 	[Header("Prefabs")]
-	public GameObject CarPrefab;
-	public GameObject CarPlatformPrefab;
-	public GameObject CarFrontPrefab;
-	public GameObject BoxRowPrefab;
-	public GameObject PalmPrefab;
-	public GameObject TreePrefab;
-	public GameObject LampPrefab;
-	public GameObject TablePrefab;
-	public GameObject ChairPrefab;
+	[FormerlySerializedAs("CarPrefab")]
+	public GameObject carPrefab;
+	[FormerlySerializedAs("CarPlatformPrefab")]
+	public GameObject carPlatformPrefab;
+	[FormerlySerializedAs("CarFrontPrefab")]
+	public GameObject carFrontPrefab;
+	[FormerlySerializedAs("BoxRowPrefab")]
+	public GameObject boxRowPrefab;
+	[FormerlySerializedAs("PalmPrefab")]
+	public GameObject palmPrefab;
+	[FormerlySerializedAs("TreePrefab")]
+	public GameObject treePrefab;
+	[FormerlySerializedAs("LampPrefab")]
+	public GameObject lampPrefab;
+	[FormerlySerializedAs("TablePrefab")]
+	public GameObject tablePrefab;
+	[FormerlySerializedAs("ChairPrefab")]
+	public GameObject chairPrefab;
 
 	[Header("Materials")]
-	public Material Red;
-	public Material Green;
-	public Material Blue;
+	[FormerlySerializedAs("Red")]
+	public Material red;
+	[FormerlySerializedAs("Green")]
+	public Material green;
+	[FormerlySerializedAs("Blue")]
+	public Material blue;
 
 	[Header("Distances")]
-	public float CarSpacing = 1.5f;
-	public float BoxSpacing = 0.5f;
-	public float CarPadding = 0.4f;
-	private const float BoxLength = 1; // is set from CreateAssets()
+	[FormerlySerializedAs("CarSpacing")]
+	public float carSpacing = 1.5f;
+	[FormerlySerializedAs("BoxSpacing")]
+	public float boxSpacing = 0.5f;
+	[FormerlySerializedAs("CarPadding")]
+	public float carPadding = 0.4f;
+	private const float BOX_LENGTH = 1; // is set from CreateAssets()
 
 	private GameObject queue;
 
@@ -38,11 +54,11 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 		{
 			itemTypeToPrefab = new Dictionary<string, GameObject>
 			{
-				{"palmer", PalmPrefab},
-				{"granar", TreePrefab},
-				{"bord", TablePrefab},
-				{"lampor", LampPrefab},
-				{"stolar", ChairPrefab}
+				{"palmer", palmPrefab},
+				{"granar", treePrefab},
+				{"bord", tablePrefab},
+				{"lampor", lampPrefab},
+				{"stolar", chairPrefab}
 			};
 
 		}
@@ -53,9 +69,9 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 	{
 		colorToMaterial = new Dictionary<string, Material>
 		{
-			{"red", Red},
-			{"green", Green},
-			{"blue", Blue}
+			{"red", red},
+			{"green", green},
+			{"blue", blue}
 		};
 
 	}
@@ -71,19 +87,19 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 		queue = new GameObject("Queue");
 		queue.AddComponent<CarQueue>();
 
-		float boxLength = BoxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
+		float boxLength = boxRowPrefab.GetComponentInChildren<Renderer>().bounds.size.x;
 		float previousCarPositionX = 0;
 
 		foreach (CarData carData in caseDef.cars)
 		{
-			GameObject carObj = Instantiate(CarPrefab, queue.transform, true);
+			GameObject carObj = Instantiate(carPrefab, queue.transform, true);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
-            carInfo.StartBatteryLevel = carData.batteryLevel;
-			carInfo.BatteryLevel = carData.batteryLevel;
-			carInfo.ItemsInCar = 0;
+            carInfo.startBatteryLevel = carData.batteryLevel;
+			carInfo.batteryLevel = carData.batteryLevel;
+			carInfo.itemsInCar = 0;
 
-			GameObject platform = Instantiate(CarPlatformPrefab, carObj.transform, true);
-			GameObject front = Instantiate(CarFrontPrefab, carObj.transform, true);
+			GameObject platform = Instantiate(carPlatformPrefab, carObj.transform, true);
+			GameObject front = Instantiate(carFrontPrefab, carObj.transform, true);
 
 			SetCarMaterial(carData, front);
 
@@ -110,28 +126,28 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 
 				for (int j = 1; j <= section.rows; j++)
 				{
-					GameObject boxRow = Instantiate(BoxRowPrefab, carObj.transform, true);
+					GameObject boxRow = Instantiate(boxRowPrefab, carObj.transform, true);
 
-					float rowCenter = sectionLeftEnd + CarPadding + (2 * (float)j - 1) / 2 * boxLength + (j - 1) * BoxSpacing;
+					float rowCenter = sectionLeftEnd + carPadding + (2 * (float)j - 1) / 2 * boxLength + (j - 1) * boxSpacing;
 					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 					
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
 					for (int k = 1; k <= 4; k++)
 					{
-						float colCenter = platformBounds.min.z + CarPadding + (2 * (float)k - 1) / 2 * boxLength + (k - 1) * BoxSpacing;
+						float colCenter = platformBounds.min.z + carPadding + (2 * (float)k - 1) / 2 * boxLength + (k - 1) * boxSpacing;
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
 				}
 				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
-				carInfo.ItemsInCar += section.itemCount;
-				carInfo.CargoType = section.type;
+				carInfo.itemsInCar += section.itemCount;
+				carInfo.cargoType = section.type;
 
-				float sectionLength = section.rows * boxLength + (section.rows - 1) * BoxSpacing  + 2 * CarPadding;
+				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
 				sectionLeftEnd += sectionLength;
 			}
-			previousCarPositionX = carObj.transform.position.x - carLength - CarSpacing;
+			previousCarPositionX = carObj.transform.position.x - carLength - carSpacing;
 		}
 	}
 
@@ -156,8 +172,8 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
                 throw new Exception("The itemCount in a section can not be negative (in level: " + PMWrapper.currentLevel + ")");
             }
 		}
-		float newCarWidth = 4 * BoxLength + 3 * BoxSpacing + 2 * CarPadding;
-		float newPlatformLength = rowsInCar * BoxLength + boxSpacingsNeeded * BoxSpacing + 2 * sectionCount * CarPadding;
+		float newCarWidth = 4 * BOX_LENGTH + 3 * boxSpacing + 2 * carPadding;
+		float newPlatformLength = rowsInCar * BOX_LENGTH + boxSpacingsNeeded * boxSpacing + 2 * sectionCount * carPadding;
 		
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;

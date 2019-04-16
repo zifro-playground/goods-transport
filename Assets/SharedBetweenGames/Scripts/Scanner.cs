@@ -2,13 +2,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using PM;
+using UnityEngine.Serialization;
 
 public class Scanner : MonoBehaviour, IPMCompilerStopped
 {
-	public static Scanner Instance;
+	public static Scanner instance;
 
-	public Text DisplayText;
-	public GameObject Light;
+	[FormerlySerializedAs("DisplayText")]
+	public Text displayText;
+	[FormerlySerializedAs("Light")]
+	public GameObject scannerLight;
 	private Transform scanner;
 
 	private Vector3 targetPos;
@@ -17,9 +20,9 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 	
 	void Start ()
 	{
-		Instance = this;
+		instance = this;
 		DisableScanner();
-		scanner = Light.transform;
+		scanner = scannerLight.transform;
 	}
 	
 	void Update ()
@@ -54,38 +57,38 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		float carRear = carBounds.min.x;
 
 		float distanceToCar = scanner.position.y - obj.transform.position.y;
-		float lightSpotAngle = Light.GetComponent<Light>().spotAngle;
+		float lightSpotAngle = scannerLight.GetComponent<Light>().spotAngle;
 		float lightRadiusAtCar = Mathf.Tan(Mathf.Deg2Rad * (lightSpotAngle / 2)) * distanceToCar;
 
-		Light.SetActive(true);
+		scannerLight.SetActive(true);
 		scanner.LookAt(new Vector3(carFront - lightRadiusAtCar + 1, 0, 0));
 		targetPos = new Vector3(carRear + lightRadiusAtCar - 1, 0, 0);
 	}
 
 	public void SetDisplayText(string text)
 	{
-		DisplayText.text = text;
+		displayText.text = text;
 	}
 
 	public void SetDisplayText(int text)
 	{
-		DisplayText.text = text.ToString();
+		displayText.text = text.ToString();
 	}
 
 	private void DisableScanner()
 	{
 		isScanning = false;
-		Light.SetActive(false);
-		DisplayText.gameObject.SetActive(false);
+		scannerLight.SetActive(false);
+		displayText.gameObject.SetActive(false);
 	}
 
 	public IEnumerator ActivateDisplayForSeconds(int seconds)
 	{
-		DisplayText.gameObject.SetActive(true);
+		displayText.gameObject.SetActive(true);
 
 		yield return new WaitForSeconds(seconds);
 
-		DisplayText.gameObject.SetActive(false);
+		displayText.gameObject.SetActive(false);
 	}
 
 	public void OnPMCompilerStopped(StopStatus status)

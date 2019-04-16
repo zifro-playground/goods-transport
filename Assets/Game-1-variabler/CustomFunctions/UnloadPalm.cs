@@ -17,7 +17,7 @@ public class UnloadPalm : ClrYieldingFunction
 			PMWrapper.RaiseError("Hittade ingen palm att lasta av.");
 		}
 
-		palm.GetComponent<UnloadableItem>().IsUnloading = true;
+		palm.GetComponent<UnloadableItem>().isUnloading = true;
         GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
     }
 }

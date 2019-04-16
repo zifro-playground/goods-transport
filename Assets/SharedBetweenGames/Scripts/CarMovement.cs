@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Animator))]
 
 public class CarMovement : MonoBehaviour
 {
-	public float QueueSpeed = 22f;
-	public float AnimationSpeed = 8f;
+	[FormerlySerializedAs("QueueSpeed")]
+	public float queueSpeed = 22f;
+	[FormerlySerializedAs("AnimationSpeed")]
+	public float animationSpeed = 8f;
 
-	[HideInInspector]
-	public static int OperationsRunning;
+	public static int operationsRunning;
 
 	private bool isMovingByScript;
 	private bool isMovingByAnimation;
@@ -23,7 +25,7 @@ public class CarMovement : MonoBehaviour
 		animator = GetComponent<Animator>();
 		animator.enabled = false;
 
-		OperationsRunning = 0;
+		operationsRunning = 0;
 	}
 
 	private void Update()
@@ -37,14 +39,14 @@ public class CarMovement : MonoBehaviour
 			else
 			{
 				float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-				animator.speed = AnimationSpeed * gameSpeedExp;
+				animator.speed = animationSpeed * gameSpeedExp;
 			}
 
-			if (!AnimatorIsPlaying() && OperationsRunning == 1)
+			if (!AnimatorIsPlaying() && operationsRunning == 1)
 			{
 				PMWrapper.ResolveYield();
 				isMovingByAnimation = false;
-				OperationsRunning = 0;
+				operationsRunning = 0;
 			}
 		}
 
@@ -52,13 +54,13 @@ public class CarMovement : MonoBehaviour
 		{
 			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
 
-			transform.Translate(new Vector3(0, 0, QueueSpeed * gameSpeedExp * Time.deltaTime));
+			transform.Translate(new Vector3(0, 0, queueSpeed * gameSpeedExp * Time.deltaTime));
 
-			if (Vector3.Distance(transform.position, targetPosition) < 2 * (QueueSpeed * gameSpeedExp * Time.deltaTime))
+			if (Vector3.Distance(transform.position, targetPosition) < 2 * (queueSpeed * gameSpeedExp * Time.deltaTime))
 			{
 				transform.position = targetPosition;
 				isMovingByScript = false;
-				OperationsRunning--;
+				operationsRunning--;
 			}
 		}
 	}
@@ -74,7 +76,7 @@ public class CarMovement : MonoBehaviour
 	private void PlayAnimation(string animationName)
 	{
 		isMovingByAnimation = true;
-		OperationsRunning++;
+		operationsRunning++;
 
 		animator.enabled = true;
 		animator.SetTrigger(animationName);
@@ -104,6 +106,6 @@ public class CarMovement : MonoBehaviour
 	{
 		targetPosition = target.position;
 		isMovingByScript = true;
-		OperationsRunning++;
+		operationsRunning++;
 	}
 }

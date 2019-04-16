@@ -10,10 +10,10 @@ public class DriveStraight : ClrYieldingFunction
 
 	public override void InvokeEnter(params IScriptType[] arguments)
 	{
-		SortedQueue.LeftQueue.Add(CarQueue.GetFirstCar());
+		SortedQueue.LEFT_QUEUE.Add(CarQueue.GetFirstCar());
 
 		CarQueue.DriveQueueForward();
 		CarQueue.DriveFirstCarStraight();
-		SceneController2_2.CarsSorted++;
+		SceneController2_2.carsSorted++;
     }
 }

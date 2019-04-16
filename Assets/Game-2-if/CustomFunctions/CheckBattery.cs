@@ -10,9 +10,9 @@ public class CheckBattery : ClrFunction
 
     public override IScriptType Invoke(params IScriptType[] arguments)
     {
-        int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().BatteryLevel;
+        int batteryLevel = CarQueue.GetFirstCar().GetComponent<CarInfo>().batteryLevel;
 
-        ChargeStation.Instance.CheckBattery(batteryLevel);
+        ChargeStation.instance.CheckBattery(batteryLevel);
 
         return Processor.Factory.Create(batteryLevel);
     }

@@ -13,7 +13,7 @@ public class ScanChairs : ClrYieldingFunction
     {
         GameObject car = CarQueue.GetFirstCar();
 
-        Scanner scanner = Scanner.Instance;
+        Scanner scanner = Scanner.instance;
         scanner.Scan(car);
 
         int chairCount = 0;

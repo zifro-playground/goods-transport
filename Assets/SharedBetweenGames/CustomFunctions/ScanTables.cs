@@ -13,7 +13,7 @@ public class ScanTables : ClrYieldingFunction
     {
         GameObject car = CarQueue.GetFirstCar();
 
-        Scanner scanner = Scanner.Instance;
+        Scanner scanner = Scanner.instance;
         scanner.Scan(car);
 
         int tableCount = 0;

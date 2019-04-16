@@ -43,10 +43,10 @@ public static class MyLibrary{
 			throw new ArgumentOutOfRangeException("MidValue must be greater than 0 and less than MaxValue");
 		}
 
-		float A = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
-		float B = -A;
-		float C = 2 * Mathf.Log((max - mid) / (mid - min));
+		float a = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
+		float b = -a;
+		float c = 2 * Mathf.Log((max - mid) / (mid - min));
 
-		return A + B * Mathf.Exp(C * value);
+		return a + b * Mathf.Exp(c * value);
 	}
 }

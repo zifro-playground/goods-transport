@@ -1,17 +1,22 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Road : MonoBehaviour
 {
-	public static Road Instance;
+	public static Road instance;
 
-	public Transform LeftEndPoint;
-	public Transform MiddelEndPoint;
-	public Transform RightEndPoint;
+	[FormerlySerializedAs("LeftEndPoint")]
+	public Transform leftEndPoint;
+	[FormerlySerializedAs("MiddelEndPoint")]
+	public Transform middelEndPoint;
+	[FormerlySerializedAs("RightEndPoint")]
+	public Transform rightEndPoint;
 
-	public Transform ShortEndPoint;
+	[FormerlySerializedAs("ShortEndPoint")]
+	public Transform shortEndPoint;
 
 	private void Start()
 	{
-		Instance = this;
+		instance = this;
 	}
 }

@@ -3,14 +3,14 @@ using UnityEngine;
 
 public class SortedQueue : MonoBehaviour
 {
-	public static List<GameObject> LeftQueue = new List<GameObject>();
-	public static List<GameObject> ForwardQueue = new List<GameObject>();
-	public static List<GameObject> RightQueue = new List<GameObject>();
+	public static readonly List<GameObject> LEFT_QUEUE = new List<GameObject>();
+	public static readonly List<GameObject> FORWARD_QUEUE = new List<GameObject>();
+	public static readonly List<GameObject> RIGHT_QUEUE = new List<GameObject>();
 
 	public static void ResetQueues()
 	{
-		LeftQueue.Clear();
-		RightQueue.Clear();
-		ForwardQueue.Clear();
+		LEFT_QUEUE.Clear();
+		RIGHT_QUEUE.Clear();
+		FORWARD_QUEUE.Clear();
 	}
 }

@@ -1,32 +1,36 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ChargeStation : MonoBehaviour
 {
-	public static ChargeStation Instance;
+	public static ChargeStation instance;
 
-	public Transform Walls;
-	public Text Display;
+	[FormerlySerializedAs("Walls")]
+	public Transform walls;
+	[FormerlySerializedAs("Display")]
+	public Text display;
 
-	public float WallSpeed = 50f;
+	[FormerlySerializedAs("WallSpeed")]
+	public float wallSpeed = 50f;
 
-	private bool isRasingWalls;
+	private bool isRaisingWalls;
     private bool isLoweringWalls;
 	private bool isCharging;
 
-	private const int FullBatteryLevel = 100;
+	private const int FULL_BATTERY_LEVEL = 100;
 
     private CarInfo currentCarInfo;
 
 	private void Start()
 	{
-        if (Instance != null)
+        if (instance != null)
 		{
-			throw new Exception("There should only be one instace of ChargeStation.");
+			throw new Exception("There should only be one instance of ChargeStation.");
 		}
 
-		Instance = this;
+		instance = this;
 	}
 
 	private void Update()
@@ -36,7 +40,7 @@ public class ChargeStation : MonoBehaviour
 			return;
 		}
 
-		if (isRasingWalls)
+		if (isRaisingWalls)
 		{
 			MoveWalls(Direction.Up);
 		}
@@ -59,21 +63,21 @@ public class ChargeStation : MonoBehaviour
 
         if (direction == Direction.Up)
 		{
-			move = Vector3.up * Time.deltaTime * gameSpeedExp * WallSpeed;
+			move = Vector3.up * Time.deltaTime * gameSpeedExp * wallSpeed;
 		}
 		else if (direction == Direction.Down)
 		{
-			move = Vector3.down * Time.deltaTime * gameSpeedExp * WallSpeed;
+			move = Vector3.down * Time.deltaTime * gameSpeedExp * wallSpeed;
 		}
 
-		Walls.transform.Translate(move);
+		walls.transform.Translate(move);
 
-        if (direction == Direction.Up && Walls.transform.localPosition.z > 0.2f)
+        if (direction == Direction.Up && walls.transform.localPosition.z > 0.2f)
         {
-            isRasingWalls = false;
+            isRaisingWalls = false;
             isCharging = true;
         }
-        else if (direction == Direction.Down && Walls.transform.localPosition.z < -0.3f)
+        else if (direction == Direction.Down && walls.transform.localPosition.z < -0.3f)
         {
             isLoweringWalls = false;
             PMWrapper.ResolveYield();
@@ -82,10 +86,10 @@ public class ChargeStation : MonoBehaviour
 
     private void Charge()
 	{
-        if (currentCarInfo.BatteryLevel < FullBatteryLevel)
+        if (currentCarInfo.batteryLevel < FULL_BATTERY_LEVEL)
         {
-            currentCarInfo.BatteryLevel++;
-            Display.text = currentCarInfo.BatteryLevel.ToString();
+            currentCarInfo.batteryLevel++;
+            display.text = currentCarInfo.batteryLevel.ToString();
         }
         else
         {
@@ -96,14 +100,14 @@ public class ChargeStation : MonoBehaviour
 
 	public void CheckBattery(int currentBatteryLevel)
 	{
-		SceneController2_1.CheckChargeCounter++;
-		Display.text = currentBatteryLevel.ToString();
+		SceneController2_1.checkChargeCounter++;
+		display.text = currentBatteryLevel.ToString();
 	}
 
 	public void ChargeBattery()
 	{
         currentCarInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
-        isRasingWalls = true;
+        isRaisingWalls = true;
     }
 }
 

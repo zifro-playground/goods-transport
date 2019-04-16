@@ -39,19 +39,19 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
 	private bool CorrectSorting()
 	{
 	    var leftBounds = caseDef.correctSorting.leftQueue;
-	    if (!CorrectQueue(leftBounds, SortedQueue.LeftQueue, "åt vänster"))
+	    if (!CorrectQueue(leftBounds, SortedQueue.LEFT_QUEUE, "åt vänster"))
 		{
 			return false;
 		}
 
 		var forwardBounds = caseDef.correctSorting.forwardQueue;
-        if (!CorrectQueue(forwardBounds, SortedQueue.ForwardQueue, "rakt fram"))
+        if (!CorrectQueue(forwardBounds, SortedQueue.FORWARD_QUEUE, "rakt fram"))
 		{
 			return false;
 		}
 
 		var rightBounds = caseDef.correctSorting.rightQueue;
-        if (!CorrectQueue(rightBounds, SortedQueue.RightQueue, "åt höger"))
+        if (!CorrectQueue(rightBounds, SortedQueue.RIGHT_QUEUE, "åt höger"))
 		{
 			return false;
 		}
@@ -108,7 +108,7 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
     {
         foreach (GameObject car in queue)
         {
-            int itemsInCar = car.GetComponent<CarInfo>().ItemsInCar;
+            int itemsInCar = car.GetComponent<CarInfo>().itemsInCar;
 
             if (itemsInCar > bounds.upperBound)
             {

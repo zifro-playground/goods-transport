@@ -18,7 +18,7 @@ public class ScanTrees : ClrYieldingFunction
 			PMWrapper.RaiseError("Kan inte hitta något att scanna.");
 		}
 
-		Scanner scanner = Scanner.Instance;
+		Scanner scanner = Scanner.instance;
         scanner.Scan(car);
 
         int treeCount = 0;

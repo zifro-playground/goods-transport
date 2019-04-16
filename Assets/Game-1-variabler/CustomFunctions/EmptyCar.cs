@@ -28,7 +28,7 @@ public class EmptyCar : ClrYieldingFunction
         {
             if (item != null)
 			{
-				item.IsUnloading = true;
+				item.isUnloading = true;
 			}
 		}
 
