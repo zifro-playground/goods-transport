@@ -112,14 +112,14 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 				{
 					GameObject boxRow = Instantiate(BoxRowPrefab, carObj.transform, true);
 
-					float rowCenter = sectionLeftEnd + CarPadding + ((2 * (float)j - 1) / 2) * boxLength + (j - 1) * BoxSpacing;
+					float rowCenter = sectionLeftEnd + CarPadding + (2 * (float)j - 1) / 2 * boxLength + (j - 1) * BoxSpacing;
 					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
 					
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
 					for (int k = 1; k <= 4; k++)
 					{
-						float colCenter = platformBounds.min.z + CarPadding + ((2 * (float)k - 1) / 2) * boxLength + (k - 1) * BoxSpacing;
+						float colCenter = platformBounds.min.z + CarPadding + (2 * (float)k - 1) / 2 * boxLength + (k - 1) * BoxSpacing;
 						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
 
