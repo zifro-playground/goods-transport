@@ -1,26 +1,52 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Animator))]
-
 public class CarMovement : MonoBehaviour
 {
-	[FormerlySerializedAs("QueueSpeed")]
-	public float queueSpeed = 22f;
+	public static int operationsRunning;
+
 	[FormerlySerializedAs("AnimationSpeed")]
 	public float animationSpeed = 8f;
 
-	public static int operationsRunning;
+	[FormerlySerializedAs("QueueSpeed")]
+	public float queueSpeed = 22f;
 
-	private bool isMovingByScript;
-	private bool isMovingByAnimation;
+	Animator animator;
+	bool isMovingByAnimation;
 
-	private Vector3 targetPosition;
+	bool isMovingByScript;
 
-	private Animator animator;
+	Vector3 targetPosition;
 
-	private void Start()
+	public void DriveLeft()
+	{
+		PlayAnimation("DriveLeft");
+	}
+
+	public void DriveStraight()
+	{
+		PlayAnimation("DriveStraight");
+	}
+
+	public void DriveRight()
+	{
+		PlayAnimation("DriveRight");
+	}
+
+	public void DriveShort()
+	{
+		PlayAnimation("DriveShort");
+	}
+
+	public void DriveForward(Transform target)
+	{
+		targetPosition = target.position;
+		isMovingByScript = true;
+		operationsRunning++;
+	}
+
+	void Start()
 	{
 		animator = GetComponent<Animator>();
 		animator.enabled = false;
@@ -28,7 +54,7 @@ public class CarMovement : MonoBehaviour
 		operationsRunning = 0;
 	}
 
-	private void Update()
+	void Update()
 	{
 		if (isMovingByAnimation)
 		{
@@ -65,7 +91,7 @@ public class CarMovement : MonoBehaviour
 		}
 	}
 
-	private bool AnimatorIsPlaying()
+	bool AnimatorIsPlaying()
 	{
 		return animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 &&
 		       (animator.GetCurrentAnimatorStateInfo(0).IsName("DriveLeft") ||
@@ -73,39 +99,12 @@ public class CarMovement : MonoBehaviour
 		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveRight"));
 	}
 
-	private void PlayAnimation(string animationName)
+	void PlayAnimation(string animationName)
 	{
 		isMovingByAnimation = true;
 		operationsRunning++;
 
 		animator.enabled = true;
 		animator.SetTrigger(animationName);
-	}
-
-	public void DriveLeft()
-	{
-		PlayAnimation("DriveLeft");
-	}
-
-	public void DriveStraight()
-	{
-		PlayAnimation("DriveStraight");
-	}
-
-	public void DriveRight()
-	{
-		PlayAnimation("DriveRight");
-	}
-
-	public void DriveShort()
-	{
-		PlayAnimation("DriveShort");
-	}
-
-	public void DriveForward(Transform target)
-	{
-		targetPosition = target.position;
-		isMovingByScript = true;
-		operationsRunning++;
 	}
 }

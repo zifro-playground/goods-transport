@@ -5,27 +5,39 @@ using UnityEngine.UI;
 
 public class ChargeStation : MonoBehaviour
 {
+	const int FULL_BATTERY_LEVEL = 100;
 	public static ChargeStation instance;
+
+	[FormerlySerializedAs("Display")]
+	public Text display;
 
 	[FormerlySerializedAs("Walls")]
 	public Transform walls;
-	[FormerlySerializedAs("Display")]
-	public Text display;
 
 	[FormerlySerializedAs("WallSpeed")]
 	public float wallSpeed = 50f;
 
-	private bool isRaisingWalls;
-    private bool isLoweringWalls;
-	private bool isCharging;
+	CarInfo currentCarInfo;
+	bool isCharging;
+	bool isLoweringWalls;
 
-	private const int FULL_BATTERY_LEVEL = 100;
+	bool isRaisingWalls;
 
-    private CarInfo currentCarInfo;
-
-	private void Start()
+	public void CheckBattery(int currentBatteryLevel)
 	{
-        if (instance != null)
+		SceneController2_1.checkChargeCounter++;
+		display.text = currentBatteryLevel.ToString();
+	}
+
+	public void ChargeBattery()
+	{
+		currentCarInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
+		isRaisingWalls = true;
+	}
+
+	void Start()
+	{
+		if (instance != null)
 		{
 			throw new Exception("There should only be one instance of ChargeStation.");
 		}
@@ -33,7 +45,7 @@ public class ChargeStation : MonoBehaviour
 		instance = this;
 	}
 
-	private void Update()
+	void Update()
 	{
 		if (PMWrapper.isCompilerUserPaused)
 		{
@@ -56,12 +68,12 @@ public class ChargeStation : MonoBehaviour
 		}
 	}
 
-    private void MoveWalls(Direction direction)
-    {
+	void MoveWalls(Direction direction)
+	{
 		Vector3 move = Vector3.zero;
-        float gameSpeedExp = MyLibrary.LinearToExponential(0, 1f, 10, PMWrapper.speedMultiplier);
+		float gameSpeedExp = MyLibrary.LinearToExponential(0, 1f, 10, PMWrapper.speedMultiplier);
 
-        if (direction == Direction.Up)
+		if (direction == Direction.Up)
 		{
 			move = Vector3.up * Time.deltaTime * gameSpeedExp * wallSpeed;
 		}
@@ -72,47 +84,35 @@ public class ChargeStation : MonoBehaviour
 
 		walls.transform.Translate(move);
 
-        if (direction == Direction.Up && walls.transform.localPosition.z > 0.2f)
-        {
-            isRaisingWalls = false;
-            isCharging = true;
-        }
-        else if (direction == Direction.Down && walls.transform.localPosition.z < -0.3f)
-        {
-            isLoweringWalls = false;
-            PMWrapper.ResolveYield();
-        }
-    }
-
-    private void Charge()
-	{
-        if (currentCarInfo.batteryLevel < FULL_BATTERY_LEVEL)
-        {
-            currentCarInfo.batteryLevel++;
-            display.text = currentCarInfo.batteryLevel.ToString();
-        }
-        else
-        {
-            isCharging = false;
-            isLoweringWalls = true;
-        }
+		if (direction == Direction.Up && walls.transform.localPosition.z > 0.2f)
+		{
+			isRaisingWalls = false;
+			isCharging = true;
+		}
+		else if (direction == Direction.Down && walls.transform.localPosition.z < -0.3f)
+		{
+			isLoweringWalls = false;
+			PMWrapper.ResolveYield();
+		}
 	}
 
-	public void CheckBattery(int currentBatteryLevel)
+	void Charge()
 	{
-		SceneController2_1.checkChargeCounter++;
-		display.text = currentBatteryLevel.ToString();
+		if (currentCarInfo.batteryLevel < FULL_BATTERY_LEVEL)
+		{
+			currentCarInfo.batteryLevel++;
+			display.text = currentCarInfo.batteryLevel.ToString();
+		}
+		else
+		{
+			isCharging = false;
+			isLoweringWalls = true;
+		}
 	}
-
-	public void ChargeBattery()
-	{
-        currentCarInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
-        isRaisingWalls = true;
-    }
 }
 
-enum Direction
+internal enum Direction
 {
-    Up,
-    Down
+	Up,
+	Down
 }

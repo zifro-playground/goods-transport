@@ -1,52 +1,30 @@
 ﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
 using PM;
+using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Scanner : MonoBehaviour, IPMCompilerStopped
 {
 	public static Scanner instance;
+	readonly float speed = 1;
 
 	[FormerlySerializedAs("DisplayText")]
 	public Text displayText;
+
 	[FormerlySerializedAs("Light")]
 	public GameObject scannerLight;
-	private Transform scanner;
 
-	private Vector3 targetPos;
-	private bool isScanning;
-	private readonly float speed = 1;
-	
-	void Start ()
+	bool isScanning;
+	Transform scanner;
+
+	Vector3 targetPos;
+
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		instance = this;
 		DisableScanner();
-		scanner = scannerLight.transform;
+		StopAllCoroutines();
 	}
-	
-	void Update ()
-	{
-		if (isScanning)
-		{
-			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-
-			Vector3 targetDir = targetPos - scanner.position;
-			float step = speed * gameSpeedExp * Time.deltaTime;
-			var newDir = Vector3.RotateTowards(scanner.forward, targetDir, step, 0);
-
-			scanner.rotation = Quaternion.LookRotation(newDir);
-
-			if (Vector3.Angle(scanner.forward, targetDir) < 5)
-			{
-				DisableScanner();
-				int timeActivated = Mathf.Max(1, Mathf.CeilToInt(4 * (1 - PMWrapper.speedMultiplier)));
-				StartCoroutine(ActivateDisplayForSeconds(timeActivated));
-				PMWrapper.ResolveYield();
-			}
-		}
-	}
-
 
 	public void Scan(GameObject obj)
 	{
@@ -75,13 +53,6 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		displayText.text = text.ToString();
 	}
 
-	private void DisableScanner()
-	{
-		isScanning = false;
-		scannerLight.SetActive(false);
-		displayText.gameObject.SetActive(false);
-	}
-
 	public IEnumerator ActivateDisplayForSeconds(int seconds)
 	{
 		displayText.gameObject.SetActive(true);
@@ -91,9 +62,39 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		displayText.gameObject.SetActive(false);
 	}
 
-	public void OnPMCompilerStopped(StopStatus status)
+	void Start()
 	{
+		instance = this;
 		DisableScanner();
-		StopAllCoroutines();
+		scanner = scannerLight.transform;
+	}
+
+	void Update()
+	{
+		if (isScanning)
+		{
+			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+
+			Vector3 targetDir = targetPos - scanner.position;
+			float step = speed * gameSpeedExp * Time.deltaTime;
+			var newDir = Vector3.RotateTowards(scanner.forward, targetDir, step, 0);
+
+			scanner.rotation = Quaternion.LookRotation(newDir);
+
+			if (Vector3.Angle(scanner.forward, targetDir) < 5)
+			{
+				DisableScanner();
+				int timeActivated = Mathf.Max(1, Mathf.CeilToInt(4 * (1 - PMWrapper.speedMultiplier)));
+				StartCoroutine(ActivateDisplayForSeconds(timeActivated));
+				PMWrapper.ResolveYield();
+			}
+		}
+	}
+
+	void DisableScanner()
+	{
+		isScanning = false;
+		scannerLight.SetActive(false);
+		displayText.gameObject.SetActive(false);
 	}
 }

@@ -48,10 +48,10 @@ public class CarQueue : MonoBehaviour
 	public static GameObject GetFirstCar()
 	{
 		if (CARS.Count == 0)
-        {
-            PMWrapper.RaiseError("Hittade inget tåg.");
-            return null;
-        }
+		{
+			PMWrapper.RaiseError("Hittade inget tåg.");
+			return null;
+		}
 
 		return CARS.First.Value;
 	}
@@ -65,6 +65,7 @@ public class CarQueue : MonoBehaviour
 				Destroy(obj);
 			}
 		}
+
 		CARS.Clear();
 	}
 }

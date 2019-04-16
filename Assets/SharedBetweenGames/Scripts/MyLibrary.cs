@@ -1,8 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public static class MyLibrary{
-
+public static class MyLibrary
+{
 	public static Bounds CalculateBoundsInChildren(GameObject obj)
 	{
 		Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
@@ -17,6 +17,7 @@ public static class MyLibrary{
 		{
 			bounds.Encapsulate(renderer.bounds);
 		}
+
 		Vector3 localCenter = bounds.center - obj.transform.position;
 		bounds.center = localCenter;
 
@@ -24,7 +25,8 @@ public static class MyLibrary{
 	}
 
 	/// <summary>
-	/// Scale a linear range between 0.0-1.0 to an exponential scale using the equation returnValue = A + B * Math.Exp(C * inputValue)
+	///     Scale a linear range between 0.0-1.0 to an exponential scale using the equation returnValue = A + B * Math.Exp(C *
+	///     inputValue)
 	/// </summary>
 	/// <param name="min">The value returned for input value of 0</param>
 	/// <param name="mid">The value returned for input value of 0.5</param>
@@ -40,7 +42,8 @@ public static class MyLibrary{
 
 		if (mid <= 0 || mid >= max)
 		{
-			throw new ArgumentOutOfRangeException(nameof(mid), "MidValue must be greater than 0 and less than MaxValue");
+			throw new ArgumentOutOfRangeException(nameof(mid),
+				"MidValue must be greater than 0 and less than MaxValue");
 		}
 
 		float a = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);

@@ -1,88 +1,113 @@
 ﻿using System;
-using System.Linq;
 using System.Collections.Generic;
-using System.Collections.Specialized;
+using System.Linq;
 using GameData;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class LevelController : MonoBehaviour, IPMCaseSwitched
 {
+	const float BOX_LENGTH = 1; // is set from CreateAssets()
+
+	[FormerlySerializedAs("Blue")]
+	public Material blue;
+
+	[FormerlySerializedAs("BoxRowPrefab")]
+	public GameObject boxRowPrefab;
+
+	[FormerlySerializedAs("BoxSpacing")]
+	public float boxSpacing = 0.5f;
+
+	[FormerlySerializedAs("CarFrontPrefab")]
+	public GameObject carFrontPrefab;
+
+	[FormerlySerializedAs("CarPadding")]
+	public float carPadding = 0.4f;
+
+	[FormerlySerializedAs("CarPlatformPrefab")]
+	public GameObject carPlatformPrefab;
+
 	[Header("Prefabs")]
 	[FormerlySerializedAs("CarPrefab")]
 	public GameObject carPrefab;
-	[FormerlySerializedAs("CarPlatformPrefab")]
-	public GameObject carPlatformPrefab;
-	[FormerlySerializedAs("CarFrontPrefab")]
-	public GameObject carFrontPrefab;
-	[FormerlySerializedAs("BoxRowPrefab")]
-	public GameObject boxRowPrefab;
-	[FormerlySerializedAs("PalmPrefab")]
-	public GameObject palmPrefab;
-	[FormerlySerializedAs("TreePrefab")]
-	public GameObject treePrefab;
-	[FormerlySerializedAs("LampPrefab")]
-	public GameObject lampPrefab;
-	[FormerlySerializedAs("TablePrefab")]
-	public GameObject tablePrefab;
-	[FormerlySerializedAs("ChairPrefab")]
-	public GameObject chairPrefab;
-
-	[Header("Materials")]
-	[FormerlySerializedAs("Red")]
-	public Material red;
-	[FormerlySerializedAs("Green")]
-	public Material green;
-	[FormerlySerializedAs("Blue")]
-	public Material blue;
 
 	[Header("Distances")]
 	[FormerlySerializedAs("CarSpacing")]
 	public float carSpacing = 1.5f;
-	[FormerlySerializedAs("BoxSpacing")]
-	public float boxSpacing = 0.5f;
-	[FormerlySerializedAs("CarPadding")]
-	public float carPadding = 0.4f;
-	private const float BOX_LENGTH = 1; // is set from CreateAssets()
 
-	private GameObject queue;
+	[FormerlySerializedAs("ChairPrefab")]
+	public GameObject chairPrefab;
 
-	private Dictionary<string, GameObject> itemTypeToPrefab;
-	private void BuildItemDictionary()
+	[FormerlySerializedAs("Green")]
+	public Material green;
+
+	[FormerlySerializedAs("LampPrefab")]
+	public GameObject lampPrefab;
+
+	[FormerlySerializedAs("PalmPrefab")]
+	public GameObject palmPrefab;
+
+	[Header("Materials")]
+	[FormerlySerializedAs("Red")]
+	public Material red;
+
+	[FormerlySerializedAs("TablePrefab")]
+	public GameObject tablePrefab;
+
+	[FormerlySerializedAs("TreePrefab")]
+	public GameObject treePrefab;
+
+	Dictionary<string, Material> colorToMaterial;
+
+	Dictionary<string, GameObject> itemTypeToPrefab;
+
+	GameObject queue;
+
+	public void OnPMCaseSwitched(int caseNumber)
+	{
+		BuildItemDictionary();
+		BuildColorDictionary();
+
+		RemoveOldAssets();
+
+		var goodsCaseDefinition = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+
+		CreateAssets(goodsCaseDefinition);
+
+		PMWrapper.SetCaseAnswer(goodsCaseDefinition.answer);
+	}
+
+	void BuildItemDictionary()
 	{
 		if (itemTypeToPrefab == null)
 		{
-			itemTypeToPrefab = new Dictionary<string, GameObject>
-			{
+			itemTypeToPrefab = new Dictionary<string, GameObject> {
 				{"palmer", palmPrefab},
 				{"granar", treePrefab},
 				{"bord", tablePrefab},
 				{"lampor", lampPrefab},
 				{"stolar", chairPrefab}
 			};
-
 		}
 	}
 
-	private Dictionary<string, Material> colorToMaterial;
-	private void BuildColorDictionary()
+	void BuildColorDictionary()
 	{
-		colorToMaterial = new Dictionary<string, Material>
-		{
+		colorToMaterial = new Dictionary<string, Material> {
 			{"red", red},
 			{"green", green},
 			{"blue", blue}
 		};
-
 	}
 
-	private void RemoveOldAssets()
+	void RemoveOldAssets()
 	{
 		CarQueue.RemoveAllCars();
 		Destroy(queue);
 	}
 
-	private void CreateAssets(GoodsCaseDefinition caseDef)
+	void CreateAssets(GoodsCaseDefinition caseDef)
 	{
 		queue = new GameObject("Queue");
 		queue.AddComponent<CarQueue>();
@@ -94,7 +119,7 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 		{
 			GameObject carObj = Instantiate(carPrefab, queue.transform, true);
 			CarInfo carInfo = carObj.GetComponent<CarInfo>();
-            carInfo.startBatteryLevel = carData.batteryLevel;
+			carInfo.startBatteryLevel = carData.batteryLevel;
 			carInfo.batteryLevel = carData.batteryLevel;
 			carInfo.itemsInCar = 0;
 
@@ -113,7 +138,8 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 			// Place the rows of boxes and their items in car
 			Bounds platformBounds = platform.GetComponent<Renderer>().bounds;
 			Bounds frontBounds = front.GetComponent<Renderer>().bounds;
-			front.transform.position = new Vector3(platformBounds.max.x, platformBounds.min.y-0.25f, platformBounds.center.z);
+			front.transform.position =
+				new Vector3(platformBounds.max.x, platformBounds.min.y - 0.25f, platformBounds.center.z);
 
 			float carLength = platformBounds.size.x + frontBounds.size.x;
 			float carWidthCenter = platformBounds.center.z;
@@ -128,30 +154,33 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 				{
 					GameObject boxRow = Instantiate(boxRowPrefab, carObj.transform, true);
 
-					float rowCenter = sectionLeftEnd + carPadding + (2 * (float)j - 1) / 2 * boxLength + (j - 1) * boxSpacing;
+					float rowCenter = sectionLeftEnd + carPadding + (2 * (float)j - 1) / 2 * boxLength +
+					                  (j - 1) * boxSpacing;
 					boxRow.transform.position = new Vector3(rowCenter, 0.5f, carWidthCenter);
-					
+
 					float rowTopEnd = boxRow.GetComponentInChildren<Renderer>().bounds.max.y;
 
 					for (int k = 1; k <= 4; k++)
 					{
-						float colCenter = platformBounds.min.z + carPadding + (2 * (float)k - 1) / 2 * boxLength + (k - 1) * boxSpacing;
-						itemPositions[j-1, k-1] = new Vector3(rowCenter, rowTopEnd, colCenter);
+						float colCenter = platformBounds.min.z + carPadding + (2 * (float)k - 1) / 2 * boxLength +
+						                  (k - 1) * boxSpacing;
+						itemPositions[j - 1, k - 1] = new Vector3(rowCenter, rowTopEnd, colCenter);
 					}
-
 				}
+
 				PlaceItems(itemPositions, carObj, itemTypeToPrefab[section.type], section.itemCount);
 				carInfo.itemsInCar += section.itemCount;
 				carInfo.cargoType = section.type;
 
-				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing  + 2 * carPadding;
+				float sectionLength = section.rows * boxLength + (section.rows - 1) * boxSpacing + 2 * carPadding;
 				sectionLeftEnd += sectionLength;
 			}
+
 			previousCarPositionX = carObj.transform.position.x - carLength - carSpacing;
 		}
 	}
 
-	private void RescaleCar(CarData carData, GameObject carPlatform, GameObject carFront)
+	void RescaleCar(CarData carData, GameObject carPlatform, GameObject carFront)
 	{
 		Vector3 platformSize = carPlatform.GetComponent<Renderer>().bounds.size;
 
@@ -167,20 +196,24 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 				sectionCount++;
 				boxSpacingsNeeded += section.rows - 1;
 			}
-            else
-            {
-                throw new Exception("The itemCount in a section can not be negative (in level: " + PMWrapper.currentLevel + ")");
-            }
+			else
+			{
+				throw new Exception("The itemCount in a section can not be negative (in level: " +
+				                    PMWrapper.currentLevel + ")");
+			}
 		}
+
 		float newCarWidth = 4 * BOX_LENGTH + 3 * boxSpacing + 2 * carPadding;
-		float newPlatformLength = rowsInCar * BOX_LENGTH + boxSpacingsNeeded * boxSpacing + 2 * sectionCount * carPadding;
-		
+		float newPlatformLength =
+			rowsInCar * BOX_LENGTH + boxSpacingsNeeded * boxSpacing + 2 * sectionCount * carPadding;
+
 		float scaleFactorLengthPlatform = newPlatformLength / platformSize.x;
 		float scaleFactorWidthPlatform = newCarWidth / platformSize.z;
 
 		carPlatform.transform.localScale = new Vector3(scaleFactorLengthPlatform, 2.3f, scaleFactorWidthPlatform);
 	}
-	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
+
+	void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{
 		if (itemCount > positionMatrix.Length)
 		{
@@ -204,7 +237,7 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 		}
 	}
 
-	private void SetCarMaterial(CarData carData, params GameObject[] objects)
+	void SetCarMaterial(CarData carData, params GameObject[] objects)
 	{
 		Material material;
 
@@ -219,7 +252,6 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 		}
 		else
 		{
-
 			material = colorToMaterial[carData.color];
 		}
 
@@ -229,24 +261,11 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 			rend.material = material;
 		}
 	}
-	private Material GetRandomMaterial()
+
+	Material GetRandomMaterial()
 	{
-		int randomIndex = UnityEngine.Random.Range(0, colorToMaterial.Keys.Count);
+		int randomIndex = Random.Range(0, colorToMaterial.Keys.Count);
 		string color = colorToMaterial.Keys.ElementAt(randomIndex);
 		return colorToMaterial[color];
-	}
-
-	public void OnPMCaseSwitched(int caseNumber)
-	{
-		BuildItemDictionary();
-		BuildColorDictionary();
-
-		RemoveOldAssets();
-
-		var goodsCaseDefinition = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
-
-		CreateAssets(goodsCaseDefinition);
-
-		PMWrapper.SetCaseAnswer(goodsCaseDefinition.answer);
 	}
 }

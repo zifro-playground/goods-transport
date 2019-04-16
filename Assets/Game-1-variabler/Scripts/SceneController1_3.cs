@@ -1,9 +1,15 @@
 ﻿using GameData;
-using UnityEngine;
 using PM;
+using UnityEngine;
 
-public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer, IPMCorrectAnswer, IPMCaseSwitched
+public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMWrongAnswer,
+	IPMCorrectAnswer, IPMCaseSwitched
 {
+	[HideInInspector]
+	public int carsUnloaded;
+
+	GoodsCaseDefinition caseDef;
+
 	static SceneController1_3()
 	{
 		Main.RegisterFunction(new EmptyCar());
@@ -12,11 +18,12 @@ public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		Main.RegisterFunction(new ScanPalms());
 	}
 
-    [HideInInspector]
-	public int carsUnloaded;
-	private GoodsCaseDefinition caseDef;
+	public void OnPMCaseSwitched(int caseNumber)
+	{
+		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+	}
 
-    public void OnPMCompilerStarted()
+	public void OnPMCompilerStarted()
 	{
 		carsUnloaded = 0;
 	}
@@ -30,6 +37,11 @@ public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 				WinIfCarsUnloaded();
 			}
 		}
+	}
+
+	public void OnPMCorrectAnswer(string answer)
+	{
+		WinIfCarsUnloaded();
 	}
 
 	public void OnPMWrongAnswer(string answer)
@@ -47,27 +59,19 @@ public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		}
 	}
 
-	public void OnPMCorrectAnswer(string answer)
-	{
-		WinIfCarsUnloaded();
-	}
-
-	private void WinIfCarsUnloaded()
+	void WinIfCarsUnloaded()
 	{
 		int carsToUnload = caseDef.cars.Count;
 
 		if (carsUnloaded < carsToUnload)
 		{
-			PMWrapper.RaiseTaskError("Alla tåg tömdes inte. Nu är det " + (carsToUnload - carsUnloaded) + " som inte töms.");
+			PMWrapper.RaiseTaskError("Alla tåg tömdes inte. Nu är det " + (carsToUnload - carsUnloaded) +
+			                         " som inte töms.");
 		}
+
 		if (carsToUnload == carsUnloaded)
 		{
 			PMWrapper.SetCaseCompleted();
 		}
 	}
-
-	public void OnPMCaseSwitched(int caseNumber)
-	{
-		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
-    }
 }

@@ -1,6 +1,5 @@
 ﻿using Mellis;
 using Mellis.Core.Interfaces;
-using UnityEngine;
 
 public class DriveStraight : ClrYieldingFunction
 {
@@ -15,5 +14,5 @@ public class DriveStraight : ClrYieldingFunction
 		CarQueue.DriveQueueForward();
 		CarQueue.DriveFirstCarStraight();
 		SceneController2_2.carsSorted++;
-    }
+	}
 }

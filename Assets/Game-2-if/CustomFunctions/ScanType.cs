@@ -4,8 +4,8 @@ using Mellis;
 using Mellis.Core.Interfaces;
 using UnityEngine;
 
-public class ScanType : ClrFunction {
-
+public class ScanType : ClrFunction
+{
 	public ScanType() : base("scanna_sort")
 	{
 	}
@@ -51,7 +51,8 @@ public class ScanType : ClrFunction {
 
 		if (typesFound.Count > 1)
 		{
-			throw new Exception("There are more than one type of items in current car. Can not unambiguously decide item type.");
+			throw new Exception(
+				"There are more than one type of items in current car. Can not unambiguously decide item type.");
 		}
 
 		scanner.SetDisplayText(type);

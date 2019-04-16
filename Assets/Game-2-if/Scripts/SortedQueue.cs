@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SortedQueue : MonoBehaviour
 {
-	public static readonly List<GameObject> LEFT_QUEUE = new List<GameObject>();
 	public static readonly List<GameObject> FORWARD_QUEUE = new List<GameObject>();
+	public static readonly List<GameObject> LEFT_QUEUE = new List<GameObject>();
 	public static readonly List<GameObject> RIGHT_QUEUE = new List<GameObject>();
 
 	public static void ResetQueues()

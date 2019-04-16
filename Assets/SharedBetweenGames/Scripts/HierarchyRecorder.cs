@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 #if UNITY_EDITOR
-using UnityEditor;
 using UnityEditor.Animations;
+
 #endif
 
 public class HierarchyRecorder : MonoBehaviour
@@ -16,7 +14,7 @@ public class HierarchyRecorder : MonoBehaviour
 
 #if UNITY_EDITOR
 	// The main feature: the actual recorder.
-	private GameObjectRecorder m_Recorder;
+	GameObjectRecorder m_Recorder;
 
 	void Start()
 	{

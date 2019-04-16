@@ -7,15 +7,17 @@ public class Road : MonoBehaviour
 
 	[FormerlySerializedAs("LeftEndPoint")]
 	public Transform leftEndPoint;
+
 	[FormerlySerializedAs("MiddelEndPoint")]
 	public Transform middelEndPoint;
+
 	[FormerlySerializedAs("RightEndPoint")]
 	public Transform rightEndPoint;
 
 	[FormerlySerializedAs("ShortEndPoint")]
 	public Transform shortEndPoint;
 
-	private void Start()
+	void Start()
 	{
 		instance = this;
 	}
