@@ -3,16 +3,23 @@ using UnityEngine;
 
 public class SceneController1_1 : MonoBehaviour, IPMWrongAnswer, IPMCorrectAnswer, IPMCaseSwitched
 {
-	private int correctAnswer;
+	int correctAnswer;
 
-	public void OnPMWrongAnswer(string answer)
+	public void OnPMCaseSwitched(int caseNumber)
 	{
-		int guess = int.Parse(answer.Replace(".", ""));
+		var caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
+		string precode = "";
 
-		if (guess < correctAnswer)
-			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
-		else if (guess > correctAnswer)
-			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
+		foreach (SectionData section in caseDef.cars[0].sections)
+		{
+			if (section.itemCount > 0)
+			{
+				precode += section.type + " = " + section.itemCount + "\n";
+			}
+		}
+
+		PMWrapper.preCode = precode.Trim();
+		correctAnswer = caseDef.answer;
 	}
 
 	public void OnPMCorrectAnswer(string answer)
@@ -20,17 +27,17 @@ public class SceneController1_1 : MonoBehaviour, IPMWrongAnswer, IPMCorrectAnswe
 		PMWrapper.SetCaseCompleted();
 	}
 
-    public void OnPMCaseSwitched(int caseNumber)
-    {
-	    var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
-        string precode = "";
+	public void OnPMWrongAnswer(string answer)
+	{
+		int guess = int.Parse(answer.Replace(".", ""));
 
-        foreach (SectionData section in caseDef.cars[0].sections)
-        {
-            if (section.itemCount > 0)
-                precode += section.type + " = " + section.itemCount + "\n";
-        }
-        PMWrapper.preCode = precode.Trim();
-        correctAnswer = caseDef.answer;
-    }
+		if (guess < correctAnswer)
+		{
+			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
+		}
+		else if (guess > correctAnswer)
+		{
+			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
+		}
+	}
 }

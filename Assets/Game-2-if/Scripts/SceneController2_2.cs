@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompilerStarted, IPMCaseSwitched
 {
+	public static int carsSorted;
+
+	int carsToSort;
+	GoodsCaseDefinition caseDef;
+
 	static SceneController2_2()
 	{
 		Main.RegisterFunction(new ScanType());
@@ -14,20 +19,14 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		Main.RegisterFunction(new DriveRight());
 	}
 
-    public static int CarsSorted;
-
-	private int carsToSort;
-	private GoodsCaseDefinition caseDef;
-
-
 	public void OnPMCaseSwitched(int caseNumber)
 	{
 		caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[caseNumber].caseDefinition;
 	}
-	
+
 	public void OnPMCompilerStarted()
 	{
-		CarsSorted = 0;
+		carsSorted = 0;
 		carsToSort = caseDef.cars.Count;
 	}
 
@@ -35,93 +34,113 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	{
 		if (status == StopStatus.Finished)
 		{
-			if (CarsSorted < carsToSort)
+			if (carsSorted < carsToSort)
+			{
 				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");
+			}
 			else if (CorrectSorting())
+			{
 				PMWrapper.SetCaseCompleted();
+			}
 		}
-		
+
 		SortedQueue.ResetQueues();
 	}
 
-	private bool CorrectSorting()
+	bool CorrectSorting()
 	{
-	    string correctLeftType = caseDef.correctSorting.leftQueue.type;
-	    if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue, "åt vänster"))
-	        return false;
-
-	    string correctForwardType = caseDef.correctSorting.forwardQueue.type;
-	    if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue, "rakt fram"))
+		string correctLeftType = caseDef.correctSorting.leftQueue.type;
+		if (!CorrectQueue(correctLeftType, SortedQueue.LEFT_QUEUE, "åt vänster"))
+		{
 			return false;
+		}
 
-	    string correctRightType = caseDef.correctSorting.rightQueue.type;
-	    if (!CorrectQueue(correctRightType, SortedQueue.RightQueue, "åt höger"))
+		string correctForwardType = caseDef.correctSorting.forwardQueue.type;
+		if (!CorrectQueue(correctForwardType, SortedQueue.FORWARD_QUEUE, "rakt fram"))
+		{
 			return false;
+		}
 
-	    return true;
+		string correctRightType = caseDef.correctSorting.rightQueue.type;
+		if (!CorrectQueue(correctRightType, SortedQueue.RIGHT_QUEUE, "åt höger"))
+		{
+			return false;
+		}
+
+		return true;
 	}
 
-	private bool CorrectQueue(string correctType, List<GameObject> queue, string direction)
+	bool CorrectQueue(string correctType, List<GameObject> queue, string direction)
 	{
-	    if (!CorrectNumberOfCarsInQueue(correctType, queue, direction))
-	        return false;
+		if (!CorrectNumberOfCarsInQueue(correctType, queue, direction))
+		{
+			return false;
+		}
 
-	    if (!CorrectTypesInQueue(correctType, queue, direction))
-	        return false;
+		if (!CorrectTypesInQueue(correctType, queue, direction))
+		{
+			return false;
+		}
 
-        return true;
+		return true;
 	}
 
-    private bool CorrectNumberOfCarsInQueue(string correctType, List<GameObject> queue, string direction)
-    {
-        if (correctType != "none" && correctType != "whatever")
-        {
-            var correctNumberOfCars = 0;
-            foreach (var car in caseDef.cars)
-            {
-	            var currentType = FindTypeFromDefinition(car.sections.First().type);
+	bool CorrectNumberOfCarsInQueue(string correctType, List<GameObject> queue, string direction)
+	{
+		if (correctType != "none" && correctType != "whatever")
+		{
+			int correctNumberOfCars = 0;
+			foreach (CarData car in caseDef.cars)
+			{
+				string currentType = FindTypeFromDefinition(car.sections.First().type);
 
 				if (currentType == correctType)
-                    correctNumberOfCars++;
-            }
+				{
+					correctNumberOfCars++;
+				}
+			}
 
-            if (queue.Count < correctNumberOfCars)
-            {
-                PMWrapper.RaiseTaskError("För få varor sorterades " + direction);
-                return false;
-            }
-            if (queue.Count > correctNumberOfCars)
-            {
-                PMWrapper.RaiseTaskError("För många varor sorterade " + direction);
-                return false;
-            }
-        }
-        return true;
-    }
+			if (queue.Count < correctNumberOfCars)
+			{
+				PMWrapper.RaiseTaskError("För få varor sorterades " + direction);
+				return false;
+			}
 
-    private bool CorrectTypesInQueue(string correctType, List<GameObject> queue, string direction)
-    {
-        foreach (GameObject car in queue)
-        {
-            string cargoType = car.GetComponent<CarInfo>().CargoType;
+			if (queue.Count > correctNumberOfCars)
+			{
+				PMWrapper.RaiseTaskError("För många varor sorterade " + direction);
+				return false;
+			}
+		}
 
-            cargoType = FindTypeFromDefinition(cargoType);
+		return true;
+	}
 
-            if ((cargoType != correctType && correctType != "whatever") || correctType == "none")
-            {
-                PMWrapper.RaiseTaskError("Något blev felsorterat i kön " + direction + ".");
-                return false;
-            }
-        }
-        return true;
-    }
-
-	private string FindTypeFromDefinition(string type)
+	bool CorrectTypesInQueue(string correctType, List<GameObject> queue, string direction)
 	{
-		var typeDefinitions = caseDef.correctSorting.typeDefinitions;
+		foreach (GameObject car in queue)
+		{
+			string cargoType = car.GetComponent<CarInfo>().cargoType;
 
-		if (typeDefinitions != null) { 
-			foreach (var typeDefinition in typeDefinitions)
+			cargoType = FindTypeFromDefinition(cargoType);
+
+			if ((cargoType != correctType && correctType != "whatever") || correctType == "none")
+			{
+				PMWrapper.RaiseTaskError("Något blev felsorterat i kön " + direction + ".");
+				return false;
+			}
+		}
+
+		return true;
+	}
+
+	string FindTypeFromDefinition(string type)
+	{
+		List<TypeDefinitionData> typeDefinitions = caseDef.correctSorting.typeDefinitions;
+
+		if (typeDefinitions != null)
+		{
+			foreach (TypeDefinitionData typeDefinition in typeDefinitions)
 			{
 				//print("Type: " + type);
 				if (typeDefinition.types.Contains(type))
@@ -130,6 +149,7 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 				}
 			}
 		}
+
 		return type;
 	}
 }

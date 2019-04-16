@@ -1,40 +1,43 @@
 ﻿using GameData;
 using Mellis;
 using Mellis.Core.Interfaces;
-using UnityEngine;
 
 public class ChargeCar : ClrYieldingFunction
 {
-    public ChargeCar() : base("ladda_tåg")
-    {
-    }
+	public ChargeCar() : base("ladda_tåg")
+	{
+	}
 
-    public override void InvokeEnter(params IScriptType[] arguments)
-    {
-        SetCarCharged();
-        ChargeStation.Instance.ChargeBattery();
-    }
+	static void SetCarCharged()
+	{
+		var caseDef = (GoodsCaseDefinition)PMWrapper.currentLevel.cases[PMWrapper.currentCase].caseDefinition;
+		int chargeBound = caseDef.chargeBound;
 
-    private static void SetCarCharged()
-    {
-        var caseDef = (GoodsCaseDefinition) PMWrapper.currentLevel.cases[PMWrapper.currentCase].caseDefinition;
-        int chargeBound = caseDef.chargeBound;
+		CarInfo carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
 
-        var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
+		if (carInfo.hasBeenCharged)
+		{
+			return;
+		}
 
-        if (carInfo.HasBeenCharged)
-            return;
+		if (carInfo.startBatteryLevel < chargeBound)
+		{
+			SceneController2_1.correctlyCharged++;
+		}
+		else
+		{
+			if (carInfo.startBatteryLevel != 100)
+			{
+				SceneController2_1.falselyCharged++;
+			}
+		}
 
-        if (carInfo.StartBatteryLevel < chargeBound)
-        {
-            SceneController2_1.CorrectlyCharged++;
-        }
-        else
-        {
-            if (carInfo.StartBatteryLevel != 100)
-                SceneController2_1.FalselyCharged++;
-        }
+		carInfo.hasBeenCharged = true;
+	}
 
-        carInfo.HasBeenCharged = true;
-    }
+	public override void InvokeEnter(params IScriptType[] arguments)
+	{
+		SetCarCharged();
+		ChargeStation.instance.ChargeBattery();
+	}
 }

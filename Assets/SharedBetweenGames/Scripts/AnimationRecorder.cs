@@ -3,15 +3,15 @@ using UnityEngine.AI;
 
 public class AnimationRecorder : MonoBehaviour
 {
-	public Transform target;
 	public NavMeshAgent agent;
+	public Transform target;
 
-	void Start ()
+	void Start()
 	{
 		agent.SetDestination(target.position);
 	}
 
-	void Update ()
+	void Update()
 	{
 		if (Vector3.Distance(transform.position, target.position) < 1.5f)
 		{

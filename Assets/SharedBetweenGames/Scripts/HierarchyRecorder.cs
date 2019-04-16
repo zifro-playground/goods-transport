@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 #if UNITY_EDITOR
-using UnityEditor;
 using UnityEditor.Animations;
+
 #endif
 
 public class HierarchyRecorder : MonoBehaviour
@@ -12,11 +10,11 @@ public class HierarchyRecorder : MonoBehaviour
 	public AnimationClip clip;
 
 	// Checkbox to start/stop the recording.
-	public bool record = false;
+	public bool record;
 
 #if UNITY_EDITOR
 	// The main feature: the actual recorder.
-	private GameObjectRecorder m_Recorder;
+	GameObjectRecorder m_Recorder;
 
 	void Start()
 	{
@@ -33,7 +31,9 @@ public class HierarchyRecorder : MonoBehaviour
 	void LateUpdate()
 	{
 		if (clip == null)
+		{
 			return;
+		}
 
 		if (record)
 		{

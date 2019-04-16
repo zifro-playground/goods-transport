@@ -1,6 +1,5 @@
 ﻿using Mellis;
 using Mellis.Core.Interfaces;
-using UnityEngine;
 
 public class DriveRight : ClrYieldingFunction
 {
@@ -10,10 +9,10 @@ public class DriveRight : ClrYieldingFunction
 
 	public override void InvokeEnter(params IScriptType[] arguments)
 	{
-		SortedQueue.LeftQueue.Add(CarQueue.GetFirstCar());
+		SortedQueue.LEFT_QUEUE.Add(CarQueue.GetFirstCar());
 
 		CarQueue.DriveQueueForward();
 		CarQueue.DriveFirstCarRight();
-		SceneController2_2.CarsSorted++;
-    }
+		SceneController2_2.carsSorted++;
+	}
 }

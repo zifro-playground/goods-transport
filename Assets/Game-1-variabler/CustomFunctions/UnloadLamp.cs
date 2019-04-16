@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class UnloadLamp : ClrYieldingFunction
 {
-    public UnloadLamp() : base("lasta_av_lampa")
-    {
-    }
+	public UnloadLamp() : base("lasta_av_lampa")
+	{
+	}
 
-    public override void InvokeEnter(params IScriptType[] arguments)
-    {
-        GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
+	public override void InvokeEnter(params IScriptType[] arguments)
+	{
+		var lamp = GameObject.FindGameObjectWithTag("Lamp");
 
-        if (lamp == null)
-            PMWrapper.RaiseError("Hittade ingen lampa att lasta av.");
+		if (lamp == null)
+		{
+			PMWrapper.RaiseError("Hittade ingen lampa att lasta av.");
+		}
 
-        lamp.GetComponent<UnloadableItem>().IsUnloading = true;
-        GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
-    }
+		lamp.GetComponent<UnloadableItem>().isUnloading = true;
+		GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
+	}
 }

@@ -1,28 +1,75 @@
 ﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
 using PM;
+using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Scanner : MonoBehaviour, IPMCompilerStopped
 {
-	public static Scanner Instance;
+	public static Scanner instance;
+	readonly float speed = 1;
 
-	public Text DisplayText;
-	public GameObject Light;
-	private Transform scanner;
+	[FormerlySerializedAs("DisplayText")]
+	public Text displayText;
 
-	private Vector3 targetPos;
-	private bool isScanning;
-	private float speed = 1;
-	
-	void Start ()
+	[FormerlySerializedAs("Light")]
+	public GameObject scannerLight;
+
+	bool isScanning;
+	Transform scanner;
+
+	Vector3 targetPos;
+
+	public void OnPMCompilerStopped(StopStatus status)
 	{
-		Instance = this;
 		DisableScanner();
-		scanner = Light.transform;
+		StopAllCoroutines();
 	}
-	
-	void Update ()
+
+	public void Scan(GameObject obj)
+	{
+		isScanning = true;
+
+		Bounds carBounds = MyLibrary.CalculateBoundsInChildren(obj);
+		float carFront = carBounds.max.x;
+		float carRear = carBounds.min.x;
+
+		float distanceToCar = scanner.position.y - obj.transform.position.y;
+		float lightSpotAngle = scannerLight.GetComponent<Light>().spotAngle;
+		float lightRadiusAtCar = Mathf.Tan(Mathf.Deg2Rad * (lightSpotAngle / 2)) * distanceToCar;
+
+		scannerLight.SetActive(true);
+		scanner.LookAt(new Vector3(carFront - lightRadiusAtCar + 1, 0, 0));
+		targetPos = new Vector3(carRear + lightRadiusAtCar - 1, 0, 0);
+	}
+
+	public void SetDisplayText(string text)
+	{
+		displayText.text = text;
+	}
+
+	public void SetDisplayText(int text)
+	{
+		displayText.text = text.ToString();
+	}
+
+	public IEnumerator ActivateDisplayForSeconds(int seconds)
+	{
+		displayText.gameObject.SetActive(true);
+
+		yield return new WaitForSeconds(seconds);
+
+		displayText.gameObject.SetActive(false);
+	}
+
+	void Start()
+	{
+		instance = this;
+		DisableScanner();
+		scanner = scannerLight.transform;
+	}
+
+	void Update()
 	{
 		if (isScanning)
 		{
@@ -30,7 +77,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 
 			Vector3 targetDir = targetPos - scanner.position;
 			float step = speed * gameSpeedExp * Time.deltaTime;
-			Vector3 newDir = Vector3.RotateTowards(scanner.forward, targetDir, step, 0);
+			var newDir = Vector3.RotateTowards(scanner.forward, targetDir, step, 0);
 
 			scanner.rotation = Quaternion.LookRotation(newDir);
 
@@ -44,53 +91,10 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 		}
 	}
 
-
-	public void Scan(GameObject obj)
-	{
-		isScanning = true;
-
-		Bounds carBounds = MyLibrary.CalculateBoundsInChildren(obj);
-		float carFront = carBounds.max.x;
-		float carRear = carBounds.min.x;
-
-		float distanceToCar = scanner.position.y - obj.transform.position.y;
-		float lightSpotAngle = Light.GetComponent<Light>().spotAngle;
-		float lightRadiusAtCar = Mathf.Tan(Mathf.Deg2Rad * (lightSpotAngle / 2)) * distanceToCar;
-
-		Light.SetActive(true);
-		scanner.LookAt(new Vector3(carFront - lightRadiusAtCar + 1, 0, 0));
-		targetPos = new Vector3(carRear + lightRadiusAtCar - 1, 0, 0);
-	}
-
-	public void SetDisplayText(string text)
-	{
-		DisplayText.text = text;
-	}
-
-	public void SetDisplayText(int text)
-	{
-		DisplayText.text = text.ToString();
-	}
-
-	private void DisableScanner()
+	void DisableScanner()
 	{
 		isScanning = false;
-		Light.SetActive(false);
-		DisplayText.gameObject.SetActive(false);
-	}
-
-	public IEnumerator ActivateDisplayForSeconds(int seconds)
-	{
-		DisplayText.gameObject.SetActive(true);
-
-		yield return new WaitForSeconds(seconds);
-
-		DisplayText.gameObject.SetActive(false);
-	}
-
-	public void OnPMCompilerStopped(StopStatus status)
-	{
-		DisableScanner();
-		StopAllCoroutines();
+		scannerLight.SetActive(false);
+		displayText.gameObject.SetActive(false);
 	}
 }

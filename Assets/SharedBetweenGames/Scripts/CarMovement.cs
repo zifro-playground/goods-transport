@@ -1,84 +1,23 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Animator))]
-
 public class CarMovement : MonoBehaviour
 {
-	public float QueueSpeed = 22f;
-	public float AnimationSpeed = 8f;
+	public static int operationsRunning;
 
-	[HideInInspector]
-	public static int OperationsRunning;
+	[FormerlySerializedAs("AnimationSpeed")]
+	public float animationSpeed = 8f;
 
-	private bool isMovingByScript;
-	private bool isMovingByAnimation;
+	[FormerlySerializedAs("QueueSpeed")]
+	public float queueSpeed = 22f;
 
-	private Vector3 targetPosition;
+	Animator animator;
+	bool isMovingByAnimation;
 
-	private Animator animator;
+	bool isMovingByScript;
 
-	private void Start()
-	{
-		animator = GetComponent<Animator>();
-		animator.enabled = false;
-
-		OperationsRunning = 0;
-	}
-
-	private void Update()
-	{
-		if (isMovingByAnimation)
-		{
-			if (PMWrapper.isCompilerUserPaused)
-			{
-				animator.speed = 0;
-			}
-			else
-			{
-				float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-				animator.speed = AnimationSpeed * gameSpeedExp;
-			}
-
-			if (!AnimatorIsPlaying() && OperationsRunning == 1)
-			{
-				PMWrapper.ResolveYield();
-				isMovingByAnimation = false;
-				OperationsRunning = 0;
-			}
-		}
-
-		if (isMovingByScript && !PMWrapper.isCompilerUserPaused)
-		{
-			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
-
-			transform.Translate(new Vector3(0, 0, QueueSpeed * gameSpeedExp * Time.deltaTime));
-
-			if (Vector3.Distance(transform.position, targetPosition) < 2 * (QueueSpeed * gameSpeedExp * Time.deltaTime))
-			{
-				transform.position = targetPosition;
-				isMovingByScript = false;
-				OperationsRunning--;
-			}
-		}
-	}
-
-	private bool AnimatorIsPlaying()
-	{
-		return animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 &&
-		       (animator.GetCurrentAnimatorStateInfo(0).IsName("DriveLeft") ||
-		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveStraight") ||
-		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveRight"));
-	}
-
-	private void PlayAnimation(string animationName)
-	{
-		isMovingByAnimation = true;
-		OperationsRunning++;
-
-		animator.enabled = true;
-		animator.SetTrigger(animationName);
-	}
+	Vector3 targetPosition;
 
 	public void DriveLeft()
 	{
@@ -104,6 +43,68 @@ public class CarMovement : MonoBehaviour
 	{
 		targetPosition = target.position;
 		isMovingByScript = true;
-		OperationsRunning++;
+		operationsRunning++;
+	}
+
+	void Start()
+	{
+		animator = GetComponent<Animator>();
+		animator.enabled = false;
+
+		operationsRunning = 0;
+	}
+
+	void Update()
+	{
+		if (isMovingByAnimation)
+		{
+			if (PMWrapper.isCompilerUserPaused)
+			{
+				animator.speed = 0;
+			}
+			else
+			{
+				float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+				animator.speed = animationSpeed * gameSpeedExp;
+			}
+
+			if (!AnimatorIsPlaying() && operationsRunning == 1)
+			{
+				PMWrapper.ResolveYield();
+				isMovingByAnimation = false;
+				operationsRunning = 0;
+			}
+		}
+
+		if (isMovingByScript && !PMWrapper.isCompilerUserPaused)
+		{
+			float gameSpeedExp = MyLibrary.LinearToExponential(0, 0.5f, 5, PMWrapper.speedMultiplier);
+
+			transform.Translate(new Vector3(0, 0, queueSpeed * gameSpeedExp * Time.deltaTime));
+
+			if (Vector3.Distance(transform.position, targetPosition) < 2 * (queueSpeed * gameSpeedExp * Time.deltaTime))
+			{
+				transform.position = targetPosition;
+				isMovingByScript = false;
+				operationsRunning--;
+			}
+		}
+	}
+
+	bool AnimatorIsPlaying()
+	{
+		return animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 1 &&
+		       (animator.GetCurrentAnimatorStateInfo(0).IsName("DriveLeft") ||
+		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveStraight") ||
+		        animator.GetCurrentAnimatorStateInfo(0).IsName("DriveRight"));
+	}
+
+	void PlayAnimation(string animationName)
+	{
+		isMovingByAnimation = true;
+		operationsRunning++;
+
+		animator.enabled = true;
+		animator.SetTrigger(animationName);
 	}
 }

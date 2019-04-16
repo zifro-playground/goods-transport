@@ -1,19 +1,27 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CarInfo : MonoBehaviour
 {
-	public string CargoType;
+	[FormerlySerializedAs("BatteryLevel")]
+	public int batteryLevel;
 
-    public int StartBatteryLevel;
-	public int BatteryLevel = 0;
-	public int ItemsInCar;
+	[FormerlySerializedAs("CargoType")]
+	public string cargoType;
 
-    public bool HasBeenCharged;
+	[FormerlySerializedAs("HasBeenCharged")]
+	public bool hasBeenCharged;
 
-	private void OnEnable()
+	[FormerlySerializedAs("ItemsInCar")]
+	public int itemsInCar;
+
+	[FormerlySerializedAs("StartBatteryLevel")]
+	public int startBatteryLevel;
+
+	void OnEnable()
 	{
-		CarQueue.Cars.AddLast(gameObject);
-        
-        HasBeenCharged = false;
+		CarQueue.CARS.AddLast(gameObject);
+
+		hasBeenCharged = false;
 	}
 }

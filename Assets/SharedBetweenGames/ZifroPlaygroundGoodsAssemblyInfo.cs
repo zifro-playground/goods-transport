@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Reflection;
-using UnityEngine;
 using PM;
 
 [assembly: AssemblyVersion("1.0.0")]
@@ -10,5 +7,5 @@ using PM;
 
 public class ZifroPlaygroundGoodsAssemblyInfo : AssemblyInfo
 {
-    public override bool canBeEdited => true;
+	public override bool canBeEdited => true;
 }

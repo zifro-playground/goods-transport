@@ -1,20 +1,23 @@
 ﻿using System;
 using UnityEngine;
 
-public static class MyLibrary{
-
+public static class MyLibrary
+{
 	public static Bounds CalculateBoundsInChildren(GameObject obj)
 	{
 		Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
 
 		if (renderers.Length == 0 || renderers == null)
-			throw new System.Exception("Could not find any renderers in children of gameobject \"" + obj.name + "\".");
+		{
+			throw new Exception("Could not find any renderers in children of gameobject \"" + obj.name + "\".");
+		}
 
-		Bounds bounds = new Bounds(obj.transform.position, Vector3.zero);
+		var bounds = new Bounds(obj.transform.position, Vector3.zero);
 		foreach (Renderer renderer in renderers)
 		{
 			bounds.Encapsulate(renderer.bounds);
 		}
+
 		Vector3 localCenter = bounds.center - obj.transform.position;
 		bounds.center = localCenter;
 
@@ -22,7 +25,8 @@ public static class MyLibrary{
 	}
 
 	/// <summary>
-	/// Scale a linear range between 0.0-1.0 to an exponential scale using the equation returnValue = A + B * Math.Exp(C * inputValue)
+	///     Scale a linear range between 0.0-1.0 to an exponential scale using the equation returnValue = A + B * Math.Exp(C *
+	///     inputValue)
 	/// </summary>
 	/// <param name="min">The value returned for input value of 0</param>
 	/// <param name="mid">The value returned for input value of 0.5</param>
@@ -31,13 +35,21 @@ public static class MyLibrary{
 	/// <returns></returns>
 	public static float LinearToExponential(float min, float mid, float max, float value)
 	{
-		if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("Input value must be between 0 and 1.0");
-		if (mid <= 0 || mid >= max) throw new ArgumentOutOfRangeException("MidValue must be greater than 0 and less than MaxValue");
+		if (value < 0 || value > 1)
+		{
+			throw new ArgumentOutOfRangeException(nameof(value), "Input value must be between 0 and 1.0");
+		}
 
-		float A = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
-		float B = -A;
-		float C = 2 * Mathf.Log((max - mid) / (mid - min));
+		if (mid <= 0 || mid >= max)
+		{
+			throw new ArgumentOutOfRangeException(nameof(mid),
+				"MidValue must be greater than 0 and less than MaxValue");
+		}
 
-		return A + B * Mathf.Exp(C * value);
+		float a = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
+		float b = -a;
+		float c = 2 * Mathf.Log((max - mid) / (mid - min));
+
+		return a + b * Mathf.Exp(c * value);
 	}
 }
