@@ -11,9 +11,9 @@ public class SceneController2_1 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		Main.RegisterFunction(new DriveForward());
 	}
 
-    public static int correctlyCharged = 0;
-    public static int falselyCharged = 0;
-	public static int checkChargeCounter = 0;
+    public static int correctlyCharged;
+    public static int falselyCharged;
+	public static int checkChargeCounter;
 
     private int carsToCharge;
 	private int carsToCheck;

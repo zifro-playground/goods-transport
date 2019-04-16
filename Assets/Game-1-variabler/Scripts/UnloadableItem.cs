@@ -4,7 +4,7 @@ using UnityEngine.Serialization;
 public class UnloadableItem : MonoBehaviour
 {
 	[FormerlySerializedAs("IsUnloading")]
-	public bool isUnloading = false;
+	public bool isUnloading;
 	[FormerlySerializedAs("UnloadingSpeed")]
 	public float unloadingSpeed = 0.2f;
 	

@@ -13,7 +13,7 @@ public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	}
 
     [HideInInspector]
-	public int carsUnloaded = 0;
+	public int carsUnloaded;
 	private GoodsCaseDefinition caseDef;
 
     public void OnPMCompilerStarted()

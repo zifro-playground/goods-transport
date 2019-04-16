@@ -9,7 +9,7 @@ public class CarInfo : MonoBehaviour
     [FormerlySerializedAs("StartBatteryLevel")]
     public int startBatteryLevel;
 	[FormerlySerializedAs("BatteryLevel")]
-	public int batteryLevel = 0;
+	public int batteryLevel;
 	[FormerlySerializedAs("ItemsInCar")]
 	public int itemsInCar;
 

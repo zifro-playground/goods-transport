@@ -12,7 +12,7 @@ public class HierarchyRecorder : MonoBehaviour
 	public AnimationClip clip;
 
 	// Checkbox to start/stop the recording.
-	public bool record = false;
+	public bool record;
 
 #if UNITY_EDITOR
 	// The main feature: the actual recorder.

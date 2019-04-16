@@ -11,7 +11,7 @@ public class SceneController1_2 : MonoBehaviour, IPMCaseSwitched, IPMCompilerSto
 		Main.RegisterFunction(new UnloadLamp());
 	}
 
-    public int itemsUnloaded = 0;
+    public int itemsUnloaded;
 
 	private GoodsCaseDefinition caseDef;
 
