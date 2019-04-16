@@ -23,17 +23,21 @@ public class ChargeCar : ClrYieldingFunction
         var carInfo = CarQueue.GetFirstCar().GetComponent<CarInfo>();
 
         if (carInfo.HasBeenCharged)
-            return;
+		{
+			return;
+		}
 
-        if (carInfo.StartBatteryLevel < chargeBound)
+		if (carInfo.StartBatteryLevel < chargeBound)
         {
             SceneController2_1.CorrectlyCharged++;
         }
         else
         {
             if (carInfo.StartBatteryLevel != 100)
-                SceneController2_1.FalselyCharged++;
-        }
+			{
+				SceneController2_1.FalselyCharged++;
+			}
+		}
 
         carInfo.HasBeenCharged = true;
     }

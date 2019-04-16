@@ -14,9 +14,11 @@ public class ScanPalms : ClrYieldingFunction
         GameObject car = CarQueue.GetFirstCar();
 
         if (car == null)
-            PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		{
+			PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		}
 
-        Scanner scanner = Scanner.Instance;
+		Scanner scanner = Scanner.Instance;
         scanner.Scan(car);
 
         int palmCount = 0;
@@ -24,8 +26,10 @@ public class ScanPalms : ClrYieldingFunction
         foreach (Transform child in car.transform)
         {
             if (child.CompareTag("Palm"))
-                palmCount++;
-        }
+			{
+				palmCount++;
+			}
+		}
 
         scanner.SetDisplayText(palmCount);
     }

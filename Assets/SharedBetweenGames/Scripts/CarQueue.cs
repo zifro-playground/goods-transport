@@ -61,7 +61,9 @@ public class CarQueue : MonoBehaviour
 		foreach (GameObject obj in Cars)
 		{
 			if (obj.name != "TestCar")
+			{
 				Destroy(obj);
+			}
 		}
 		Cars.Clear();
 	}

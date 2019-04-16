@@ -34,8 +34,9 @@ public class SceneController1_2 : MonoBehaviour, IPMCaseSwitched, IPMCompilerSto
 			}
 
 			if (itemsToUnload == itemsUnloaded)
+			{
 				PMWrapper.SetCaseCompleted();
-
+			}
 		}
 		itemsUnloaded = 0;
 	}

@@ -13,9 +13,11 @@ public class UnloadPalm : ClrYieldingFunction
         GameObject palm = GameObject.FindGameObjectWithTag("Palm");
 
         if (palm == null)
-            PMWrapper.RaiseError("Hittade ingen palm att lasta av.");
+		{
+			PMWrapper.RaiseError("Hittade ingen palm att lasta av.");
+		}
 
-        palm.GetComponent<UnloadableItem>().IsUnloading = true;
+		palm.GetComponent<UnloadableItem>().IsUnloading = true;
         GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
     }
 }

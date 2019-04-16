@@ -21,8 +21,10 @@ public class ScanChairs : ClrYieldingFunction
         foreach (Transform child in car.transform)
         {
             if (child.CompareTag("Chair"))
-                chairCount++;
-        }
+			{
+				chairCount++;
+			}
+		}
 
         scanner.SetDisplayText(chairCount);
     }

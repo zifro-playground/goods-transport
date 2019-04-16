@@ -8,7 +8,9 @@ public static class MyLibrary{
 		Renderer[] renderers = obj.GetComponentsInChildren<Renderer>();
 
 		if (renderers.Length == 0 || renderers == null)
+		{
 			throw new System.Exception("Could not find any renderers in children of gameobject \"" + obj.name + "\".");
+		}
 
 		Bounds bounds = new Bounds(obj.transform.position, Vector3.zero);
 		foreach (Renderer renderer in renderers)
@@ -31,8 +33,15 @@ public static class MyLibrary{
 	/// <returns></returns>
 	public static float LinearToExponential(float min, float mid, float max, float value)
 	{
-		if (value < 0 || value > 1) throw new ArgumentOutOfRangeException("Input value must be between 0 and 1.0");
-		if (mid <= 0 || mid >= max) throw new ArgumentOutOfRangeException("MidValue must be greater than 0 and less than MaxValue");
+		if (value < 0 || value > 1)
+		{
+			throw new ArgumentOutOfRangeException("Input value must be between 0 and 1.0");
+		}
+
+		if (mid <= 0 || mid >= max)
+		{
+			throw new ArgumentOutOfRangeException("MidValue must be greater than 0 and less than MaxValue");
+		}
 
 		float A = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
 		float B = -A;

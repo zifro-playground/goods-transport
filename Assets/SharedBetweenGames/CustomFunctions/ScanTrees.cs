@@ -14,9 +14,11 @@ public class ScanTrees : ClrYieldingFunction
         GameObject car = CarQueue.GetFirstCar();
 
         if (car == null)
-            PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		{
+			PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		}
 
-        Scanner scanner = Scanner.Instance;
+		Scanner scanner = Scanner.Instance;
         scanner.Scan(car);
 
         int treeCount = 0;
@@ -24,8 +26,10 @@ public class ScanTrees : ClrYieldingFunction
         foreach (Transform child in car.transform)
         {
             if (child.CompareTag("Tree"))
-                treeCount++;
-        }
+			{
+				treeCount++;
+			}
+		}
 
         scanner.SetDisplayText(treeCount);
     }

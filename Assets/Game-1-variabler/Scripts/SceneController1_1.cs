@@ -10,9 +10,13 @@ public class SceneController1_1 : MonoBehaviour, IPMWrongAnswer, IPMCorrectAnswe
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
+		{
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
+		}
 		else if (guess > correctAnswer)
+		{
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
+		}
 	}
 
 	public void OnPMCorrectAnswer(string answer)
@@ -28,8 +32,10 @@ public class SceneController1_1 : MonoBehaviour, IPMWrongAnswer, IPMCorrectAnswe
         foreach (SectionData section in caseDef.cars[0].sections)
         {
             if (section.itemCount > 0)
-                precode += section.type + " = " + section.itemCount + "\n";
-        }
+			{
+				precode += section.type + " = " + section.itemCount + "\n";
+			}
+		}
         PMWrapper.preCode = precode.Trim();
         correctAnswer = caseDef.answer;
     }

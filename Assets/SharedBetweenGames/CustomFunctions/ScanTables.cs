@@ -21,8 +21,10 @@ public class ScanTables : ClrYieldingFunction
         foreach (Transform child in car.transform)
         {
             if (child.CompareTag("Table"))
-                tableCount++;
-        }
+			{
+				tableCount++;
+			}
+		}
 
         scanner.SetDisplayText(tableCount);
     }

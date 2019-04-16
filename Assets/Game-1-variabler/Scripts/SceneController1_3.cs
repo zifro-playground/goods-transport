@@ -38,9 +38,13 @@ public class SceneController1_3 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		int guess = int.Parse(answer.Replace(".", ""));
 
 		if (guess < correctAnswer)
+		{
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är större.");
+		}
 		else if (guess > correctAnswer)
+		{
 			PMWrapper.RaiseTaskError("Fel svar, rätt svar är mindre.");
+		}
 	}
 
 	public void OnPMCorrectAnswer(string answer)

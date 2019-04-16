@@ -28,7 +28,9 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
 		if (status == StopStatus.Finished)
 		{
 			if (CorrectSorting())
+			{
 				PMWrapper.SetCaseCompleted();
+			}
 		}
 
 		SortedQueue.ResetQueues();
@@ -38,28 +40,38 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
 	{
 	    var leftBounds = caseDef.correctSorting.leftQueue;
 	    if (!CorrectQueue(leftBounds, SortedQueue.LeftQueue, "åt vänster"))
-	        return false;
+		{
+			return false;
+		}
 
-        var forwardBounds = caseDef.correctSorting.forwardQueue;
+		var forwardBounds = caseDef.correctSorting.forwardQueue;
         if (!CorrectQueue(forwardBounds, SortedQueue.ForwardQueue, "rakt fram"))
-            return false;
+		{
+			return false;
+		}
 
-        var rightBounds = caseDef.correctSorting.rightQueue;
+		var rightBounds = caseDef.correctSorting.rightQueue;
         if (!CorrectQueue(rightBounds, SortedQueue.RightQueue, "åt höger"))
-            return false;
+		{
+			return false;
+		}
 
-        return true;
+		return true;
 	}
 
 	private bool CorrectQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
 	{
 	    if (!CorrectNumberOfCarsInQueue(bounds, queue, direction))
-	        return false;
+		{
+			return false;
+		}
 
-	    if (!CorrectBoundsInQueue(bounds, queue, direction))
-	        return false;
+		if (!CorrectBoundsInQueue(bounds, queue, direction))
+		{
+			return false;
+		}
 
-        return true;
+		return true;
 	}
 
     private bool CorrectNumberOfCarsInQueue(CorrectSortedQueueData bounds, List<GameObject> queue, string direction)
@@ -74,8 +86,10 @@ public class SceneController2_3 : MonoBehaviour, IPMCompilerStopped, IPMCaseSwit
             }
 
             if (itemsInCar <= bounds.upperBound && itemsInCar >= bounds.lowerBound)
-                correctNumberOfCars++;
-        }
+			{
+				correctNumberOfCars++;
+			}
+		}
 
         if (queue.Count < correctNumberOfCars)
         {

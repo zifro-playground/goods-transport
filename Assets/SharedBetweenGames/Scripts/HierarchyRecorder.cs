@@ -33,7 +33,9 @@ public class HierarchyRecorder : MonoBehaviour
 	void LateUpdate()
 	{
 		if (clip == null)
+		{
 			return;
+		}
 
 		if (record)
 		{

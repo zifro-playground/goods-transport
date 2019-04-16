@@ -22,7 +22,9 @@ public class ChargeStation : MonoBehaviour
 	private void Start()
 	{
         if (Instance != null)
-            throw new Exception("There should only be one instace of ChargeStation.");
+		{
+			throw new Exception("There should only be one instace of ChargeStation.");
+		}
 
 		Instance = this;
 	}
@@ -30,16 +32,24 @@ public class ChargeStation : MonoBehaviour
 	private void Update()
 	{
 		if (PMWrapper.isCompilerUserPaused)
+		{
 			return;
+		}
 
 		if (isRasingWalls)
+		{
 			MoveWalls(Direction.Up);
+		}
 
-        if (isLoweringWalls)
-            MoveWalls(Direction.Down);
+		if (isLoweringWalls)
+		{
+			MoveWalls(Direction.Down);
+		}
 
 		if (isCharging)
+		{
 			Charge();
+		}
 	}
 
     private void MoveWalls(Direction direction)
@@ -48,11 +58,15 @@ public class ChargeStation : MonoBehaviour
         float gameSpeedExp = MyLibrary.LinearToExponential(0, 1f, 10, PMWrapper.speedMultiplier);
 
         if (direction == Direction.Up)
-            move = Vector3.up * Time.deltaTime * gameSpeedExp * WallSpeed;
-        else if (direction == Direction.Down)
-            move = Vector3.down * Time.deltaTime * gameSpeedExp * WallSpeed;
+		{
+			move = Vector3.up * Time.deltaTime * gameSpeedExp * WallSpeed;
+		}
+		else if (direction == Direction.Down)
+		{
+			move = Vector3.down * Time.deltaTime * gameSpeedExp * WallSpeed;
+		}
 
-        Walls.transform.Translate(move);
+		Walls.transform.Translate(move);
 
         if (direction == Direction.Up && Walls.transform.localPosition.z > 0.2f)
         {

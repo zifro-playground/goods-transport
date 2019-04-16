@@ -36,9 +36,13 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		if (status == StopStatus.Finished)
 		{
 			if (CarsSorted < carsToSort)
+			{
 				PMWrapper.RaiseTaskError("Alla varor sorterades inte.");
+			}
 			else if (CorrectSorting())
+			{
 				PMWrapper.SetCaseCompleted();
+			}
 		}
 		
 		SortedQueue.ResetQueues();
@@ -48,28 +52,38 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	{
 	    string correctLeftType = caseDef.correctSorting.leftQueue.type;
 	    if (!CorrectQueue(correctLeftType, SortedQueue.LeftQueue, "åt vänster"))
-	        return false;
+		{
+			return false;
+		}
 
-	    string correctForwardType = caseDef.correctSorting.forwardQueue.type;
+		string correctForwardType = caseDef.correctSorting.forwardQueue.type;
 	    if (!CorrectQueue(correctForwardType, SortedQueue.ForwardQueue, "rakt fram"))
+		{
 			return false;
+		}
 
-	    string correctRightType = caseDef.correctSorting.rightQueue.type;
+		string correctRightType = caseDef.correctSorting.rightQueue.type;
 	    if (!CorrectQueue(correctRightType, SortedQueue.RightQueue, "åt höger"))
+		{
 			return false;
+		}
 
-	    return true;
+		return true;
 	}
 
 	private bool CorrectQueue(string correctType, List<GameObject> queue, string direction)
 	{
 	    if (!CorrectNumberOfCarsInQueue(correctType, queue, direction))
-	        return false;
+		{
+			return false;
+		}
 
-	    if (!CorrectTypesInQueue(correctType, queue, direction))
-	        return false;
+		if (!CorrectTypesInQueue(correctType, queue, direction))
+		{
+			return false;
+		}
 
-        return true;
+		return true;
 	}
 
     private bool CorrectNumberOfCarsInQueue(string correctType, List<GameObject> queue, string direction)
@@ -82,8 +96,10 @@ public class SceneController2_2 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 	            var currentType = FindTypeFromDefinition(car.sections.First().type);
 
 				if (currentType == correctType)
-                    correctNumberOfCars++;
-            }
+				{
+					correctNumberOfCars++;
+				}
+			}
 
             if (queue.Count < correctNumberOfCars)
             {

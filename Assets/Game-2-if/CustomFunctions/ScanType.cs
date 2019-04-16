@@ -23,26 +23,36 @@ public class ScanType : ClrFunction {
 		foreach (Transform t in firstCar.transform)
 		{
 			if (t.CompareTag("Palm"))
+			{
 				type = "palmer";
-
+			}
 			else if (t.CompareTag("Table"))
+			{
 				type = "bord";
-
+			}
 			else if (t.CompareTag("Chair"))
+			{
 				type = "stolar";
-
+			}
 			else if (t.CompareTag("Lamp"))
+			{
 				type = "lampor";
-
+			}
 			else if (t.CompareTag("Tree"))
+			{
 				type = "granar";
+			}
 
 			if (type.Length > 0)
+			{
 				typesFound[type] = 1;
+			}
 		}
 
 		if (typesFound.Count > 1)
+		{
 			throw new Exception("There are more than one type of items in current car. Can not unambiguously decide item type.");
+		}
 
 		scanner.SetDisplayText(type);
 

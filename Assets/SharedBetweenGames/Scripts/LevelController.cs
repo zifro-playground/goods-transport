@@ -167,7 +167,9 @@ public class LevelController : MonoBehaviour, IPMCaseSwitched
 	private void PlaceItems(Vector3[,] positionMatrix, GameObject parent, GameObject itemPrefab, int itemCount)
 	{
 		if (itemCount > positionMatrix.Length)
+		{
 			throw new Exception("There are too few rows in comparison to the itemCount in car.");
+		}
 
 		int a = 0;
 		int b = positionMatrix.GetLength(1) - 1;

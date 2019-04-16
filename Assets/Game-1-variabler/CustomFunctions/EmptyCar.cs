@@ -13,18 +13,24 @@ public class EmptyCar : ClrYieldingFunction
         GameObject currentCar = CarQueue.GetFirstCar();
 
         if (currentCar == null)
-            PMWrapper.RaiseError("Hittade inget tåg att tömma. ");
+		{
+			PMWrapper.RaiseError("Hittade inget tåg att tömma. ");
+		}
 
-        UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();
+		UnloadableItem[] itemsToUnload = currentCar.GetComponentsInChildren<UnloadableItem>();
 
         if (itemsToUnload.Length == 0)
-            PMWrapper.RaiseError("Kan inte tömma ett tomt tåg. Kom ihåg att köra fram nästa tåg innan du tömmer igen.");
+		{
+			PMWrapper.RaiseError("Kan inte tömma ett tomt tåg. Kom ihåg att köra fram nästa tåg innan du tömmer igen.");
+		}
 
-        foreach (UnloadableItem item in itemsToUnload)
+		foreach (UnloadableItem item in itemsToUnload)
         {
             if (item != null)
-                item.IsUnloading = true;
-        }
+			{
+				item.IsUnloading = true;
+			}
+		}
 
         GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_3>().carsUnloaded += 1;
     }

@@ -14,9 +14,11 @@ public class ScanLamps : ClrYieldingFunction
         GameObject car = CarQueue.GetFirstCar();
 
         if (car == null)
-            PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		{
+			PMWrapper.RaiseError("Kan inte hitta något att scanna.");
+		}
 
-        Scanner scanner = Scanner.Instance;
+		Scanner scanner = Scanner.Instance;
         scanner.Scan(car);
 
         int lampCount = 0;
@@ -24,8 +26,10 @@ public class ScanLamps : ClrYieldingFunction
         foreach (Transform child in car.transform)
         {
             if (child.CompareTag("Lamp"))
-                lampCount++;
-        }
+			{
+				lampCount++;
+			}
+		}
 
         scanner.SetDisplayText(lampCount);
     }

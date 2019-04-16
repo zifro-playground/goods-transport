@@ -48,7 +48,9 @@ public class SceneController2_1 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
 		{
 			carsToCheck++;
 			if (car.batteryLevel < caseDef.chargeBound)
+			{
 				carsToCharge++;
+			}
 		}
 	}
 
@@ -59,20 +61,32 @@ public class SceneController2_1 : MonoBehaviour, IPMCompilerStopped, IPMCompiler
         if (CorrectlyCharged == carsToCharge)
         {
 			if (FalselyCharged > 0)
+			{
 				PMWrapper.RaiseTaskError ("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
+			}
 			else if (CheckChargeCounter < carsToCheck)
+			{
 				PMWrapper.RaiseTaskError ("Alla tåg kollades inte. Se till att köra kolla_batterinivå() för varje tåg.");
-            else
-                PMWrapper.SetCaseCompleted();
-        }
+			}
+			else
+			{
+				PMWrapper.SetCaseCompleted();
+			}
+		}
         else
         {
             if (CorrectlyCharged + FalselyCharged == carsToCharge)
-                PMWrapper.RaiseTaskError("Fel tåg laddades.");
-            else if (CorrectlyCharged + FalselyCharged < carsToCharge)
-                PMWrapper.RaiseTaskError("För få tåg laddades. Alla tåg med batterinivå < " + chargeBound + " ska laddas.");
-            else
-                PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
-        }
+			{
+				PMWrapper.RaiseTaskError("Fel tåg laddades.");
+			}
+			else if (CorrectlyCharged + FalselyCharged < carsToCharge)
+			{
+				PMWrapper.RaiseTaskError("För få tåg laddades. Alla tåg med batterinivå < " + chargeBound + " ska laddas.");
+			}
+			else
+			{
+				PMWrapper.RaiseTaskError("För många tåg laddades. Bara tåg med batterinivå < " + chargeBound + " ska laddas.");
+			}
+		}
     }
 }

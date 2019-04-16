@@ -13,9 +13,11 @@ public class UnloadLamp : ClrYieldingFunction
         GameObject lamp = GameObject.FindGameObjectWithTag("Lamp");
 
         if (lamp == null)
-            PMWrapper.RaiseError("Hittade ingen lampa att lasta av.");
+		{
+			PMWrapper.RaiseError("Hittade ingen lampa att lasta av.");
+		}
 
-        lamp.GetComponent<UnloadableItem>().IsUnloading = true;
+		lamp.GetComponent<UnloadableItem>().IsUnloading = true;
         GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
     }
 }

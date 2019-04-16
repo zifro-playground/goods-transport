@@ -13,9 +13,11 @@ public class UnloadChair : ClrYieldingFunction
         var chair = GameObject.FindGameObjectWithTag("Chair");
 
         if (chair == null)
-            PMWrapper.RaiseError("Hittade ingen stol att lasta av.");
+		{
+			PMWrapper.RaiseError("Hittade ingen stol att lasta av.");
+		}
 
-        chair.GetComponent<UnloadableItem>().IsUnloading = true;
+		chair.GetComponent<UnloadableItem>().IsUnloading = true;
         GameObject.FindGameObjectWithTag("SceneController").GetComponent<SceneController1_2>().itemsUnloaded += 1;
     }
 }
