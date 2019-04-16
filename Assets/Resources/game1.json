@@ -1084,7 +1084,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 7"
+                "precode": "antal_tåg = 7"
               }
             }
           ],
@@ -1208,7 +1208,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 9"
+                "precode": "antal_tåg = 9"
               }
             }
           ],
@@ -1279,7 +1279,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 5"
+                "precode": "antal_tåg = 5"
               }
             }
           ],
@@ -1404,7 +1404,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 7"
+                "precode": "antal_tåg = 7"
               }
             }
           ],
@@ -1487,7 +1487,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 4"
+                "precode": "antal_tåg = 4"
               }
             }
           ],
@@ -1560,7 +1560,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 5"
+                "precode": "antal_tåg = 5"
               }
             }
           ],
@@ -1674,7 +1674,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 7"
+                "precode": "antal_tåg = 7"
               }
             }
           ],
@@ -1815,7 +1815,7 @@
                 ]
               },
               "caseSettings": {
-                "precode": "antal_tÃ¥g = 8"
+                "precode": "antal_tåg = 8"
               }
             }
           ],
