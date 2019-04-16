@@ -9,7 +9,7 @@ public static class MyLibrary{
 
 		if (renderers.Length == 0 || renderers == null)
 		{
-			throw new System.Exception("Could not find any renderers in children of gameobject \"" + obj.name + "\".");
+			throw new Exception("Could not find any renderers in children of gameobject \"" + obj.name + "\".");
 		}
 
 		var bounds = new Bounds(obj.transform.position, Vector3.zero);
