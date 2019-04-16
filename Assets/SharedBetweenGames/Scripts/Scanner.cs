@@ -16,7 +16,7 @@ public class Scanner : MonoBehaviour, IPMCompilerStopped
 
 	private Vector3 targetPos;
 	private bool isScanning;
-	private float speed = 1;
+	private readonly float speed = 1;
 	
 	void Start ()
 	{

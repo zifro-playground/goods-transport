@@ -35,12 +35,12 @@ public static class MyLibrary{
 	{
 		if (value < 0 || value > 1)
 		{
-			throw new ArgumentOutOfRangeException("Input value must be between 0 and 1.0");
+			throw new ArgumentOutOfRangeException(nameof(value), "Input value must be between 0 and 1.0");
 		}
 
 		if (mid <= 0 || mid >= max)
 		{
-			throw new ArgumentOutOfRangeException("MidValue must be greater than 0 and less than MaxValue");
+			throw new ArgumentOutOfRangeException(nameof(mid), "MidValue must be greater than 0 and less than MaxValue");
 		}
 
 		float a = (min * max - Mathf.Pow(mid, 2)) / (min - 2 * mid + max);
