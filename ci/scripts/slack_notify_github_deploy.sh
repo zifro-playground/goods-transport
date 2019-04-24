@@ -1,10 +1,10 @@
 #!/bin/bash
 
 : ${SLACK_WEBHOOK?}
-: ${SLACK_THUMBNAIL:="https://img.icons8.com/ultraviolet/100/000000/sedan.png"}
+: ${SLACK_THUMBNAIL:="https://img.icons8.com/ultraviolet/100/000000/railway-station.png"}
 
 : ${DEPLOY_STATUS:="fail"}
-: ${DEPLOY_TAG_KJELL:=}
+: ${DEPLOY_TAG:=}
 : ${DEPLOY_CHANGESET:=}
 : ${BUILD_STATUS:="fail"}
 
@@ -32,7 +32,7 @@ then
         color="#1CBF43" # green
         visitJobActionStyle="primary" # green
         title=":tada: DEPLOYED TO GITHUB"
-        fallback="Deployed to GitHub successfully, new tag: $DEPLOY_TAG_KJELL"
+        fallback="Deployed to GitHub successfully, new tag: $DEPLOY_TAG"
         actions=",
             {
                 \"type\": \"button\",
@@ -40,15 +40,15 @@ then
                 \"url\": \"https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/releases/tag/$DEPLOY_TAG_COMBINED\"
             }
         "
-        if [[ "$DEPLOY_TAG_KJELL" ]]; then
-            echo "Recording new ui tag: '$DEPLOY_TAG_KJELL'"
-            uiTagText="_(tag: <https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/releases/tag/$DEPLOY_TAG_KJELL|$DEPLOY_TAG_KJELL>)_"
+        if [[ "$DEPLOY_TAG" ]]; then
+            echo "Recording new ui tag: '$DEPLOY_TAG'"
+            uiTagText="_(tag: <https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/releases/tag/$DEPLOY_TAG|$DEPLOY_TAG>)_"
         else
             uiTagText="_(no new tag)_"
         fi
         fields="{
                 \"title\": \"Zifro Kjell UI\",
-                \"value\": \"\`\`\`$DEPLOY_TAG_KJELL\`\`\`\\n$uiTagText\",
+                \"value\": \"\`\`\`$DEPLOY_TAG\`\`\`\\n$uiTagText\",
                 \"short\": true
             }"
 

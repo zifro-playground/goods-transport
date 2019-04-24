@@ -47,8 +47,8 @@ jobs:
             shopt -s globstar
             
             # Get versions
-            PLAYGROUND_CARCONTROLLER_VERSION="$($SCRIPTS/get_attr_version.sh ~/repo/Assets/**/CarControllerAssemblyInfo.cs)"
-            echo ">>> Using Playground Kjell UI v$PLAYGROUND_CARCONTROLLER_VERSION"
+            PLAYGROUND_GOODSTRANSPORT_VERSION="$($SCRIPTS/get_attr_version.sh ~/repo/Assets/**/ZifroPlaygroundGoodsAssemblyInfo.cs)"
+            echo ">>> Using Playground Goods-Transport v$PLAYGROUND_GOODSTRANSPORT_VERSION"
 
             PLAYGROUND_UI_VERSION="$($SCRIPTS/get_attr_version.sh ~/repo/Library/PackageCache/se.zifro.ui*/**/ZifroPlaygroundUIAssemblyInfo.cs)"
             echo ">>> Using Playground UI v$PLAYGROUND_UI_VERSION"
@@ -58,7 +58,7 @@ jobs:
             echo ">>> Using Mellis v$MELLIS_VERSION, and Python3 module v$MELLIS_PYTHON3_VERSION"
 
             # Save to environment
-            echo "PLAYGROUND_CARCONTROLLER_VERSION='$PLAYGROUND_CARCONTROLLER_VERSION'" >> $BASH_ENV
+            echo "PLAYGROUND_GOODSTRANSPORT_VERSION='$PLAYGROUND_GOODSTRANSPORT_VERSION'" >> $BASH_ENV
             echo "PLAYGROUND_UI_VERSION='$PLAYGROUND_UI_VERSION'" >> $BASH_ENV
             echo "MELLIS_VERSION='$MELLIS_VERSION'" >> $BASH_ENV
             echo "MELLIS_PYTHON3_VERSION='$MELLIS_PYTHON3_VERSION'" >> $BASH_ENV
@@ -128,19 +128,19 @@ jobs:
   #           shopt -s globstar
 
   #           # Get versions
-  #           PLAYGROUND_CARCONTROLLER_VERSION="$($SCRIPTS/get_attr_version.sh ~/repo/Assets/**/CarControllerAssemblyInfo.cs)"
-  #           echo ">>> Using Playground Kjell UI v$PLAYGROUND_CARCONTROLLER_VERSION"
+  #           PLAYGROUND_GOODSTRANSPORT_VERSION="$($SCRIPTS/get_attr_version.sh ~/repo/Assets/**/ZifroPlaygroundGoodsAssemblyInfo.cs)"
+  #           echo ">>> Using Playground Goods-Transport v$PLAYGROUND_GOODSTRANSPORT_VERSION"
 
   #           # Save to environment
-  #           echo "PLAYGROUND_CARCONTROLLER_VERSION='$PLAYGROUND_CARCONTROLLER_VERSION'" >> $BASH_ENV
+  #           echo "PLAYGROUND_GOODSTRANSPORT_VERSION='$PLAYGROUND_GOODSTRANSPORT_VERSION'" >> $BASH_ENV
 
   #     - run:
   #         name: Prepare files for deployment
   #         command: |
-  #           : ${PLAYGROUND_CARCONTROLLER_VERSION?}
+  #           : ${PLAYGROUND_GOODSTRANSPORT_VERSION?}
 
-  #           echo ">>> Update version package.json to '$PLAYGROUND_CARCONTROLLER_VERSION'"
-  #           echo "$(jq ".version=\"$PLAYGROUND_CARCONTROLLER_VERSION\"" ~/upm/package.json)" > ~/upm/package.json
+  #           echo ">>> Update version package.json to '$PLAYGROUND_GOODSTRANSPORT_VERSION'"
+  #           echo "$(jq ".version=\"$PLAYGROUND_GOODSTRANSPORT_VERSION\"" ~/upm/package.json)" > ~/upm/package.json
   #           echo
 
   #           $SCRIPTS/move_upm_files.sh ~/repo ~/upm

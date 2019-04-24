@@ -5,7 +5,7 @@
 : ${SLACK_AUTHOR_NAME:=}
 : ${SLACK_AUTHOR_ICON:=}
 : ${SLACK_AUTHOR_LINK:=}
-: ${SLACK_THUMBNAIL:="https://img.icons8.com/ultraviolet/100/000000/sedan.png"}
+: ${SLACK_THUMBNAIL:="https://img.icons8.com/ultraviolet/100/000000/railway-station.png"}
 
 : ${TEST_PASSED:=0}
 : ${TEST_FAILED:=0}
@@ -16,7 +16,7 @@ TEST_TOTAL=$((TEST_PASSED+TEST_FAILED+TEST_SKIPPED+TEST_INCONCLUSIVE))
 : ${TEST_ERRORS:=}
 : ${BUILD_STATUS:="fail"}
 
-: ${PLAYGROUND_CARCONTROLLER_VERSION:=}
+: ${PLAYGROUND_GOODSTRANSPORT_VERSION:=}
 : ${PLAYGROUND_UI_VERSION:=}
 : ${MELLIS_VERSION:=}
 : ${MELLIS_PYTHON3_VERSION:=}
@@ -214,7 +214,7 @@ else
 fi
 
 versions="\
-Playground car-controller: $(formatVersion "$PLAYGROUND_CARCONTROLLER_VERSION")\\n\
+Playground goods-transport: $(formatVersion "$PLAYGROUND_GOODSTRANSPORT_VERSION")\\n\
 Playground UI: $(formatVersion "$PLAYGROUND_UI_VERSION")\\n\
 Mellis: $(formatVersion "$MELLIS_VERSION")\\n\
 Python3 module: $(formatVersion "$MELLIS_PYTHON3_VERSION")"
